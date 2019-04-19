@@ -6,7 +6,11 @@ easily stored in a yaml file located at  `~/.cloudmesh/cloudmesh4.yaml` This
 file is  created upon first start of the shell. You need to edit it and include
 some of your cloud information.
 
-## Commandline (proposed)
+A template for the yaml file is located at:
+
+* <https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/etc/cloudmesh4.yaml>
+
+## Commandline 
 
 It is easy to switch beteeen clouds with the set command. Ater the set and
 specifying the cloud by name many commands will default to that cloud. The
@@ -14,6 +18,7 @@ exception is the `vm list` command that lists by default all vms on all clouds.
 In addition the `vm refresh` command will also work on all clouds.
 
 ```bash
+$ cms admin mongo create  # needs only be done one time
 $ cms admin mongo start
 
 $ cms set cloud=vagrant
@@ -43,7 +48,8 @@ $ cms flavor list
 
 $ cms vm refresh
 
-$ cms vm list
+$ cms vm listcms admin mongo stop
+
 ```
 
 In case you want a command explicitly apply to one or more clouds or one or more
@@ -133,7 +139,7 @@ To switch it off you can say
 $ cms set refresh=False
 ```
 
-## Manual (ok)
+## Manual 
 
 The manaul page can be opened with 
 

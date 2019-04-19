@@ -23,7 +23,7 @@ by the user.
   <https://github.com/cloudmesh/cloudmesh-installer>
 
 
-## Readmap (under development)
+## Roadmap (under development)
 
 * MongoDB as a backend for caching
   <https://github.com/cloudmesh/cloudmesh-cloud>

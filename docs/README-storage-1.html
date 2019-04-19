@@ -359,8 +359,21 @@ provider.</p>
 <div class="section" id="id2">
 <h3>2.6.1. Configuration<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file needs to be set up as follows for the ‘azure-blob’ section under ‘storage’.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>  storage:
-    azure-blob:
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cloudmesh:
+  .........
+  storage:
+    box:
+      cm:
+        heading: Box
+        host: box.com
+        label: Box
+        kind: box
+        version: TBD
+      default:
+        directory: TBD
+      credentials:
+        name: TBD
+    azureblob:
       cm:
         heading: Azure
         host: azure.com
@@ -370,9 +383,9 @@ provider.</p>
       default:
         directory: TBD
       credentials:
-        account_name: <span class="s1">&#39;XXXXXXXXXXXXXXXXX&#39;</span>
-        account_key: <span class="s1">&#39;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span>
-        container: <span class="s1">&#39;Test container name&#39;</span>
+        account_name: <span class="s1">&#39;*****************&#39;</span>
+        account_key: <span class="s1">&#39;********************************************************************&#39;</span>
+        container: <span class="s1">&#39;azuretest&#39;</span>
 </pre></div>
 </div>
 <p>Configuration settings for credentials in the yaml file can be obtained from Azure portal.</p>

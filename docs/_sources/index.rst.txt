@@ -34,8 +34,6 @@ Cloudmesh Version 4
    :caption: STORAGE
 
    README-storage.md
-   README-storage-1.md
-   README-storage-awss3.md
    README-storage-openapi.md
 
 .. toctree::

@@ -1,4 +1,4 @@
-# Quickstart (proposed)
+# Quickstart
 
 One of the features up Cloudmesh is to easily start new virtual machines on
 vairous clouds. It uses defaults for these clouds that can be chaned, but are
@@ -10,7 +10,7 @@ A template for the yaml file is located at:
 
 * <https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/etc/cloudmesh4.yaml>
 
-## Commandline 
+## Command line 
 
 It is easy to switch beteeen clouds with the set command. Ater the set and
 specifying the cloud by name many commands will default to that cloud. The
@@ -95,7 +95,7 @@ cms> set cloud=aws
 cms> vm start
 ```
 
-## Command scripts (ok)
+## Command scripts
 
 As we use cmd5 we also have access to piped and named scripts with
 
@@ -109,7 +109,7 @@ and
 $ cms --script script.cms
 ```
 
-## Cache (proposed)
+## Cache
 
 All information about for example virtual machines are cached locally. The cache
 for various information sources can be explicitly updated with the `--refresh`

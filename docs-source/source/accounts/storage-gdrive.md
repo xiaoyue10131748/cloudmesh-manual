@@ -31,8 +31,7 @@ to Google Docs.
 *of the functionalities.  Google sheets can be shared with other people
 *and can concurrently work on it and can edit it. We can change  the font
 *size, type as we want. We can use the formulas to calculate some mathematical
-*expressions. This can be  readily transformed to .csv or .xlsx format.<br
-*/>
+*expressions. This can be  readily transformed to .csv or .xlsx format.
 
 **Google Slides:** Just like Microsoft PowerPoint presentation, Google has
 *Googleslides. We can do small  animations, transformations of slides.

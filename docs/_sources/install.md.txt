@@ -17,7 +17,10 @@ we recommend that you use the source installation instead.
 In future cloudmesh version 4 will be installed with
 
 ```bash
+pip install cloudmesh-cms
 pip install cloudmesh-cloud
+pip install cloudmesh-storage
+
 ```
 
 Individual packages can be installed with
@@ -33,78 +36,47 @@ For the time being we recommend you conduct the source install.
 
 ### Source installation for development
 
-For developers we recommend the source installation as all other installations
-will not yet work
+The best way to install cloudmesh from source is to use our installer:
 
+More documentation about it can be found at 
 
-```bash
-export SRC=`pwd`
-git clone https://github.com/cloudmesh/cloudmesh-common.git
-git clone https://github.com/cloudmesh/cloudmesh-cmd5.git
-git clone https://github.com/cloudmesh/cloudmesh-sys.git
-git clone https://github.com/cloudmesh/cloudmesh-openapi.git
-git clone https://github.com/cloudmesh-community/cloudmesh-cloud.git
+* <https://github.com/cloudmesh/cloudmesh-installer>
 
-
-cd $SRC/cloudmesh-common
-pip install -e .
-cd $SRC/cloudmesh-cmd5
-pip install -e .
-cd $SRC/cloudmesh-sys
-pip install -e .
-cd $SRC/cloudmesh-openapi
-pip install -e .
-cd $SRC/cloudmesh-cloud
-pip install -e .
-```
-
-## Updating cloudmesh from source
-
-To update cloudmesh form source you will need yo update all source packages.
-Make sure to place all your code in the current directory, or locate the
-directory in your system where you prviously have git cloned it Now the update
-is easy: 
-
+You install it with 
 
 ```bash
-export SRC=`pwd`
-
-cd $SRC/cloudmesh-common
-git pull
-pip install -e .
-cd $SRC/cloudmesh-cmd5
-git pull
-pip install -e .
-cd $SRC/cloudmesh-sys
-git pull
-pip install -e .
-cd $SRC/cloudmesh-openapi
-git pull
-pip install -e .
-git pull
-cd $SRC/cm
-pip install -e .
+pip install cloudmesh-installer
 ```
 
-However we also have a command called 
+It is best to create an emty directory and decide which bundles to install
 
 ```bash
-$ cms source install
+mkdir cm
+cd cm
+cloudmesh-installer bundels
 ```
 
-assuming you use ssh as the protocoll to interface with git.
-Please make sure your cloudmesh4.yaml file contains the location where 
-you like to install cloudmesh in. An example is
+Decide which bundels you like to install (let us assume you use storage) and simply say 
 
+```bash
+cloudmesh-installer git clone storage
+cloudmesh-installer install storage -e
 ```
-cloudmesh:
-  destination:
-    cloudmesh-common: ~/Desktop/github/cloudmesh
-    cloudmesh-cmd5: ~/Desktop/github/cloudmesh
-    cloudmesh-openapi: ~/Desktop/github/cloudmesh
-    cloudmesh-sys: ~/Desktop/github/cloudmesh
-    cloudmesh-cloud: ~/Desktop/github/cloudmesh
-      git: https://github.com/cloudmesh-community/cloudmesh-cloud
+
+It will take a while to install On newer machines 1 minte, on older significant longer.
+
+YOu can than test if 
+
+``` bash
+cms help 
+```
+
+works. Make susre to stay up to date while issuing the pull command on your bundle
+
+```bash
+cloudmesh-installer git pull bundle
+cloudmesh-installer install storage -e
+
 ```
 
 

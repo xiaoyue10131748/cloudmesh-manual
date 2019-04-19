@@ -16,9 +16,9 @@ installation documentation.
 
 |  | Links |
 |---------------|-------|
-| Documentation | <https://cloudmesh.github.io/cloudmesh-cloud> |
-| Code | <https://github.com/cloudmesh/cloudmesh-cloud> |
-| Instalation Instructions | <https://github.com/cloudmesh/get> |
+| Documentation | <https://cloudmesh.github.io/cloudmesh-manual> |
+| Code | <https://github.com/cloudmesh/cloudmesh-storage> |
+| Instalation Instructions | <https://github.com/cloudmesh-installer> |
 
 An dynamically extensible CMD based command shell. For en extensive
 documentation please see
@@ -28,44 +28,50 @@ documentation please see
 where we also document how to use pyenv virtualenv.
 
 
-
-## Installation and Documentation
-
-For developers:
-
-To install the storage module, you need to do an additional step. Please got to the directory
-`cloudmesh.storage` and execute in it the command
-
-```bash
-$ pip install -e .
-```
-
-For users (NOT YET WORKING:
-
-```bash
-$ pip install cloudmesh.storage
-```
-
 ## Pytests
 
-We have developed a number of simple pytests that can be called. To see the list of Pytests go to our directory
+
+### Generic Tests
+
+We have developed a number of simple pytests that can be called. To see the list
+of Pytests go to our directory
 
 * <https://github.com/cloudmesh/cloudmesh-storage/tree/master/tests>
 
-We also developed a general pytest that works accross providers and can be invoked as follows
+We also developed a general pytest that works accross providers and can be
+invoked as follows
 
 ```bash
 $ cms set storage=box
 $ pytest -v --capture=no tests/test_storage.py
+
 $ cms set storage=azure
 $ pytest -v --capture=no tests/test_storage.py
+
 $ cms set storage=gdrive
 $ pytest -v --capture=no tests/test_storage.py
+
 $ cms set storage=awss3
 $ pytest -v --capture=no tests/test_storage.py
 ```
 
-TODO: add other storage providers as they become ready 
+### Provider Specific Pytests
+
+Open a terminal and navigate to the cloudmesh-storage directory. Enter the
+following command to run pytests:
+
+```bash
+$ pytest -v --capture=no tests/test_box.py
+$ pytest -v --capture=no tests/test_azure.py
+$ pytest -v --capture=no tests/test_storage_aws.py
+```
+
+TODO: rename to 
+
+* test_storage_box.py
+* test_storage_azure.py
+
+ 
 
 ## General features
 
@@ -107,157 +113,6 @@ result = provider.put(src, dst)
 pprint(result)
 ```
 
-
-## Box
-
-### Configuration
-
-In the `cloudmesh4.yaml` file, find the 'box' section under 'storage'. Under credentials, set `config_path` to the path of the configuration file you created as described in the Box chapter:
-
-```bash
-   box:
-      cm:
-        heading: Box
-        host: box.com
-        label: Box
-        kind: box
-        version: TBD
-      default:
-        directory: /
-      credentials:
-        config_path: ******************************
-```
-
-### Pytests
-
-Open a terminal and navigate to the cloudmesh-storage directory. Enter the following command to run pytests:
-
-```bash
-$ pytest -v --capture=no tests/test_box.py
-```
-
-## Azure
-
-### Configuration
-
-The `cloudmesh4.yaml` file needs to be set up as follows for the 'azure-blob' section under 'storage'.
-
-```bash
-cloudmesh:
-  .........
-  storage:
-    box:
-      cm:
-        heading: Box
-        host: box.com
-        label: Box
-        kind: box
-        version: TBD
-      default:
-        directory: TBD
-      credentials:
-        name: TBD
-    azureblob:
-      cm:
-        heading: Azure
-        host: azure.com
-        label: Azure
-        kind: azureblob
-        version: TBD
-      default:
-        directory: TBD
-      credentials:
-        account_name: '*****************'
-        account_key: '********************************************************************'
-        container: 'azuretest'
-```
-
-Configuration settings for credentials in the yaml file can be obtained from Azure portal.
-
-* `account_name` - This is the name of the Azure blob storage account.
-* `account_key` - This can be found under 'Access Keys' after navigating to the storage account on the Azure portal.
-* `container` - This can be set to a default container created under the Azure blob storage account.
-
-### Pytests
-
-Execute the following command for Azure Blob storage service pytest after navigating to the cloudmesh-storage directory.
-
-```bash
-$ pytest -v --capture=no tests/test_azure.py
-```
-
-
-## AWS S3
-
-### Configuration
-
-In the `cloudmesh4.yaml` file, the 'aws' section under 'storage' describes the parameters used to store files in AWS S3. 
-In the credentials section under aws, specify the access key id and secret access key which will be available in the AWS console under AWS IAM service -> Users -> Security Credentials. 
-Container is the default Bucket which will be used to store the files in AWS S3. 
-Region is the geographic area like us-east-1 which contains the bucket. Region is required to get a connection handle on the S3 Client or resource for that geographic area.
-Here is a sample.
-
-```bash
-storage:
-    aws:
-      cm:
-        heading: aws
-        host: amazon.aws.com
-        label: aws
-        kind: awsS3
-        version: TBD
-      default:
-        directory: TBD
-      credentials:
-        access_key_id: *********
-        secret_access_key: *******
-        container: name of bucket that you want user to be contained in.
-        region: Specfiy the default region eg us-east-1
-```
-
-### Pytests
-
-Script to test the AWS S3 service can be accessed under tests folder using the following pytest command.
-
-```bash
-$ pytest -v --capture=no tests/test_storage_aws.py
-```
-
-
-## Google drive
-
-Due to bugs in the requirements of the google driver code, 
-we have not yet included it in the Provider code. This needs to be fixed 
-before we can do this.
-
-The `cloudmesh4.yaml` file needs to be set up as follows for the 'gdrive' section under 'storage'.
-
-```bash
-storge:
-    gdrive: 
-      cm: 
-        heading: GDrive
-        host: gdrive.google.com
-        kind: gdrive
-        label: GDrive
-        version: TBD
-      credentials: 
-        auth_host_name: localhost
-        auth_host_port: 
-          - ****
-          - ****
-        auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
-        auth_uri: "https://accounts.google.com/o/oauth2/auth"
-        client_id: *******************
-        client_secret: ************
-        project_id: ************
-        redirect_uris: 
-          - "urn:ietf:wg:oauth:2.0:oob"
-          - "http://localhost"
-        token_uri: "https://oauth2.googleapis.com/token"
-      default: 
-        directory: TBD
-```
 
 ### Pytests
 

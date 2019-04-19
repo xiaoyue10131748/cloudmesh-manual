@@ -98,7 +98,7 @@ html_theme_options = {
     'navigation_depth': 4,
     'includehidden': True,
     'titles_only': False,
-    'github_url': True
+    'github_url': True,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,

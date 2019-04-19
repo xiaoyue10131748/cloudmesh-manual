@@ -111,6 +111,9 @@ $ cms --script script.cms
 
 ## Cache
 
+
+
+
 All information about for example virtual machines are cached locally. The cache
 for various information sources can be explicitly updated with the `--refresh`
 flag. Thus the command

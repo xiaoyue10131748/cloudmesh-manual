@@ -93,8 +93,8 @@
 <p class="caption"><span class="caption-text">INSTALATION</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">2. Quickstart (proposed)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">3. Configuration (ok)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">2. Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">3. Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="yaml.html">4. Cloudmesh yaml file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mongo.html">5. Cloudmesh Database (ok)</a></li>
 </ul>
@@ -107,35 +107,20 @@
 <li class="toctree-l1"><a class="reference internal" href="README-storage.html">1. Cloudmesh Multi Cloud Storage Interface</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. Cloudmesh Storage Module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">2.1. Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installation-and-documentation">2.2. Installation and Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pytests">2.3. Pytests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#general-features">2.4. General features</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#command-line-interface">2.4.1. Command Line Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#programming-interface">2.4.2. Programming Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pytests">2.2. Pytests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#generic-tests">2.2.1. Generic Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#provider-specific-pytests">2.2.2. Provider Specific Pytests</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#box">2.5. Box</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#configuration">2.5.1. Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">2.5.2. Pytests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#general-features">2.3. General features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#command-line-interface">2.3.1. Command Line Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#programming-interface">2.3.2. Programming Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.3.3. Pytests</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#azure">2.6. Azure</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">2.6.1. Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">2.6.2. Pytests</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#aws-s3">2.7. AWS S3</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">2.7.1. Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">2.7.2. Pytests</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#google-drive">2.8. Google drive</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id6">2.8.1. Pytests</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#virtual-directory">2.9. Virtual Directory</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id7">2.9.1. Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">2.9.2. Pytests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#virtual-directory">2.4. Virtual Directory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">2.4.1. Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2.4.2. Pytests</a></li>
 </ul>
 </li>
 </ul>
@@ -279,9 +264,9 @@
 installation documentation.</p>
 <p>|  | Links |
 |—————|——-|
-| Documentation | <a class="reference external" href="https://cloudmesh.github.io/cloudmesh-cloud">https://cloudmesh.github.io/cloudmesh-cloud</a> |
-| Code | <a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cloud">https://github.com/cloudmesh/cloudmesh-cloud</a> |
-| Instalation Instructions | <a class="reference external" href="https://github.com/cloudmesh/get">https://github.com/cloudmesh/get</a> |</p>
+| Documentation | <a class="reference external" href="https://cloudmesh.github.io/cloudmesh-manual">https://cloudmesh.github.io/cloudmesh-manual</a> |
+| Code | <a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage">https://github.com/cloudmesh/cloudmesh-storage</a> |
+| Instalation Instructions | <a class="reference external" href="https://github.com/cloudmesh-installer">https://github.com/cloudmesh-installer</a> |</p>
 <p>An dynamically extensible CMD based command shell. For en extensive
 documentation please see</p>
 <ul class="simple">
@@ -289,44 +274,53 @@ documentation please see</p>
 </ul>
 <p>where we also document how to use pyenv virtualenv.</p>
 </div>
-<div class="section" id="installation-and-documentation">
-<h2>2.2. Installation and Documentation<a class="headerlink" href="#installation-and-documentation" title="Permalink to this headline">¶</a></h2>
-<p>For developers:</p>
-<p>To install the storage module, you need to do an additional step. Please got to the directory
-<code class="docutils literal notranslate"><span class="pre">cloudmesh.storage</span></code> and execute in it the command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install -e .
-</pre></div>
-</div>
-<p>For users (NOT YET WORKING:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install cloudmesh.storage
-</pre></div>
-</div>
-</div>
 <div class="section" id="pytests">
-<h2>2.3. Pytests<a class="headerlink" href="#pytests" title="Permalink to this headline">¶</a></h2>
-<p>We have developed a number of simple pytests that can be called. To see the list of Pytests go to our directory</p>
+<h2>2.2. Pytests<a class="headerlink" href="#pytests" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="generic-tests">
+<h3>2.2.1. Generic Tests<a class="headerlink" href="#generic-tests" title="Permalink to this headline">¶</a></h3>
+<p>We have developed a number of simple pytests that can be called. To see the list
+of Pytests go to our directory</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/tree/master/tests">https://github.com/cloudmesh/cloudmesh-storage/tree/master/tests</a></p></li>
 </ul>
-<p>We also developed a general pytest that works accross providers and can be invoked as follows</p>
+<p>We also developed a general pytest that works accross providers and can be
+invoked as follows</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cms <span class="nb">set</span> <span class="nv">storage</span><span class="o">=</span>box
 $ pytest -v --capture<span class="o">=</span>no tests/test_storage.py
+
 $ cms <span class="nb">set</span> <span class="nv">storage</span><span class="o">=</span>azure
 $ pytest -v --capture<span class="o">=</span>no tests/test_storage.py
+
 $ cms <span class="nb">set</span> <span class="nv">storage</span><span class="o">=</span>gdrive
 $ pytest -v --capture<span class="o">=</span>no tests/test_storage.py
+
 $ cms <span class="nb">set</span> <span class="nv">storage</span><span class="o">=</span>awss3
 $ pytest -v --capture<span class="o">=</span>no tests/test_storage.py
 </pre></div>
 </div>
-<p>TODO: add other storage providers as they become ready</p>
+</div>
+<div class="section" id="provider-specific-pytests">
+<h3>2.2.2. Provider Specific Pytests<a class="headerlink" href="#provider-specific-pytests" title="Permalink to this headline">¶</a></h3>
+<p>Open a terminal and navigate to the cloudmesh-storage directory. Enter the
+following command to run pytests:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pytest -v --capture<span class="o">=</span>no tests/test_box.py
+$ pytest -v --capture<span class="o">=</span>no tests/test_azure.py
+$ pytest -v --capture<span class="o">=</span>no tests/test_storage_aws.py
+</pre></div>
+</div>
+<p>TODO: rename to</p>
+<ul class="simple">
+<li><p>test_storage_box.py</p></li>
+<li><p>test_storage_azure.py</p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="general-features">
-<h2>2.4. General features<a class="headerlink" href="#general-features" title="Permalink to this headline">¶</a></h2>
+<h2>2.3. General features<a class="headerlink" href="#general-features" title="Permalink to this headline">¶</a></h2>
 <p>How to set up the authentication to a specific service is discussed in later sections</p>
 <p>TODO: Provide a simple programming example with the general provider</p>
 <div class="section" id="command-line-interface">
-<h3>2.4.1. Command Line Interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h3>
+<h3>2.3.1. Command Line Interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h3>
 <p>TBD</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cms <span class="nb">set</span> <span class="nv">storage</span><span class="o">=</span>azure
 $ cms storage list
@@ -334,7 +328,7 @@ $ cms storage list
 </div>
 </div>
 <div class="section" id="programming-interface">
-<h3>2.4.2. Programming Interface<a class="headerlink" href="#programming-interface" title="Permalink to this headline">¶</a></h3>
+<h3>2.3.2. Programming Interface<a class="headerlink" href="#programming-interface" title="Permalink to this headline">¶</a></h3>
 <p>TBD</p>
 <p>Cloudmesh Storage provides a simple programming API interface that you can use.
 We highlight a simple exampple for storing and retrieving a file form a storage
@@ -354,152 +348,8 @@ provider.</p>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="box">
-<h2>2.5. Box<a class="headerlink" href="#box" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="configuration">
-<h3>2.5.1. Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
-<p>In the <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file, find the ‘box’ section under ‘storage’. Under credentials, set <code class="docutils literal notranslate"><span class="pre">config_path</span></code> to the path of the configuration file you created as described in the Box chapter:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>   box:
-      cm:
-        heading: Box
-        host: box.com
-        label: Box
-        kind: box
-        version: TBD
-      default:
-        directory: /
-      credentials:
-        config_path: ******************************
-</pre></div>
-</div>
-</div>
 <div class="section" id="id1">
-<h3>2.5.2. Pytests<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Open a terminal and navigate to the cloudmesh-storage directory. Enter the following command to run pytests:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pytest -v --capture<span class="o">=</span>no tests/test_box.py
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="azure">
-<h2>2.6. Azure<a class="headerlink" href="#azure" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>2.6.1. Configuration<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file needs to be set up as follows for the ‘azure-blob’ section under ‘storage’.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cloudmesh:
-  .........
-  storage:
-    box:
-      cm:
-        heading: Box
-        host: box.com
-        label: Box
-        kind: box
-        version: TBD
-      default:
-        directory: TBD
-      credentials:
-        name: TBD
-    azureblob:
-      cm:
-        heading: Azure
-        host: azure.com
-        label: Azure
-        kind: azureblob
-        version: TBD
-      default:
-        directory: TBD
-      credentials:
-        account_name: <span class="s1">&#39;*****************&#39;</span>
-        account_key: <span class="s1">&#39;********************************************************************&#39;</span>
-        container: <span class="s1">&#39;azuretest&#39;</span>
-</pre></div>
-</div>
-<p>Configuration settings for credentials in the yaml file can be obtained from Azure portal.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">account_name</span></code> - This is the name of the Azure blob storage account.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">account_key</span></code> - This can be found under ‘Access Keys’ after navigating to the storage account on the Azure portal.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">container</span></code> - This can be set to a default container created under the Azure blob storage account.</p></li>
-</ul>
-</div>
-<div class="section" id="id3">
-<h3>2.6.2. Pytests<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>Execute the following command for Azure Blob storage service pytest after navigating to the cloudmesh-storage directory.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pytest -v --capture<span class="o">=</span>no tests/test_azure.py
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="aws-s3">
-<h2>2.7. AWS S3<a class="headerlink" href="#aws-s3" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id4">
-<h3>2.7.1. Configuration<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p>In the <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file, the ‘aws’ section under ‘storage’ describes the parameters used to store files in AWS S3.
-In the credentials section under aws, specify the access key id and secret access key which will be available in the AWS console under AWS IAM service -&gt; Users -&gt; Security Credentials.
-Container is the default Bucket which will be used to store the files in AWS S3.
-Region is the geographic area like us-east-1 which contains the bucket. Region is required to get a connection handle on the S3 Client or resource for that geographic area.
-Here is a sample.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>storage:
-    aws:
-      cm:
-        heading: aws
-        host: amazon.aws.com
-        label: aws
-        kind: awsS3
-        version: TBD
-      default:
-        directory: TBD
-      credentials:
-        access_key_id: *********
-        secret_access_key: *******
-        container: name of bucket that you want user to be contained in.
-        region: Specfiy the default region eg us-east-1
-</pre></div>
-</div>
-</div>
-<div class="section" id="id5">
-<h3>2.7.2. Pytests<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>Script to test the AWS S3 service can be accessed under tests folder using the following pytest command.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pytest -v --capture<span class="o">=</span>no tests/test_storage_aws.py
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="google-drive">
-<h2>2.8. Google drive<a class="headerlink" href="#google-drive" title="Permalink to this headline">¶</a></h2>
-<p>Due to bugs in the requirements of the google driver code,
-we have not yet included it in the Provider code. This needs to be fixed
-before we can do this.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file needs to be set up as follows for the ‘gdrive’ section under ‘storage’.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>storge:
-    gdrive: 
-      cm: 
-        heading: GDrive
-        host: gdrive.google.com
-        kind: gdrive
-        label: GDrive
-        version: TBD
-      credentials: 
-        auth_host_name: localhost
-        auth_host_port: 
-          - ****
-          - ****
-        auth_provider_x509_cert_url: <span class="s2">&quot;https://www.googleapis.com/oauth2/v1/certs&quot;</span>
-        auth_uri: <span class="s2">&quot;https://accounts.google.com/o/oauth2/auth&quot;</span>
-        client_id: *******************
-        client_secret: ************
-        project_id: ************
-        redirect_uris: 
-          - <span class="s2">&quot;urn:ietf:wg:oauth:2.0:oob&quot;</span>
-          - <span class="s2">&quot;http://localhost&quot;</span>
-        token_uri: <span class="s2">&quot;https://oauth2.googleapis.com/token&quot;</span>
-      default: 
-        directory: TBD
-</pre></div>
-</div>
-<div class="section" id="id6">
-<h3>2.8.1. Pytests<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h3>2.3.3. Pytests<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Script to test the GDrive service can be accessed under tests folder using the following pytest command.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pytest -v --capture<span class="o">=</span>no tests/test_gdrive.py
 </pre></div>
@@ -507,14 +357,14 @@ before we can do this.</p>
 </div>
 </div>
 <div class="section" id="virtual-directory">
-<h2>2.9. Virtual Directory<a class="headerlink" href="#virtual-directory" title="Permalink to this headline">¶</a></h2>
+<h2>2.4. Virtual Directory<a class="headerlink" href="#virtual-directory" title="Permalink to this headline">¶</a></h2>
 <p>The virtual directory has been developed to mirror the linux directory commands. File links in the virtual directory point to files on storage providers, which can be retrieved using the virtual directory.</p>
-<div class="section" id="id7">
-<h3>2.9.1. Configuration<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="configuration">
+<h3>2.4.1. Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
 <p>The credentials for the virtual directory are the same as for the admin mongo command. See the Mongo section for details.</p>
 </div>
-<div class="section" id="id8">
-<h3>2.9.2. Pytests<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>2.4.2. Pytests<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>The vdir command can be tested as follows:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pytest -v --capture<span class="o">=</span>no tests/test_vdir.py
 </pre></div>

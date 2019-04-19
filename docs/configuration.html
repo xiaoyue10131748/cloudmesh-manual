@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3. Configuration (ok) &mdash; Cloudmesh v4 alpha documentation</title>
+  <title>3. Configuration &mdash; Cloudmesh v4 alpha documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="4. Cloudmesh yaml file" href="yaml.html" />
-    <link rel="prev" title="2. Quickstart (proposed)" href="quickstart.html" /> 
+    <link rel="prev" title="2. Quickstart" href="quickstart.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -93,17 +93,33 @@
 <p class="caption"><span class="caption-text">INSTALATION</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">2. Quickstart (proposed)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Configuration (ok)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#clouds-proposed">3.1. Clouds (proposed)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#virtual-clusters-proposed">3.2. Virtual Clusters (proposed)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#aminsistartive-services">3.3. Aminsistartive Services</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#mongodb-ok">3.3.1. MongoDB (ok)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rest-proposed">3.3.2. REST (proposed)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">2. Quickstart</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mongodb">3.1. MongoDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compute-cloud-providers">3.2. Compute Cloud Providers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aws">3.2.1. AWS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#azure">3.2.2. Azure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#google">3.2.3. Google</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#openstack">3.2.4. OpenStack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#virtual-box">3.2.5. Virtual Box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssh">3.2.6. SSH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#local">3.2.7. Local</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#docker">3.2.8. Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#storage-providers">3.2.9. Storage Providers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aws-s3">3.2.10. AWS S3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">3.2.11. Azure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#google-bug">3.2.12. Google (BUG)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#log-file-proposed">3.4. Log File (proposed)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#encryption-proposed">3.5. Encryption (proposed)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#google-drive">3.3. Google drive</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#box">3.3.1. Box</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#object-store">3.4. Object Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#virtual-clusters">3.5. Virtual Clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rest">3.6. REST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#log-file-proposed">3.7. Log File (proposed)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#encryption">3.8. Encryption</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="yaml.html">4. Cloudmesh yaml file</a></li>
@@ -222,7 +238,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>3. Configuration (ok)</li>
+      <li>3. Configuration</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -241,8 +257,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="configuration-ok">
-<h1>3. Configuration (ok)<a class="headerlink" href="#configuration-ok" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="configuration">
+<h1>3. Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
 <p>The Configuration of cloudmesh is controled with a yaml file that is placed in
 <code class="docutils literal notranslate"><span class="pre">~/.clloudmesh/cloudmesh4.yaml</span></code>. It is created automatically from the templace
 located at</p>
@@ -250,56 +266,335 @@ located at</p>
 <li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/etc/cloudmesh4.yaml">https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/etc/cloudmesh4.yaml</a></p></li>
 </ul>
 <p>You can customize the file in your local directory.</p>
-<div class="section" id="clouds-proposed">
-<h2>3.1. Clouds (proposed)<a class="headerlink" href="#clouds-proposed" title="Permalink to this headline">¶</a></h2>
-<p>The default yaml file includes templates to configure various clouds. YOu can
-change these defaults and provide access to your cloud credentials to make the
-management of cloud virtual machines easier. Templates for AWS, Azure, Google,
-OpenStack are provided. Specific templates for Jetstream and Chameleopn cloud
-are included</p>
-</div>
-<div class="section" id="virtual-clusters-proposed">
-<h2>3.2. Virtual Clusters (proposed)<a class="headerlink" href="#virtual-clusters-proposed" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="aminsistartive-services">
-<h2>3.3. Aminsistartive Services<a class="headerlink" href="#aminsistartive-services" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="mongodb-ok">
-<h3>3.3.1. MongoDB (ok)<a class="headerlink" href="#mongodb-ok" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="mongodb">
+<h2>3.1. MongoDB<a class="headerlink" href="#mongodb" title="Permalink to this headline">¶</a></h2>
 <p>The cache of cloudmesh is managed in a mongo db database with various
 collections. However the user does not have to manage thes collections as this
-is done for the user through cloudmesh. The mongo db can be started and stoped
+is done for the user through cloudmesh. Before you can use it it mongo does need to be installed.</p>
+<p>If you have not installed mongo, you may try</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cms admin mongo install
+</pre></div>
+</div>
+<p>Next you create the database template with authentication with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cms admin mongo create
+</pre></div>
+</div>
+<p>Now you are ready to use it in cloudmesh.
+The mongo db can be started and stoped
 with the command</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$cms</span> admin mongo start
 <span class="nv">$cms</span> admin mongo stop
 </pre></div>
 </div>
-<p>Before you can use it mongo needs to be installed and basic authentication needs
-to be enabled with</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$cms</span> admin mongo install
-<span class="nv">$cms</span> admin mongo create
-</pre></div>
-</div>
 <p>The configuration detals are included in the yaml file.</p>
 </div>
-<div class="section" id="rest-proposed">
-<h3>3.3.2. REST (proposed)<a class="headerlink" href="#rest-proposed" title="Permalink to this headline">¶</a></h3>
-<p>TBD</p>
+<div class="section" id="compute-cloud-providers">
+<h2>3.2. Compute Cloud Providers<a class="headerlink" href="#compute-cloud-providers" title="Permalink to this headline">¶</a></h2>
+<p>The default yaml file includes templates to configure various clouds. YOu can
+change these defaults and provide access to your cloud credentials to make the
+management of cloud virtual machines easier. Templates for AWS, Azure, Google,
+OpenStack are provided. Specific templates for Jetstream and Chameleopn cloud
+are included</p>
+<blockquote>
+<div><p>STUDENT CONTRIBUTE HERE</p>
+</div></blockquote>
+<div class="section" id="aws">
+<h3>3.2.1. AWS<a class="headerlink" href="#aws" title="Permalink to this headline">¶</a></h3>
+<p>It is beyond the scope of this manual to discuss how to get an account on Aws.
+However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK></p>
+<blockquote>
+<div><p>STUDENT CONTRIBUTE HERE</p>
+</div></blockquote>
+<p>see Openstack example</p>
 </div>
+<div class="section" id="azure">
+<h3>3.2.2. Azure<a class="headerlink" href="#azure" title="Permalink to this headline">¶</a></h3>
+<p>It is beyond the scope of this manual to discuss how to get an account on Azure.
+However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK></p>
+<blockquote>
+<div><p>STUDENT CONTRIBUTE HERE</p>
+</div></blockquote>
+<p>see Openstack example</p>
+</div>
+<div class="section" id="google">
+<h3>3.2.3. Google<a class="headerlink" href="#google" title="Permalink to this headline">¶</a></h3>
+<p>It is beyond the scope of this manual to discuss how to get an account on Google.
+However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK></p>
+<blockquote>
+<div><p>STUDENT CONTRIBUTE HERE</p>
+</div></blockquote>
+<p>see Openstack example</p>
+</div>
+<div class="section" id="openstack">
+<h3>3.2.4. OpenStack<a class="headerlink" href="#openstack" title="Permalink to this headline">¶</a></h3>
+<p>We provide an example on how to use an OpenStack based cloud in cloudmesh.
+Please ass the following to your <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file and replace the values
+for <code class="docutils literal notranslate"><span class="pre">TBD</span></code>. Our example uses <a class="reference external" href="https://www.chameleoncloud.org/">Chameleon Cloud</a>.
+This is a cloud for academic research. Certainly you can configure other clouds
+based on this template. We have successfully used also clouds in Canada
+(Cybera), Germany (KIT), Indiana University (jetstream). TO get started you can
+even install your local cloud with devstack and make adjustements. Please
+remember you can have multiple clouds in the <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file so you could
+if you have access to them integrate all of them.</p>
+<p>Example for chameleon cloud:</p>
+<ul class="simple">
+<li><p>You will need access to a project and add your project nump=ber to the
+credentials.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cloudmesh</span><span class="p">:</span>
+  <span class="o">...</span>
+  <span class="n">cloud</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="n">chameleon</span><span class="p">:</span>
+      <span class="n">cm</span><span class="p">:</span>
+        <span class="n">active</span><span class="p">:</span> <span class="kc">True</span>    
+        <span class="n">heading</span><span class="p">:</span> <span class="n">Chameleon</span>
+        <span class="n">host</span><span class="p">:</span> <span class="n">chameleoncloud</span><span class="o">.</span><span class="n">org</span>
+        <span class="n">label</span><span class="p">:</span> <span class="n">chameleon</span>
+        <span class="n">kind</span><span class="p">:</span> <span class="n">openstack</span>
+        <span class="n">version</span><span class="p">:</span> <span class="n">liberty</span>
+      <span class="n">credentials</span><span class="p">:</span>
+        <span class="n">OS_AUTH_URL</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">openstack</span><span class="o">.</span><span class="n">tacc</span><span class="o">.</span><span class="n">chameleoncloud</span><span class="o">.</span><span class="n">org</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">v2</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">tokens</span>
+        <span class="n">OS_USERNAME</span><span class="p">:</span> <span class="n">TBD</span>
+        <span class="n">OS_PASSWORD</span><span class="p">:</span> <span class="n">TBD</span>
+        <span class="n">OS_TENANT_NAME</span><span class="p">:</span> <span class="n">CH</span><span class="o">-</span><span class="mi">819337</span>
+        <span class="n">OS_TENANT_ID</span><span class="p">:</span> <span class="n">CH</span><span class="o">-</span><span class="mi">819337</span>
+        <span class="n">OS_PROJECT_NAME</span><span class="p">:</span> <span class="n">CH</span><span class="o">-</span><span class="mi">819337</span>
+        <span class="n">OS_PROJECT_DOMAIN_ID</span><span class="p">:</span> <span class="n">default</span>
+        <span class="n">OS_USER_DOMAIN_ID</span><span class="p">:</span> <span class="n">default</span>
+        <span class="n">OS_VERSION</span><span class="p">:</span> <span class="n">liberty</span>
+        <span class="n">OS_REGION_NAME</span><span class="p">:</span> <span class="n">RegionOne</span>
+        <span class="n">OS_KEY_PATH</span><span class="p">:</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="o">.</span><span class="n">pub</span>
+      <span class="n">default</span><span class="p">:</span>
+        <span class="n">flavor</span><span class="p">:</span> <span class="n">m1</span><span class="o">.</span><span class="n">small</span>
+        <span class="n">image</span><span class="p">:</span> <span class="n">CC</span><span class="o">-</span><span class="n">Ubuntu16</span><span class="o">.</span><span class="mi">04</span>
+        <span class="n">username</span><span class="p">:</span> <span class="n">cc</span>        
+</pre></div>
+</div>
+</div>
+<div class="section" id="virtual-box">
+<h3>3.2.5. Virtual Box<a class="headerlink" href="#virtual-box" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>STUDENT CONTRIBUTE HERE</p>
+</div></blockquote>
+</div>
+<div class="section" id="ssh">
+<h3>3.2.6. SSH<a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>STUDENT CONTRIBUTE HERE</p>
+</div></blockquote>
+</div>
+<div class="section" id="local">
+<h3>3.2.7. Local<a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>STUDENT CONTRIBUTE HERE</p>
+</div></blockquote>
+</div>
+<div class="section" id="docker">
+<h3>3.2.8. Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>STUDENT CONTRIBUTE HERE</p>
+</div></blockquote>
+</div>
+<div class="section" id="storage-providers">
+<h3>3.2.9. Storage Providers<a class="headerlink" href="#storage-providers" title="Permalink to this headline">¶</a></h3>
+<p>General description for all storage providers, comment on the <code class="docutils literal notranslate"><span class="pre">default:</span></code> and
+what that does</p>
+</div>
+<div class="section" id="aws-s3">
+<h3>3.2.10. AWS S3<a class="headerlink" href="#aws-s3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>STUDENT CONTRIBUTE HERE</p>
+</div></blockquote>
+<p>It is beyond the scope of this manual to discuss how to get an account on Google.
+However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK></p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file, the ‘aws’ section under ‘storage’ describes an
+example configuration or a AWS S3 storage provider. In the credentials section
+under aws, specify the access key id and secret access key which will be
+available in the AWS console under AWS IAM <code class="docutils literal notranslate"><span class="pre">service</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Users</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Security</span> <span class="pre">Credentials</span></code>. Container is the default Bucket which will be used to store the
+files in AWS S3. Region is the geographic area like <code class="docutils literal notranslate"><span class="pre">us-east-1</span></code> which contains
+the bucket. Region is required to get a connection handle on the S3 Client or
+resource for that geographic area. Here is a sample.</p>
+<p>TODO: Make credentials more uniform between compute and data</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>storage:
+    aws:
+      cm:
+        heading: aws
+        host: amazon.aws.com
+        label: aws
+        kind: awsS3
+        version: TBD
+      default:
+        directory: /
+      credentials:
+        access_key_id: *********
+        secret_access_key: *******
+        container: name of bucket that you want user to be contained in.
+        region: Specfiy the default region eg us-east-1
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>3.2.11. Azure<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>STUDENT CONTRIBUTE HERE</p>
+</div></blockquote>
+<p>It is beyond the scope of this manual to discuss how to get an account on Google.
+However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file needs to be set up as follows for the ‘azure-blob’
+section under ‘storage’.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cloudmesh:
+  .........
+  storage:
+    box:
+      cm:
+        heading: Box
+        host: box.com
+        label: Box
+        kind: box
+        version: TBD
+      default:
+        directory: TBD
+      credentials:
+        name: TBD
+    azure:
+      cm:
+        heading: Azure
+        host: azure.com
+        label: Azure
+        kind: azureblob
+        version: TBD
+      default:
+        directory: /
+      credentials:
+        account_name: <span class="s1">&#39;*****************&#39;</span>
+        account_key: <span class="s1">&#39;********************************************************************&#39;</span>
+        container: <span class="s1">&#39;azuretest&#39;</span>
+</pre></div>
+</div>
+<p>Configuration settings for credentials in the yaml file can be obtained from Azure portal.</p>
+<p>TODO: MOre information via a pointer to a documentation you create needs to be added here</p>
+<p>In the yaml file the following values have to be changed</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">account_name</span></code> - This is the name of the Azure blob storage account.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">account_key</span></code> - This can be found under ‘Access Keys’ after navigating to the storage account on the Azure portal.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">container</span></code> - This can be set to a default container created under the Azure blob storage account.</p></li>
+</ul>
+</div>
+<div class="section" id="google-bug">
+<h3>3.2.12. Google (BUG)<a class="headerlink" href="#google-bug" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>STUDENT CONTRIBUTE HERE</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="google-drive">
+<h2>3.3. Google drive<a class="headerlink" href="#google-drive" title="Permalink to this headline">¶</a></h2>
+<p>Due to bugs in the requirements of the google driver code,
+we have not yet included it in the Provider code. This needs to be fixed
+before we can do this.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file needs to be set up as follows for the ‘gdrive’
+section under ‘storage’.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>storge:
+    gdrive: 
+      cm: 
+        heading: GDrive
+        host: gdrive.google.com
+        kind: gdrive
+        label: GDrive
+        version: TBD
+      credentials: 
+        auth_host_name: localhost
+        auth_host_port: 
+          - ****
+          - ****
+        auth_provider_x509_cert_url: <span class="s2">&quot;https://www.googleapis.com/oauth2/v1/certs&quot;</span>
+        auth_uri: <span class="s2">&quot;https://accounts.google.com/o/oauth2/auth&quot;</span>
+        client_id: *******************
+        client_secret: ************
+        project_id: ************
+        redirect_uris: 
+          - <span class="s2">&quot;urn:ietf:wg:oauth:2.0:oob&quot;</span>
+          - <span class="s2">&quot;http://localhost&quot;</span>
+        token_uri: <span class="s2">&quot;https://oauth2.googleapis.com/token&quot;</span>
+      default: 
+        directory: TBD
+</pre></div>
+</div>
+<div class="section" id="box">
+<h3>3.3.1. Box<a class="headerlink" href="#box" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>STUDENT CONTRIBUTE HERE</p>
+</div></blockquote>
+<p>It is beyond the scope of this manual to discuss how to get an account on Google.
+However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK></p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file, find the ‘box’ section under ‘storage’. Under
+credentials, set <code class="docutils literal notranslate"><span class="pre">config_path</span></code> to the path of the configuration file you created
+as described in the Box chapter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>   box:
+      cm:
+        heading: Box
+        host: box.com
+        label: Box
+        kind: box
+        version: TBD
+      default:
+        directory: /
+      credentials:
+        config_path: ******************************
+</pre></div>
+</div>
+<p>ADD OTHERS IF MISSING</p>
+</div>
+</div>
+<div class="section" id="object-store">
+<h2>3.4. Object Store<a class="headerlink" href="#object-store" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>STUDENT CONTRIBUTE HERE</p>
+</div></blockquote>
+</div>
+<div class="section" id="virtual-clusters">
+<h2>3.5. Virtual Clusters<a class="headerlink" href="#virtual-clusters" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>STUDENT CONTRIBUTE HERE</p>
+</div></blockquote>
+</div>
+<div class="section" id="rest">
+<h2>3.6. REST<a class="headerlink" href="#rest" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>STUDENT CONTRIBUTE HERE</p>
+</div></blockquote>
 </div>
 <div class="section" id="log-file-proposed">
-<h2>3.4. Log File (proposed)<a class="headerlink" href="#log-file-proposed" title="Permalink to this headline">¶</a></h2>
+<h2>3.7. Log File (proposed)<a class="headerlink" href="#log-file-proposed" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>THIS FEATURE IS NOT YET SUPPORTED</p>
+</div></blockquote>
 <p>Log files are stored by default in <code class="docutils literal notranslate"><span class="pre">~/.cloudmesh/log</span></code> The directory can be
 specified in the yaml file.</p>
 </div>
-<div class="section" id="encryption-proposed">
-<h2>3.5. Encryption (proposed)<a class="headerlink" href="#encryption-proposed" title="Permalink to this headline">¶</a></h2>
-<p>The yaml file can also be encrupted which is done with the command</p>
+<div class="section" id="encryption">
+<h2>3.8. Encryption<a class="headerlink" href="#encryption" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>STUDENT CONTRIBUTE HERE</p>
+</div></blockquote>
+<p>The yaml file can also be encrypted which is done with the command</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$cms</span> admin encrypt
 </pre></div>
 </div>
+<p>toe edit the file you need to specify a default editor with the shell variable EDITOR.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>emacs
+</pre></div>
+</div>
+<p>to edit the file you can do it with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cms admin edit config
+</pre></div>
+</div>
+<p>Once saved you cloudmehs will sheck if your file is encrypted and unencrypt it
+upon start.</p>
 <p>It will replace the yaml file with an encryoted version while using your public
 private key/ You can keep the file encripted and use the command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$ssh</span>-add
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ssh-add
 </pre></div>
 </div>
 <p>to access the file without using the password whenefer it is accessed.</p>
@@ -317,7 +612,7 @@ private key/ You can keep the file encripted and use the command</p>
         <a href="yaml.html" class="btn btn-neutral float-right" title="4. Cloudmesh yaml file" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="quickstart.html" class="btn btn-neutral float-left" title="2. Quickstart (proposed)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="2. Quickstart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

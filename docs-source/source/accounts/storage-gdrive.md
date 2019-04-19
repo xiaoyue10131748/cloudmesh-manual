@@ -63,30 +63,29 @@ https://developers.google.com/drive/api/v3/quickstart/python
 
 There we can see Enable API option as shown in the below picture:  
 
-![Image1](images/gdirve/image1.png)
+![Image1](images/gdrive/image1.png)
 
 
 Once we enable that we will get credentials.json file where all of our
 credentials are stored that can be used  to communicate with our Google
 Drive through Python Interface.  After that, we will be redirected to a
-page where we need to create our own project as shown in the below picture:<br
-/> 
+page where we need to create our own project as shown in the below picture:
 
-FIX
-![image2](images/gdirve/image2.png)
+
+![image2](images/gdrive/image2.png)
 
 As we see below we need to select Google Drive API from here   
 
-FIX
-![gd1](images/gdirve/image16.png)
+
+![gd1](images/gdrive/image16.png)
 
 
 After that, we need to obtain the client_secret file as shown below: (The
 file that is downloaded as client_id.json needs to be renamed as
 client_secret.json)  
 
-FIX
-![image3](images/gdirve/image18.png)
+
+![image3](images/gdrive/image18.png)
 
 After this we need to click Done otherwise it would not set the Google Drive API
 
@@ -95,15 +94,15 @@ After this if we run Authentication.py we will be redirected to our default
 browser to put our our login id and password and  after that it asks to
 authenticate our credentials. If we allow that as shown below:  
 
-FIX
-![gd2](images/gdirve/image21.png)
+
+![gd2](images/gdrive/image21.png)
 
 
 We will get the screen something like given below (as the authentication
 pipeline has bees completed).  
 
-FIX
-![gd3](images/gdirve/image23.png)
+
+![gd3](images/gdrive/image23.png)
 
 If the authentication flow is completed then the Authentication.py will create a
 "google-drive-credentials.json" file in  ".credentials" folder. This file

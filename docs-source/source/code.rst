@@ -12,20 +12,26 @@ Commands
    :members:
 
 
-New CM4 Library
-===============
+Management
+==========
 
-Name
-----
+
+Names
+-------
 
 .. automodule:: cloudmesh.management.configuration.name
    :members:
 
 Script
-----
+------
 
 .. automodule:: cloudmesh.management.script
    :members:
+
+
+Cloud Library
+===============
+
 
 Batch
 ----

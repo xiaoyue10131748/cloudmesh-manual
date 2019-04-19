@@ -47,11 +47,14 @@ Cloudmesh Version 4
    jupyter
 
 .. toctree::
+   :glob:
    :numbered:
    :maxdepth: 2
    :caption: MANUAL PAGES
 
-   manual
+   manual/cmd5/*
+   manual/compute/*
+   manual/storage/*
    manual-dev
 
 .. toctree::

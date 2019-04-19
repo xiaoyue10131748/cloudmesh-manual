@@ -1,6 +1,6 @@
 # cloudmesh-manual
 
-The documentation is avilable at <>
+The documentation is avilable at <https://cloudmesh.github.io/cloudmesh-manual/>
 
 To make contributions do them in 
 

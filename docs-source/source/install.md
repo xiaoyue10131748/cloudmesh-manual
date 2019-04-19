@@ -136,11 +136,7 @@ $ cms admin mongo stop
 
 For cloudmesh to work properly, please start mongo.
 
-## One Line installer (ok)
 
-```bash
-wget -qO - http://cloudmesh.github.io/get/ | sh 
-```
 
 ## Anaconda and Conda (proposed)
 

@@ -46,49 +46,49 @@ management of cloud virtual machines easier. Templates for AWS, Azure, Google,
 OpenStack are provided. Specific templates for Jetstream and Chameleopn cloud
 are included
 
-> STUDENT CONTRIUTE HERE
+> STUDENT CONTRIBUTE HERE
   
 ### AWS
 
-> STUDENT CONTRIUTE HERE
+> STUDENT CONTRIBUTE HERE
 
 ### Azure
 
-> STUDENT CONTRIUTE HERE
+> STUDENT CONTRIBUTE HERE
 
 ### Google
 
-> STUDENT CONTRIUTE HERE
+> STUDENT CONTRIBUTE HERE
 
 ### OpenStack
 
-> STUDENT CONTRIUTE HERE
+> STUDENT CONTRIBUTE HERE
 
 ### Virtual Box
 
-> STUDENT CONTRIUTE HERE
+> STUDENT CONTRIBUTE HERE
 
 ### SSH
 
-> STUDENT CONTRIUTE HERE
+> STUDENT CONTRIBUTE HERE
 
 ### Local
 
-> STUDENT CONTRIUTE HERE
+> STUDENT CONTRIBUTE HERE
 
 ### Docker
 
-> STUDENT CONTRIUTE HERE
+> STUDENT CONTRIBUTE HERE
 
 
 ## Virtual Clusters
 
-> STUDENT CONTRIUTE HERE
+> STUDENT CONTRIBUTE HERE
 
 
 ## REST
 
-> STUDENT CONTRIUTE HERE
+> STUDENT CONTRIBUTE HERE
 
 ## Log File (proposed)
 
@@ -99,7 +99,7 @@ specified in the yaml file.
 
 ## Encryption 
 
-> STUDENT CONTRIUTE HERE
+> STUDENT CONTRIBUTE HERE
 
 The yaml file can also be encrypted which is done with the command
 

@@ -1,11 +1,13 @@
 # Cloudmesh Multi Cloud Storage Interface
 
-Cloudmesh multiple cloud storage services is independent of the APIs and interfaces used to 
-access these services. In other words, an abstraction layer between data and the proprietary 
-APIs is used to place that data in any given cloud storage service.
+Cloudmesh multiple cloud storage services is independent of the APIs and
+interfaces used to access these services. In other words, an abstraction layer
+between data and the proprietary APIs is used to place that data in any given
+cloud storage service.
 
-Provides a interface to manage all cloud storage in one place. it helps you access and search 
-all of your files in one place so you don't need to sign into several accounts.
+Provides a interface to manage all cloud storage in one place. it helps you
+access and search all of your files in one place so you don't need to sign into
+several accounts.
 
 
 # Cloudmesh Storage Module
@@ -257,7 +259,8 @@ TODO: rename to
 
 ## General features
 
-How to set up the authentication to a specific service is discussed in later sections
+How to set up the authentication to a specific service is discussed in later
+sections
 
 TODO: Provide a simple programming example with the general provider
 
@@ -298,7 +301,10 @@ pprint(result)
 
 ### Pytests
 
-Script to test the GDrive service can be accessed under tests folder using the following pytest command.
+Script to test the GDrive service can be accessed under tests folder using the
+following pytest command.
+
+TODO rename to test_storage_gdrive.py
 
 ```bash
 $ pytest -v --capture=no tests/test_gdrive.py
@@ -306,11 +312,14 @@ $ pytest -v --capture=no tests/test_gdrive.py
 
 ## Virtual Directory
 
-The virtual directory has been developed to mirror the linux directory commands. File links in the virtual directory point to files on storage providers, which can be retrieved using the virtual directory. 
+The virtual directory has been developed to mirror the linux directory commands.
+File links in the virtual directory point to files on storage providers, which
+can be retrieved using the virtual directory.
 
 ### Configuration
 
-The credentials for the virtual directory are the same as for the admin mongo command. See the Mongo section for details. 
+The credentials for the virtual directory are the same as for the admin mongo
+command. See the Mongo section for details.
 
 ### Pytests
 
@@ -326,17 +335,22 @@ The Google Drive API needs the following two 2 credentials files.
 * `client_secret.json` 
 * `google-drive-credentials.json`  
 
-If we run the Google Drive `Provider.py` for the **First time** then the required keys, tokens are taken from the `cloudmesh4.yaml` file and creates a `client_secret.json` file in the follwing path `~/.cloudmesh/gdrive/`
+If we run the Google Drive `Provider.py` for the **First time** then the
+required keys, tokens are taken from the `cloudmesh4.yaml` file and creates a
+`client_secret.json` file in the follwing path `~/.cloudmesh/gdrive/`
 
-The `Authentication.py` creates a `.credentials` folder under the following path `~/.cloudmesh/gdrive/` if it doesn't exist and creates a `google-drive-credentials.json` file under the following folder `~/.cloudmesh/gdrive/.credentials/`
+The `Authentication.py` creates a `.credentials` folder under the following path
+`~/.cloudmesh/gdrive/` if it doesn't exist and creates a
+`google-drive-credentials.json` file under the following folder
+`~/.cloudmesh/gdrive/.credentials/`
 
 
 
-So, for the **First time**
-browser will be opened up automatically and asks for the Google Drive(gmail)
-credentials i.e., login email and  password. If you provide these 2 then
-the Authentication step is completed and then it will create the 
-`google-drive-credentials.json` and place it in `~/.cloudmesh/gdrive/.credentials/` folder. 
+So, for the **First time** browser will be opened up automatically and asks for
+the Google Drive(gmail) credentials i.e., login email and  password. If you
+provide these 2 then the Authentication step is completed and then it will
+create the `google-drive-credentials.json` and place it in
+`~/.cloudmesh/gdrive/.credentials/` folder.
  
 These steps are to be followed for the first time or initial run. Once it is
 done then our program is set. After these steps then the program will run

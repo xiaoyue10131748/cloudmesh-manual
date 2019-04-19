@@ -24,14 +24,6 @@ Cloudmesh Version 4
 .. toctree::
    :numbered:
    :maxdepth: 2
-   :caption: INTRODUCTION
-
-   manual
-   manual-dev
-
-.. toctree::
-   :numbered:
-   :maxdepth: 2
    :caption: COMPUTE
 
    vm
@@ -57,6 +49,14 @@ Cloudmesh Version 4
 .. toctree::
    :numbered:
    :maxdepth: 2
+   :caption: MANUAL PAGES
+
+   manual
+   manual-dev
+
+.. toctree::
+   :numbered:
+   :maxdepth: 2
    :caption: CODE
 
    code
@@ -64,7 +64,7 @@ Cloudmesh Version 4
 .. toctree::
    :numbered:
    :maxdepth: 2
-   :caption: CONVENTIONS
+   :caption: CONTRIBUTION
 
    conventions
    pytest

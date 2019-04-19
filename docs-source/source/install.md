@@ -137,7 +137,6 @@ $ cms admin mongo stop
 For cloudmesh to work properly, please start mongo.
 
 
-
 ## Anaconda and Conda (proposed)
 
 At this time we do not yet support conda. But if you like to

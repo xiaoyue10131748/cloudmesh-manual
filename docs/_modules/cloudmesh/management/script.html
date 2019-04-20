@@ -151,6 +151,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../manual/storage/storage.html">2. storage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../manual/storage/vdir.html">3. vdir</a></li>
 </ul>
+<p class="caption"><span class="caption-text">CODE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/code.html">1. Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/cloudmesh.html">2. Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/management.html">3. Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/management.html#module-cloudmesh.management.configuration.config">4. Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/mongo.html">5. Mongo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/common.html">6. Common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/commands.html">7. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/batch.html">8. Batch</a></li>
+</ul>
 <p class="caption"><span class="caption-text">CONTRIBUTION</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../conventions.html">1. Code Conventions</a></li>
@@ -247,10 +258,10 @@
 <span class="kn">import</span> <span class="nn">psutil</span>
 
 
-<div class="viewcode-block" id="SystemPath"><a class="viewcode-back" href="../../../code.html#cloudmesh.management.script.SystemPath">[docs]</a><span class="k">class</span> <span class="nc">SystemPath</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="SystemPath"><a class="viewcode-back" href="../../../code/management.html#cloudmesh.management.script.SystemPath">[docs]</a><span class="k">class</span> <span class="nc">SystemPath</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Managing the System path in the .bashrc or .bash_profile files&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="SystemPath.add"><a class="viewcode-back" href="../../../code.html#cloudmesh.management.script.SystemPath.add">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="SystemPath.add"><a class="viewcode-back" href="../../../code/management.html#cloudmesh.management.script.SystemPath.add">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Adds a path to the ``~/.bashrc`` or ``~/.bash_profile`` files.</span>
@@ -278,10 +289,10 @@
         <span class="n">installer</span> <span class="o">=</span> <span class="n">Script</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">script</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="Script"><a class="viewcode-back" href="../../../code.html#cloudmesh.management.script.Script">[docs]</a><span class="k">class</span> <span class="nc">Script</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Script"><a class="viewcode-back" href="../../../code/management.html#cloudmesh.management.script.Script">[docs]</a><span class="k">class</span> <span class="nc">Script</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Executing a script defined by a simple text parameter&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Script.run"><a class="viewcode-back" href="../../../code.html#cloudmesh.management.script.Script.run">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Script.run"><a class="viewcode-back" href="../../../code/management.html#cloudmesh.management.script.Script.run">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">script</span><span class="p">,</span> <span class="n">live</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        run the specified script line by line.</span>
@@ -313,7 +324,7 @@
             <span class="k">return</span> <span class="s2">&quot;&quot;</span></div></div>
 
 
-<div class="viewcode-block" id="find_process"><a class="viewcode-back" href="../../../code.html#cloudmesh.management.script.find_process">[docs]</a><span class="k">def</span> <span class="nf">find_process</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="viewcode-block" id="find_process"><a class="viewcode-back" href="../../../code/management.html#cloudmesh.management.script.find_process">[docs]</a><span class="k">def</span> <span class="nf">find_process</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; find a process by name</span>
 
 <span class="sd">    :param name: the name of the process</span>

@@ -12,7 +12,8 @@ You can customize the file in your local directory.
 
 The cache of cloudmesh is managed in a mongo db database with various
 collections. However the user does not have to manage thes collections as this
-is done for the user through cloudmesh. Before you can use it it mongo does need to be installed.
+is done for the user through cloudmesh. Before you can use it it mongo does need
+to be installed.
 
 If you have not installed mongo, you may try 
 
@@ -44,18 +45,39 @@ The default yaml file includes templates to configure various clouds. YOu can
 change these defaults and provide access to your cloud credentials to make the
 management of cloud virtual machines easier. Templates for AWS, Azure, Google,
 OpenStack are provided. Specific templates for Jetstream and Chameleopn cloud
-are included
+are included in the example
+[cloudmesh4.yaml](https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/etc/cloudmesh4.yaml
+). We list each template next.
 
->  STUDENT CONTRIBUTE HERE
-  
 ### AWS
 
 It is beyond the scope of this manual to discuss how to get an account on Aws.
 However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK>
 
->  STUDENT CONTRIBUTE HERE
-
-see Openstack example
+```
+cloudmesh:
+  ...
+  cloud:
+    ...
+    aws:
+      cm:
+        active: False
+        heading: AWS
+        host: aws.amazon.com
+        label: aws
+        kind: aws
+        version: TBD
+      default:
+        image: 'ami-0f65671a86f061fcd'
+        size: 't2.micro'
+      credentials:
+        region: 'us-west-2'
+        EC2_SECURITY_GROUP: 'group1'
+        EC2_ACCESS_ID: TBD
+        EC2_SECRET_KEY: TBD
+        EC2_PRIVATE_KEY_FILE_PATH: '~/.cloudmesh/aws_cert.pem'
+        EC2_PRIVATE_KEY_FILE_NAME: 'aws_cert'
+```
 
 
 ### Azure
@@ -63,18 +85,62 @@ see Openstack example
 It is beyond the scope of this manual to discuss how to get an account on Azure.
 However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK>
 
->  STUDENT CONTRIBUTE HERE
-
-see Openstack example
+```
+cloudmesh:
+  ...
+  cloud:
+    ...
+    azure:
+      cm:
+        active: False
+        heading: AWS
+        host: azure.mocrosoft.com
+        label: Azure
+        kind: azure_arm
+        version: TBD
+      default:
+        image: 'Canonical:UbuntuServer:16.04-LTS:latest'
+        size: 'Basic_A0'
+        resource_group: 'cloudmesh'
+        storage_account: 'cmdrive'
+        network: 'cmnetwork'
+        subnet: 'cmsubnet'
+        blob_container: 'vhds'
+      credentials:
+        AZURE_TENANT_ID: 'xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+        AZURE_SUBSCRIPTION_ID: 'xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+        AZURE_APPLICATION_ID: 'xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+        AZURE_SECRET_KEY: TBD
+        AZURE_REGION: 'northcentralus'
+```
 
 ### Google
 
 It is beyond the scope of this manual to discuss how to get an account on Google.
 However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK>
 
->  STUDENT CONTRIBUTE HERE
-
-see Openstack example
+```
+cloudmesh:
+  ...
+  cloud:
+    ...
+    google:
+      cm:
+        active: True
+        heading: google
+        host: google.cloud.com
+        label: google
+        kind: google
+        version: TBD
+      default:
+        image: 'Image Name'
+        size: 'n1-standard-4'
+      credentials:
+        datacenter: 'us-central1-a'
+        client_email: '<service account>.iam.gserviceaccount.com'
+        project: '<Project Name>'
+        path_to_json_file: '~/.cloudmesh/<file with credentials>'
+```
 
 ### OpenStack
 
@@ -126,7 +192,32 @@ cloudmesh:
 
 ### Virtual Box
 
->  STUDENT CONTRIBUTE HERE
+Virtualbox has at this time limited functionality, but creation, ssh, and
+deletion of the virtual box is possible.
+
+You can also integrate virtualbox as part of cloudmesh while providing the
+following description:
+
+```
+cloudmesh:
+  ...
+  cloud:
+    ...
+    vbox:
+      cm:
+        active: False            
+        heading: Vagrant
+        host: localhost
+        label: vbox
+        kind: vagrant
+        version: TBD
+      default:
+        path: ~/.cloudmesh/vagrant
+        image: "generic/ubuntu1810"
+      credentials:
+        local: True
+        hostname: localhost
+```
 
 ### SSH
 

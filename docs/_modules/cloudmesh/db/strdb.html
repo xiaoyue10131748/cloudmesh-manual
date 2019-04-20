@@ -151,6 +151,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../manual/storage/storage.html">2. storage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../manual/storage/vdir.html">3. vdir</a></li>
 </ul>
+<p class="caption"><span class="caption-text">CODE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/code.html">1. Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/cloudmesh.html">2. Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/management.html">3. Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/management.html#module-cloudmesh.management.configuration.config">4. Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/mongo.html">5. Mongo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/common.html">6. Common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/commands.html">7. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/batch.html">8. Batch</a></li>
+</ul>
 <p class="caption"><span class="caption-text">CONTRIBUTION</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../conventions.html">1. Code Conventions</a></li>
@@ -259,7 +270,7 @@
 <span class="c1">###############################################################</span>
 <span class="c1">#  the db api</span>
 
-<div class="viewcode-block" id="YamlDB"><a class="viewcode-back" href="../../../code.html#cloudmesh.db.strdb.YamlDB">[docs]</a><span class="k">class</span> <span class="nc">YamlDB</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="YamlDB"><a class="viewcode-back" href="../../../code/common.html#cloudmesh.db.strdb.YamlDB">[docs]</a><span class="k">class</span> <span class="nc">YamlDB</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;A YAML-backed Key-Value database to store strings</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -306,11 +317,11 @@
     <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="p">)</span>
 
-<div class="viewcode-block" id="YamlDB.close"><a class="viewcode-back" href="../../../code.html#cloudmesh.db.strdb.YamlDB.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="YamlDB.close"><a class="viewcode-back" href="../../../code/common.html#cloudmesh.db.strdb.YamlDB.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;This is a NoOP for backwards compatibility&quot;&quot;&quot;</span>
         <span class="k">pass</span></div>
 
-<div class="viewcode-block" id="YamlDB.clear"><a class="viewcode-back" href="../../../code.html#cloudmesh.db.strdb.YamlDB.clear">[docs]</a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="YamlDB.clear"><a class="viewcode-back" href="../../../code/common.html#cloudmesh.db.strdb.YamlDB.clear">[docs]</a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Truncate the database&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span></div>

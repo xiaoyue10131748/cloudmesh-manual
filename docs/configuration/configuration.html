@@ -179,6 +179,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../manual/storage/storage.html">2. storage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/storage/vdir.html">3. vdir</a></li>
 </ul>
+<p class="caption"><span class="caption-text">CODE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code/code.html">1. Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/cloudmesh.html">2. Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/management.html">3. Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/management.html#module-cloudmesh.management.configuration.config">4. Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/mongo.html">5. Mongo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/common.html">6. Common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/commands.html">7. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/batch.html">8. Batch</a></li>
+</ul>
 <p class="caption"><span class="caption-text">CONTRIBUTION</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../conventions.html">1. Code Conventions</a></li>
@@ -276,7 +287,8 @@ located at</p>
 <h2>3.1. MongoDB<a class="headerlink" href="#mongodb" title="Permalink to this headline">¶</a></h2>
 <p>The cache of cloudmesh is managed in a mongo db database with various
 collections. However the user does not have to manage thes collections as this
-is done for the user through cloudmesh. Before you can use it it mongo does need to be installed.</p>
+is done for the user through cloudmesh. Before you can use it it mongo does need
+to be installed.</p>
 <p>If you have not installed mongo, you may try</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cms admin mongo install
 </pre></div>
@@ -300,36 +312,96 @@ with the command</p>
 change these defaults and provide access to your cloud credentials to make the
 management of cloud virtual machines easier. Templates for AWS, Azure, Google,
 OpenStack are provided. Specific templates for Jetstream and Chameleopn cloud
-are included</p>
-<blockquote>
-<div><p>STUDENT CONTRIBUTE HERE</p>
-</div></blockquote>
+are included in the example
+<a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/etc/cloudmesh4.yaml">cloudmesh4.yaml</a>. We list each template next.</p>
 <div class="section" id="aws">
 <h3>3.2.1. AWS<a class="headerlink" href="#aws" title="Permalink to this headline">¶</a></h3>
 <p>It is beyond the scope of this manual to discuss how to get an account on Aws.
 However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK></p>
-<blockquote>
-<div><p>STUDENT CONTRIBUTE HERE</p>
-</div></blockquote>
-<p>see Openstack example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cloudmesh</span><span class="p">:</span>
+  <span class="o">...</span>
+  <span class="n">cloud</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="n">aws</span><span class="p">:</span>
+      <span class="n">cm</span><span class="p">:</span>
+        <span class="n">active</span><span class="p">:</span> <span class="kc">False</span>
+        <span class="n">heading</span><span class="p">:</span> <span class="n">AWS</span>
+        <span class="n">host</span><span class="p">:</span> <span class="n">aws</span><span class="o">.</span><span class="n">amazon</span><span class="o">.</span><span class="n">com</span>
+        <span class="n">label</span><span class="p">:</span> <span class="n">aws</span>
+        <span class="n">kind</span><span class="p">:</span> <span class="n">aws</span>
+        <span class="n">version</span><span class="p">:</span> <span class="n">TBD</span>
+      <span class="n">default</span><span class="p">:</span>
+        <span class="n">image</span><span class="p">:</span> <span class="s1">&#39;ami-0f65671a86f061fcd&#39;</span>
+        <span class="n">size</span><span class="p">:</span> <span class="s1">&#39;t2.micro&#39;</span>
+      <span class="n">credentials</span><span class="p">:</span>
+        <span class="n">region</span><span class="p">:</span> <span class="s1">&#39;us-west-2&#39;</span>
+        <span class="n">EC2_SECURITY_GROUP</span><span class="p">:</span> <span class="s1">&#39;group1&#39;</span>
+        <span class="n">EC2_ACCESS_ID</span><span class="p">:</span> <span class="n">TBD</span>
+        <span class="n">EC2_SECRET_KEY</span><span class="p">:</span> <span class="n">TBD</span>
+        <span class="n">EC2_PRIVATE_KEY_FILE_PATH</span><span class="p">:</span> <span class="s1">&#39;~/.cloudmesh/aws_cert.pem&#39;</span>
+        <span class="n">EC2_PRIVATE_KEY_FILE_NAME</span><span class="p">:</span> <span class="s1">&#39;aws_cert&#39;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="azure">
 <h3>3.2.2. Azure<a class="headerlink" href="#azure" title="Permalink to this headline">¶</a></h3>
 <p>It is beyond the scope of this manual to discuss how to get an account on Azure.
 However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK></p>
-<blockquote>
-<div><p>STUDENT CONTRIBUTE HERE</p>
-</div></blockquote>
-<p>see Openstack example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cloudmesh</span><span class="p">:</span>
+  <span class="o">...</span>
+  <span class="n">cloud</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="n">azure</span><span class="p">:</span>
+      <span class="n">cm</span><span class="p">:</span>
+        <span class="n">active</span><span class="p">:</span> <span class="kc">False</span>
+        <span class="n">heading</span><span class="p">:</span> <span class="n">AWS</span>
+        <span class="n">host</span><span class="p">:</span> <span class="n">azure</span><span class="o">.</span><span class="n">mocrosoft</span><span class="o">.</span><span class="n">com</span>
+        <span class="n">label</span><span class="p">:</span> <span class="n">Azure</span>
+        <span class="n">kind</span><span class="p">:</span> <span class="n">azure_arm</span>
+        <span class="n">version</span><span class="p">:</span> <span class="n">TBD</span>
+      <span class="n">default</span><span class="p">:</span>
+        <span class="n">image</span><span class="p">:</span> <span class="s1">&#39;Canonical:UbuntuServer:16.04-LTS:latest&#39;</span>
+        <span class="n">size</span><span class="p">:</span> <span class="s1">&#39;Basic_A0&#39;</span>
+        <span class="n">resource_group</span><span class="p">:</span> <span class="s1">&#39;cloudmesh&#39;</span>
+        <span class="n">storage_account</span><span class="p">:</span> <span class="s1">&#39;cmdrive&#39;</span>
+        <span class="n">network</span><span class="p">:</span> <span class="s1">&#39;cmnetwork&#39;</span>
+        <span class="n">subnet</span><span class="p">:</span> <span class="s1">&#39;cmsubnet&#39;</span>
+        <span class="n">blob_container</span><span class="p">:</span> <span class="s1">&#39;vhds&#39;</span>
+      <span class="n">credentials</span><span class="p">:</span>
+        <span class="n">AZURE_TENANT_ID</span><span class="p">:</span> <span class="s1">&#39;xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#39;</span>
+        <span class="n">AZURE_SUBSCRIPTION_ID</span><span class="p">:</span> <span class="s1">&#39;xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#39;</span>
+        <span class="n">AZURE_APPLICATION_ID</span><span class="p">:</span> <span class="s1">&#39;xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#39;</span>
+        <span class="n">AZURE_SECRET_KEY</span><span class="p">:</span> <span class="n">TBD</span>
+        <span class="n">AZURE_REGION</span><span class="p">:</span> <span class="s1">&#39;northcentralus&#39;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="google">
 <h3>3.2.3. Google<a class="headerlink" href="#google" title="Permalink to this headline">¶</a></h3>
 <p>It is beyond the scope of this manual to discuss how to get an account on Google.
 However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK></p>
-<blockquote>
-<div><p>STUDENT CONTRIBUTE HERE</p>
-</div></blockquote>
-<p>see Openstack example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cloudmesh</span><span class="p">:</span>
+  <span class="o">...</span>
+  <span class="n">cloud</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="n">google</span><span class="p">:</span>
+      <span class="n">cm</span><span class="p">:</span>
+        <span class="n">active</span><span class="p">:</span> <span class="kc">True</span>
+        <span class="n">heading</span><span class="p">:</span> <span class="n">google</span>
+        <span class="n">host</span><span class="p">:</span> <span class="n">google</span><span class="o">.</span><span class="n">cloud</span><span class="o">.</span><span class="n">com</span>
+        <span class="n">label</span><span class="p">:</span> <span class="n">google</span>
+        <span class="n">kind</span><span class="p">:</span> <span class="n">google</span>
+        <span class="n">version</span><span class="p">:</span> <span class="n">TBD</span>
+      <span class="n">default</span><span class="p">:</span>
+        <span class="n">image</span><span class="p">:</span> <span class="s1">&#39;Image Name&#39;</span>
+        <span class="n">size</span><span class="p">:</span> <span class="s1">&#39;n1-standard-4&#39;</span>
+      <span class="n">credentials</span><span class="p">:</span>
+        <span class="n">datacenter</span><span class="p">:</span> <span class="s1">&#39;us-central1-a&#39;</span>
+        <span class="n">client_email</span><span class="p">:</span> <span class="s1">&#39;&lt;service account&gt;.iam.gserviceaccount.com&#39;</span>
+        <span class="n">project</span><span class="p">:</span> <span class="s1">&#39;&lt;Project Name&gt;&#39;</span>
+        <span class="n">path_to_json_file</span><span class="p">:</span> <span class="s1">&#39;~/.cloudmesh/&lt;file with credentials&gt;&#39;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="openstack">
 <h3>3.2.4. OpenStack<a class="headerlink" href="#openstack" title="Permalink to this headline">¶</a></h3>
@@ -380,9 +452,30 @@ credentials.</p></li>
 </div>
 <div class="section" id="virtual-box">
 <h3>3.2.5. Virtual Box<a class="headerlink" href="#virtual-box" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>STUDENT CONTRIBUTE HERE</p>
-</div></blockquote>
+<p>Virtualbox has at this time limited functionality, but creation, ssh, and
+deletion of the virtual box is possible.</p>
+<p>You can also integrate virtualbox as part of cloudmesh while providing the
+following description:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cloudmesh</span><span class="p">:</span>
+  <span class="o">...</span>
+  <span class="n">cloud</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="n">vbox</span><span class="p">:</span>
+      <span class="n">cm</span><span class="p">:</span>
+        <span class="n">active</span><span class="p">:</span> <span class="kc">False</span>            
+        <span class="n">heading</span><span class="p">:</span> <span class="n">Vagrant</span>
+        <span class="n">host</span><span class="p">:</span> <span class="n">localhost</span>
+        <span class="n">label</span><span class="p">:</span> <span class="n">vbox</span>
+        <span class="n">kind</span><span class="p">:</span> <span class="n">vagrant</span>
+        <span class="n">version</span><span class="p">:</span> <span class="n">TBD</span>
+      <span class="n">default</span><span class="p">:</span>
+        <span class="n">path</span><span class="p">:</span> <span class="o">~/.</span><span class="n">cloudmesh</span><span class="o">/</span><span class="n">vagrant</span>
+        <span class="n">image</span><span class="p">:</span> <span class="s2">&quot;generic/ubuntu1810&quot;</span>
+      <span class="n">credentials</span><span class="p">:</span>
+        <span class="n">local</span><span class="p">:</span> <span class="kc">True</span>
+        <span class="n">hostname</span><span class="p">:</span> <span class="n">localhost</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="ssh">
 <h3>3.2.6. SSH<a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h3>

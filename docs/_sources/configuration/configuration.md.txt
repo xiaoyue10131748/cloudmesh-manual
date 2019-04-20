@@ -52,7 +52,7 @@ are included in the example
 ### AWS
 
 It is beyond the scope of this manual to discuss how to get an account on Aws.
-However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK>
+However we do provide a convenient documentation at ![][CONTRIBUTE]
 
 ```
 cloudmesh:
@@ -83,7 +83,9 @@ cloudmesh:
 ### Azure
 
 It is beyond the scope of this manual to discuss how to get an account on Azure.
-However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK>
+However we do provide a convenient documentation at ![][CONTRIBUTE]
+
+
 
 ```
 cloudmesh:
@@ -117,7 +119,7 @@ cloudmesh:
 ### Google
 
 It is beyond the scope of this manual to discuss how to get an account on Google.
-However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK>
+However we do provide a convenient documentation at ![][CONTRIBUTE]
 
 ```
 cloudmesh:
@@ -249,7 +251,7 @@ what that does
 
 
 It is beyond the scope of this manual to discuss how to get an account on Google.
-However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK>
+However we do provide a convenient documentation at ![][CONTRIBUTE]
 
 
 In the `cloudmesh4.yaml` file, the 'aws' section under 'storage' describes an
@@ -287,7 +289,7 @@ storage:
 >  STUDENT CONTRIBUTE HERE
 
 It is beyond the scope of this manual to discuss how to get an account on Google.
-However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK>
+However we do provide a convenient documentation at ![][CONTRIBUTE]
 
 The `cloudmesh4.yaml` file needs to be set up as follows for the 'azure-blob'
 section under 'storage'.
@@ -380,7 +382,7 @@ storge:
 >  STUDENT CONTRIBUTE HERE
 
 It is beyond the scope of this manual to discuss how to get an account on Google.
-However we do provide a convenient documentation at <STUDENT CONTRUBTE LINK>
+However we do provide a convenient documentation at ![][CONTRIBUTE]
 
 
 In the `cloudmesh4.yaml` file, find the 'box' section under 'storage'. Under
@@ -427,3 +429,5 @@ ADD OTHERS IF MISSING
 Log files are stored by default in `~/.cloudmesh/log` The directory can be
 specified in the yaml file.
 
+
+[CONTRIBUTE]: https://place-hold.it/150x24/red.png&text=CONTRIBUTE "CONTRIBUTE"

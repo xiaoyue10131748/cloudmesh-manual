@@ -101,10 +101,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#generating-the-key-and-certificate">6.1. Generating the Key and Certificate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#validate-and-verify-the-key">6.2. Validate and verify the key</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#encryption">6.3. Encryption</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cloudmesh-integration">6.4. Cloudmesh Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#editing-the-configuration-file">6.5. Editing the Configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#adding-information-to-the-configuration">6.6. Adding information to the configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#separating-the-sensitive-information">6.7. Separating the sensitive information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#decryption">6.4. Decryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cloudmesh-integration">6.5. Cloudmesh Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#editing-the-configuration-file">6.6. Editing the Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-information-to-the-configuration">6.7. Adding information to the configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#separating-the-sensitive-information">6.8. Separating the sensitive information</a></li>
 </ul>
 </li>
 </ul>
@@ -126,19 +127,23 @@
 <p class="caption"><span class="caption-text">MANUAL PAGES</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../manual-cmd5.html">1. Manual Cmd5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual-compute.html">1. Compute Manual Pages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual-storage.html">1. Storage Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual-compute.html">2. Compute Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual-storage.html">3. Storage Manual Pages</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CODE</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../code/code.html">1. Code Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/cloudmesh.html">2. Cloudmesh</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/management.html">3. Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/management.html#module-cloudmesh.management.configuration.config">4. Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/mongo.html">5. Mongo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/common.html">6. Common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/common.html">2. Common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/cmd5.html">3. CMD5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/cloudmesh.html">4. Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/management.html">5. Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/mongo.html">6. Mongo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../code/commands.html">7. Commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/batch.html">8. Batch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/inventory.html">8. Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/storage.html">9. cloudmesh-storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/cloud.html">10. cloudmesh-cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/batch.html">11. cloudmesh-batch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/emr.html">12. cloudmesh-emr</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CONTRIBUTION</span></p>
 <ul>
@@ -269,8 +274,17 @@ $ cms config verify
 <p>This command will encrypt your <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file and place it under
 <code class="docutils literal notranslate"><span class="pre">~/.cloudmesh/cloudmesh4.yaml.enc</span></code>. It will ask you if you like to delete the orignial yaml file.</p>
 </div>
+<div class="section" id="decryption">
+<h2>6.4. Decryption<a class="headerlink" href="#decryption" title="Permalink to this headline">¶</a></h2>
+<p>To decrypt the file, pleas use the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cms config decrypt 
+</pre></div>
+</div>
+<p>This command will decrypt your <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml.enc</span></code> file and place it under
+<code class="docutils literal notranslate"><span class="pre">~/.cloudmesh/cloudmesh4.yaml.enc.enc</span></code>. It will ask you if you like to delete the orignial yaml file.</p>
+</div>
 <div class="section" id="cloudmesh-integration">
-<h2>6.4. Cloudmesh Integration<a class="headerlink" href="#cloudmesh-integration" title="Permalink to this headline">¶</a></h2>
+<h2>6.5. Cloudmesh Integration<a class="headerlink" href="#cloudmesh-integration" title="Permalink to this headline">¶</a></h2>
 <p>We have provided a new <code class="docutils literal notranslate"><span class="pre">cloudmesh.management.configuration.ConfigCrypt()</span></code> That
 will be integrated in future (once verified it works) into the regular <code class="docutils literal notranslate"><span class="pre">Config()</span></code></p>
 <p>The functionality tht is provided by  <code class="docutils literal notranslate"><span class="pre">ConfigCrypt()</span></code> includes</p>
@@ -286,7 +300,7 @@ so that the decryption and loading loading is conducted only once.</p></li>
 </ul>
 </div>
 <div class="section" id="editing-the-configuration-file">
-<h2>6.5. Editing the Configuration file<a class="headerlink" href="#editing-the-configuration-file" title="Permalink to this headline">¶</a></h2>
+<h2>6.6. Editing the Configuration file<a class="headerlink" href="#editing-the-configuration-file" title="Permalink to this headline">¶</a></h2>
 <p>Editing the configuration file can be done by first unencrypting the file with</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ TBD
 </pre></div>
@@ -302,7 +316,7 @@ is emacs.</p>
 </div>
 </div>
 <div class="section" id="adding-information-to-the-configuration">
-<h2>6.6. Adding information to the configuration<a class="headerlink" href="#adding-information-to-the-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>6.7. Adding information to the configuration<a class="headerlink" href="#adding-information-to-the-configuration" title="Permalink to this headline">¶</a></h2>
 <p>It is also possible to add configurations to the encrypted file while storing
 the new values in a temporary yaml file.</p>
 <p>Let us assume the temporary file <code class="docutils literal notranslate"><span class="pre">./change.yaml</span></code> contains the following information:</p>
@@ -333,7 +347,7 @@ We illustarted this on the following example where the data is stored in <code c
 </div>
 </div>
 <div class="section" id="separating-the-sensitive-information">
-<h2>6.7. Separating the sensitive information<a class="headerlink" href="#separating-the-sensitive-information" title="Permalink to this headline">¶</a></h2>
+<h2>6.8. Separating the sensitive information<a class="headerlink" href="#separating-the-sensitive-information" title="Permalink to this headline">¶</a></h2>
 <p>As it may be beneficial to separate the sensitive form the non sensitive
 information, we also provide a mechanism for authentication with a merged file.
 This way you could for example store the sensitive information on a USB key.</p>

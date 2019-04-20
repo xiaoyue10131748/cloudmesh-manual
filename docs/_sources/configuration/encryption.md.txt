@@ -54,6 +54,17 @@ $ cms config encrypt
 This command will encrypt your `cloudmesh4.yaml` file and place it under
 `~/.cloudmesh/cloudmesh4.yaml.enc`. It will ask you if you like to delete the orignial yaml file. 
 
+## Decryption
+
+To decrypt the file, pleas use the command
+
+```bash
+$ cms config decrypt 
+```
+
+This command will decrypt your `cloudmesh4.yaml.enc` file and place it under
+`~/.cloudmesh/cloudmesh4.yaml.enc.enc`. It will ask you if you like to delete the orignial yaml file. 
+
 ## Cloudmesh Integration
 
 We have provided a new `cloudmesh.management.configuration.ConfigCrypt()` That

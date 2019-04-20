@@ -48,12 +48,25 @@ Cloudmesh Version 4
    :glob:
    :numbered:
    :maxdepth: 2
-   :caption: MANUAL PAGES
+   :caption: MANUAL PAGES CMD5
 
    manual/cmd5/*
+
+.. toctree::
+   :glob:
+   :numbered:
+   :maxdepth: 2
+   :caption: MANUAL PAGES COMPUTE
+
    manual/compute/*
+
+.. toctree::
+   :glob:
+   :numbered:
+   :maxdepth: 2
+   :caption: MANUAL PAGES STORAGE
+
    manual/storage/*
-   manual-dev
 
 .. toctree::
    :numbered:

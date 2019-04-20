@@ -239,15 +239,13 @@ cloudmesh:
 
 
 
-### Storage Providers
+## Storage Providers
 
 General description for all storage providers, comment on the `default:` and
 what that does
 
 
 ### AWS S3
-
->  STUDENT CONTRIBUTE HERE
 
 
 It is beyond the scope of this manual to discuss how to get an account on Google.
@@ -286,7 +284,6 @@ storage:
 
 ### Azure
 
->  STUDENT CONTRIBUTE HERE
 
 It is beyond the scope of this manual to discuss how to get an account on Google.
 However we do provide a convenient documentation at ![][CONTRIBUTE]
@@ -335,12 +332,7 @@ In the yaml file the following values have to be changed
 * `container` - This can be set to a default container created under the Azure blob storage account.
 
 
-### Google (BUG)
-
->  STUDENT CONTRIBUTE HERE
-
-
-## Google drive
+### Google drive
 
 Due to bugs in the requirements of the google driver code, 
 we have not yet included it in the Provider code. This needs to be fixed 
@@ -379,8 +371,6 @@ storge:
 
 ### Box
 
->  STUDENT CONTRIBUTE HERE
-
 It is beyond the scope of this manual to discuss how to get an account on Google.
 However we do provide a convenient documentation at ![][CONTRIBUTE]
 
@@ -405,22 +395,21 @@ as described in the Box chapter:
 
 
 
-ADD OTHERS IF MISSING
+### ADD OTHERS IF MISSING
 
 ## Object Store
 
->  STUDENT CONTRIBUTE HERE
+![][CONTRIBUTE]
 
 
-## Virtual Clusters
+## Batch
 
->  STUDENT CONTRIBUTE HERE
-
+![][CONTRIBUTE]
 
 
 ## REST
 
->  STUDENT CONTRIBUTE HERE
+TBD
 
 ## Log File (proposed)
 

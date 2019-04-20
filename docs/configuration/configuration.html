@@ -105,18 +105,18 @@
 <li class="toctree-l3"><a class="reference internal" href="#ssh">3.2.6. SSH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#local">3.2.7. Local</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#docker">3.2.8. Docker</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storage-providers">3.2.9. Storage Providers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#aws-s3">3.2.10. AWS S3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">3.2.11. Azure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#google-bug">3.2.12. Google (BUG)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#google-drive">3.3. Google drive</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#box">3.3.1. Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#storage-providers">3.3. Storage Providers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aws-s3">3.3.1. AWS S3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">3.3.2. Azure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#google-drive">3.3.3. Google drive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#box">3.3.4. Box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-others-if-missing">3.3.5. ADD OTHERS IF MISSING</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#object-store">3.4. Object Store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#virtual-clusters">3.5. Virtual Clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#batch">3.5. Batch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rest">3.6. REST</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#log-file-proposed">3.7. Log File (proposed)</a></li>
 </ul>
@@ -143,19 +143,23 @@
 <p class="caption"><span class="caption-text">MANUAL PAGES</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../manual-cmd5.html">1. Manual Cmd5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual-compute.html">1. Compute Manual Pages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual-storage.html">1. Storage Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual-compute.html">2. Compute Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual-storage.html">3. Storage Manual Pages</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CODE</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../code/code.html">1. Code Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/cloudmesh.html">2. Cloudmesh</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/management.html">3. Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/management.html#module-cloudmesh.management.configuration.config">4. Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/mongo.html">5. Mongo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/common.html">6. Common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/common.html">2. Common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/cmd5.html">3. CMD5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/cloudmesh.html">4. Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/management.html">5. Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/mongo.html">6. Mongo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../code/commands.html">7. Commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/batch.html">8. Batch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/inventory.html">8. Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/storage.html">9. cloudmesh-storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/cloud.html">10. cloudmesh-cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/batch.html">11. cloudmesh-batch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/emr.html">12. cloudmesh-emr</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CONTRIBUTION</span></p>
 <ul>
@@ -462,16 +466,13 @@ following description:</p>
 <div><p>STUDENT CONTRIBUTE HERE</p>
 </div></blockquote>
 </div>
+</div>
 <div class="section" id="storage-providers">
-<h3>3.2.9. Storage Providers<a class="headerlink" href="#storage-providers" title="Permalink to this headline">¶</a></h3>
+<h2>3.3. Storage Providers<a class="headerlink" href="#storage-providers" title="Permalink to this headline">¶</a></h2>
 <p>General description for all storage providers, comment on the <code class="docutils literal notranslate"><span class="pre">default:</span></code> and
 what that does</p>
-</div>
 <div class="section" id="aws-s3">
-<h3>3.2.10. AWS S3<a class="headerlink" href="#aws-s3" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>STUDENT CONTRIBUTE HERE</p>
-</div></blockquote>
+<h3>3.3.1. AWS S3<a class="headerlink" href="#aws-s3" title="Permalink to this headline">¶</a></h3>
 <p>It is beyond the scope of this manual to discuss how to get an account on Google.
 However we do provide a convenient documentation at <img alt="CONTRIBUTE" src="https://place-hold.it/150x24/red.png&amp;text=CONTRIBUTE" /></p>
 <p>In the <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file, the ‘aws’ section under ‘storage’ describes an
@@ -501,10 +502,7 @@ resource for that geographic area. Here is a sample.</p>
 </div>
 </div>
 <div class="section" id="id1">
-<h3>3.2.11. Azure<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>STUDENT CONTRIBUTE HERE</p>
-</div></blockquote>
+<h3>3.3.2. Azure<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>It is beyond the scope of this manual to discuss how to get an account on Google.
 However we do provide a convenient documentation at <img alt="CONTRIBUTE" src="https://place-hold.it/150x24/red.png&amp;text=CONTRIBUTE" /></p>
 <p>The <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file needs to be set up as follows for the ‘azure-blob’
@@ -547,15 +545,8 @@ section under ‘storage’.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">container</span></code> - This can be set to a default container created under the Azure blob storage account.</p></li>
 </ul>
 </div>
-<div class="section" id="google-bug">
-<h3>3.2.12. Google (BUG)<a class="headerlink" href="#google-bug" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>STUDENT CONTRIBUTE HERE</p>
-</div></blockquote>
-</div>
-</div>
 <div class="section" id="google-drive">
-<h2>3.3. Google drive<a class="headerlink" href="#google-drive" title="Permalink to this headline">¶</a></h2>
+<h3>3.3.3. Google drive<a class="headerlink" href="#google-drive" title="Permalink to this headline">¶</a></h3>
 <p>Due to bugs in the requirements of the google driver code,
 we have not yet included it in the Provider code. This needs to be fixed
 before we can do this.</p>
@@ -587,11 +578,9 @@ section under ‘storage’.</p>
         directory: TBD
 </pre></div>
 </div>
+</div>
 <div class="section" id="box">
-<h3>3.3.1. Box<a class="headerlink" href="#box" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>STUDENT CONTRIBUTE HERE</p>
-</div></blockquote>
+<h3>3.3.4. Box<a class="headerlink" href="#box" title="Permalink to this headline">¶</a></h3>
 <p>It is beyond the scope of this manual to discuss how to get an account on Google.
 However we do provide a convenient documentation at <img alt="CONTRIBUTE" src="https://place-hold.it/150x24/red.png&amp;text=CONTRIBUTE" /></p>
 <p>In the <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file, find the ‘box’ section under ‘storage’. Under
@@ -610,26 +599,22 @@ as described in the Box chapter:</p>
         config_path: ******************************
 </pre></div>
 </div>
-<p>ADD OTHERS IF MISSING</p>
+</div>
+<div class="section" id="add-others-if-missing">
+<h3>3.3.5. ADD OTHERS IF MISSING<a class="headerlink" href="#add-others-if-missing" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="object-store">
 <h2>3.4. Object Store<a class="headerlink" href="#object-store" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>STUDENT CONTRIBUTE HERE</p>
-</div></blockquote>
+<p><img alt="CONTRIBUTE" src="https://place-hold.it/150x24/red.png&amp;text=CONTRIBUTE" /></p>
 </div>
-<div class="section" id="virtual-clusters">
-<h2>3.5. Virtual Clusters<a class="headerlink" href="#virtual-clusters" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>STUDENT CONTRIBUTE HERE</p>
-</div></blockquote>
+<div class="section" id="batch">
+<h2>3.5. Batch<a class="headerlink" href="#batch" title="Permalink to this headline">¶</a></h2>
+<p><img alt="CONTRIBUTE" src="https://place-hold.it/150x24/red.png&amp;text=CONTRIBUTE" /></p>
 </div>
 <div class="section" id="rest">
 <h2>3.6. REST<a class="headerlink" href="#rest" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>STUDENT CONTRIBUTE HERE</p>
-</div></blockquote>
+<p>TBD</p>
 </div>
 <div class="section" id="log-file-proposed">
 <h2>3.7. Log File (proposed)<a class="headerlink" href="#log-file-proposed" title="Permalink to this headline">¶</a></h2>

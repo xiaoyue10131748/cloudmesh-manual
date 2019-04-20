@@ -60,7 +60,13 @@ Cloudmesh Version 4
    :maxdepth: 2
    :caption: CODE
 
-   code
+   code/code.rst
+   code/cloudmesh.rst
+   code/management.rst
+   code/mongo.rst
+   code/common.rst
+   code/commands.rst
+   code/batch.rst
 
 .. toctree::
    :numbered:

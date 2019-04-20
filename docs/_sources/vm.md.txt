@@ -162,3 +162,23 @@ vm terminate [NAMES] [--cloud=CLOUD] [--dryrun]
 ### Delete
 
 vm delete [NAMES] [--cloud=CLOUD] [--dryrun]
+
+## AWS Quickstart
+
+vm boot --name=test_cloudmesh --cloud=aws
+
+vm status 
+(check to see if test_cloudmesh is running)
+
+vm ping
+
+vm check
+
+vm ssh
+
+vm stop
+
+vm start 
+
+vm terminate
+

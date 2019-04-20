@@ -1,4 +1,4 @@
-# Cloudmesh Database (ok)
+# Cloudmesh Database
 
 Cloudmesh stores its status in a database so that you can easily remember which
 services you used where and have an accurate account of them. We use as a
@@ -137,7 +137,7 @@ Example:
            elif provider == "bar":
               provider = BarProvider()
 
-        @DatabaseUpdate
+        @DatabaseUpdate()
         def entries(self):
             provider.entries()
 

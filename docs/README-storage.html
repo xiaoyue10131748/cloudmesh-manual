@@ -133,6 +133,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#id2">2.5.2. Pytests</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#google-drive">2.6. Google drive</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#note">2.6.1. Note</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#links">2.6.2. Links</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="README-storage-openapi.html">3. Cloudmesh Multi Cloud Open API Interface</a></li>
@@ -260,11 +265,13 @@
             
   <div class="section" id="cloudmesh-multi-cloud-storage-interface">
 <h1>1. Cloudmesh Multi Cloud Storage Interface<a class="headerlink" href="#cloudmesh-multi-cloud-storage-interface" title="Permalink to this headline">¶</a></h1>
-<p>Cloudmesh multiple cloud storage services is independent of the APIs and interfaces used to
-access these services. In other words, an abstraction layer between data and the proprietary
-APIs is used to place that data in any given cloud storage service.</p>
-<p>Provides a interface to manage all cloud storage in one place. it helps you access and search
-all of your files in one place so you don’t need to sign into several accounts.</p>
+<p>Cloudmesh multiple cloud storage services is independent of the APIs and
+interfaces used to access these services. In other words, an abstraction layer
+between data and the proprietary APIs is used to place that data in any given
+cloud storage service.</p>
+<p>Provides a interface to manage all cloud storage in one place. it helps you
+access and search all of your files in one place so you don’t need to sign into
+several accounts.</p>
 </div>
 <div class="section" id="cloudmesh-storage-module">
 <h1>2. Cloudmesh Storage Module<a class="headerlink" href="#cloudmesh-storage-module" title="Permalink to this headline">¶</a></h1>
@@ -475,7 +482,8 @@ $ pytest -v --capture<span class="o">=</span>no tests/test_storage_aws.py
 </div>
 <div class="section" id="general-features">
 <h2>2.4. General features<a class="headerlink" href="#general-features" title="Permalink to this headline">¶</a></h2>
-<p>How to set up the authentication to a specific service is discussed in later sections</p>
+<p>How to set up the authentication to a specific service is discussed in later
+sections</p>
 <p>TODO: Provide a simple programming example with the general provider</p>
 <div class="section" id="command-line-interface">
 <h3>2.4.1. Command Line Interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h3>
@@ -508,7 +516,9 @@ provider.</p>
 </div>
 <div class="section" id="id1">
 <h3>2.4.3. Pytests<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Script to test the GDrive service can be accessed under tests folder using the following pytest command.</p>
+<p>Script to test the GDrive service can be accessed under tests folder using the
+following pytest command.</p>
+<p>TODO rename to test_storage_gdrive.py</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pytest -v --capture<span class="o">=</span>no tests/test_gdrive.py
 </pre></div>
 </div>
@@ -516,10 +526,13 @@ provider.</p>
 </div>
 <div class="section" id="virtual-directory">
 <h2>2.5. Virtual Directory<a class="headerlink" href="#virtual-directory" title="Permalink to this headline">¶</a></h2>
-<p>The virtual directory has been developed to mirror the linux directory commands. File links in the virtual directory point to files on storage providers, which can be retrieved using the virtual directory.</p>
+<p>The virtual directory has been developed to mirror the linux directory commands.
+File links in the virtual directory point to files on storage providers, which
+can be retrieved using the virtual directory.</p>
 <div class="section" id="configuration">
 <h3>2.5.1. Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
-<p>The credentials for the virtual directory are the same as for the admin mongo command. See the Mongo section for details.</p>
+<p>The credentials for the virtual directory are the same as for the admin mongo
+command. See the Mongo section for details.</p>
 </div>
 <div class="section" id="id2">
 <h3>2.5.2. Pytests<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
@@ -527,6 +540,41 @@ provider.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pytest -v --capture<span class="o">=</span>no tests/test_vdir.py
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="google-drive">
+<h2>2.6. Google drive<a class="headerlink" href="#google-drive" title="Permalink to this headline">¶</a></h2>
+<p>The Google Drive API needs the following two 2 credentials files.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">client_secret.json</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">google-drive-credentials.json</span></code></p></li>
+</ul>
+<p>If we run the Google Drive <code class="docutils literal notranslate"><span class="pre">Provider.py</span></code> for the <strong>First time</strong> then the
+required keys, tokens are taken from the <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file and creates a
+<code class="docutils literal notranslate"><span class="pre">client_secret.json</span></code> file in the follwing path <code class="docutils literal notranslate"><span class="pre">~/.cloudmesh/gdrive/</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Authentication.py</span></code> creates a <code class="docutils literal notranslate"><span class="pre">.credentials</span></code> folder under the following path
+<code class="docutils literal notranslate"><span class="pre">~/.cloudmesh/gdrive/</span></code> if it doesn’t exist and creates a
+<code class="docutils literal notranslate"><span class="pre">google-drive-credentials.json</span></code> file under the following folder
+<code class="docutils literal notranslate"><span class="pre">~/.cloudmesh/gdrive/.credentials/</span></code></p>
+<p>So, for the <strong>First time</strong> browser will be opened up automatically and asks for
+the Google Drive(gmail) credentials i.e., login email and  password. If you
+provide these 2 then the Authentication step is completed and then it will
+create the <code class="docutils literal notranslate"><span class="pre">google-drive-credentials.json</span></code> and place it in
+<code class="docutils literal notranslate"><span class="pre">~/.cloudmesh/gdrive/.credentials/</span></code> folder.</p>
+<p>These steps are to be followed for the first time or initial run. Once it is
+done then our program is set. After these steps then the program will run
+automatically by using these credentials stored in the respective files.</p>
+<div class="section" id="note">
+<h3>2.6.1. Note<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h3>
+<p>The Google Drive API accepts these 2 files in the form of <strong>.json file format</strong>
+and not in the form of a dictionary.</p>
+</div>
+<div class="section" id="links">
+<h3>2.6.2. Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
+<p>Link for additional information:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh-community/sp19-516-130/blob/master/gdrive">https://github.com/cloudmesh-community/sp19-516-130/blob/master/gdrive.md</a></p></li>
+</ul>
 </div>
 </div>
 </div>

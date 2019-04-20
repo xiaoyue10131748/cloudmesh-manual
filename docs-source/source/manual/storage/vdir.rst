@@ -10,10 +10,15 @@ vdir
         vdir add [FILEENDPOINT] [DIR_AND_NAME]
         vdir delete [DIR_OR_NAME]
         vdir status [DIR_OR_NAME]
-        vdir get NAME
+        vdir get NAME DESTINATION
 
   Arguments:
-      FILE   a file name
+      DIR           a directory name
+      FILEENDPOINT  location of file
+      DIR_AND_NAME  path of file link
+      DIR_OR_NAME   name of directory or link
+      DESTINATION   directory to download to
+      NAME          name of link
 
   Options:
       -f      specify the file
@@ -43,7 +48,7 @@ vdir
             created: date
             modified: date
 
-      vdir get NAME
+      vdir get NAME DESTINATION
 
          locates the file with the name on a storage provider,
          and fetches it from there.

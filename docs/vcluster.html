@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>8. Virtual Cluster (in progress) &mdash; Cloudmesh v4 alpha documentation</title>
+  <title>7. Virtual Cluster (in progress) &mdash; Cloudmesh v4 alpha documentation</title>
   
 
   
@@ -36,7 +36,7 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="7. REST Service (outdated)" href="ufo.html" /> 
+    <link rel="prev" title="6. REST Service (outdated)" href="ufo.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -104,9 +104,8 @@
 <p class="caption"><span class="caption-text">STORAGE</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="README-storage.html">1. Cloudmesh Multi Cloud Storage Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="README-storage-1.html">2. Cloudmesh Storage Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="README-storage-awss3.html">3. AWSS3 Cloudmesh Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="README-storage-openapi.html">4. Cloudmesh Multi Cloud Open API Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README-storage.html#cloudmesh-storage-module">2. Cloudmesh Storage Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README-storage-openapi.html">3. Cloudmesh Multi Cloud Open API Interface</a></li>
 </ul>
 <p class="caption"><span class="caption-text">WORKFLOW</span></p>
 <ul>
@@ -146,10 +145,6 @@
 <li class="toctree-l1"><a class="reference internal" href="manual/storage/vdir.html">29. vdir</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual-dev.html">30. Manual (proposed)</a></li>
 </ul>
-<p class="caption"><span class="caption-text">CODE</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="code.html">1. Code Documentation</a></li>
-</ul>
 <p class="caption"><span class="caption-text">CONTRIBUTION</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="conventions.html">1. Code Conventions</a></li>
@@ -159,16 +154,15 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="goal.html">1. Goal (outdated)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goal.html#manual-cloudmesh-multi-service-data-access">2. Manual: Cloudmesh Multi Service Data Access</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vmproviders.html">3. VM Providers (outdated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vagrant.html">4. Vagrant (outdated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CM4README.html">5. CM4 Details (outdated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aws.html">6. AWS cm (outdated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ufo.html">7. REST Service (outdated)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">8. Virtual Cluster (in progress)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#creating-a-virtual-cluster-and-testing-connections">8.1. Creating a Virtual Cluster and testing connections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-a-runtime-configuration">8.2. Creating a runtime-configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#running-parallel-remote-jobs">8.3. Running Parallel Remote Jobs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cleaning-the-remote">8.4. Cleaning the remote</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vagrant.html">3. Vagrant (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CM4README.html">4. CM4 Details (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aws.html">5. AWS cm (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ufo.html">6. REST Service (outdated)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Virtual Cluster (in progress)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-virtual-cluster-and-testing-connections">7.1. Creating a Virtual Cluster and testing connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-runtime-configuration">7.2. Creating a runtime-configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-parallel-remote-jobs">7.3. Running Parallel Remote Jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cleaning-the-remote">7.4. Cleaning the remote</a></li>
 </ul>
 </li>
 </ul>
@@ -216,7 +210,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>8. Virtual Cluster (in progress)</li>
+      <li>7. Virtual Cluster (in progress)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -236,7 +230,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="virtual-cluster-in-progress">
-<h1>8. Virtual Cluster (in progress)<a class="headerlink" href="#virtual-cluster-in-progress" title="Permalink to this headline">¶</a></h1>
+<h1>7. Virtual Cluster (in progress)<a class="headerlink" href="#virtual-cluster-in-progress" title="Permalink to this headline">¶</a></h1>
 <p>This is a tool used to submit jobs to remote hosts in parallel and contains the following subcommands:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cms vcluster create virtual-cluster VIRTUALCLUSTER_NAME --clusters=CLUSTERS_LIST [--computers=COMPUTERS_LIST] [--debug]</span>
 <span class="go">cms vcluster destroy virtual-cluster VIRTUALCLUSTER_NAME</span>
@@ -303,7 +297,7 @@ argument to <code class="docutils literal notranslate"><span class="pre">create<
 Cluster</em> created this way. When you are done with a Virtual Cluster,
 aka <code class="docutils literal notranslate"><span class="pre">vcluster</span></code>, you can simply destroy it.</p>
 <div class="section" id="creating-a-virtual-cluster-and-testing-connections">
-<h2>8.1. Creating a Virtual Cluster and testing connections<a class="headerlink" href="#creating-a-virtual-cluster-and-testing-connections" title="Permalink to this headline">¶</a></h2>
+<h2>7.1. Creating a Virtual Cluster and testing connections<a class="headerlink" href="#creating-a-virtual-cluster-and-testing-connections" title="Permalink to this headline">¶</a></h2>
 <p>Consider the following two dummy clusters in the <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>cloudmesh: 
 	...
@@ -388,7 +382,7 @@ easily remove it using:</p>
 </div>
 </div>
 <div class="section" id="creating-a-runtime-configuration">
-<h2>8.2. Creating a runtime-configuration<a class="headerlink" href="#creating-a-runtime-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>7.2. Creating a runtime-configuration<a class="headerlink" href="#creating-a-runtime-configuration" title="Permalink to this headline">¶</a></h2>
 <p>Next, we have to create a <code class="docutils literal notranslate"><span class="pre">runtime-configuration</span></code> which defines the
 type of input and output for possibly a set of jobs that are going to
 be submitted later.  In the next example we will create a runtime
@@ -427,7 +421,7 @@ using the <code class="docutils literal notranslate"><span class="pre">destroy</
 </div>
 </div>
 <div class="section" id="running-parallel-remote-jobs">
-<h2>8.3. Running Parallel Remote Jobs<a class="headerlink" href="#running-parallel-remote-jobs" title="Permalink to this headline">¶</a></h2>
+<h2>7.3. Running Parallel Remote Jobs<a class="headerlink" href="#running-parallel-remote-jobs" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have both the virtual cluster and runtime configuration
 ready, we can try to submit a batch job to our virtual cluster using
 <code class="docutils literal notranslate"><span class="pre">cms</span> <span class="pre">vcluster</span> <span class="pre">run-script</span></code>. This is by far the most complicated
@@ -538,7 +532,7 @@ first place:</p>
 </div>
 </div>
 <div class="section" id="cleaning-the-remote">
-<h2>8.4. Cleaning the remote<a class="headerlink" href="#cleaning-the-remote" title="Permalink to this headline">¶</a></h2>
+<h2>7.4. Cleaning the remote<a class="headerlink" href="#cleaning-the-remote" title="Permalink to this headline">¶</a></h2>
 <p>By default the Virtual Cluster tool does not clean the remotes
 automatically and this task is left to be performed manually since
 important results might be lose due to mistakes. To clean the remotes,
@@ -562,7 +556,7 @@ be removed from <strong>ALL</strong> remotes using 2 parallel processes:</p>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="ufo.html" class="btn btn-neutral float-left" title="7. REST Service (outdated)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ufo.html" class="btn btn-neutral float-left" title="6. REST Service (outdated)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

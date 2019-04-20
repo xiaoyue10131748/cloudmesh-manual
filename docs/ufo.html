@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7. REST Service (outdated) &mdash; Cloudmesh v4 alpha documentation</title>
+  <title>6. REST Service (outdated) &mdash; Cloudmesh v4 alpha documentation</title>
   
 
   
@@ -36,8 +36,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="8. Virtual Cluster (in progress)" href="vcluster.html" />
-    <link rel="prev" title="6. AWS cm (outdated)" href="aws.html" /> 
+    <link rel="next" title="7. Virtual Cluster (in progress)" href="vcluster.html" />
+    <link rel="prev" title="5. AWS cm (outdated)" href="aws.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -105,9 +105,8 @@
 <p class="caption"><span class="caption-text">STORAGE</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="README-storage.html">1. Cloudmesh Multi Cloud Storage Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="README-storage-1.html">2. Cloudmesh Storage Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="README-storage-awss3.html">3. AWSS3 Cloudmesh Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="README-storage-openapi.html">4. Cloudmesh Multi Cloud Open API Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README-storage.html#cloudmesh-storage-module">2. Cloudmesh Storage Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README-storage-openapi.html">3. Cloudmesh Multi Cloud Open API Interface</a></li>
 </ul>
 <p class="caption"><span class="caption-text">WORKFLOW</span></p>
 <ul>
@@ -147,10 +146,6 @@
 <li class="toctree-l1"><a class="reference internal" href="manual/storage/vdir.html">29. vdir</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual-dev.html">30. Manual (proposed)</a></li>
 </ul>
-<p class="caption"><span class="caption-text">CODE</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="code.html">1. Code Documentation</a></li>
-</ul>
 <p class="caption"><span class="caption-text">CONTRIBUTION</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="conventions.html">1. Code Conventions</a></li>
@@ -160,19 +155,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="goal.html">1. Goal (outdated)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goal.html#manual-cloudmesh-multi-service-data-access">2. Manual: Cloudmesh Multi Service Data Access</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vmproviders.html">3. VM Providers (outdated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vagrant.html">4. Vagrant (outdated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CM4README.html">5. CM4 Details (outdated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aws.html">6. AWS cm (outdated)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">7. REST Service (outdated)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#pre-requisites">7.1. Pre-requisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-run-the-rest-api">7.2. How to run the REST API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#api">7.3. API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#examples">7.4. Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dev-restricting-certain-ips-for-certain-rest-calls">7.5. Dev - restricting certain ips for certain rest calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vagrant.html">3. Vagrant (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CM4README.html">4. CM4 Details (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aws.html">5. AWS cm (outdated)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. REST Service (outdated)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pre-requisites">6.1. Pre-requisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-run-the-rest-api">6.2. How to run the REST API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api">6.3. API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">6.4. Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dev-restricting-certain-ips-for-certain-rest-calls">6.5. Dev - restricting certain ips for certain rest calls</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="vcluster.html">8. Virtual Cluster (in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vcluster.html">7. Virtual Cluster (in progress)</a></li>
 </ul>
 
             
@@ -218,7 +212,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>7. REST Service (outdated)</li>
+      <li>6. REST Service (outdated)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -238,11 +232,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="rest-service-outdated">
-<h1>7. REST Service (outdated)<a class="headerlink" href="#rest-service-outdated" title="Permalink to this headline">¶</a></h1>
+<h1>6. REST Service (outdated)<a class="headerlink" href="#rest-service-outdated" title="Permalink to this headline">¶</a></h1>
 <p>The REST Api is built using flask and provides the cloud
 information retrieval functionality through HTTP calls.</p>
 <div class="section" id="pre-requisites">
-<h2>7.1. Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">¶</a></h2>
+<h2>6.1. Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">¶</a></h2>
 <p>Use pip install to install the following packages.</p>
 <ul class="simple">
 <li><p>Flask</p></li>
@@ -250,7 +244,7 @@ information retrieval functionality through HTTP calls.</p>
 </ul>
 </div>
 <div class="section" id="how-to-run-the-rest-api">
-<h2>7.2. How to run the REST API<a class="headerlink" href="#how-to-run-the-rest-api" title="Permalink to this headline">¶</a></h2>
+<h2>6.2. How to run the REST API<a class="headerlink" href="#how-to-run-the-rest-api" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Navigate to the cm directory. example:</p></li>
 </ul>
@@ -277,7 +271,7 @@ information retrieval functionality through HTTP calls.</p>
 </div>
 </div>
 <div class="section" id="api">
-<h2>7.3. API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<h2>6.3. API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">/vms/</span></code> : Provides information on all the VMs.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">/vms/stopped</span></code>  : Provides information on all the stopped VMs.</p></li>
@@ -285,7 +279,7 @@ information retrieval functionality through HTTP calls.</p>
 </ul>
 </div>
 <div class="section" id="examples">
-<h2>7.4. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2>6.4. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Retrieve information about a VM</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl localhost:5000/vms/i-0fad7e92ffea8b345
@@ -295,7 +289,7 @@ information retrieval functionality through HTTP calls.</p>
 </ul>
 </div>
 <div class="section" id="dev-restricting-certain-ips-for-certain-rest-calls">
-<h2>7.5. Dev - restricting certain ips for certain rest calls<a class="headerlink" href="#dev-restricting-certain-ips-for-certain-rest-calls" title="Permalink to this headline">¶</a></h2>
+<h2>6.5. Dev - restricting certain ips for certain rest calls<a class="headerlink" href="#dev-restricting-certain-ips-for-certain-rest-calls" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">abort</span><span class="p">,</span> <span class="n">request</span>
 <span class="kn">from</span> <span class="nn">cm4.flask_rest_api.app</span> <span class="kn">import</span> <span class="n">app</span>
 
@@ -317,10 +311,10 @@ information retrieval functionality through HTTP calls.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vcluster.html" class="btn btn-neutral float-right" title="8. Virtual Cluster (in progress)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="vcluster.html" class="btn btn-neutral float-right" title="7. Virtual Cluster (in progress)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="aws.html" class="btn btn-neutral float-left" title="6. AWS cm (outdated)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="aws.html" class="btn btn-neutral float-left" title="5. AWS cm (outdated)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

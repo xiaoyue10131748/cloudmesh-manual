@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>28. storage &mdash; Cloudmesh v4 alpha documentation</title>
+  <title>29. storage &mdash; Cloudmesh v4 alpha documentation</title>
   
 
   
@@ -36,8 +36,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="29. vdir" href="vdir.html" />
-    <link rel="prev" title="27. workflow" href="../compute/workflow.html" /> 
+    <link rel="next" title="30. vdir" href="vdir.html" />
+    <link rel="prev" title="28. objstorage" href="objstorage.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,7 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">2. Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../configuration.html">3. Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../yaml.html">4. Cloudmesh yaml file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../mongo.html">5. Cloudmesh Database (ok)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mongo.html">5. Cloudmesh Database</a></li>
 </ul>
 <p class="caption"><span class="caption-text">COMPUTE</span></p>
 <ul>
@@ -105,9 +105,8 @@
 <p class="caption"><span class="caption-text">STORAGE</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../README-storage.html">1. Cloudmesh Multi Cloud Storage Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../README-storage-1.html">2. Cloudmesh Storage Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../README-storage-awss3.html">3. AWSS3 Cloudmesh Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../README-storage-openapi.html">4. Cloudmesh Multi Cloud Open API Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README-storage.html#cloudmesh-storage-module">2. Cloudmesh Storage Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README-storage-openapi.html">3. Cloudmesh Multi Cloud Open API Interface</a></li>
 </ul>
 <p class="caption"><span class="caption-text">WORKFLOW</span></p>
 <ul>
@@ -143,13 +142,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../compute/vcluster.html">25. vcluster</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compute/vm.html">26. vm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compute/workflow.html">27. workflow</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">28. storage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vdir.html">29. vdir</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../manual-dev.html">30. Manual (proposed)</a></li>
-</ul>
-<p class="caption"><span class="caption-text">CODE</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../code.html">1. Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objstorage.html">28. objstorage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">29. storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vdir.html">30. vdir</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../manual-dev.html">31. Manual (proposed)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CONTRIBUTION</span></p>
 <ul>
@@ -160,12 +156,11 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../goal.html">1. Goal (outdated)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../goal.html#manual-cloudmesh-multi-service-data-access">2. Manual: Cloudmesh Multi Service Data Access</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vmproviders.html">3. VM Providers (outdated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vagrant.html">4. Vagrant (outdated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../CM4README.html">5. CM4 Details (outdated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aws.html">6. AWS cm (outdated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../ufo.html">7. REST Service (outdated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vcluster.html">8. Virtual Cluster (in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vagrant.html">3. Vagrant (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CM4README.html">4. CM4 Details (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aws.html">5. AWS cm (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ufo.html">6. REST Service (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vcluster.html">7. Virtual Cluster (in progress)</a></li>
 </ul>
 
             
@@ -211,7 +206,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>28. storage</li>
+      <li>29. storage</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -231,7 +226,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="storage">
-<h1>28. storage<a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h1>
+<h1>29. storage<a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>
       <span class="n">storage</span> <span class="p">[</span><span class="o">--</span><span class="n">storage</span><span class="o">=</span><span class="n">SERVICE</span><span class="p">]</span> <span class="n">create</span> <span class="nb">dir</span> <span class="n">DIRECTORY</span>
       <span class="n">storage</span> <span class="p">[</span><span class="o">--</span><span class="n">storage</span><span class="o">=</span><span class="n">SERVICE</span><span class="p">]</span> <span class="n">get</span> <span class="n">SOURCE</span> <span class="n">DESTINATION</span> <span class="p">[</span><span class="o">--</span><span class="n">recursive</span><span class="p">]</span>
@@ -317,10 +312,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vdir.html" class="btn btn-neutral float-right" title="29. vdir" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="vdir.html" class="btn btn-neutral float-right" title="30. vdir" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../compute/workflow.html" class="btn btn-neutral float-left" title="27. workflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="objstorage.html" class="btn btn-neutral float-left" title="28. objstorage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

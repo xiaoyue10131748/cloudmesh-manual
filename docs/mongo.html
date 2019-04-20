@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5. Cloudmesh Database (ok) &mdash; Cloudmesh v4 alpha documentation</title>
+  <title>5. Cloudmesh Database &mdash; Cloudmesh v4 alpha documentation</title>
   
 
   
@@ -96,7 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">2. Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">3. Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="yaml.html">4. Cloudmesh yaml file</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Cloudmesh Database (ok)</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Cloudmesh Database</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#database-decorator">5.1. Database Decorator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#database-access">5.2. Database Access</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creating-uniqe-names">5.3. Creating Uniqe Names</a></li>
@@ -111,9 +111,8 @@
 <p class="caption"><span class="caption-text">STORAGE</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="README-storage.html">1. Cloudmesh Multi Cloud Storage Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="README-storage-1.html">2. Cloudmesh Storage Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="README-storage-awss3.html">3. AWSS3 Cloudmesh Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="README-storage-openapi.html">4. Cloudmesh Multi Cloud Open API Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README-storage.html#cloudmesh-storage-module">2. Cloudmesh Storage Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README-storage-openapi.html">3. Cloudmesh Multi Cloud Open API Interface</a></li>
 </ul>
 <p class="caption"><span class="caption-text">WORKFLOW</span></p>
 <ul>
@@ -149,13 +148,10 @@
 <li class="toctree-l1"><a class="reference internal" href="manual/compute/vcluster.html">25. vcluster</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual/compute/vm.html">26. vm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual/compute/workflow.html">27. workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/storage/storage.html">28. storage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/storage/vdir.html">29. vdir</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual-dev.html">30. Manual (proposed)</a></li>
-</ul>
-<p class="caption"><span class="caption-text">CODE</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="code.html">1. Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual/storage/objstorage.html">28. objstorage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual/storage/storage.html">29. storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual/storage/vdir.html">30. vdir</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual-dev.html">31. Manual (proposed)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CONTRIBUTION</span></p>
 <ul>
@@ -166,12 +162,11 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="goal.html">1. Goal (outdated)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goal.html#manual-cloudmesh-multi-service-data-access">2. Manual: Cloudmesh Multi Service Data Access</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vmproviders.html">3. VM Providers (outdated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vagrant.html">4. Vagrant (outdated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CM4README.html">5. CM4 Details (outdated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aws.html">6. AWS cm (outdated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ufo.html">7. REST Service (outdated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vcluster.html">8. Virtual Cluster (in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vagrant.html">3. Vagrant (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CM4README.html">4. CM4 Details (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aws.html">5. AWS cm (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ufo.html">6. REST Service (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vcluster.html">7. Virtual Cluster (in progress)</a></li>
 </ul>
 
             
@@ -217,7 +212,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>5. Cloudmesh Database (ok)</li>
+      <li>5. Cloudmesh Database</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -236,8 +231,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="cloudmesh-database-ok">
-<h1>5. Cloudmesh Database (ok)<a class="headerlink" href="#cloudmesh-database-ok" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="cloudmesh-database">
+<h1>5. Cloudmesh Database<a class="headerlink" href="#cloudmesh-database" title="Permalink to this headline">¶</a></h1>
 <p>Cloudmesh stores its status in a database so that you can easily remember which
 services you used where and have an accurate account of them. We use as a
 database mongoDB to store this information. To use cloudmesh you simply need to
@@ -351,7 +346,7 @@ dict and another that is responsible for the upload to the database.</p>
        <span class="k">elif</span> <span class="n">provider</span> <span class="o">==</span> <span class="s2">&quot;bar&quot;</span><span class="p">:</span>
           <span class="n">provider</span> <span class="o">=</span> <span class="n">BarProvider</span><span class="p">()</span>
 
-    <span class="nd">@DatabaseUpdate</span>
+    <span class="nd">@DatabaseUpdate</span><span class="p">()</span>
     <span class="k">def</span> <span class="nf">entries</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">provider</span><span class="o">.</span><span class="n">entries</span><span class="p">()</span>
 </pre></div>

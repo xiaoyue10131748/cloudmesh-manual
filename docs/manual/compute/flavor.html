@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. flavor &mdash; Cloudmesh v4 alpha documentation</title>
+  <title>2.1. flavor &mdash; Cloudmesh v4 alpha documentation</title>
   
 
   
@@ -36,7 +36,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2. image" href="image.html" />
+    <link rel="next" title="2.2. image" href="image.html" />
     <link rel="prev" title="&lt;no title&gt;" href="batch.html" /> 
 </head>
 
@@ -118,17 +118,17 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../manual-cmd5.html">1. Manual Cmd5</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../manual-compute.html">2. Compute Manual Pages</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">1. flavor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="image.html">2. image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="key.html">3. key</a></li>
-<li class="toctree-l2"><a class="reference internal" href="network.html">4. network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="open.html">5. open</a></li>
-<li class="toctree-l2"><a class="reference internal" href="secgroup.html">6. secgroup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ssh.html">7. ssh</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vbox.html">8. vbox</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vcluster.html">9. vcluster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vm.html">10. vm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="workflow.html">11. workflow</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.1. flavor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image.html">2.2. image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="key.html">2.3. key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network.html">2.4. network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="open.html">2.5. open</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secgroup.html">2.6. secgroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssh.html">2.7. ssh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vbox.html">2.8. vbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vcluster.html">2.9. vcluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vm.html">2.10. vm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html">2.11. workflow</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual-storage.html">3. Storage Manual Pages</a></li>
@@ -143,9 +143,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../code/mongo.html">6. Mongo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../code/commands.html">7. Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../code/inventory.html">8. Inventory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../code/storage.html">9. cloudmesh-cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../code/storage.html">9. cloudmesh-storage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../code/cloud.html">10. cloudmesh-cloud</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../code/batch.html">11. Batch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../code/batch.html">11. cloudmesh-batch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../code/emr.html">12. cloudmesh-emr</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CONTRIBUTION</span></p>
 <ul>
@@ -214,7 +215,7 @@
         
           <li><a href="../../manual-compute.html">2. Compute Manual Pages</a> &raquo;</li>
         
-      <li>1. flavor</li>
+      <li>2.1. flavor</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -234,7 +235,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="flavor">
-<h1>1. flavor<a class="headerlink" href="#flavor" title="Permalink to this headline">¶</a></h1>
+<h1>2.1. flavor<a class="headerlink" href="#flavor" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>
     <span class="n">flavor</span> <span class="nb">list</span> <span class="p">[</span><span class="n">NAMES</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">cloud</span><span class="o">=</span><span class="n">CLOUD</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">refresh</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span><span class="o">=</span><span class="n">OUTPUT</span><span class="p">]</span>
 
@@ -268,7 +269,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="image.html" class="btn btn-neutral float-right" title="2. image" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="image.html" class="btn btn-neutral float-right" title="2.2. image" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="batch.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

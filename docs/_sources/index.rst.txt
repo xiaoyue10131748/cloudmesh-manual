@@ -17,9 +17,10 @@ Cloudmesh Version 4
 
    install
    quickstart
-   configuration
+   configuration/configuration
    yaml
    mongo
+   configuration/encryption
 
 .. toctree::
    :numbered:

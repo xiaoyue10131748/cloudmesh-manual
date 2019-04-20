@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Overview: module code &mdash; Cloudmesh v4 alpha documentation</title>
+  <title>Google (I FOND THIS, IS THIS DUPLICATED?) &mdash; Cloudmesh v4 alpha documentation</title>
   
 
   
@@ -210,10 +210,14 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Overview: module code</li>
+      <li>Google (I FOND THIS, IS THIS DUPLICATED?)</li>
     
     
       <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/accounts/google-ufo.md.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -225,23 +229,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>All modules for which code is available</h1>
-<ul><li><a href="cloudmesh/common/FlatDict.html">cloudmesh.common.FlatDict</a></li>
-<li><a href="cloudmesh/common/Printer.html">cloudmesh.common.Printer</a></li>
-<li><a href="cloudmesh/common/Shell.html">cloudmesh.common.Shell</a></li>
-<li><a href="cloudmesh/common/StopWatch.html">cloudmesh.common.StopWatch</a></li>
-<li><a href="cloudmesh/common/console.html">cloudmesh.common.console</a></li>
-<li><a href="cloudmesh/common/dotdict.html">cloudmesh.common.dotdict</a></li>
-<li><a href="cloudmesh/common/error.html">cloudmesh.common.error</a></li>
-<li><a href="cloudmesh/common/locations.html">cloudmesh.common.locations</a></li>
-<li><a href="cloudmesh/common/logger.html">cloudmesh.common.logger</a></li>
-<li><a href="cloudmesh/common/ssh/authorized_keys.html">cloudmesh.common.ssh.authorized_keys</a></li>
-<li><a href="cloudmesh/common/ssh/ssh_config.html">cloudmesh.common.ssh.ssh_config</a></li>
-<li><a href="cloudmesh/common/util.html">cloudmesh.common.util</a></li>
-<li><a href="cloudmesh/db/strdb.html">cloudmesh.db.strdb</a></li>
-<li><a href="cloudmesh/management/configuration/name.html">cloudmesh.management.configuration.name</a></li>
-<li><a href="cloudmesh/management/script.html">cloudmesh.management.script</a></li>
+  <div class="section" id="google-i-fond-this-is-this-duplicated">
+<h1>Google (I FOND THIS, IS THIS DUPLICATED?)<a class="headerlink" href="#google-i-fond-this-is-this-duplicated" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>THIS WAS FOUND IN AN UNRELATED DOCUMENT IN A USERS DOCUMENTATION</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">client_secret.json</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">google-drive-credentials.json</span></code></p></li>
 </ul>
+<p>If we run the Google Drive <code class="docutils literal notranslate"><span class="pre">Provider.py</span></code> for the <strong>First time</strong> then the
+required keys, tokens are taken from the <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file and creates a
+<code class="docutils literal notranslate"><span class="pre">client_secret.json</span></code> file in the follwing path <code class="docutils literal notranslate"><span class="pre">~/.cloudmesh/gdrive/</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Authentication.py</span></code> creates a <code class="docutils literal notranslate"><span class="pre">.credentials</span></code> folder under the following path
+<code class="docutils literal notranslate"><span class="pre">~/.cloudmesh/gdrive/</span></code> if it doesn’t exist and creates a
+<code class="docutils literal notranslate"><span class="pre">google-drive-credentials.json</span></code> file under the following folder
+<code class="docutils literal notranslate"><span class="pre">~/.cloudmesh/gdrive/.credentials/</span></code></p>
+<p>So, for the <strong>First time</strong>
+browser will be opened up automatically and asks for the Google Drive(gmail)
+credentials i.e., login email and  password. If you provide these 2 then
+the Authentication step is completed and then it will create the
+<code class="docutils literal notranslate"><span class="pre">google-drive-credentials.json</span></code> and place it in <code class="docutils literal notranslate"><span class="pre">~/.cloudmesh/gdrive/.credentials/</span></code> folder.</p>
+<p>These steps are to be followed for the first time or initial run. Once it is
+done then our program is set. After these steps then the program will run
+automatically by using these credentials stored in the respective files.</p>
+<div class="section" id="note">
+<h2>Note<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h2>
+<p>The Google Drive API accepts these 2 files in the form of <strong>.json file format</strong>
+and not in the form of a dictionary.</p>
+</div>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<p>Link for additional information:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh-community/sp19-516-130/blob/master/gdrive">https://github.com/cloudmesh-community/sp19-516-130/blob/master/gdrive.md</a></p></li>
+</ul>
+</div>
+</div>
+
 
            </div>
            

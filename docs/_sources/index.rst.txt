@@ -90,6 +90,18 @@ Cloudmesh Version 4
    conventions
    pytest
 
+Cloud Provider Accounts
+========================
+
+.. toctree::
+   :numbered:
+   :maxdepth: 2
+   :caption: Cloud Accounts:
+
+   accounts/storage-gdrive
+   accounts/google-ufo
+   accounts/accountcreation
+
 Cloudmesh Outdated
 ===============================
 

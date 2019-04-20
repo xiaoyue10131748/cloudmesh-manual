@@ -336,36 +336,3 @@ ADD OTHERS IF MISSING
 Log files are stored by default in `~/.cloudmesh/log` The directory can be
 specified in the yaml file.
 
-## Encryption 
-
->  STUDENT CONTRIBUTE HERE
-
-The yaml file can also be encrypted which is done with the command
-
-```bash
-$cms admin encrypt
-```
-
-toe edit the file you need to specify a default editor with the shell variable EDITOR.
-
-```bash
-export EDITOR=emacs
-```
-
-to edit the file you can do it with 
-
-```bash
-$ cms admin edit config
-```
-
-Once saved you cloudmehs will sheck if your file is encrypted and unencrypt it 
-upon start.
-
-It will replace the yaml file with an encryoted version while using your public
-private key/ You can keep the file encripted and use the command
-
-```bash
-$ ssh-add
-```
-
-to access the file without using the password whenefer it is accessed.

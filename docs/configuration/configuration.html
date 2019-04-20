@@ -119,12 +119,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#virtual-clusters">3.5. Virtual Clusters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rest">3.6. REST</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#log-file-proposed">3.7. Log File (proposed)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#encryption">3.8. Encryption</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../yaml.html">4. Cloudmesh yaml file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mongo.html">5. Cloudmesh Database</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encryption.html">6. Cloudmesh Yaml file Encrytion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">6. Cloudmesh Yaml file Encrytion (TODO)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">COMPUTE</span></p>
 <ul>
@@ -184,6 +183,12 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../conventions.html">1. Code Conventions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pytest.html">2. Pytest</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cloud Accounts:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/storage-gdrive.html">1. Google Storage Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/google-ufo.html">2. Google (What is this?)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/accountcreation.html">3. VM Providers (outdated)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Outdated:</span></p>
 <ul>
@@ -573,32 +578,6 @@ as described in the Box chapter:</p>
 </div></blockquote>
 <p>Log files are stored by default in <code class="docutils literal notranslate"><span class="pre">~/.cloudmesh/log</span></code> The directory can be
 specified in the yaml file.</p>
-</div>
-<div class="section" id="encryption">
-<h2>3.8. Encryption<a class="headerlink" href="#encryption" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>STUDENT CONTRIBUTE HERE</p>
-</div></blockquote>
-<p>The yaml file can also be encrypted which is done with the command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$cms</span> admin encrypt
-</pre></div>
-</div>
-<p>toe edit the file you need to specify a default editor with the shell variable EDITOR.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>emacs
-</pre></div>
-</div>
-<p>to edit the file you can do it with</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cms admin edit config
-</pre></div>
-</div>
-<p>Once saved you cloudmehs will sheck if your file is encrypted and unencrypt it
-upon start.</p>
-<p>It will replace the yaml file with an encryoted version while using your public
-private key/ You can keep the file encripted and use the command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ssh-add
-</pre></div>
-</div>
-<p>to access the file without using the password whenefer it is accessed.</p>
 </div>
 </div>
 

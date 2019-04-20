@@ -1,4 +1,6 @@
-# Cloudmesh Yaml file Encrytion
+# Cloudmesh Yaml file Encrytion (TODO)
+
+> THIS SECTION IS UNDER DEVELOPMENT AND THE CONTENT DESCRIBED IS NOT YET WORKING
 
 The cloudmesh yaml file can contain some information to simplify authentication.
 IN order not tos store the file in cleartext we have provided a replacement

@@ -49,7 +49,7 @@ to Google Docs.
 **In a broader picture Google docs is just a subset of Google Drive**  
 
 
-## Python Google Drive API:
+## Python Google Drive API
 
 ### Step-by-step process 
 
@@ -57,10 +57,11 @@ Before writing the Python interface for Google Drive, we need to setup an email
 account, with that email  account we will get a set of google services and
 one of them is Google Drive with 15 GB overall storage. 
 
-After that we need to go through the Google Drive Quick start guide given below: 
-https://developers.google.com/drive/api/v3/quickstart/python   
+After that we need to go through the Google Drive Quick start guide:
 
-There we can see Enable API option as shown in the below picture:  
+<https://developers.google.com/drive/api/v3/quickstart/python >  
+
+There we can see Enable API option as shown in the next picture:  
 
 ![Image1](images/gdrive/image1.png)
 
@@ -68,18 +69,18 @@ There we can see Enable API option as shown in the below picture:
 Once we enable that we will get credentials.json file where all of our
 credentials are stored that can be used  to communicate with our Google
 Drive through Python Interface.  After that, we will be redirected to a
-page where we need to create our own project as shown in the below picture:
+page where we need to create our own project as shown in the next picture:
 
 
 ![image2](images/gdrive/image2.png)
 
-As we see below we need to select Google Drive API from here   
+As we see next we need to select Google Drive API from here   
 
 
 ![gd1](images/gdrive/image16.png)
 
 
-After that, we need to obtain the client_secret file as shown below: (The
+After that, we need to obtain the client_secret file as shown next: (The
 file that is downloaded as client_id.json needs to be renamed as
 client_secret.json)  
 
@@ -91,22 +92,22 @@ After this we need to click Done otherwise it would not set the Google Drive API
 
 After this if we run Authentication.py we will be redirected to our default
 browser to put our our login id and password and  after that it asks to
-authenticate our credentials. If we allow that as shown below:  
+authenticate our credentials. If we allow that as shown next:  
 
 
 ![gd2](images/gdrive/image21.png)
 
 
-We will get the screen something like given below (as the authentication
+We will get the screen something like given next (as the authentication
 pipeline has bees completed).  
 
 
 ![gd3](images/gdrive/image23.png)
 
 If the authentication flow is completed then the Authentication.py will create a
-"google-drive-credentials.json" file in  ".credentials" folder. This file
+`google-drive-credentials.json` file in  `.credentials` folder. This file
 can be used for future purposes. If we delete this file then the
-Authentication.py  will again ask for login id and password and again
+`Authentication.py`  will again ask for login id and password and again
 create that file automatically.  
 
 **So, now with the client_secret.json, google-drive-credentials.json and with Authentication.py and Provider.py our setup is ready**
@@ -122,7 +123,8 @@ Drive.
 
 
 
-## References:
+## References
+
 * <https://www.cloudwards.net/how-does-google-drive-work/>
 * <https://whatis.techtarget.com/definition/Google-Docs>
 * <https://www.techopedia.com/definition/13626/google-docs> 

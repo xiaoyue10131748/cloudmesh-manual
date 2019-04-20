@@ -2,7 +2,7 @@ Management
 ==========
 
 Configuration
-=============
+-------------
 
 .. automodule:: cloudmesh.management.configuration.config
    :members:
@@ -19,6 +19,22 @@ Configuration
 .. automodule:: cloudmesh.management.configuration.name
    :members:
 
+.. automodule:: cloudmesh.management.configuration.arguments
+   :members:
+
+.. automodule:: cloudmesh.management.configuration.operatingsystem
+   :members:
+
+.. automodule:: cloudmesh.management.configuration.SSHkey
+   :members:
+
+
+Printer
+-------
+
+.. automodule:: cloudmesh.management.printer.Printer
+   :members:
+
 
 Names
 -------
@@ -30,4 +46,10 @@ Script
 ------
 
 .. automodule:: cloudmesh.management.script
+   :members:
+
+Debug
+-----
+
+.. automodule:: cloudmesh.management.debug
    :members:

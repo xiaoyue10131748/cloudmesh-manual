@@ -9,13 +9,20 @@ define banner
 	@echo "###################################"
 endef
 
-all:doc
+all:
+	echo done
 
 source:
 	cd ../cloudmesh.common; make source
 	$(call banner, "Install cloudmesh-cmd5")
 	pip install -e . -U
 	cms help
+
+install:
+	cd ..; cloudmesh-installer git pull storage
+	cd ..; cloudmesh-installer install storage -e
+	cd ../cloudmesh-batch ; git pull; pip install -e .
+	cd ../cloudmesh-emr ; git pull; pip install -e .
 
 clean:
 	$(call banner, "CLEAN")

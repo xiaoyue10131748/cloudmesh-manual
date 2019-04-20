@@ -1,9 +1,9 @@
 Cloudmesh Version 4
 ===============================
 
+
 .. toctree::
    :numbered:
-   :maxdepth: 2
    :caption: PREFACE
 
    about
@@ -11,9 +11,7 @@ Cloudmesh Version 4
 
 .. toctree::
    :numbered:
-   :maxdepth: 2
    :caption: INSTALATION
-
 
    install
    quickstart
@@ -24,14 +22,12 @@ Cloudmesh Version 4
 
 .. toctree::
    :numbered:
-   :maxdepth: 2
    :caption: COMPUTE
 
    vm
 
 .. toctree::
    :numbered:
-   :maxdepth: 2
    :caption: STORAGE
 
    README-storage.md
@@ -39,52 +35,47 @@ Cloudmesh Version 4
 
 .. toctree::
    :numbered:
-   :maxdepth: 2
    :caption: WORKFLOW
 
    workflow
    jupyter
 
-.. toctree::
-   :glob:
-   :numbered:
-   :maxdepth: 2
-   :caption: MANUAL PAGES CMD5
-
-   manual/cmd5/*
-
-.. toctree::
-   :glob:
-   :numbered:
-   :maxdepth: 2
-   :caption: MANUAL PAGES COMPUTE
-
-   manual/compute/*
-
-.. toctree::
-   :glob:
-   :numbered:
-   :maxdepth: 2
-   :caption: MANUAL PAGES STORAGE
-
-   manual/storage/*
+MAMUAL PAGES
+============
 
 .. toctree::
    :numbered:
-   :maxdepth: 2
+   :caption: MANUAL PAGES
+
+   manual-cmd5
+   manual-compute
+   manual-storage
+
+
+CODE
+====
+
+.. toctree::
+   :numbered:
    :caption: CODE
 
-   code/code.rst
-   code/cloudmesh.rst
-   code/management.rst
-   code/mongo.rst
-   code/common.rst
-   code/commands.rst
-   code/batch.rst
+   code/code
+   code/common
+   code/cmd5
+   code/cloudmesh
+   code/management
+   code/mongo
+   code/commands
+   code/inventory
+   code/storage
+   code/objstorage
+   code/cloud
+   code/batch
+   code/emr
+
 
 .. toctree::
    :numbered:
-   :maxdepth: 2
    :caption: CONTRIBUTION
 
    conventions
@@ -95,7 +86,6 @@ Cloud Provider Accounts
 
 .. toctree::
    :numbered:
-   :maxdepth: 2
    :caption: Cloud Accounts:
 
    accounts/storage-gdrive
@@ -107,7 +97,6 @@ Cloudmesh Outdated
 
 .. toctree::
    :numbered:
-   :maxdepth: 2
    :caption: Outdated:
 
    goal

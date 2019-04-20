@@ -16,6 +16,7 @@ import os
 import sys
 from pprint import pprint
 
+# sys.path.insert(0, os.path.abspath('../..'))
 sys.path.insert(0, os.path.abspath('../..'))
 
 pprint (sys.path)
@@ -23,7 +24,7 @@ pprint (sys.path)
 # -- Project information -----------------------------------------------------
 
 project = 'Cloudmesh v4'
-copyright = '2018, Cloudmesh Community'
+copyright = '2018-2019, Cloudmesh Community'
 author = 'Cloudmesh Community'
 
 # The short X.Y version

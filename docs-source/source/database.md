@@ -23,6 +23,13 @@ We list in the next section examples of such data objects
 
 ### Openstack
 
+The compute provider kind is `openstack`. The Provider is located at 
+
+* <https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/virtualbox/Provider.py>
+
+This provder should not be used, but you need to use the general provider at
+
+* <https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/vm/Provider.py>
 
 #### Flavor
 
@@ -158,6 +165,15 @@ We list in the next section examples of such data objects
 
 ## Azure AzProvider
 
+
+The compute provider kind is `azure`. The Provider is located at 
+
+* <https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/virtualbox/Provider.py>
+
+This provder should not be used, but you need to use the general provider at
+
+* <https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py>
+
 ### Flavor
 
 ### Image
@@ -165,6 +181,15 @@ We list in the next section examples of such data objects
 ### VM
 
 ## Azure MS Azure Library Provider
+
+The compute provider kind is `MISSING`. The Provider is located at 
+
+* <MISSING>
+
+This provder should not be used, but you need to use the general provider at
+
+* <https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py>
+
 
 ### Flavor
 
@@ -174,6 +199,15 @@ We list in the next section examples of such data objects
 
 ## AWS Libcloud Provider
 
+The compute provider kind is `MISSING`. The Provider is located at 
+
+* <MISSING>
+
+This provder should not be used, but you need to use the general provider at
+
+* <https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py>
+
+
 ### Flavor
 
 ### Image
@@ -181,6 +215,15 @@ We list in the next section examples of such data objects
 ### VM
 
 ## AWS Boto3 Provider
+
+
+The compute provider kind is `MISSING`. The Provider is located at 
+
+* <MISSING>
+
+This provder should not be used, but you need to use the general provider at
+
+* <https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py>
 
 ### Flavor
 
@@ -190,7 +233,25 @@ We list in the next section examples of such data objects
 
 ## Storage
 
+
+The storage provider kind is `MISSING`. The Provider is located at 
+
+* <MISSING>
+
+This provder should not be used, but you need to use the general provider at
+
+* <https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py>
+
 ### Box
+
+The storage provider kind is `box`. The Provider is located at 
+
+* <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/box/Provider.py>
+
+This provder should not be used, but you need to use the general provider at
+
+* <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py>
+
 
 #### Directory
 
@@ -198,11 +259,29 @@ We list in the next section examples of such data objects
 
 ### Azure Blob
 
+
+The storage provider kind is `azureblob`. The Provider is located at 
+
+* <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/azureblob/Provider.py>
+
+This provder should not be used, but you need to use the general provider at
+
+* <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py>
+
 #### Directory
 
 #### File
 
 ### AWSS3 the one from cloudmesh-cloud
+
+
+The storage provider kind is `awss3`. The Provider is located at 
+
+* <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/awss3/Provider.py>
+
+This provder should not be used, but you need to use the general provider at
+
+* <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py>
 
 #### Directory
 
@@ -213,12 +292,33 @@ We list in the next section examples of such data objects
 It is unclear waht the difference to AWSS3 the one from cloudmesh-cloud is
 Please explain. If its the same, let us know and we shoudl merge
 
+
+The storage provider kind is `objstorage`. The Provider is located at 
+
+* UNCLEAR IF IT DUPLICATES awss3 
+
+This provder should not be used, but you need to use the general provider at
+
+* <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py>
+
+
 #### Directory
 
 #### File
 
 
 ### Google Drive
+
+
+
+The storage provider kind is `gdrive`. The Provider is located at 
+
+* <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/gdrive/Provider.py>
+
+This provder should not be used, but you need to use the general provider at
+
+* <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py>
+
 
 #### Directory
 
@@ -231,11 +331,21 @@ we may need ta add an option --force for this provider and always ask if
 we wnat to delete the files while shoing them first. This could even be a reason
 to introduce it in all providers.
 
+
+
+The storage provider kind is `local`. The Provider is located at 
+
+* <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/local/Provider.py>
+
+This provder should not be used, but you need to use the general provider at
+
+* <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py>
+
+
+
 #### Directory
 
 #### File
-
-
 
 
 

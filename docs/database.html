@@ -1,0 +1,774 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. Cloudmesh Database &mdash; Cloudmesh v4 alpha documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Code Documentation" href="code/code.html" />
+    <link rel="prev" title="3. vdir" href="manual/storage/vdir.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Cloudmesh v4
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.0.28
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">PREFACE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">2. Contributors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">INSTALATION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">2. Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/configuration.html">3. Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="yaml.html">4. Cloudmesh yaml file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mongo.html">5. Cloudmesh Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/encryption.html">6. Cloudmesh Yaml file Encrytion (TODO)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">COMPUTE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vm.html">1. Virtual Machine Management (proposed)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">STORAGE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="README-storage.html">1. Cloudmesh Multi Cloud Storage Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README-storage.html#cloudmesh-storage-module">2. Cloudmesh Storage Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objectstore.html">3. Object Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README-storage-openapi.html">4. Cloudmesh Multi Cloud Open API Interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">WORKFLOW</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">1. Infrastructure Workflow (proposed)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">2. Jupyter Integration (proposed)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MANUAL PAGES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="manual-cmd5.html">1. Manual Cmd5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual-compute.html">1. Compute Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual-storage.html">3. Storage Manual Pages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Database</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Cloudmesh Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#virtual-machines">1.1. Virtual Machines</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#openstack">1.1.1. Openstack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#flavor">1.1.1.1. Flavor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#image">1.1.1.2. Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vm">1.1.1.3. VM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#azure-azprovider">1.2. Azure AzProvider</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1.2.1. Flavor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">1.2.2. Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">1.2.3. VM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#azure-ms-azure-library-provider">1.3. Azure MS Azure Library Provider</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">1.3.1. Flavor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">1.3.2. Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">1.3.3. VM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#aws-libcloud-provider">1.4. AWS Libcloud Provider</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">1.4.1. Flavor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">1.4.2. Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">1.4.3. VM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#aws-boto3-provider">1.5. AWS Boto3 Provider</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">1.5.1. Flavor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">1.5.2. Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">1.5.3. VM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#storage">1.6. Storage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#box">1.6.1. Box</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#directory">1.6.1.1. Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#file">1.6.1.2. File</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#azure-blob">1.6.2. Azure Blob</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id13">1.6.2.1. Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">1.6.2.2. File</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#awss3-the-one-from-cloudmesh-cloud">1.6.3. AWSS3 the one from cloudmesh-cloud</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id15">1.6.3.1. Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">1.6.3.2. File</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#awss3-the-one-from-cloudmesh-objstore">1.6.4. AWSS3 the one from cloudmesh-objstore</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id17">1.6.4.1. Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">1.6.4.2. File</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#google-drive">1.6.5. Google Drive</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id19">1.6.5.1. Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">1.6.5.2. File</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#local">1.6.6. Local</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id21">1.6.6.1. Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id22">1.6.6.2. File</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow">1.7. Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#emr">1.8. Emr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hpc">1.9. HPC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#batch">1.9.1. Batch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#queue">1.9.2. Queue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#job">1.9.3. Job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#keys">1.10. Keys</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">CODE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code/code.html">1. Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/common.html">2. Common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/cmd5.html">3. CMD5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/cloudmesh.html">4. Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/management.html">5. Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/mongo.html">6. Mongo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/commands.html">7. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/inventory.html">8. Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/storage.html">9. cloudmesh-storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/cloud.html">10. cloudmesh-cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/batch.html">11. cloudmesh-batch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/emr.html">12. cloudmesh-emr</a></li>
+</ul>
+<p class="caption"><span class="caption-text">CONTRIBUTION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">1. Code Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pytest.html">2. Pytest</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cloud Accounts:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="accounts/storage-gdrive.html">1. Google Storage Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts/google-ufo.html">2. Google (What is this?)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts/accountcreation.html">3. VM Providers (outdated)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Outdated:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="goal.html">1. Goal (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="goal.html#manual-cloudmesh-multi-service-data-access">2. Manual: Cloudmesh Multi Service Data Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vagrant.html">3. Vagrant (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CM4README.html">4. CM4 Details (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aws.html">5. AWS cm (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ufo.html">6. REST Service (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vcluster.html">7. Virtual Cluster (in progress)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Cloudmesh v4</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>1. Cloudmesh Database</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/database.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cloudmesh-database">
+<h1>1. Cloudmesh Database<a class="headerlink" href="#cloudmesh-database" title="Permalink to this headline">¶</a></h1>
+<p>Cloudmesh has a database in whic a local copy of information about objects that
+are stored in the cloud is maintained. The objects contain all information of
+the cloud that can be retrieved with the raw provider but are enhanced with a
+cloudmesh attribute dict. Potential security related attributes, will hoever be removed from it so they are not stored in the database.</p>
+<p>This dict looks like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;cm&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="n">the</span> <span class="n">kind</span> <span class="n">of</span> <span class="n">the</span> <span class="n">provider</span>
+   <span class="s2">&quot;cloud&quot;</span><span class="p">:</span> <span class="n">the</span> <span class="n">cloud</span> <span class="ow">or</span> <span class="n">service</span> <span class="n">name</span><span class="p">,</span> <span class="n">will</span> <span class="n">be</span> <span class="n">renamed</span> <span class="n">to</span> <span class="n">service</span> <span class="ow">in</span> <span class="n">future</span><span class="p">)</span>
+   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">a</span> <span class="n">unique</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">object</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We list in the next section examples of such data objects</p>
+<div class="section" id="virtual-machines">
+<h2>1.1. Virtual Machines<a class="headerlink" href="#virtual-machines" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="openstack">
+<h3>1.1.1. Openstack<a class="headerlink" href="#openstack" title="Permalink to this headline">¶</a></h3>
+<p>The compute provider kind is <code class="docutils literal notranslate"><span class="pre">openstack</span></code>. The Provider is located at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/virtualbox/Provider.py">https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/virtualbox/Provider.py</a></p></li>
+</ul>
+<p>This provder should not be used, but you need to use the general provider at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/vm/Provider.py">https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/vm/Provider.py</a></p></li>
+</ul>
+<div class="section" id="flavor">
+<h4>1.1.1.1. Flavor<a class="headerlink" href="#flavor" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s2">&quot;5ca798a7dc64f18b19e644e1&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;m1.tiny&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ram&quot;</span> <span class="p">:</span> <span class="mi">512</span><span class="p">,</span>
+    <span class="s2">&quot;disk&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;bandwidth&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;price&quot;</span> <span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="s2">&quot;extra&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+    <span class="s2">&quot;vcpus&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;ephemeral_disk&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;swap&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cm&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;kind&quot;</span> <span class="p">:</span> <span class="s2">&quot;flavor&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;driver&quot;</span> <span class="p">:</span> <span class="s2">&quot;openstack&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;cloud&quot;</span> <span class="p">:</span> <span class="s2">&quot;chameleon&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-05 18:04:23.621043&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;m1.tiny&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;collection&quot;</span> <span class="p">:</span> <span class="s2">&quot;chameleon-flavor&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-06 06:50:23.894035&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;updated&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-06 06:50:23.867695&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="image">
+<h4>1.1.1.2. Image<a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s2">&quot;5ca798abdc64f18b19e644e9&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;4c8e6dac-97f0-4224-b7a2-0daef96b5c9f&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;CC-Ubuntu16.04&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;extra&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;visibility&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;updated&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-03-25T21:21:06Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-03-25T21:20:51Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;progress&quot;</span> <span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;metadata&quot;</span> <span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;build-repo-commit&quot;</span> <span class="p">:</span> <span class="s2">&quot;4ba0beb418de52f0d3bf93a94392b662d653c073&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;build-variant&quot;</span> <span class="p">:</span> <span class="s2">&quot;base&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;build-os-base-image-revision&quot;</span> <span class="p">:</span> <span class="s2">&quot;20190325&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;build-os&quot;</span> <span class="p">:</span> <span class="s2">&quot;ubuntu-xenial&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;build-tag&quot;</span> <span class="p">:</span> <span class="s2">&quot;jenkins-cc-ubuntu16.04-builder-34&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;build-repo&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://github.com/ChameleonCloud/CC-Ubuntu16.04&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;os_type&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;serverId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;minDisk&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;minRam&quot;</span> <span class="p">:</span> <span class="mi">0</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;cm&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;kind&quot;</span> <span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;driver&quot;</span> <span class="p">:</span> <span class="s2">&quot;openstack&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;cloud&quot;</span> <span class="p">:</span> <span class="s2">&quot;chameleon&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-05 18:04:27.417958&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;updated&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-03-25T21:21:06Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;CC-Ubuntu16.04&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;collection&quot;</span> <span class="p">:</span> <span class="s2">&quot;chameleon-image&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-06 06:50:33.747656&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="vm">
+<h4>1.1.1.3. VM<a class="headerlink" href="#vm" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s2">&quot;5ca798acdc64f18b19e6454e&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;f531d2df-c472-4b32-8239-0e3969d33ebb&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;exp-grp-gregor-vm-1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;state&quot;</span> <span class="p">:</span> <span class="s2">&quot;running&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;public_ips&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+    <span class="s2">&quot;private_ips&quot;</span> <span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;192.168.0.249&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;size&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;created_at&quot;</span> <span class="p">:</span> <span class="n">ISODate</span><span class="p">(</span><span class="s2">&quot;2019-04-01T11:05:56.000-04:00&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;image&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;extra&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;addresses&quot;</span> <span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;CH-819337-net&quot;</span> <span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;OS-EXT-IPS-MAC:mac_addr&quot;</span> <span class="p">:</span> <span class="s2">&quot;fa:16:3e:9d:ca:c2&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;version&quot;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                    <span class="s2">&quot;addr&quot;</span> <span class="p">:</span> <span class="s2">&quot;192.168.0.249&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;OS-EXT-IPS:type&quot;</span> <span class="p">:</span> <span class="s2">&quot;fixed&quot;</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;hostId&quot;</span> <span class="p">:</span> <span class="s2">&quot;64472a496451a2d599c215a8e86275191c9e3fb9d53790de35bbb6dc&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;access_ip&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;access_ipv6&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="s2">&quot;CH-819337&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;userId&quot;</span> <span class="p">:</span> <span class="s2">&quot;tg455498&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;imageId&quot;</span> <span class="p">:</span> <span class="s2">&quot;4c8e6dac-97f0-4224-b7a2-0daef96b5c9f&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;flavorId&quot;</span> <span class="p">:</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;uri&quot;</span> <span class="p">:</span> <span class="s2">&quot;http://openstack.tacc.chameleoncloud.org:8774/v2/CH-819337/servers/f531d2df-c472-4b32-8239-0e3969d33ebb&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;service_name&quot;</span> <span class="p">:</span> <span class="s2">&quot;nova&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;metadata&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;password&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-01T15:05:56Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;updated&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-01T15:06:06Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;key_name&quot;</span> <span class="p">:</span> <span class="s2">&quot;gregor&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;disk_config&quot;</span> <span class="p">:</span> <span class="s2">&quot;MANUAL&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;config_drive&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;availability_zone&quot;</span> <span class="p">:</span> <span class="s2">&quot;nova&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;volumes_attached&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;task_state&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;vm_state&quot;</span> <span class="p">:</span> <span class="s2">&quot;active&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;power_state&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;progress&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;fault&quot;</span> <span class="p">:</span> <span class="n">null</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;cm&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;kind&quot;</span> <span class="p">:</span> <span class="s2">&quot;node&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;driver&quot;</span> <span class="p">:</span> <span class="s2">&quot;openstack&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;cloud&quot;</span> <span class="p">:</span> <span class="s2">&quot;chameleon&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;updated&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-06 06:50:35.592158&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;exp-grp-gregor-vm-1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-05 18:04:28.376784&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;collection&quot;</span> <span class="p">:</span> <span class="s2">&quot;chameleon-node&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-06 06:50:35.596479&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="azure-azprovider">
+<h2>1.2. Azure AzProvider<a class="headerlink" href="#azure-azprovider" title="Permalink to this headline">¶</a></h2>
+<p>The compute provider kind is <code class="docutils literal notranslate"><span class="pre">azure</span></code>. The Provider is located at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/virtualbox/Provider.py">https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/virtualbox/Provider.py</a></p></li>
+</ul>
+<p>This provder should not be used, but you need to use the general provider at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py">https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py</a></p></li>
+</ul>
+<div class="section" id="id1">
+<h3>1.2.1. Flavor<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id2">
+<h3>1.2.2. Image<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id3">
+<h3>1.2.3. VM<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="azure-ms-azure-library-provider">
+<h2>1.3. Azure MS Azure Library Provider<a class="headerlink" href="#azure-ms-azure-library-provider" title="Permalink to this headline">¶</a></h2>
+<p>The compute provider kind is <code class="docutils literal notranslate"><span class="pre">MISSING</span></code>. The Provider is located at</p>
+<ul>
+<li><MISSING></li>
+</ul>
+<p>This provder should not be used, but you need to use the general provider at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py">https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py</a></p></li>
+</ul>
+<div class="section" id="id4">
+<h3>1.3.1. Flavor<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id5">
+<h3>1.3.2. Image<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id6">
+<h3>1.3.3. VM<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="aws-libcloud-provider">
+<h2>1.4. AWS Libcloud Provider<a class="headerlink" href="#aws-libcloud-provider" title="Permalink to this headline">¶</a></h2>
+<p>The compute provider kind is <code class="docutils literal notranslate"><span class="pre">MISSING</span></code>. The Provider is located at</p>
+<ul>
+<li><MISSING></li>
+</ul>
+<p>This provder should not be used, but you need to use the general provider at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py">https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py</a></p></li>
+</ul>
+<div class="section" id="id7">
+<h3>1.4.1. Flavor<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id8">
+<h3>1.4.2. Image<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id9">
+<h3>1.4.3. VM<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="aws-boto3-provider">
+<h2>1.5. AWS Boto3 Provider<a class="headerlink" href="#aws-boto3-provider" title="Permalink to this headline">¶</a></h2>
+<p>The compute provider kind is <code class="docutils literal notranslate"><span class="pre">MISSING</span></code>. The Provider is located at</p>
+<ul>
+<li><MISSING></li>
+</ul>
+<p>This provder should not be used, but you need to use the general provider at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py">https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py</a></p></li>
+</ul>
+<div class="section" id="id10">
+<h3>1.5.1. Flavor<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id11">
+<h3>1.5.2. Image<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id12">
+<h3>1.5.3. VM<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="storage">
+<h2>1.6. Storage<a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h2>
+<p>The storage provider kind is <code class="docutils literal notranslate"><span class="pre">MISSING</span></code>. The Provider is located at</p>
+<ul>
+<li><MISSING></li>
+</ul>
+<p>This provder should not be used, but you need to use the general provider at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py">https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py</a></p></li>
+</ul>
+<div class="section" id="box">
+<h3>1.6.1. Box<a class="headerlink" href="#box" title="Permalink to this headline">¶</a></h3>
+<p>The storage provider kind is <code class="docutils literal notranslate"><span class="pre">box</span></code>. The Provider is located at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/box/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/box/Provider.py</a></p></li>
+</ul>
+<p>This provder should not be used, but you need to use the general provider at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py</a></p></li>
+</ul>
+<div class="section" id="directory">
+<h4>1.6.1.1. Directory<a class="headerlink" href="#directory" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="file">
+<h4>1.6.1.2. File<a class="headerlink" href="#file" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="azure-blob">
+<h3>1.6.2. Azure Blob<a class="headerlink" href="#azure-blob" title="Permalink to this headline">¶</a></h3>
+<p>The storage provider kind is <code class="docutils literal notranslate"><span class="pre">azureblob</span></code>. The Provider is located at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/azureblob/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/azureblob/Provider.py</a></p></li>
+</ul>
+<p>This provder should not be used, but you need to use the general provider at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py</a></p></li>
+</ul>
+<div class="section" id="id13">
+<h4>1.6.2.1. Directory<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id14">
+<h4>1.6.2.2. File<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="awss3-the-one-from-cloudmesh-cloud">
+<h3>1.6.3. AWSS3 the one from cloudmesh-cloud<a class="headerlink" href="#awss3-the-one-from-cloudmesh-cloud" title="Permalink to this headline">¶</a></h3>
+<p>The storage provider kind is <code class="docutils literal notranslate"><span class="pre">awss3</span></code>. The Provider is located at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/awss3/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/awss3/Provider.py</a></p></li>
+</ul>
+<p>This provder should not be used, but you need to use the general provider at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py</a></p></li>
+</ul>
+<div class="section" id="id15">
+<h4>1.6.3.1. Directory<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id16">
+<h4>1.6.3.2. File<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="awss3-the-one-from-cloudmesh-objstore">
+<h3>1.6.4. AWSS3 the one from cloudmesh-objstore<a class="headerlink" href="#awss3-the-one-from-cloudmesh-objstore" title="Permalink to this headline">¶</a></h3>
+<p>It is unclear waht the difference to AWSS3 the one from cloudmesh-cloud is
+Please explain. If its the same, let us know and we shoudl merge</p>
+<p>The storage provider kind is <code class="docutils literal notranslate"><span class="pre">objstorage</span></code>. The Provider is located at</p>
+<ul class="simple">
+<li><p>UNCLEAR IF IT DUPLICATES awss3</p></li>
+</ul>
+<p>This provder should not be used, but you need to use the general provider at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py</a></p></li>
+</ul>
+<div class="section" id="id17">
+<h4>1.6.4.1. Directory<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id18">
+<h4>1.6.4.2. File<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="google-drive">
+<h3>1.6.5. Google Drive<a class="headerlink" href="#google-drive" title="Permalink to this headline">¶</a></h3>
+<p>The storage provider kind is <code class="docutils literal notranslate"><span class="pre">gdrive</span></code>. The Provider is located at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/gdrive/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/gdrive/Provider.py</a></p></li>
+</ul>
+<p>This provder should not be used, but you need to use the general provider at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py</a></p></li>
+</ul>
+<div class="section" id="id19">
+<h4>1.6.5.1. Directory<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id20">
+<h4>1.6.5.2. File<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="local">
+<h3>1.6.6. Local<a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h3>
+<p>This has not been tested yet, so be careful as it could remove local dir trees.
+we may need ta add an option –force for this provider and always ask if
+we wnat to delete the files while shoing them first. This could even be a reason
+to introduce it in all providers.</p>
+<p>The storage provider kind is <code class="docutils literal notranslate"><span class="pre">local</span></code>. The Provider is located at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/local/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/local/Provider.py</a></p></li>
+</ul>
+<p>This provder should not be used, but you need to use the general provider at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py</a></p></li>
+</ul>
+<div class="section" id="id21">
+<h4>1.6.6.1. Directory<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id22">
+<h4>1.6.6.2. File<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="workflow">
+<h2>1.7. Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="mi">2</span> <span class="o">*/</span>
+<span class="p">{</span>
+    <span class="s2">&quot;_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s2">&quot;5cbc414e20b39a69d014efec&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dependencies&quot;</span> <span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;c&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;workflow&quot;</span> <span class="p">:</span> <span class="s2">&quot;workflow&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cm&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;kind&quot;</span> <span class="p">:</span> <span class="s2">&quot;flow&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;cloud&quot;</span> <span class="p">:</span> <span class="s2">&quot;workflow&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;collection&quot;</span> <span class="p">:</span> <span class="s2">&quot;workflow-flow&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-21 10:09:18.887115&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-21 10:09:18.887115&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;kind&quot;</span> <span class="p">:</span> <span class="s2">&quot;flow&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cloud&quot;</span> <span class="p">:</span> <span class="s2">&quot;workflow&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="emr">
+<h2>1.8. Emr<a class="headerlink" href="#emr" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="hpc">
+<h2>1.9. HPC<a class="headerlink" href="#hpc" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="batch">
+<h3>1.9.1. Batch<a class="headerlink" href="#batch" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="queue">
+<h3>1.9.2. Queue<a class="headerlink" href="#queue" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="job">
+<h3>1.9.3. Job<a class="headerlink" href="#job" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="keys">
+<h2>1.10. Keys<a class="headerlink" href="#keys" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s2">&quot;5ca79c92dc64f1905d924234&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;gregor&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fingerprint&quot;</span> <span class="p">:</span> <span class="s2">&quot;aa:aa:bb:11:22:33:88:98:13:74:8a:3b:6a:5a:b2:5d&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;public_key&quot;</span> <span class="p">:</span> <span class="s2">&quot;ssh-rsa xxxxxxxxx ... gregor@nowhere test&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;private_key&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;extra&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+    <span class="s2">&quot;cm&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;kind&quot;</span> <span class="p">:</span> <span class="s2">&quot;key&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;driver&quot;</span> <span class="p">:</span> <span class="s2">&quot;openstack&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;cloud&quot;</span> <span class="p">:</span> <span class="s2">&quot;chameleon&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;gregor&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;collection&quot;</span> <span class="p">:</span> <span class="s2">&quot;chameleon-key&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-05 18:21:06.898856&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-06 06:50:30.975625&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code/code.html" class="btn btn-neutral float-right" title="1. Code Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="manual/storage/vdir.html" class="btn btn-neutral float-left" title="3. vdir" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-2019, Cloudmesh Community
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

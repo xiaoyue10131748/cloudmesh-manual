@@ -467,7 +467,323 @@ This provder should not be used, but you need to use the general provider at
 }
 ```
 
-## Emr
+## EMR
+
+### Cluster Listing
+
+```
+{
+	"_id" : ObjectId("5cae2f2176cd490cac627e04"),
+	"cm" : {
+		"cloud" : "aws",
+		"kind" : "emr cluster list",
+		"name" : "emr",
+		"collection" : "aws-emr cluster list",
+		"created" : "2019-04-10 18:00:01.850862",
+		"modified" : "2019-04-10 18:00:55.341485"
+	},
+	"data" : [
+		{
+			"Id" : "j-XXXXXXXXXXXXX",
+			"Name" : "NAME",
+			"Status" : {
+				"State" : "TERMINATED",
+				"StateChangeReason" : {
+					"Code" : "USER_REQUEST",
+					"Message" : "Terminated by user request"
+				},
+				"Timeline" : {
+					"CreationDateTime" : ISODate("2019-04-04T01:38:26.595Z"),
+					"EndDateTime" : ISODate("2019-04-04T01:43:53.907Z")
+				}
+			},
+			"NormalizedInstanceHours" : 0
+		},
+      ...
+	]
+}
+```
+### Instance Listing
+
+```
+{
+	"_id" : ObjectId("5cae36b976cd490de715a25a"),
+	"cm" : {
+		"cloud" : "aws",
+		"kind" : "emr instance list",
+		"name" : "j-XXXXXXXXXXXXX",
+		"collection" : "aws-emr instance list",
+		"created" : "2019-04-10 18:32:25.886579",
+		"modified" : "2019-04-10 18:32:39.244152"
+	},
+	"data" : [
+		{
+			"Id" : "ci-XXXXXXXXXXXXX",
+			"Ec2InstanceId" : "i-XXXXXXXXXXXXX",
+			"PublicDnsName" : "ec2-54-193-70-173.us-west-1.compute.amazonaws.com",
+			"PublicIpAddress" : "54.193.70.173",
+			"PrivateDnsName" : "ip-172-31-10-13.us-west-1.compute.internal",
+			"PrivateIpAddress" : "172.31.10.13",
+			"Status" : {
+				"State" : "TERMINATED",
+				"StateChangeReason" : {
+					"Code" : "INSTANCE_FAILURE",
+					"Message" : "Instance was terminated."
+				},
+				"Timeline" : {
+					"CreationDateTime" : ISODate("2019-04-04T01:39:20.733Z"),
+					"ReadyDateTime" : ISODate("2019-04-04T01:42:11.677Z"),
+					"EndDateTime" : ISODate("2019-04-04T01:43:53.810Z")
+				}
+			},
+			"InstanceGroupId" : "ig-XXXXXXXXXXXXX",
+			"Market" : "ON_DEMAND",
+			"InstanceType" : "m4.xlarge",
+			"EbsVolumes" : [
+				{
+					"Device" : "/dev/sdb",
+					"VolumeId" : "vol-0255d0ae88dbbe78f"
+				},
+				{
+					"Device" : "/dev/sdc",
+					"VolumeId" : "vol-0092cf772c4cb49d6"
+				}
+			]
+		}
+      ...
+	]
+}
+```
+
+### Cluster Description
+
+```
+{
+	"_id" : ObjectId("5cae3acd76cd490f74997607"),
+	"cm" : {
+		"cloud" : "aws",
+		"kind" : "emr cluster description",
+		"name" : "j-2KJT8GO4RV4VR",
+		"collection" : "aws-emr cluster description",
+		"created" : "2019-04-10 18:49:49.923422",
+		"modified" : "2019-04-10 18:49:49.923422"
+	},
+	"data" : {
+		"Id" : "j-XXXXXXXXXXXXX",
+		"Name" : "NAME",
+		"Status" : {
+			"State" : "TERMINATED",
+			"StateChangeReason" : {
+				"Code" : "USER_REQUEST",
+				"Message" : "Terminated by user request"
+			},
+			"Timeline" : {
+				"CreationDateTime" : ISODate("2019-04-04T01:38:26.595Z"),
+				"EndDateTime" : ISODate("2019-04-04T01:43:53.907Z")
+			}
+		},
+		"Ec2InstanceAttributes" : {
+			"RequestedEc2SubnetIds" : [ ],
+			"Ec2AvailabilityZone" : "us-west-1c",
+			"RequestedEc2AvailabilityZones" : [ ],
+			"IamInstanceProfile" : "EMR_EC2_DefaultRole",
+			"EmrManagedMasterSecurityGroup" : "sg-XXXXXXXXXXXXX",
+			"EmrManagedSlaveSecurityGroup" : "sg-XXXXXXXXXXXXX"
+		},
+		"InstanceCollectionType" : "INSTANCE_GROUP",
+		"ReleaseLabel" : "emr-5.22.0",
+		"AutoTerminate" : false,
+		"TerminationProtected" : false,
+		"VisibleToAllUsers" : true,
+		"Applications" : [
+			{
+				"Name" : "Spark",
+				"Version" : "2.4.0"
+			},
+			{
+				"Name" : "Hadoop",
+				"Version" : "2.8.5"
+			}
+		],
+		"Tags" : [ ],
+		"ServiceRole" : "EMR_DefaultRole",
+		"NormalizedInstanceHours" : 0,
+		"MasterPublicDnsName" : "ec2-54-193-70-173.us-west-1.compute.amazonaws.com",
+		"Configurations" : [ ],
+		"ScaleDownBehavior" : "TERMINATE_AT_TASK_COMPLETION",
+		"KerberosAttributes" : {
+			
+		}
+	}
+}
+```
+
+### Copy File Request
+
+```
+{
+	"_id" : ObjectId("5cae3c7576cd49129fde9fd7"),
+	"cm" : {
+		"cloud" : "aws",
+		"kind" : "emr copy file request",
+		"name" : "test.md",
+		"collection" : "aws-emr copy file request",
+		"created" : "2019-04-10 18:56:53.568585",
+		"modified" : "2019-04-10 18:56:53.568585"
+	},
+	"data" : {
+		"StepIds" : [
+			"s-XXXXXXXXXXXXX"
+		],
+		"ResponseMetadata" : {
+			"RequestId" : "077a0182-5bc2-11e9-a7ff-118a03244614",
+			"HTTPStatusCode" : 200,
+			"HTTPHeaders" : {
+				"x-amzn-requestid" : "077a0182-5bc2-11e9-a7ff-118a03244614",
+				"content-type" : "application/x-amz-json-1.1",
+				"content-length" : "30",
+				"date" : "Wed, 10 Apr 2019 18:54:11 GMT"
+			},
+			"RetryAttempts" : 0
+		}
+	}
+}
+```
+
+### File Upload
+
+```
+{
+	"_id" : ObjectId("5cae3c3576cd49120a3a0513"),
+	"cm" : {
+		"cloud" : "aws",
+		"kind" : "emr file upload",
+		"name" : "test.md",
+		"collection" : "aws-emr file upload",
+		"created" : "2019-04-10 18:55:49.612897",
+		"modified" : "2019-04-10 18:55:49.612897"
+	},
+	"data" : {
+		"file" : "LICENSE",
+		"bucket" : "BUCKET NAME",
+		"bucketname" : "FILE NAME"
+	}
+}
+```
+
+### Run File Request
+
+```
+{
+	"_id" : ObjectId("5cae3c8e76cd4913333930cc"),
+	"cm" : {
+		"cloud" : "aws",
+		"kind" : "emr run file request",
+		"name" : "main.py",
+		"collection" : "aws-emr run file request",
+		"created" : "2019-04-10 18:57:18.893398",
+		"modified" : "2019-04-10 18:57:18.893398"
+	},
+	"data" : {
+		"StepIds" : [
+			"s-XXXXXXXXXXXXX"
+		],
+		"ResponseMetadata" : {
+			"RequestId" : "16944707-5bc2-11e9-ab7c-333f036e49a6",
+			"HTTPStatusCode" : 200,
+			"HTTPHeaders" : {
+				"x-amzn-requestid" : "16944707-5bc2-11e9-ab7c-333f036e49a6",
+				"content-type" : "application/x-amz-json-1.1",
+				"content-length" : "30",
+				"date" : "Wed, 10 Apr 2019 18:54:36 GMT"
+			},
+			"RetryAttempts" : 0
+		}
+	}
+}
+```
+
+### Start Cluster Request
+
+```
+{
+	"_id" : ObjectId("5cae3ba776cd4910291c2bbf"),
+	"cm" : {
+		"cloud" : "aws",
+		"kind" : "emr start cluster request",
+		"name" : "temp12",
+		"collection" : "aws-emr start cluster request",
+		"created" : "2019-04-10 18:53:27.965266",
+		"modified" : "2019-04-10 18:53:27.965266"
+	},
+	"data" : {
+		"cluster" : "j-XXXXXXXXXXXXX",
+		"name" : "NAME"
+	}
+}
+```
+
+### Stop Cluster Request
+
+```
+{
+	"_id" : ObjectId("5cae3c9c76cd4913c74b5060"),
+	"cm" : {
+		"cloud" : "aws",
+		"kind" : "emr stop cluster request",
+		"name" : "j-XXXXXXXXXXXXX",
+		"collection" : "aws-emr stop cluster request",
+		"created" : "2019-04-10 18:57:32.779245",
+		"modified" : "2019-04-10 18:57:32.779245"
+	},
+	"data" : {
+		"name" : "j-XXXXXXXXXXXXX"
+	}
+}
+```
+
+### Step List
+
+```
+{
+	"_id" : ObjectId("5cae3ac276cd490f2ae1c8b7"),
+	"cm" : {
+		"cloud" : "aws",
+		"kind" : "emr step list",
+		"name" : "j-2KJT8GO4RV4VR",
+		"collection" : "aws-emr step list",
+		"created" : "2019-04-10 18:49:38.921115",
+		"modified" : "2019-04-10 18:49:38.921115"
+	},
+	"data" : [
+		{
+			"Id" : "s-XXXXXXXXXXXXX",
+			"Name" : "Run main.py",
+			"Config" : {
+				"Jar" : "command-runner.jar",
+				"Properties" : {
+					
+				},
+				"Args" : [
+					"spark-submit",
+					"s3://BUCKET/FILENAME.py"
+				]
+			},
+			"ActionOnFailure" : "CANCEL_AND_WAIT",
+			"Status" : {
+				"State" : "CANCELLED",
+				"StateChangeReason" : {
+					"Message" : "Job terminated"
+				},
+				"Timeline" : {
+					"CreationDateTime" : ISODate("2019-04-04T01:42:11.574Z")
+				}
+			}
+		},
+		...
+	]
+}
+```
 
 ## HPC
 

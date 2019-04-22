@@ -10,7 +10,8 @@ define banner
 endef
 
 all:
-	echo done
+	$(call banner, "use: make doc")
+
 
 source:
 	cd ../cloudmesh.common; make source

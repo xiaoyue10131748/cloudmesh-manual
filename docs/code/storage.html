@@ -107,7 +107,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../README-storage.html">1. Cloudmesh Multi Cloud Storage Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../README-storage.html#cloudmesh-storage-module">2. Cloudmesh Storage Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../README-storage-openapi.html">3. Cloudmesh Multi Cloud Open API Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../objectstore.html">3. Object Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README-storage-openapi.html">4. Cloudmesh Multi Cloud Open API Interface</a></li>
 </ul>
 <p class="caption"><span class="caption-text">WORKFLOW</span></p>
 <ul>
@@ -117,8 +118,12 @@
 <p class="caption"><span class="caption-text">MANUAL PAGES</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../manual-cmd5.html">1. Manual Cmd5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual-compute.html">2. Compute Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual-compute.html">1. Compute Manual Pages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual-storage.html">3. Storage Manual Pages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Database</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database.html">1. Cloudmesh Database</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CODE</span></p>
 <ul class="current">
@@ -298,14 +303,11 @@ version: 1.0</p>
 <p>default location is credentials.directory / default.directory</p>
 <dl class="method">
 <dt id="cloudmesh.storage.provider.local.Provider.Provider.create_dir">
-<code class="descname">create_dir</code><span class="sig-paren">(</span><em>service=None</em>, <em>directory=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/storage/provider/local/Provider.html#Provider.create_dir"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.storage.provider.local.Provider.Provider.create_dir" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create_dir</code><span class="sig-paren">(</span><em>directory=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/storage/provider/local/Provider.html#Provider.create_dir"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.storage.provider.local.Provider.Provider.create_dir" title="Permalink to this definition">¶</a></dt>
 <dd><p>creates a directory</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>service</strong> – the name of the service in the yaml file</p></li>
-<li><p><strong>directory</strong> – the name of the directory</p></li>
-</ul>
+<dd class="field-odd"><p><strong>directory</strong> – the name of the directory</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>dict</p>
@@ -320,7 +322,6 @@ version: 1.0</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>service</strong> – the name of the service in the yaml file</p></li>
 <li><p><strong>source</strong> – the source which either can be a directory or file</p></li>
 <li><p><strong>recursive</strong> – in case of directory the recursive referes to all
 subdirectories in the specified source</p></li>
@@ -334,12 +335,11 @@ subdirectories in the specified source</p></li>
 
 <dl class="method">
 <dt id="cloudmesh.storage.provider.local.Provider.Provider.get">
-<code class="descname">get</code><span class="sig-paren">(</span><em>source=None</em>, <em>service=None</em>, <em>destination=None</em>, <em>recusrive=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/storage/provider/local/Provider.html#Provider.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.storage.provider.local.Provider.Provider.get" title="Permalink to this definition">¶</a></dt>
-<dd><p>gets the destination and copies it in source</p>
+<code class="descname">get</code><span class="sig-paren">(</span><em>source=None</em>, <em>destination=None</em>, <em>recusrive=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/storage/provider/local/Provider.html#Provider.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.storage.provider.local.Provider.Provider.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets the source and copies it in destination</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>service</strong> – the name of the service in the yaml file</p></li>
 <li><p><strong>source</strong> – the source which either can be a directory or file</p></li>
 <li><p><strong>destination</strong> – the destination which either can be a directory or
 file</p></li>
@@ -373,12 +373,11 @@ subdirectories in the specified source</p></li>
 
 <dl class="method">
 <dt id="cloudmesh.storage.provider.local.Provider.Provider.put">
-<code class="descname">put</code><span class="sig-paren">(</span><em>source=None</em>, <em>service=None</em>, <em>destination=None</em>, <em>recusrive=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/storage/provider/local/Provider.html#Provider.put"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.storage.provider.local.Provider.Provider.put" title="Permalink to this definition">¶</a></dt>
+<code class="descname">put</code><span class="sig-paren">(</span><em>source=None</em>, <em>destination=None</em>, <em>recusrive=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/storage/provider/local/Provider.html#Provider.put"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.storage.provider.local.Provider.Provider.put" title="Permalink to this definition">¶</a></dt>
 <dd><p>puts the source on the service</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>service</strong> – the name of the service in the yaml file</p></li>
 <li><p><strong>source</strong> – the source which either can be a directory or file</p></li>
 <li><p><strong>destination</strong> – the destination which either can be a directory or
 file</p></li>
@@ -409,6 +408,16 @@ subdirectories in the specified source</p></li>
 <dd class="field-even"><p>dict</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.storage.provider.local.Provider.Provider.tree">
+<code class="descname">tree</code><span class="sig-paren">(</span><em>directory=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/storage/provider/local/Provider.html#Provider.tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.storage.provider.local.Provider.Provider.tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints a fisual representation of the files and directories
+:param directory:
+:type directory:
+:return:
+:rtype:</p>
 </dd></dl>
 
 </dd></dl>

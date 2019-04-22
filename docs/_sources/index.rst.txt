@@ -31,6 +31,7 @@ Cloudmesh Version 4
    :caption: STORAGE
 
    README-storage.md
+   objectstore.md
    README-storage-openapi.md
 
 .. toctree::
@@ -50,6 +51,15 @@ MAMUAL PAGES
    manual-cmd5
    manual-compute
    manual-storage
+
+DATABASE OBJECTS
+================
+
+.. toctree::
+   :numbered:
+   :caption: Database
+
+   database
 
 
 CODE

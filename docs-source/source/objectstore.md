@@ -10,7 +10,7 @@ At this time we do not offer this ~~but it will be~~
 
 Gregor will set this up, so please do not do this yourself. 
 
-# Instalation for Developers
+## Instalation for Developers
 
 This install only works if you use ssh-keys with github
 
@@ -29,9 +29,9 @@ cd cloudmesh-objstorage
 pip install -e .
 ```
 
-# Cloudmesh Object Storage Interfaces
+## Cloudmesh Object Storage Interfaces
 
-## Object Storage with ASW S3
+### Object Storage with ASW S3
 
 Object Storage is one of the feature in AWS S3 and this feature integrated with cloudmesh library and is available 
 for use via commandline. 
@@ -108,10 +108,10 @@ cms shell.
 $ cms objstorage --objstorage='awss3' list ''
 ```
 
-### objstorage functions overview
+### Objstorage Functionality
 
 
-### Create Object Directory 
+## Create Object Directory 
 
 This command helps to create a new bucket before storage an object on AWS S3. You must specify the 
 full path of the new directory you would like to create. 
@@ -120,7 +120,7 @@ full path of the new directory you would like to create.
 $ cms objstorage --objstorage='awss3' create bucket_name /base_path/
 ```
 
-### Put
+## Put
 
 The put command uploads object from your local system to AWS S3 object storage 
 
@@ -129,7 +129,7 @@ $ cms objstorage --objstorage='awss3' put ~/.cloudmesh/objstorage/src /base_path
 ```
 
 
-### Get
+## Get
 
 The put command retrieve or download a object from AWS S3 object storage 
 
@@ -138,7 +138,7 @@ $ cms objstorage --objstorage='awss3' get /bucket_name/src ~/.cloudmesh/objstora
 ```
 
 
-### Search
+## Search
 
 The advantage of search command to search a given object in specified bucket location
 
@@ -147,7 +147,7 @@ The advantage of search command to search a given object in specified bucket loc
 $ cms objstorage --objstorage='aws3' search //bucket_name/dest "<<objectname>>" --recursive
 ```
 
-### List
+## List
 
 The list command lists all the contents of a cloud object details. If the recursive 
 option is specified, it will list the contents of all the nested objects information 
@@ -157,7 +157,7 @@ $ cms objstorage --objstorage='awss3' list /bucket_name/dest --recursive
 ```
 
 
-### Delete
+## Delete
 
 The delete command can delete objects on cloud storage. Once object deletes it will never be rollback and delete applicable to nested objects when function `--recursive` used. 
 Deleting a folder will delete its contents as well (including the 

@@ -2,14 +2,15 @@ objstorage
 ==========
 
 ::
+
   Usage:
-        objstorage [--objstorage=SERVICE] create dir DIRECTORY
-        objstorage [--objstorage=SERVICE] copy SOURCE DESTINATION [--recursive]
-        objstorage [--objstorage=SERVICE] get SOURCE DESTINATION [--recursive]
-        objstorage [--objstorage=SERVICE] put SOURCE DESTINATION [--recursive]
-        objstorage [--objstorage=SERVICE] list SOURCE [--recursive] [--output=OUTPUT]
-        objstorage [--objstorage=SERVICE] delete SOURCE
-        objstorage [--objstorage=SERVICE] search  DIRECTORY FILENAME [--recursive] [--output=OUTPUT]
+        objstorage [--service=SERVICE] create dir DIRECTORY
+        objstorage [--service=SERVICE] copy SOURCE DESTINATION [--recursive]
+        objstorage [--service=SERVICE] get SOURCE DESTINATION [--recursive]
+        objstorage [--service=SERVICE] put SOURCE DESTINATION [--recursive]
+        objstorage [--service=SERVICE] list SOURCE [--recursive] [--output=OUTPUT]
+        objstorage [--service=SERVICE] delete SOURCE
+        objstorage [--service=SERVICE] search  DIRECTORY FILENAME [--recursive] [--output=OUTPUT]
 
   This command does some useful things.
 
@@ -20,7 +21,7 @@ objstorage
 
   Options:
       -h, --help
-      --objstorage=SERVICE  specify the cloud service name like aws-s3
+      --service=SERVICE  specify the cloud service name like aws-s3
 
   Description:
         commands used to upload, download, list files on different cloud objstorage services.
@@ -47,5 +48,5 @@ objstorage
     set objstorage=s3object
     objstorage put SOURCE DESTINATION --recursive
     is the same as
-    objstorage --objstorage=s3object put SOURCE DESTINATION --recursive
+    objstorage --service=s3object put SOURCE DESTINATION --recursive
 

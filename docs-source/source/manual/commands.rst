@@ -1,10 +1,11 @@
 Commands
 ========
 
-EOF        data     image      network     quit      ssh        vbox    
-admin      default  info       objstorage  secgroup  stopwatch  vcluster
-banner     echo     inventory  open        set       storage    vdir    
-clear      flavor   key        pause       shell     sys        version 
-config     flow     login      plugin      sleep     url        vm      
-container  help     man        q           source    var        workflow
+EOF        data     image      objstorage  secgroup   storage   version 
+admin      default  info       open        set        sys       vm      
+banner     echo     inventory  pause       shell      url       workflow
+batch      emr      key        plugin      sleep      var     
+clear      flavor   login      q           source     vbox    
+config     flow     man        queue       ssh        vcluster
+container  help     network    quit        stopwatch  vdir    
 

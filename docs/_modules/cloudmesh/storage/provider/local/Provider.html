@@ -105,7 +105,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../README-storage.html">1. Cloudmesh Multi Cloud Storage Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../README-storage.html#cloudmesh-storage-module">2. Cloudmesh Storage Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../README-storage-openapi.html">3. Cloudmesh Multi Cloud Open API Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../objectstore.html">3. Object Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../README-storage-openapi.html">4. Cloudmesh Multi Cloud Open API Interface</a></li>
 </ul>
 <p class="caption"><span class="caption-text">WORKFLOW</span></p>
 <ul>
@@ -115,8 +116,12 @@
 <p class="caption"><span class="caption-text">MANUAL PAGES</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../manual-cmd5.html">1. Manual Cmd5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../manual-compute.html">2. Compute Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../manual-compute.html">1. Compute Manual Pages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../manual-storage.html">3. Storage Manual Pages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Database</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../database.html">1. Cloudmesh Database</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CODE</span></p>
 <ul>
@@ -221,11 +226,12 @@
 
 <span class="kn">from</span> <span class="nn">cloudmesh.common.util</span> <span class="k">import</span> <span class="n">path_expand</span>
 <span class="kn">from</span> <span class="nn">cloudmesh.common.util</span> <span class="k">import</span> <span class="n">writefile</span>
-<span class="kn">from</span> <span class="nn">cloudmesh.storage.StorageABC</span> <span class="k">import</span> <span class="n">StorageABC</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.storage.StorageNewABC</span> <span class="k">import</span> <span class="n">StorageABC</span>
 <span class="kn">from</span> <span class="nn">cloudmesh.DEBUG</span> <span class="k">import</span> <span class="n">VERBOSE</span>
 <span class="kn">import</span> <span class="nn">shutil</span>
 <span class="kn">from</span> <span class="nn">os</span> <span class="k">import</span> <span class="n">stat</span>
 <span class="kn">from</span> <span class="nn">pwd</span> <span class="k">import</span> <span class="n">getpwuid</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.common.Shell</span> <span class="k">import</span> <span class="n">Shell</span>
 
 <span class="kn">from</span> <span class="nn">grp</span> <span class="k">import</span> <span class="n">getgrgid</span>
 
@@ -317,16 +323,15 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">create_dir</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
         <span class="n">writefile</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Provider.create_dir"><a class="viewcode-back" href="../../../../../code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.create_dir">[docs]</a>    <span class="k">def</span> <span class="nf">create_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                   <span class="n">service</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                   <span class="n">directory</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Provider.create_dir"><a class="viewcode-back" href="../../../../../code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.create_dir">[docs]</a>    <span class="k">def</span> <span class="nf">create_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        creates a directory</span>
 
-<span class="sd">        :param service: the name of the service in the yaml file</span>
 <span class="sd">        :param directory: the name of the directory</span>
 <span class="sd">        :return: dict</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+        <span class="c1">#appand path from yaml file</span>
 
         <span class="n">d</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path_expand</span><span class="p">(</span><span class="n">directory</span><span class="p">)))</span>
         <span class="n">d</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -354,11 +359,10 @@
             <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span></div>
 
-<div class="viewcode-block" id="Provider.put"><a class="viewcode-back" href="../../../../../code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.put">[docs]</a>    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">service</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">recusrive</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Provider.put"><a class="viewcode-back" href="../../../../../code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.put">[docs]</a>    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">recusrive</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        puts the source on the service</span>
 
-<span class="sd">        :param service: the name of the service in the yaml file</span>
 <span class="sd">        :param source: the source which either can be a directory or file</span>
 <span class="sd">        :param destination: the destination which either can be a directory or</span>
 <span class="sd">                            file</span>
@@ -367,21 +371,22 @@
 <span class="sd">        :return: dict</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="n">files</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dirname</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">recusrive</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+            <span class="n">src</span> <span class="o">=</span> <span class="n">path_expand</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+            <span class="n">dest</span> <span class="o">=</span> <span class="n">path_expand</span><span class="p">(</span><span class="n">destination</span><span class="p">)</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">src</span> <span class="o">=</span> <span class="n">path_expand</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+            <span class="n">dest</span> <span class="o">=</span> <span class="n">path_expand</span><span class="p">(</span><span class="n">destination</span><span class="p">)</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
 
-        <span class="n">src</span> <span class="o">=</span> <span class="n">path_expand</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-        <span class="n">dest</span> <span class="o">=</span> <span class="n">path_expand</span><span class="p">(</span><span class="n">destination</span><span class="p">)</span>
-        <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="p">()</span></div>
 
-        <span class="k">return</span> <span class="p">[]</span></div>
-
-<div class="viewcode-block" id="Provider.get"><a class="viewcode-back" href="../../../../../code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">service</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">recusrive</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Provider.get"><a class="viewcode-back" href="../../../../../code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">recusrive</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        gets the destination and copies it in source</span>
+<span class="sd">        gets the source and copies it in destination</span>
 
-<span class="sd">        :param service: the name of the service in the yaml file</span>
 <span class="sd">        :param source: the source which either can be a directory or file</span>
 <span class="sd">        :param destination: the destination which either can be a directory or</span>
 <span class="sd">                            file</span>
@@ -389,21 +394,32 @@
 <span class="sd">                          subdirectories in the specified source</span>
 <span class="sd">        :return: dict</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
-        <span class="k">return</span> <span class="p">[]</span></div>
+        <span class="n">destination</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dirname</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">recusrive</span><span class="p">:</span>
+            <span class="n">src</span> <span class="o">=</span> <span class="n">path_expand</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+            <span class="n">dest</span> <span class="o">=</span> <span class="n">path_expand</span><span class="p">(</span><span class="n">destination</span><span class="p">)</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">src</span> <span class="o">=</span> <span class="n">path_expand</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+            <span class="n">dest</span> <span class="o">=</span> <span class="n">path_expand</span><span class="p">(</span><span class="n">destination</span><span class="p">)</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="p">()</span></div>
+
 
 <div class="viewcode-block" id="Provider.delete"><a class="viewcode-back" href="../../../../../code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.delete">[docs]</a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">recusrive</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        deletes the source</span>
 
-<span class="sd">        :param service: the name of the service in the yaml file</span>
 <span class="sd">        :param source: the source which either can be a directory or file</span>
 <span class="sd">        :param recursive: in case of directory the recursive referes to all</span>
 <span class="sd">                          subdirectories in the specified source</span>
 <span class="sd">        :return: dict</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
-        <span class="k">return</span> <span class="p">[]</span></div>
+        <span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dirname</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">path_expand</span><span class="p">(</span><span class="n">source</span><span class="p">))</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">content</span></div>
 
 <div class="viewcode-block" id="Provider.search"><a class="viewcode-back" href="../../../../../code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.search">[docs]</a>    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                <span class="n">directory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -427,7 +443,12 @@
         <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;cm&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
                 <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">result</span></div></div>
+        <span class="k">return</span> <span class="n">result</span></div>
+
+<div class="viewcode-block" id="Provider.tree"><a class="viewcode-back" href="../../../../../code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.tree">[docs]</a>    <span class="k">def</span> <span class="nf">tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dirname</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">Shell</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;tree </span><span class="si">{source}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="n">r</span><span class="p">)</span></div></div>
 </pre></div>
 
            </div>

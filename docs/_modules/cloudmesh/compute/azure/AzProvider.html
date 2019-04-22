@@ -229,7 +229,10 @@
 <span class="kn">from</span> <span class="nn">cloudmesh.common.Shell</span> <span class="k">import</span> <span class="n">Shell</span>
 <span class="kn">from</span> <span class="nn">cloudmesh.common.StopWatch</span> <span class="k">import</span> <span class="n">StopWatch</span>
 <span class="kn">import</span> <span class="nn">time</span>
-
+<span class="kn">from</span> <span class="nn">cloudmesh.management.configuration.config</span> <span class="k">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.abstractclass.ComputeNodeABC</span> <span class="k">import</span> <span class="n">ComputeNodeABC</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.DEBUG</span> <span class="k">import</span> <span class="n">VERBOSE</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.common.util</span> <span class="k">import</span> <span class="n">path_expand</span>
 
 <span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">decorated_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -242,7 +245,7 @@
     <span class="k">return</span> <span class="n">decorated_func</span>
 
 
-<div class="viewcode-block" id="Provider"><a class="viewcode-back" href="../../../../code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider">[docs]</a><span class="k">class</span> <span class="nc">Provider</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Provider"><a class="viewcode-back" href="../../../../code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider">[docs]</a><span class="k">class</span> <span class="nc">Provider</span><span class="p">(</span><span class="n">ComputeNodeABC</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">    az commands</span>
@@ -257,8 +260,82 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resourcegroup</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="k">pass</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    # THIS NEED STO BE DEFINED ONCE WE SEE THE OUTPUT</span>
+<span class="sd">    </span>
+<span class="sd">    output = {</span>
+
+<span class="sd">        &quot;vm&quot;: {</span>
+<span class="sd">            &quot;sort_keys&quot;: [&quot;cm.name&quot;],</span>
+<span class="sd">            &quot;order&quot;: [&quot;cm.name&quot;,</span>
+<span class="sd">                      &quot;cm.cloud&quot;,</span>
+<span class="sd">                      &quot;state&quot;,</span>
+<span class="sd">                      &quot;image&quot;,</span>
+<span class="sd">                      &quot;public_ips&quot;,</span>
+<span class="sd">                      &quot;private_ips&quot;,</span>
+<span class="sd">                      &quot;cm.kind&quot;],</span>
+<span class="sd">            &quot;header&quot;: [&quot;cm.name&quot;,</span>
+<span class="sd">                       &quot;cm.cloud&quot;,</span>
+<span class="sd">                       &quot;state&quot;,</span>
+<span class="sd">                       &quot;image&quot;,</span>
+<span class="sd">                       &quot;public_ips&quot;,</span>
+<span class="sd">                       &quot;private_ips&quot;,</span>
+<span class="sd">                       &quot;cm.kind&quot;]</span>
+<span class="sd">        },</span>
+<span class="sd">        &quot;image&quot;: {&quot;sort_keys&quot;: [&quot;cm.name&quot;,</span>
+<span class="sd">                                &quot;extra.minDisk&quot;],</span>
+<span class="sd">                  &quot;order&quot;: [&quot;cm.name&quot;,</span>
+<span class="sd">                            &quot;extra.minDisk&quot;,</span>
+<span class="sd">                            &quot;updated&quot;,</span>
+<span class="sd">                            &quot;cm.driver&quot;],</span>
+<span class="sd">                  &quot;header&quot;: [&quot;Name&quot;,</span>
+<span class="sd">                             &quot;MinDisk&quot;,</span>
+<span class="sd">                             &quot;Updated&quot;,</span>
+<span class="sd">                             &quot;Driver&quot;]},</span>
+<span class="sd">        &quot;flavor&quot;: {&quot;sort_keys&quot;: [&quot;cm.name&quot;,</span>
+<span class="sd">                                 &quot;vcpus&quot;,</span>
+<span class="sd">                                 &quot;disk&quot;],</span>
+<span class="sd">                   &quot;order&quot;: [&quot;cm.name&quot;,</span>
+<span class="sd">                             &quot;vcpus&quot;,</span>
+<span class="sd">                             &quot;ram&quot;,</span>
+<span class="sd">                             &quot;disk&quot;],</span>
+<span class="sd">                   &quot;header&quot;: [&quot;Name&quot;,</span>
+<span class="sd">                              &quot;VCPUS&quot;,</span>
+<span class="sd">                              &quot;RAM&quot;,</span>
+<span class="sd">                              &quot;Disk&quot;]}</span>
+
+<span class="sd">    }</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">configuration</span><span class="o">=</span><span class="s2">&quot;~/.cloudmesh/cloudmesh4.yaml&quot;</span><span class="p">):</span>
+        <span class="n">configuration</span> <span class="o">=</span> <span class="n">path_expand</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span>
+        <span class="n">conf</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">configuration</span><span class="p">)[</span><span class="s2">&quot;cloudmesh&quot;</span><span class="p">]</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">configuration</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">conf</span><span class="p">[</span><span class="s2">&quot;profile&quot;</span><span class="p">][</span><span class="s2">&quot;user&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spec</span> <span class="o">=</span> <span class="n">conf</span><span class="p">[</span><span class="s2">&quot;cloud&quot;</span><span class="p">][</span><span class="n">name</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cloud</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">cred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec</span><span class="p">[</span><span class="s2">&quot;credentials&quot;</span><span class="p">]</span>
+        <span class="n">deft</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec</span><span class="p">[</span><span class="s2">&quot;default&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cloudtype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec</span><span class="p">[</span><span class="s2">&quot;cm&quot;</span><span class="p">][</span><span class="s2">&quot;kind&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">resource_group</span> <span class="o">=</span> <span class="n">cred</span><span class="p">[</span><span class="s2">&quot;resourcegroup&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">credentials</span> <span class="o">=</span> <span class="n">cred</span>
+
+    <span class="k">def</span> <span class="nf">update_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entry</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;node&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s2">&quot;cm&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">entry</span><span class="p">:</span>
+            <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;cm&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;cm&quot;</span><span class="p">][</span><span class="s2">&quot;kind&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kind</span>
+        <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;cm&quot;</span><span class="p">][</span><span class="s2">&quot;driver&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cloudtype</span>
+        <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;cm&quot;</span><span class="p">][</span><span class="s2">&quot;cloud&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cloud</span>
+        <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;cm&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">entry</span>
+
+    <span class="k">def</span> <span class="nf">update_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_dict</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span>
+
 
     <span class="nd">@timer</span>
     <span class="k">def</span> <span class="nf">az</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">):</span>
@@ -307,111 +384,109 @@
     <span class="k">def</span> <span class="nf">list_resource_group</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">az</span><span class="p">(</span><span class="s2">&quot;az group list&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">create_vm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                  <span class="n">resource_group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                  <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                  <span class="n">image</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                  <span class="n">username</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Provider.create"><a class="viewcode-back" href="../../../../code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">username</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span>
+
         <span class="c1"># first check if vm exists, if it does return error</span>
         <span class="n">command</span> <span class="o">=</span> \
             <span class="s2">&quot;az vm create&quot;</span> \
-                <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{resource_group}</span><span class="s2">&quot;</span> \
+                <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{self.resource_group}</span><span class="s2">&quot;</span> \
                 <span class="n">f</span><span class="s2">&quot; --name </span><span class="si">{name}</span><span class="s2">&quot;</span> \
                 <span class="n">f</span><span class="s2">&quot; --image </span><span class="si">{image}</span><span class="s2">&quot;</span> \
                 <span class="n">f</span><span class="s2">&quot; --admin-username </span><span class="si">{username}</span><span class="s2">&quot;</span> \
                 <span class="n">f</span><span class="s2">&quot; --generate-ssh-keys&quot;</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">az</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">az</span><span class="p">(</span><span class="n">command</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">delete_vm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                  <span class="n">resource_group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                  <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stop_vm</span><span class="p">(</span><span class="n">resource_group</span><span class="o">=</span><span class="n">resource_group</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">destroy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
         <span class="n">command</span> <span class="o">=</span> \
             <span class="s2">&quot;az vm delete --yes&quot;</span> \
-                <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{resource_group}</span><span class="s2">&quot;</span> \
+                <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{self.resource_group}</span><span class="s2">&quot;</span> \
                 <span class="n">f</span><span class="s2">&quot; --name </span><span class="si">{name}</span><span class="s2">&quot;</span>
         <span class="c1"># print(command)</span>
         <span class="c1"># r = Shell.execute(command, shell=True)</span>
+        <span class="c1"># BUG MUST RETURN A DICT</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">az_2</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">list_vm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                <span class="n">resource_group</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Provider.list"><a class="viewcode-back" href="../../../../code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.list">[docs]</a>    <span class="k">def</span> <span class="nf">list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">command</span> <span class="o">=</span> \
                 <span class="s2">&quot;az vm list&quot;</span> \
-                    <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{resource_group}</span><span class="s2">&quot;</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">az</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+                    <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{self.resource_group}</span><span class="s2">&quot;</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">az</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_list</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="n">VERBOSE</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span>
         <span class="k">except</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">[]</span>
+            <span class="k">return</span> <span class="p">[]</span></div>
 
-    <span class="k">def</span> <span class="nf">status_vm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                  <span class="n">resource_group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                  <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Provider.info"><a class="viewcode-back" href="../../../../code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.info">[docs]</a>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">command</span> <span class="o">=</span> <span class="n">f</span><span class="s2">&quot;az vm show&quot;</span> \
+            <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{self.resource_group}</span><span class="s2">&quot;</span> \
+            <span class="n">f</span><span class="s2">&quot; --name </span><span class="si">{name}</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">az</span><span class="p">(</span><span class="n">command</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">command</span> <span class="o">=</span> \
             <span class="s2">&quot;az vm get-instance-view&quot;</span> \
                 <span class="n">f</span><span class="s2">&quot; --name </span><span class="si">{name}</span><span class="s2">&quot;</span> \
-                <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{resource_group}</span><span class="s2">&quot;</span> \
+                <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{self.resource_group}</span><span class="s2">&quot;</span> \
                 <span class="n">f</span><span class="s2">&quot; --query instanceView.statuses[1]&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">az</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">stop_vm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                <span class="n">resource_group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Provider.stop"><a class="viewcode-back" href="../../../../code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">command</span> <span class="o">=</span> \
             <span class="n">f</span><span class="s2">&quot;az vm stop&quot;</span> \
-                <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{resource_group}</span><span class="s2">&quot;</span> \
+                <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{self.resource_group}</span><span class="s2">&quot;</span> \
                 <span class="n">f</span><span class="s2">&quot; --name </span><span class="si">{name}</span><span class="s2">&quot;</span>
         <span class="c1"># print(command)</span>
         <span class="c1"># r = Shell.execute(command, shell=True)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">az_2</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">az_2</span><span class="p">(</span><span class="n">command</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">start_vm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                 <span class="n">resource_group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                 <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Provider.start"><a class="viewcode-back" href="../../../../code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">command</span> <span class="o">=</span> \
             <span class="n">f</span><span class="s2">&quot;az vm start&quot;</span> \
-                <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{resource_group}</span><span class="s2">&quot;</span> \
+                <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{self.resource_group}</span><span class="s2">&quot;</span> \
                 <span class="n">f</span><span class="s2">&quot; --name </span><span class="si">{name}</span><span class="s2">&quot;</span>
         <span class="c1"># return self.az(command)</span>
         <span class="c1"># print(command)</span>
         <span class="c1"># r = Shell.execute(command, shell=True)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">az_2</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+        <span class="c1"># MUST BE RETURNING A DICT</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">az_2</span><span class="p">(</span><span class="n">command</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">restart_vm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                   <span class="n">resource_group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                   <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">restart</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">command</span> <span class="o">=</span> \
             <span class="n">f</span><span class="s2">&quot;az vm restart&quot;</span> \
-                <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{resource_group}</span><span class="s2">&quot;</span> \
+                <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{self.resource_group}</span><span class="s2">&quot;</span> \
                 <span class="n">f</span><span class="s2">&quot; --name </span><span class="si">{name}</span><span class="s2">&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">az</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">ssh_vm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-               <span class="n">user</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-               <span class="n">command</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-               <span class="n">resource_group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># we need to get the ip not pass it</span>
-               <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="n">ip</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_ip_vm</span><span class="p">(</span><span class="n">resource_group</span><span class="o">=</span><span class="n">resource_group</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">ssh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">user</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">command</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">ip</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_ip</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
         <span class="n">address</span> <span class="o">=</span> <span class="n">ip</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;virtualMachine&#39;</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">][</span><span class="s1">&#39;publicIpAddresses&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span>
             <span class="s1">&#39;ipAddress&#39;</span><span class="p">]</span>
         <span class="n">c</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;ssh -o &quot;StrictHostKeyChecking no&quot; </span><span class="si">{user}</span><span class="s1">@</span><span class="si">{address}</span><span class="s1"> </span><span class="si">{command}</span><span class="s1">&#39;</span>
         <span class="k">return</span> <span class="n">Shell</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">get_ip_vm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                  <span class="n">resource_group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                  <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_ip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+
+               <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">command</span> <span class="o">=</span> <span class="n">f</span><span class="s2">&quot;az vm list-ip-addresses&quot;</span> \
-            <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{resource_group}</span><span class="s2">&quot;</span> \
+            <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{self.resource_group}</span><span class="s2">&quot;</span> \
             <span class="n">f</span><span class="s2">&quot; --name </span><span class="si">{name}</span><span class="s2">&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">az</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">connect_vm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                   <span class="n">resource_group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                   <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                   <span class="n">user</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+
+                <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                <span class="n">user</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;connecting to vm...&quot;</span><span class="p">)</span>
-        <span class="n">ip</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_ip_vm</span><span class="p">(</span><span class="n">resource_group</span><span class="o">=</span><span class="n">resource_group</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">ip</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_ip</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
         <span class="n">address</span> <span class="o">=</span> <span class="n">ip</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;virtualMachine&#39;</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">][</span><span class="s1">&#39;publicIpAddresses&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span>
             <span class="s1">&#39;ipAddress&#39;</span><span class="p">]</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">address</span><span class="p">)</span>
@@ -425,6 +500,7 @@
         <span class="n">command</span> <span class="o">=</span> \
             <span class="s2">&quot;az vm image list&quot;</span> \
                 <span class="n">f</span><span class="s2">&quot; --location </span><span class="si">{location}</span><span class="s2">&quot;</span>
+        <span class="c1"># THIS OUGHT TO RETURN A DICT</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">az_2</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">list_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
@@ -432,42 +508,54 @@
         <span class="n">command</span> <span class="o">=</span> \
             <span class="s2">&quot;az vm list-sizes&quot;</span> \
                 <span class="n">f</span><span class="s2">&quot; --location </span><span class="si">{location}</span><span class="s2">&quot;</span>
+        <span class="c1"># THIS SHOUL RETURN A DICT</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">az_2</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">connect_to_all_vm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                          <span class="n">resource_group</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="n">vm_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_vm</span><span class="p">(</span><span class="n">resource_group</span><span class="o">=</span><span class="n">resource_group</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">connect_to_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">vm_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vm_list</span><span class="p">)):</span>
             <span class="n">vm_name</span> <span class="o">=</span> <span class="n">vm_list</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
             <span class="n">username</span> <span class="o">=</span> <span class="n">vm_list</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;osProfile&#39;</span><span class="p">][</span><span class="s1">&#39;adminUsername&#39;</span><span class="p">]</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">wait_orig</span><span class="p">(</span><span class="n">resource_group</span><span class="p">,</span> <span class="n">vm_name</span><span class="p">,</span> <span class="n">username</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wait_orig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resource_group</span><span class="p">,</span> <span class="n">vm_name</span><span class="p">,</span> <span class="n">username</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">wait_orig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                  <span class="n">resource_group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+
                   <span class="n">vm_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                   <span class="n">username</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                   <span class="n">time</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
         <span class="n">re_try</span> <span class="o">=</span> <span class="mi">5</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;connecting to: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vm_name</span><span class="p">))</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_vm</span><span class="p">(</span><span class="n">resource_group</span><span class="o">=</span><span class="n">resource_group</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">vm_name</span><span class="p">,</span>
-                                <span class="n">user</span><span class="o">=</span><span class="n">username</span><span class="p">)</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">vm_name</span><span class="p">,</span>
+                <span class="n">user</span><span class="o">=</span><span class="n">username</span><span class="p">)</span>
         <span class="k">except</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">re_try</span><span class="p">):</span>
                 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span>
                     <span class="mi">120</span><span class="p">)</span>  <span class="c1"># wait for two minutes before re-try to connect</span>
-                <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_vm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource_group</span><span class="o">=</span><span class="n">resource_group</span><span class="p">,</span>
-                                         <span class="n">name</span><span class="o">=</span><span class="n">vm_name</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">username</span><span class="p">)</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+
+                                      <span class="n">name</span><span class="o">=</span><span class="n">vm_name</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">username</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
                     <span class="k">break</span>
 
-    <span class="k">def</span> <span class="nf">info_vm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                <span class="n">resource_group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="n">command</span> <span class="o">=</span> <span class="n">f</span><span class="s2">&quot;az vm show&quot;</span> \
-            <span class="n">f</span><span class="s2">&quot; --resource-group </span><span class="si">{resource_group}</span><span class="s2">&quot;</span> \
-            <span class="n">f</span><span class="s2">&quot; --name </span><span class="si">{name}</span><span class="s2">&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">az</span><span class="p">(</span><span class="n">command</span><span class="p">)</span></div>
+<div class="viewcode-block" id="Provider.rename"><a class="viewcode-back" href="../../../../code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.rename">[docs]</a>    <span class="k">def</span> <span class="nf">rename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+        <span class="c1"># RETURN A DICT</span>
+
+<div class="viewcode-block" id="Provider.resume"><a class="viewcode-back" href="../../../../code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.resume">[docs]</a>    <span class="k">def</span> <span class="nf">resume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+        <span class="c1"># THIS SHOUL RETURN A DICT</span>
+
+
+<div class="viewcode-block" id="Provider.suspend"><a class="viewcode-back" href="../../../../code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.suspend">[docs]</a>    <span class="k">def</span> <span class="nf">suspend</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+        <span class="c1"># THIS SHOUL RETURN A DICT</span>
+
+
+<div class="viewcode-block" id="Provider.destroy"><a class="viewcode-back" href="../../../../code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.destroy">[docs]</a>    <span class="k">def</span> <span class="nf">destroy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div></div>
+        <span class="c1"># THIS SHOUL RETURN A DICT</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -487,46 +575,45 @@
     <span class="c1"># print(type(r))</span>
     <span class="c1"># pprint(r)</span>
 
-    <span class="n">r</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">list_vm</span><span class="p">(</span><span class="n">resource_group</span><span class="o">=</span><span class="n">group</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
     <span class="n">pprint</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 
     <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    r = p.create_vm(resource_group=group,</span>
+<span class="sd">    r = p.create(</span>
 <span class="sd">                    name=name,</span>
 <span class="sd">                    image=&quot;UbuntuLTS&quot;,</span>
 <span class="sd">                    username=&quot;ubuntu&quot;)</span>
 <span class="sd">    print(type(r))</span>
 <span class="sd">    pprint(r)</span>
 <span class="sd">    </span>
-<span class="sd">    r = p.list_vm(resource_group=group)</span>
+<span class="sd">    r = p.list()</span>
 <span class="sd">    print(type(r))</span>
 <span class="sd">    pprint(r)</span>
 <span class="sd">    </span>
 <span class="sd">    # az vm get-instance-view --name vm3 --resource-group test1 --query instanceView.statuses[1]</span>
 <span class="sd">    </span>
-<span class="sd">    r = p.status_vm(resource_group=group,</span>
+<span class="sd">    r = p.status(</span>
 <span class="sd">                    name=name)</span>
 <span class="sd">    print(type(r))</span>
 <span class="sd">    pprint(r)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
-    <span class="n">r</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">ssh_vm</span><span class="p">(</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">ssh</span><span class="p">(</span>
         <span class="n">user</span><span class="o">=</span><span class="s2">&quot;ubuntu&quot;</span><span class="p">,</span>
-        <span class="n">resource_group</span><span class="o">=</span><span class="n">group</span><span class="p">,</span>
         <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
         <span class="n">command</span><span class="o">=</span><span class="s2">&quot;uname -a&quot;</span><span class="p">)</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 
     <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    r = p.delete_vm(resource_group=group,</span>
+<span class="sd">    r = p.delete(</span>
 <span class="sd">                    name=name)</span>
 <span class="sd">    </span>
 <span class="sd">    print(type(r))</span>
 <span class="sd">    pprint(r)</span>
 <span class="sd">    </span>
-<span class="sd">    r = p.list_vm(resource_group=group)</span>
+<span class="sd">    r = p.list()</span>
 <span class="sd">    print(type(r))</span>
 <span class="sd">    pprint(r)</span>
 <span class="sd">    &#39;&#39;&#39;</span>

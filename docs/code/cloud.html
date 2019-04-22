@@ -594,11 +594,138 @@ the specified name argument.</p>
 
 <span class="target" id="module-cloudmesh.url.command.url"></span><span class="target" id="module-cloudmesh.image.api.manager"></span><span class="target" id="module-cloudmesh.image.command.image"></span><span class="target" id="module-cloudmesh.image.Image"></span><span class="target" id="module-cloudmesh.container.command.container"></span><span class="target" id="module-cloudmesh.vm.api.manager"></span><span class="target" id="module-cloudmesh.vm.command.vm"></span><span class="target" id="module-cloudmesh.ssh.api.manager"></span><span class="target" id="module-cloudmesh.ssh.command.ssh"></span><span class="target" id="module-cloudmesh.compute.docker.Provider"></span><span class="target" id="module-cloudmesh.compute.azure.AzProvider"></span><dl class="class">
 <dt id="cloudmesh.compute.azure.AzProvider.Provider">
-<em class="property">class </em><code class="descclassname">cloudmesh.compute.azure.AzProvider.</code><code class="descname">Provider</code><span class="sig-paren">(</span><em>resourcegroup=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/compute/azure/AzProvider.html#Provider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.compute.azure.AzProvider.Provider" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">cloudmesh.compute.azure.AzProvider.</code><code class="descname">Provider</code><span class="sig-paren">(</span><em>name=None</em>, <em>configuration='~/.cloudmesh/cloudmesh4.yaml'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/compute/azure/AzProvider.html#Provider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.compute.azure.AzProvider.Provider" title="Permalink to this definition">¶</a></dt>
 <dd><p>az commands</p>
 <p><a class="reference external" href="https://docs.microsoft.com/en-us/cli/azure/reference-index?view=azure-cli-latest">https://docs.microsoft.com/en-us/cli/azure/reference-index?view=azure-cli-latest</a></p>
 <p>create the</p>
 <p><a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal">https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal</a></p>
+<dl class="method">
+<dt id="cloudmesh.compute.azure.AzProvider.Provider.create">
+<code class="descname">create</code><span class="sig-paren">(</span><em>name=None</em>, <em>image=None</em>, <em>size=None</em>, <em>timeout=360</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/compute/azure/AzProvider.html#Provider.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.compute.azure.AzProvider.Provider.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>creates a named node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – the name of the node</p></li>
+<li><p><strong>image</strong> – the image used</p></li>
+<li><p><strong>size</strong> – the size of the image</p></li>
+<li><p><strong>timeout</strong> – a timeout in seconds that is invoked in case the image does not boot.
+The default is set to 3 minutes.</p></li>
+<li><p><strong>kwargs</strong> – additional arguments passed along at time of boot</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.compute.azure.AzProvider.Provider.destroy">
+<code class="descname">destroy</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/compute/azure/AzProvider.html#Provider.destroy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.compute.azure.AzProvider.Provider.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroys the node
+:param name: the name of the node
+:return: the dict of the node</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.compute.azure.AzProvider.Provider.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/compute/azure/AzProvider.html#Provider.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.compute.azure.AzProvider.Provider.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets the information of a node with a given name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The dict representing the node including updated status</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.compute.azure.AzProvider.Provider.list">
+<code class="descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/compute/azure/AzProvider.html#Provider.list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.compute.azure.AzProvider.Provider.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>list all nodes id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>an array of dicts representing the nodes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.compute.azure.AzProvider.Provider.rename">
+<code class="descname">rename</code><span class="sig-paren">(</span><em>name=None</em>, <em>destination=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/compute/azure/AzProvider.html#Provider.rename"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.compute.azure.AzProvider.Provider.rename" title="Permalink to this definition">¶</a></dt>
+<dd><p>rename a node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>destination</strong> – </p></li>
+<li><p><strong>name</strong> – the current name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the dict with the new name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.compute.azure.AzProvider.Provider.resume">
+<code class="descname">resume</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/compute/azure/AzProvider.html#Provider.resume"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.compute.azure.AzProvider.Provider.resume" title="Permalink to this definition">¶</a></dt>
+<dd><p>resume the named node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – the name of the node</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the dict of the node</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.compute.azure.AzProvider.Provider.start">
+<code class="descname">start</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/compute/azure/AzProvider.html#Provider.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.compute.azure.AzProvider.Provider.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>start a node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – the unique node name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The dict representing the node</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.compute.azure.AzProvider.Provider.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/compute/azure/AzProvider.html#Provider.stop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.compute.azure.AzProvider.Provider.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>stops the node with the given name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The dict representing the node including updated status</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.compute.azure.AzProvider.Provider.suspend">
+<code class="descname">suspend</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/compute/azure/AzProvider.html#Provider.suspend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.compute.azure.AzProvider.Provider.suspend" title="Permalink to this definition">¶</a></dt>
+<dd><p>suspends the node with the given name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – the name of the node</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The dict representing the node</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <span class="target" id="module-cloudmesh.compute.azure.AzureVm"></span><span class="target" id="module-cloudmesh.compute.virtualbox.Provider"></span><span class="target" id="module-cloudmesh.compute.libcloud.Provider"></span><span class="target" id="module-cloudmesh.compute.vm.Provider"></span><span class="target" id="module-cloudmesh.abstractclass.ComputeNodeABC"></span><span class="target" id="module-cloudmesh.abstractclass.ProcessManagerABC"></span><span class="target" id="module-cloudmesh.abstractclass.StorageABC"></span><span class="target" id="module-cloudmesh.abstractclass.State"></span><dl class="class">

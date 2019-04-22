@@ -180,6 +180,100 @@ This provder should not be used, but you need to use the general provider at
 
 ### VM
 
+
+```
+{
+    "_id" : ObjectId("5cbe0513b6ac5a154ef64a26"),
+    "additionalCapabilities" : null,
+    "availabilitySet" : null,
+    "diagnosticsProfile" : null,
+    "hardwareProfile" : {
+        "vmSize" : "Standard_DS1_v2"
+    },
+    "id" : null,
+    "identity" : null,
+    "instanceView" : null,
+    "licenseType" : null,
+    "location" : "eastus",
+    "name" : "testvm1",
+    "networkProfile" : {
+        "networkInterfaces" : [ 
+            {
+                "id" : null,
+                "primary" : null,
+                "resourceGroup" : "test"
+            }
+        ]
+    },
+    "osProfile" : {
+        "adminPassword" : null,
+        "adminUsername" : "ubuntu",
+        "allowExtensionOperations" : true,
+        "computerName" : "testvm1",
+        "customData" : null,
+        "linuxConfiguration" : {
+            "disablePasswordAuthentication" : true,
+            "provisionVmAgent" : true,
+            "ssh" : {
+                "publicKeys" : [ 
+                    {
+                        "keyData" : "ssh-rsa ...."
+                        "path" : "/home/ubuntu/.ssh/authorized_keys"
+                    }
+                ]
+            }
+        },
+        "requireGuestProvisionSignal" : true,
+        "secrets" : [],
+        "windowsConfiguration" : null
+    },
+    "plan" : null,
+    "provisioningState" : "Succeeded",
+    "resourceGroup" : "test",
+    "resources" : null,
+    "storageProfile" : {
+        "dataDisks" : [],
+        "imageReference" : {
+            "id" : null,
+            "offer" : "UbuntuServer",
+            "publisher" : "Canonical",
+            "sku" : "18.04-LTS",
+            "version" : "latest"
+        },
+        "osDisk" : {
+            "caching" : "ReadWrite",
+            "createOption" : "FromImage",
+            "diffDiskSettings" : null,
+            "diskSizeGb" : null,
+            "encryptionSettings" : null,
+            "image" : null,
+            "managedDisk" : {
+                "id" : null,
+                "resourceGroup" : "test",
+                "storageAccountType" : null
+            },
+            "name" : "testvm1_OsDisk_1_a6a6a6a7639468d88e7b018385e225f",
+            "osType" : "Linux",
+            "vhd" : null,
+            "writeAcceleratorEnabled" : null
+        }
+    },
+    "tags" : {},
+    "type" : "Microsoft.Compute/virtualMachines",
+    "vmId" : "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa",
+    "zones" : null,
+    "cm" : {
+        "kind" : "node",
+        "driver" : "azure",
+        "cloud" : "az",
+        "name" : "testvm1",
+        "collection" : "az-node",
+        "created" : "2019-04-22 18:16:51.552324",
+        "modified" : "2019-04-22 18:16:51.552324"
+    }
+}
+```
+
 ## Azure MS Azure Library Provider
 
 The compute provider kind is `MISSING`. The Provider is located at 

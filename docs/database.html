@@ -478,6 +478,98 @@ cloudmesh attribute dict. Potential security related attributes, will hoever be 
 </div>
 <div class="section" id="id3">
 <h3>1.2.3. VM<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s2">&quot;5cbe0513b6ac5a154ef64a26&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;additionalCapabilities&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;availabilitySet&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;diagnosticsProfile&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;hardwareProfile&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;vmSize&quot;</span> <span class="p">:</span> <span class="s2">&quot;Standard_DS1_v2&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;identity&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;instanceView&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;licenseType&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;location&quot;</span> <span class="p">:</span> <span class="s2">&quot;eastus&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;testvm1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;networkProfile&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;networkInterfaces&quot;</span> <span class="p">:</span> <span class="p">[</span> 
+            <span class="p">{</span>
+                <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                <span class="s2">&quot;primary&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                <span class="s2">&quot;resourceGroup&quot;</span> <span class="p">:</span> <span class="s2">&quot;test&quot;</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;osProfile&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;adminPassword&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;adminUsername&quot;</span> <span class="p">:</span> <span class="s2">&quot;ubuntu&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;allowExtensionOperations&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;computerName&quot;</span> <span class="p">:</span> <span class="s2">&quot;testvm1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;customData&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;linuxConfiguration&quot;</span> <span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;disablePasswordAuthentication&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s2">&quot;provisionVmAgent&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s2">&quot;ssh&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;publicKeys&quot;</span> <span class="p">:</span> <span class="p">[</span> 
+                    <span class="p">{</span>
+                        <span class="s2">&quot;keyData&quot;</span> <span class="p">:</span> <span class="s2">&quot;ssh-rsa ....&quot;</span>
+                        <span class="s2">&quot;path&quot;</span> <span class="p">:</span> <span class="s2">&quot;/home/ubuntu/.ssh/authorized_keys&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;requireGuestProvisionSignal&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;secrets&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;windowsConfiguration&quot;</span> <span class="p">:</span> <span class="n">null</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;plan&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;provisioningState&quot;</span> <span class="p">:</span> <span class="s2">&quot;Succeeded&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;resourceGroup&quot;</span> <span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;resources&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;storageProfile&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;dataDisks&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;imageReference&quot;</span> <span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;offer&quot;</span> <span class="p">:</span> <span class="s2">&quot;UbuntuServer&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;publisher&quot;</span> <span class="p">:</span> <span class="s2">&quot;Canonical&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sku&quot;</span> <span class="p">:</span> <span class="s2">&quot;18.04-LTS&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;version&quot;</span> <span class="p">:</span> <span class="s2">&quot;latest&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;osDisk&quot;</span> <span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;caching&quot;</span> <span class="p">:</span> <span class="s2">&quot;ReadWrite&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;createOption&quot;</span> <span class="p">:</span> <span class="s2">&quot;FromImage&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;diffDiskSettings&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;diskSizeGb&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;encryptionSettings&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;image&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;managedDisk&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                <span class="s2">&quot;resourceGroup&quot;</span> <span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;storageAccountType&quot;</span> <span class="p">:</span> <span class="n">null</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;testvm1_OsDisk_1_a6a6a6a7639468d88e7b018385e225f&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;osType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Linux&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;vhd&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;writeAcceleratorEnabled&quot;</span> <span class="p">:</span> <span class="n">null</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;tags&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+    <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Microsoft.Compute/virtualMachines&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;vmId&quot;</span> <span class="p">:</span> <span class="s2">&quot;aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;zones&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;cm&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;kind&quot;</span> <span class="p">:</span> <span class="s2">&quot;node&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;driver&quot;</span> <span class="p">:</span> <span class="s2">&quot;azure&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;cloud&quot;</span> <span class="p">:</span> <span class="s2">&quot;az&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;testvm1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;collection&quot;</span> <span class="p">:</span> <span class="s2">&quot;az-node&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-22 18:16:51.552324&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-22 18:16:51.552324&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="azure-ms-azure-library-provider">

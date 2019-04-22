@@ -446,10 +446,10 @@
 </li>
       <li><a href="code/cloud.html#module-cloudmesh.management.configuration.counter">cloudmesh.management.configuration.counter (module)</a>, <a href="code/management.html#module-cloudmesh.management.configuration.counter">[1]</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="code/cloud.html#module-cloudmesh.management.configuration.generic_config">cloudmesh.management.configuration.generic_config (module)</a>, <a href="code/management.html#module-cloudmesh.management.configuration.generic_config">[1]</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="code/cloud.html#module-cloudmesh.management.configuration.name">cloudmesh.management.configuration.name (module)</a>, <a href="code/management.html#module-cloudmesh.management.configuration.name">[1]</a>, <a href="code/management.html#module-cloudmesh.management.configuration.name">[2]</a>
 </li>
       <li><a href="code/cloud.html#module-cloudmesh.management.configuration.operatingsystem">cloudmesh.management.configuration.operatingsystem (module)</a>, <a href="code/management.html#module-cloudmesh.management.configuration.operatingsystem">[1]</a>
@@ -584,6 +584,8 @@
 </li>
       <li><a href="code/common.html#cloudmesh.common.console.Console.cprint">cprint() (cloudmesh.common.console.Console static method)</a>
 </li>
+      <li><a href="code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.create">create() (cloudmesh.compute.azure.AzProvider.Provider method)</a>
+</li>
       <li><a href="code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.create_dir">create_dir() (cloudmesh.storage.provider.local.Provider.Provider method)</a>
 </li>
       <li><a href="code/storage.html#cloudmesh.storage.provider.local.Provider.creation_date">creation_date() (in module cloudmesh.storage.provider.local.Provider)</a>
@@ -618,6 +620,8 @@
         <li><a href="code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.delete">(cloudmesh.storage.provider.local.Provider.Provider method)</a>
 </li>
       </ul></li>
+      <li><a href="code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.destroy">destroy() (cloudmesh.compute.azure.AzProvider.Provider method)</a>
+</li>
       <li><a href="code/common.html#cloudmesh.common.Shell.Shell.dialog">dialog() (cloudmesh.common.Shell.Shell class method)</a>
 </li>
   </ul></td>
@@ -777,6 +781,8 @@
       <ul>
         <li><a href="code/common.html#cloudmesh.common.error.Error.info">(cloudmesh.common.error.Error class method)</a>
 </li>
+        <li><a href="code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.info">(cloudmesh.compute.azure.AzProvider.Provider method)</a>
+</li>
       </ul></li>
   </ul></td>
 </tr></table>
@@ -808,6 +814,8 @@
 
       <ul>
         <li><a href="code/common.html#cloudmesh.common.ssh.ssh_config.ssh_config.list">(cloudmesh.common.ssh.ssh_config.ssh_config method)</a>
+</li>
+        <li><a href="code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.list">(cloudmesh.compute.azure.AzProvider.Provider method)</a>
 </li>
         <li><a href="code/cloud.html#cloudmesh.security.ssh_config.ssh_config.list">(cloudmesh.security.ssh_config.ssh_config method)</a>
 </li>
@@ -986,9 +994,13 @@
         <li><a href="code/cloud.html#cloudmesh.security.authorized_keys.AuthorizedKeys.remove">(cloudmesh.security.authorized_keys.AuthorizedKeys method)</a>
 </li>
       </ul></li>
+      <li><a href="code/common.html#cloudmesh.common.Shell.Shell.remove_line_with">remove_line_with() (cloudmesh.common.Shell.Shell class method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="code/common.html#cloudmesh.common.Shell.Shell.remove_line_with">remove_line_with() (cloudmesh.common.Shell.Shell class method)</a>
+      <li><a href="code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.rename">rename() (cloudmesh.compute.azure.AzProvider.Provider method)</a>
+</li>
+      <li><a href="code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.resume">resume() (cloudmesh.compute.azure.AzProvider.Provider method)</a>
 </li>
       <li><a href="code/common.html#cloudmesh.common.Shell.Shell.rm">rm() (cloudmesh.common.Shell.Shell class method)</a>
 </li>
@@ -1036,12 +1048,16 @@
         <li><a href="code/cloud.html#cloudmesh.security.ssh_config.ssh_config">(class in cloudmesh.security.ssh_config)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="code/cloud.html#cloudmesh.management.configuration.SSHkey.SSHkey">SSHkey (class in cloudmesh.management.configuration.SSHkey)</a>, <a href="code/management.html#cloudmesh.management.configuration.SSHkey.SSHkey">[1]</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="code/common.html#cloudmesh.common.StopWatch.StopWatch.start">start() (cloudmesh.common.StopWatch.StopWatch class method)</a>
+
+      <ul>
+        <li><a href="code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.start">(cloudmesh.compute.azure.AzProvider.Provider method)</a>
 </li>
+      </ul></li>
       <li><a href="code/cloud.html#cloudmesh.abstractclass.State.State">State (class in cloudmesh.abstractclass.State)</a>
 </li>
       <li><a href="code/common.html#cloudmesh.common.ssh.ssh_config.ssh_config.status">status() (cloudmesh.common.ssh.ssh_config.ssh_config method)</a>
@@ -1051,7 +1067,11 @@
 </li>
       </ul></li>
       <li><a href="code/common.html#cloudmesh.common.StopWatch.StopWatch.stop">stop() (cloudmesh.common.StopWatch.StopWatch class method)</a>
+
+      <ul>
+        <li><a href="code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.stop">(cloudmesh.compute.azure.AzProvider.Provider method)</a>
 </li>
+      </ul></li>
       <li><a href="code/common.html#cloudmesh.common.StopWatch.StopWatch">StopWatch (class in cloudmesh.common.StopWatch)</a>
 </li>
       <li><a href="code/cloud.html#cloudmesh.data.api.storage.StorageProviderABC.StorageProviderABC">StorageProviderABC (class in cloudmesh.data.api.storage.StorageProviderABC)</a>
@@ -1063,6 +1083,8 @@
       <li><a href="code/common.html#cloudmesh.common.Shell.SubprocessError">SubprocessError</a>
 </li>
       <li><a href="code/common.html#cloudmesh.common.Shell.Shell.sudo">sudo() (cloudmesh.common.Shell.Shell class method)</a>
+</li>
+      <li><a href="code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.suspend">suspend() (cloudmesh.compute.azure.AzProvider.Provider method)</a>
 </li>
       <li><a href="code/cloud.html#cloudmesh.management.script.SystemPath">SystemPath (class in cloudmesh.management.script)</a>, <a href="code/management.html#cloudmesh.management.script.SystemPath">[1]</a>
 </li>

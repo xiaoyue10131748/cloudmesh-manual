@@ -293,20 +293,65 @@ This provder should not be used, but you need to use the general provider at
 
 ## AWS Libcloud Provider
 
-The compute provider kind is `MISSING`. The Provider is located at 
+The compute provider kind is `aws`. The Provider is located at 
 
-* <MISSING>
+* <https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/virtualbox/Provider.py>
 
 This provder should not be used, but you need to use the general provider at
 
-* <https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py>
+* <https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/libcloud/Provider.py>
 
 
 ### Flavor
 
+```
+{'bandwidth': None,
+ 'cm': {'cloud': 'aws',
+        'created': '2019-04-25 11:01:21.939851',
+        'driver': 'aws',
+        'kind': 'flavor',
+        'name': 't2.micro'},
+ 'disk': 0,
+ 'id': 't2.micro',
+ 'name': 't2.micro',
+ 'price': 0.012,
+ 'ram': 1024,
+ 'updated': '2019-04-25 11:01:21.939851'}
+```
+
 ### Image
 
+```
+{'cm': {'cloud': 'aws',
+         'created': '2019-04-25 11:10:31.912143',
+         'driver': 'aws',
+         'kind': 'image',
+         'name': 'memsql-cloudformation_6.7.11-5d2517b77a_1.5.3_1.0.6 '
+                 '20190208-212347',
+         'updated': '2019-04-25 11:10:31.912155'},
+  'id': 'ami-0496a382c868777a4',
+  'name': 'memsql-cloudformation_6.7.11-5d2517b77a_1.5.3_1.0.6 '
+          '20190208-212347'}
+```
+
 ### VM
+
+```
+{'cm': {'cloud': 'aws',
+         'created': '2019-04-25 06:47:39+00:00',
+         'driver': 'aws',
+         'kind': 'node',
+         'name': 't0',
+         'updated': '2019-04-25 10:55:45.394053'},
+  'created_at': datetime.datetime(2019, 4, 25, 6, 47, 39, tzinfo=<libcloud.utils.iso8601.Utc object at 0x1119225c0>),
+  'id': 'i-032d5c07fcfaf5b8b',
+  'image': None,
+  'name': 't0',
+  'private_ips': [],
+  'public_ips': [],
+  'size': None,
+  'state': 'running'}
+```
 
 ## AWS Boto3 Provider
 

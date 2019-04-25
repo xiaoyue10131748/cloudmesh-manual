@@ -117,7 +117,7 @@
 <p class="caption"><span class="caption-text">MANUAL PAGES</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="manual-cmd5.html">1. Manual Cmd5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual-compute.html">1. Compute Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual-compute.html">2. Compute Manual Pages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual-storage.html">3. Storage Manual Pages</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Database</span></p>
@@ -262,11 +262,9 @@
         <li><a href="code/cloud.html#cloudmesh.security.authorized_keys.AuthorizedKeys.add">(cloudmesh.security.authorized_keys.AuthorizedKeys method)</a>
 </li>
       </ul></li>
-      <li><a href="code/common.html#cloudmesh.common.Printer.Printer.attribute">attribute() (cloudmesh.common.Printer.Printer class method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="code/storage.html#cloudmesh.storage.provider.gdrive.Authentication.Authentication">Authentication (class in cloudmesh.storage.provider.gdrive.Authentication)</a>
+      <li><a href="code/common.html#cloudmesh.common.Printer.Printer.attribute">attribute() (cloudmesh.common.Printer.Printer class method)</a>
 </li>
       <li><a href="code/common.html#cloudmesh.common.ssh.authorized_keys.AuthorizedKeys">AuthorizedKeys (class in cloudmesh.common.ssh.authorized_keys)</a>
 
@@ -516,8 +514,6 @@
 </li>
       <li><a href="code/storage.html#module-cloudmesh.storage.provider.box.Provider">cloudmesh.storage.provider.box.Provider (module)</a>
 </li>
-      <li><a href="code/storage.html#module-cloudmesh.storage.provider.gdrive.Authentication">cloudmesh.storage.provider.gdrive.Authentication (module)</a>
-</li>
       <li><a href="code/storage.html#module-cloudmesh.storage.provider.gdrive.Provider">cloudmesh.storage.provider.gdrive.Provider (module)</a>
 </li>
       <li><a href="code/storage.html#module-cloudmesh.storage.provider.local.Provider">cloudmesh.storage.provider.local.Provider (module)</a>
@@ -586,7 +582,13 @@
 </li>
       <li><a href="code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.create">create() (cloudmesh.compute.azure.AzProvider.Provider method)</a>
 </li>
-      <li><a href="code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.create_dir">create_dir() (cloudmesh.storage.provider.local.Provider.Provider method)</a>
+      <li><a href="code/storage.html#cloudmesh.storage.provider.gdrive.Provider.Provider.create_dir">create_dir() (cloudmesh.storage.provider.gdrive.Provider.Provider method)</a>
+
+      <ul>
+        <li><a href="code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.create_dir">(cloudmesh.storage.provider.local.Provider.Provider method)</a>
+</li>
+      </ul></li>
+      <li><a href="code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.create_dir_from_filename">create_dir_from_filename() (cloudmesh.storage.provider.local.Provider.Provider method)</a>
 </li>
       <li><a href="code/storage.html#cloudmesh.storage.provider.local.Provider.creation_date">creation_date() (in module cloudmesh.storage.provider.local.Provider)</a>
 </li>
@@ -617,15 +619,17 @@
       <ul>
         <li><a href="code/cloud.html#cloudmesh.data.api.storage.StorageProviderABC.StorageProviderABC.delete">(cloudmesh.data.api.storage.StorageProviderABC.StorageProviderABC method)</a>
 </li>
+        <li><a href="code/storage.html#cloudmesh.storage.provider.gdrive.Provider.Provider.delete">(cloudmesh.storage.provider.gdrive.Provider.Provider method)</a>
+</li>
         <li><a href="code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.delete">(cloudmesh.storage.provider.local.Provider.Provider method)</a>
 </li>
       </ul></li>
       <li><a href="code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider.destroy">destroy() (cloudmesh.compute.azure.AzProvider.Provider method)</a>
 </li>
-      <li><a href="code/common.html#cloudmesh.common.Shell.Shell.dialog">dialog() (cloudmesh.common.Shell.Shell class method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="code/common.html#cloudmesh.common.Shell.Shell.dialog">dialog() (cloudmesh.common.Shell.Shell class method)</a>
+</li>
       <li><a href="code/common.html#cloudmesh.common.Printer.Printer.dict">dict() (cloudmesh.common.Printer.Printer class method)</a>
 </li>
       <li><a href="code/common.html#cloudmesh.common.Printer.Printer.dict_table">dict_table() (cloudmesh.common.Printer.Printer class method)</a>
@@ -725,12 +729,14 @@
 </li>
         <li><a href="code/cloud.html#cloudmesh.management.configuration.counter.Counter.get">(cloudmesh.management.configuration.counter.Counter method)</a>, <a href="code/management.html#cloudmesh.management.configuration.counter.Counter.get">[1]</a>
 </li>
+        <li><a href="code/storage.html#cloudmesh.storage.provider.gdrive.Provider.Provider.get">(cloudmesh.storage.provider.gdrive.Provider.Provider method)</a>
+</li>
         <li><a href="code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.get">(cloudmesh.storage.provider.local.Provider.Provider method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="code/storage.html#cloudmesh.storage.provider.gdrive.Authentication.Authentication.get_credentials">get_credentials() (cloudmesh.storage.provider.gdrive.Authentication.Authentication method)</a>
+      <li><a href="code/storage.html#cloudmesh.storage.provider.gdrive.Provider.Provider.get_credentials">get_credentials() (cloudmesh.storage.provider.gdrive.Provider.Provider method)</a>
 </li>
       <li><a href="code/common.html#cloudmesh.common.ssh.authorized_keys.get_fingerprint_from_public_key">get_fingerprint_from_public_key() (in module cloudmesh.common.ssh.authorized_keys)</a>
 
@@ -819,7 +825,7 @@
 </li>
         <li><a href="code/cloud.html#cloudmesh.security.ssh_config.ssh_config.list">(cloudmesh.security.ssh_config.ssh_config method)</a>
 </li>
-        <li><a href="code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.list">(cloudmesh.storage.provider.local.Provider.Provider method)</a>
+        <li><a href="code/storage.html#cloudmesh.storage.provider.gdrive.Provider.Provider.list">(cloudmesh.storage.provider.gdrive.Provider.Provider method)</a>
 </li>
       </ul></li>
       <li><a href="code/cloud.html#cloudmesh.data.api.db.DBProviderABC.DBProviderABC.list_files">list_files() (cloudmesh.data.api.db.DBProviderABC.DBProviderABC method)</a>
@@ -948,10 +954,10 @@
 </li>
       <li><a href="code/cmd5.html#cloudmesh.shell.shell.CMShell.precmd">precmd() (cloudmesh.shell.shell.CMShell method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="code/cmd5.html#cloudmesh.shell.shell.CMShell.preloop">preloop() (cloudmesh.shell.shell.CMShell method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="code/common.html#cloudmesh.common.StopWatch.StopWatch.print">print() (cloudmesh.common.StopWatch.StopWatch class method)</a>
 </li>
       <li><a href="code/common.html#cloudmesh.common.Printer.Printer.print_list">print_list() (cloudmesh.common.Printer.Printer class method)</a>
@@ -965,6 +971,8 @@
       <li><a href="code/cloud.html#cloudmesh.compute.azure.AzProvider.Provider">Provider (class in cloudmesh.compute.azure.AzProvider)</a>
 
       <ul>
+        <li><a href="code/storage.html#cloudmesh.storage.provider.gdrive.Provider.Provider">(class in cloudmesh.storage.provider.gdrive.Provider)</a>
+</li>
         <li><a href="code/storage.html#cloudmesh.storage.provider.local.Provider.Provider">(class in cloudmesh.storage.provider.local.Provider)</a>
 </li>
       </ul></li>
@@ -973,6 +981,8 @@
       <li><a href="code/cloud.html#cloudmesh.data.api.storage.StorageProviderABC.StorageProviderABC.put">put() (cloudmesh.data.api.storage.StorageProviderABC.StorageProviderABC method)</a>
 
       <ul>
+        <li><a href="code/storage.html#cloudmesh.storage.provider.gdrive.Provider.Provider.put">(cloudmesh.storage.provider.gdrive.Provider.Provider method)</a>
+</li>
         <li><a href="code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.put">(cloudmesh.storage.provider.local.Provider.Provider method)</a>
 </li>
       </ul></li>
@@ -1020,9 +1030,11 @@
 </li>
       <li><a href="code/cloud.html#cloudmesh.management.script.Script">Script (class in cloudmesh.management.script)</a>, <a href="code/management.html#cloudmesh.management.script.Script">[1]</a>
 </li>
-      <li><a href="code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.search">search() (cloudmesh.storage.provider.local.Provider.Provider method)</a>
+      <li><a href="code/storage.html#cloudmesh.storage.provider.gdrive.Provider.Provider.search">search() (cloudmesh.storage.provider.gdrive.Provider.Provider method)</a>
 
       <ul>
+        <li><a href="code/storage.html#cloudmesh.storage.provider.local.Provider.Provider.search">(cloudmesh.storage.provider.local.Provider.Provider method)</a>
+</li>
         <li><a href="code/common.html#cloudmesh.common.util.search">(in module cloudmesh.common.util)</a>
 </li>
       </ul></li>
@@ -1048,10 +1060,10 @@
         <li><a href="code/cloud.html#cloudmesh.security.ssh_config.ssh_config">(class in cloudmesh.security.ssh_config)</a>
 </li>
       </ul></li>
-      <li><a href="code/cloud.html#cloudmesh.management.configuration.SSHkey.SSHkey">SSHkey (class in cloudmesh.management.configuration.SSHkey)</a>, <a href="code/management.html#cloudmesh.management.configuration.SSHkey.SSHkey">[1]</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="code/cloud.html#cloudmesh.management.configuration.SSHkey.SSHkey">SSHkey (class in cloudmesh.management.configuration.SSHkey)</a>, <a href="code/management.html#cloudmesh.management.configuration.SSHkey.SSHkey">[1]</a>
+</li>
       <li><a href="code/common.html#cloudmesh.common.StopWatch.StopWatch.start">start() (cloudmesh.common.StopWatch.StopWatch class method)</a>
 
       <ul>

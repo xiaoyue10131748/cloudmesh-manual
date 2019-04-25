@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="1. Code Documentation" href="code/code.html" />
-    <link rel="prev" title="3. vdir" href="manual/storage/vdir.html" /> 
+    <link rel="prev" title="3.3. vdir" href="manual/storage/vdir.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -118,7 +118,7 @@
 <p class="caption"><span class="caption-text">MANUAL PAGES</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="manual-cmd5.html">1. Manual Cmd5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual-compute.html">1. Compute Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual-compute.html">2. Compute Manual Pages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual-storage.html">3. Storage Manual Pages</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Database</span></p>
@@ -191,7 +191,18 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#workflow">1.7. Workflow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#emr">1.8. Emr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#emr">1.8. EMR</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cluster-listing">1.8.1. Cluster Listing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#instance-listing">1.8.2. Instance Listing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cluster-description">1.8.3. Cluster Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy-file-request">1.8.4. Copy File Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-upload">1.8.5. File Upload</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-file-request">1.8.6. Run File Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-cluster-request">1.8.7. Start Cluster Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stop-cluster-request">1.8.8. Stop Cluster Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-list">1.8.9. Step List</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#hpc">1.9. HPC</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#batch">1.9.1. Batch</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#queue">1.9.2. Queue</a></li>
@@ -594,22 +605,64 @@ cloudmesh attribute dict. Potential security related attributes, will hoever be 
 </div>
 <div class="section" id="aws-libcloud-provider">
 <h2>1.4. AWS Libcloud Provider<a class="headerlink" href="#aws-libcloud-provider" title="Permalink to this headline">¶</a></h2>
-<p>The compute provider kind is <code class="docutils literal notranslate"><span class="pre">MISSING</span></code>. The Provider is located at</p>
-<ul>
-<li><MISSING></li>
+<p>The compute provider kind is <code class="docutils literal notranslate"><span class="pre">aws</span></code>. The Provider is located at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/virtualbox/Provider.py">https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/virtualbox/Provider.py</a></p></li>
 </ul>
 <p>This provder should not be used, but you need to use the general provider at</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py">https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/libcloud/Provider.py">https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/libcloud/Provider.py</a></p></li>
 </ul>
 <div class="section" id="id7">
 <h3>1.4.1. Flavor<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;bandwidth&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+ <span class="s1">&#39;cm&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;cloud&#39;</span><span class="p">:</span> <span class="s1">&#39;aws&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;created&#39;</span><span class="p">:</span> <span class="s1">&#39;2019-04-25 11:01:21.939851&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;driver&#39;</span><span class="p">:</span> <span class="s1">&#39;aws&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;kind&#39;</span><span class="p">:</span> <span class="s1">&#39;flavor&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;t2.micro&#39;</span><span class="p">},</span>
+ <span class="s1">&#39;disk&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+ <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;t2.micro&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;t2.micro&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="mf">0.012</span><span class="p">,</span>
+ <span class="s1">&#39;ram&#39;</span><span class="p">:</span> <span class="mi">1024</span><span class="p">,</span>
+ <span class="s1">&#39;updated&#39;</span><span class="p">:</span> <span class="s1">&#39;2019-04-25 11:01:21.939851&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id8">
 <h3>1.4.2. Image<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;cm&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;cloud&#39;</span><span class="p">:</span> <span class="s1">&#39;aws&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;created&#39;</span><span class="p">:</span> <span class="s1">&#39;2019-04-25 11:10:31.912143&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;driver&#39;</span><span class="p">:</span> <span class="s1">&#39;aws&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;kind&#39;</span><span class="p">:</span> <span class="s1">&#39;image&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;memsql-cloudformation_6.7.11-5d2517b77a_1.5.3_1.0.6 &#39;</span>
+                 <span class="s1">&#39;20190208-212347&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;updated&#39;</span><span class="p">:</span> <span class="s1">&#39;2019-04-25 11:10:31.912155&#39;</span><span class="p">},</span>
+  <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;ami-0496a382c868777a4&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;memsql-cloudformation_6.7.11-5d2517b77a_1.5.3_1.0.6 &#39;</span>
+          <span class="s1">&#39;20190208-212347&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id9">
 <h3>1.4.3. VM<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;cm&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;cloud&#39;</span><span class="p">:</span> <span class="s1">&#39;aws&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;created&#39;</span><span class="p">:</span> <span class="s1">&#39;2019-04-25 06:47:39+00:00&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;driver&#39;</span><span class="p">:</span> <span class="s1">&#39;aws&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;kind&#39;</span><span class="p">:</span> <span class="s1">&#39;node&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;t0&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;updated&#39;</span><span class="p">:</span> <span class="s1">&#39;2019-04-25 10:55:45.394053&#39;</span><span class="p">},</span>
+  <span class="s1">&#39;created_at&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=&lt;</span><span class="n">libcloud</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">iso8601</span><span class="o">.</span><span class="n">Utc</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x1119225c0</span><span class="o">&gt;</span><span class="p">),</span>
+  <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;i-032d5c07fcfaf5b8b&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;image&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+  <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;t0&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;private_ips&#39;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="s1">&#39;public_ips&#39;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+  <span class="s1">&#39;state&#39;</span><span class="p">:</span> <span class="s1">&#39;running&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="aws-boto3-provider">
@@ -776,7 +829,324 @@ to introduce it in all providers.</p>
 </div>
 </div>
 <div class="section" id="emr">
-<h2>1.8. Emr<a class="headerlink" href="#emr" title="Permalink to this headline">¶</a></h2>
+<h2>1.8. EMR<a class="headerlink" href="#emr" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cluster-listing">
+<h3>1.8.1. Cluster Listing<a class="headerlink" href="#cluster-listing" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+	<span class="s2">&quot;_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s2">&quot;5cae2f2176cd490cac627e04&quot;</span><span class="p">),</span>
+	<span class="s2">&quot;cm&quot;</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">&quot;cloud&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;kind&quot;</span> <span class="p">:</span> <span class="s2">&quot;emr cluster list&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;emr&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;collection&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws-emr cluster list&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:00:01.850862&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:00:55.341485&quot;</span>
+	<span class="p">},</span>
+	<span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span>
+			<span class="s2">&quot;Id&quot;</span> <span class="p">:</span> <span class="s2">&quot;j-XXXXXXXXXXXXX&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;Name&quot;</span> <span class="p">:</span> <span class="s2">&quot;NAME&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;Status&quot;</span> <span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;State&quot;</span> <span class="p">:</span> <span class="s2">&quot;TERMINATED&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;StateChangeReason&quot;</span> <span class="p">:</span> <span class="p">{</span>
+					<span class="s2">&quot;Code&quot;</span> <span class="p">:</span> <span class="s2">&quot;USER_REQUEST&quot;</span><span class="p">,</span>
+					<span class="s2">&quot;Message&quot;</span> <span class="p">:</span> <span class="s2">&quot;Terminated by user request&quot;</span>
+				<span class="p">},</span>
+				<span class="s2">&quot;Timeline&quot;</span> <span class="p">:</span> <span class="p">{</span>
+					<span class="s2">&quot;CreationDateTime&quot;</span> <span class="p">:</span> <span class="n">ISODate</span><span class="p">(</span><span class="s2">&quot;2019-04-04T01:38:26.595Z&quot;</span><span class="p">),</span>
+					<span class="s2">&quot;EndDateTime&quot;</span> <span class="p">:</span> <span class="n">ISODate</span><span class="p">(</span><span class="s2">&quot;2019-04-04T01:43:53.907Z&quot;</span><span class="p">)</span>
+				<span class="p">}</span>
+			<span class="p">},</span>
+			<span class="s2">&quot;NormalizedInstanceHours&quot;</span> <span class="p">:</span> <span class="mi">0</span>
+		<span class="p">},</span>
+      <span class="o">...</span>
+	<span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="instance-listing">
+<h3>1.8.2. Instance Listing<a class="headerlink" href="#instance-listing" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+	<span class="s2">&quot;_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s2">&quot;5cae36b976cd490de715a25a&quot;</span><span class="p">),</span>
+	<span class="s2">&quot;cm&quot;</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">&quot;cloud&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;kind&quot;</span> <span class="p">:</span> <span class="s2">&quot;emr instance list&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;j-XXXXXXXXXXXXX&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;collection&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws-emr instance list&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:32:25.886579&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:32:39.244152&quot;</span>
+	<span class="p">},</span>
+	<span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span>
+			<span class="s2">&quot;Id&quot;</span> <span class="p">:</span> <span class="s2">&quot;ci-XXXXXXXXXXXXX&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;Ec2InstanceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;i-XXXXXXXXXXXXX&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;PublicDnsName&quot;</span> <span class="p">:</span> <span class="s2">&quot;ec2-54-193-70-173.us-west-1.compute.amazonaws.com&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;PublicIpAddress&quot;</span> <span class="p">:</span> <span class="s2">&quot;54.193.70.173&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;PrivateDnsName&quot;</span> <span class="p">:</span> <span class="s2">&quot;ip-172-31-10-13.us-west-1.compute.internal&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;PrivateIpAddress&quot;</span> <span class="p">:</span> <span class="s2">&quot;172.31.10.13&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;Status&quot;</span> <span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;State&quot;</span> <span class="p">:</span> <span class="s2">&quot;TERMINATED&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;StateChangeReason&quot;</span> <span class="p">:</span> <span class="p">{</span>
+					<span class="s2">&quot;Code&quot;</span> <span class="p">:</span> <span class="s2">&quot;INSTANCE_FAILURE&quot;</span><span class="p">,</span>
+					<span class="s2">&quot;Message&quot;</span> <span class="p">:</span> <span class="s2">&quot;Instance was terminated.&quot;</span>
+				<span class="p">},</span>
+				<span class="s2">&quot;Timeline&quot;</span> <span class="p">:</span> <span class="p">{</span>
+					<span class="s2">&quot;CreationDateTime&quot;</span> <span class="p">:</span> <span class="n">ISODate</span><span class="p">(</span><span class="s2">&quot;2019-04-04T01:39:20.733Z&quot;</span><span class="p">),</span>
+					<span class="s2">&quot;ReadyDateTime&quot;</span> <span class="p">:</span> <span class="n">ISODate</span><span class="p">(</span><span class="s2">&quot;2019-04-04T01:42:11.677Z&quot;</span><span class="p">),</span>
+					<span class="s2">&quot;EndDateTime&quot;</span> <span class="p">:</span> <span class="n">ISODate</span><span class="p">(</span><span class="s2">&quot;2019-04-04T01:43:53.810Z&quot;</span><span class="p">)</span>
+				<span class="p">}</span>
+			<span class="p">},</span>
+			<span class="s2">&quot;InstanceGroupId&quot;</span> <span class="p">:</span> <span class="s2">&quot;ig-XXXXXXXXXXXXX&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;Market&quot;</span> <span class="p">:</span> <span class="s2">&quot;ON_DEMAND&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;InstanceType&quot;</span> <span class="p">:</span> <span class="s2">&quot;m4.xlarge&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;EbsVolumes&quot;</span> <span class="p">:</span> <span class="p">[</span>
+				<span class="p">{</span>
+					<span class="s2">&quot;Device&quot;</span> <span class="p">:</span> <span class="s2">&quot;/dev/sdb&quot;</span><span class="p">,</span>
+					<span class="s2">&quot;VolumeId&quot;</span> <span class="p">:</span> <span class="s2">&quot;vol-0255d0ae88dbbe78f&quot;</span>
+				<span class="p">},</span>
+				<span class="p">{</span>
+					<span class="s2">&quot;Device&quot;</span> <span class="p">:</span> <span class="s2">&quot;/dev/sdc&quot;</span><span class="p">,</span>
+					<span class="s2">&quot;VolumeId&quot;</span> <span class="p">:</span> <span class="s2">&quot;vol-0092cf772c4cb49d6&quot;</span>
+				<span class="p">}</span>
+			<span class="p">]</span>
+		<span class="p">}</span>
+      <span class="o">...</span>
+	<span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cluster-description">
+<h3>1.8.3. Cluster Description<a class="headerlink" href="#cluster-description" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+	<span class="s2">&quot;_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s2">&quot;5cae3acd76cd490f74997607&quot;</span><span class="p">),</span>
+	<span class="s2">&quot;cm&quot;</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">&quot;cloud&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;kind&quot;</span> <span class="p">:</span> <span class="s2">&quot;emr cluster description&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;j-2KJT8GO4RV4VR&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;collection&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws-emr cluster description&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:49:49.923422&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:49:49.923422&quot;</span>
+	<span class="p">},</span>
+	<span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">&quot;Id&quot;</span> <span class="p">:</span> <span class="s2">&quot;j-XXXXXXXXXXXXX&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;Name&quot;</span> <span class="p">:</span> <span class="s2">&quot;NAME&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;Status&quot;</span> <span class="p">:</span> <span class="p">{</span>
+			<span class="s2">&quot;State&quot;</span> <span class="p">:</span> <span class="s2">&quot;TERMINATED&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;StateChangeReason&quot;</span> <span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;Code&quot;</span> <span class="p">:</span> <span class="s2">&quot;USER_REQUEST&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;Message&quot;</span> <span class="p">:</span> <span class="s2">&quot;Terminated by user request&quot;</span>
+			<span class="p">},</span>
+			<span class="s2">&quot;Timeline&quot;</span> <span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;CreationDateTime&quot;</span> <span class="p">:</span> <span class="n">ISODate</span><span class="p">(</span><span class="s2">&quot;2019-04-04T01:38:26.595Z&quot;</span><span class="p">),</span>
+				<span class="s2">&quot;EndDateTime&quot;</span> <span class="p">:</span> <span class="n">ISODate</span><span class="p">(</span><span class="s2">&quot;2019-04-04T01:43:53.907Z&quot;</span><span class="p">)</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="s2">&quot;Ec2InstanceAttributes&quot;</span> <span class="p">:</span> <span class="p">{</span>
+			<span class="s2">&quot;RequestedEc2SubnetIds&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">],</span>
+			<span class="s2">&quot;Ec2AvailabilityZone&quot;</span> <span class="p">:</span> <span class="s2">&quot;us-west-1c&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;RequestedEc2AvailabilityZones&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">],</span>
+			<span class="s2">&quot;IamInstanceProfile&quot;</span> <span class="p">:</span> <span class="s2">&quot;EMR_EC2_DefaultRole&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;EmrManagedMasterSecurityGroup&quot;</span> <span class="p">:</span> <span class="s2">&quot;sg-XXXXXXXXXXXXX&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;EmrManagedSlaveSecurityGroup&quot;</span> <span class="p">:</span> <span class="s2">&quot;sg-XXXXXXXXXXXXX&quot;</span>
+		<span class="p">},</span>
+		<span class="s2">&quot;InstanceCollectionType&quot;</span> <span class="p">:</span> <span class="s2">&quot;INSTANCE_GROUP&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;ReleaseLabel&quot;</span> <span class="p">:</span> <span class="s2">&quot;emr-5.22.0&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;AutoTerminate&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+		<span class="s2">&quot;TerminationProtected&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+		<span class="s2">&quot;VisibleToAllUsers&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+		<span class="s2">&quot;Applications&quot;</span> <span class="p">:</span> <span class="p">[</span>
+			<span class="p">{</span>
+				<span class="s2">&quot;Name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Spark&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;Version&quot;</span> <span class="p">:</span> <span class="s2">&quot;2.4.0&quot;</span>
+			<span class="p">},</span>
+			<span class="p">{</span>
+				<span class="s2">&quot;Name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Hadoop&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;Version&quot;</span> <span class="p">:</span> <span class="s2">&quot;2.8.5&quot;</span>
+			<span class="p">}</span>
+		<span class="p">],</span>
+		<span class="s2">&quot;Tags&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">],</span>
+		<span class="s2">&quot;ServiceRole&quot;</span> <span class="p">:</span> <span class="s2">&quot;EMR_DefaultRole&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;NormalizedInstanceHours&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+		<span class="s2">&quot;MasterPublicDnsName&quot;</span> <span class="p">:</span> <span class="s2">&quot;ec2-54-193-70-173.us-west-1.compute.amazonaws.com&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;Configurations&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">],</span>
+		<span class="s2">&quot;ScaleDownBehavior&quot;</span> <span class="p">:</span> <span class="s2">&quot;TERMINATE_AT_TASK_COMPLETION&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;KerberosAttributes&quot;</span> <span class="p">:</span> <span class="p">{</span>
+			
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="copy-file-request">
+<h3>1.8.4. Copy File Request<a class="headerlink" href="#copy-file-request" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+	<span class="s2">&quot;_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s2">&quot;5cae3c7576cd49129fde9fd7&quot;</span><span class="p">),</span>
+	<span class="s2">&quot;cm&quot;</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">&quot;cloud&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;kind&quot;</span> <span class="p">:</span> <span class="s2">&quot;emr copy file request&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;test.md&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;collection&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws-emr copy file request&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:56:53.568585&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:56:53.568585&quot;</span>
+	<span class="p">},</span>
+	<span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">&quot;StepIds&quot;</span> <span class="p">:</span> <span class="p">[</span>
+			<span class="s2">&quot;s-XXXXXXXXXXXXX&quot;</span>
+		<span class="p">],</span>
+		<span class="s2">&quot;ResponseMetadata&quot;</span> <span class="p">:</span> <span class="p">{</span>
+			<span class="s2">&quot;RequestId&quot;</span> <span class="p">:</span> <span class="s2">&quot;077a0182-5bc2-11e9-a7ff-118a03244614&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;HTTPStatusCode&quot;</span> <span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+			<span class="s2">&quot;HTTPHeaders&quot;</span> <span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;x-amzn-requestid&quot;</span> <span class="p">:</span> <span class="s2">&quot;077a0182-5bc2-11e9-a7ff-118a03244614&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;content-type&quot;</span> <span class="p">:</span> <span class="s2">&quot;application/x-amz-json-1.1&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;content-length&quot;</span> <span class="p">:</span> <span class="s2">&quot;30&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;date&quot;</span> <span class="p">:</span> <span class="s2">&quot;Wed, 10 Apr 2019 18:54:11 GMT&quot;</span>
+			<span class="p">},</span>
+			<span class="s2">&quot;RetryAttempts&quot;</span> <span class="p">:</span> <span class="mi">0</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="file-upload">
+<h3>1.8.5. File Upload<a class="headerlink" href="#file-upload" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+	<span class="s2">&quot;_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s2">&quot;5cae3c3576cd49120a3a0513&quot;</span><span class="p">),</span>
+	<span class="s2">&quot;cm&quot;</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">&quot;cloud&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;kind&quot;</span> <span class="p">:</span> <span class="s2">&quot;emr file upload&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;test.md&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;collection&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws-emr file upload&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:55:49.612897&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:55:49.612897&quot;</span>
+	<span class="p">},</span>
+	<span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">&quot;file&quot;</span> <span class="p">:</span> <span class="s2">&quot;LICENSE&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;bucket&quot;</span> <span class="p">:</span> <span class="s2">&quot;BUCKET NAME&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;bucketname&quot;</span> <span class="p">:</span> <span class="s2">&quot;FILE NAME&quot;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-file-request">
+<h3>1.8.6. Run File Request<a class="headerlink" href="#run-file-request" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+	<span class="s2">&quot;_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s2">&quot;5cae3c8e76cd4913333930cc&quot;</span><span class="p">),</span>
+	<span class="s2">&quot;cm&quot;</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">&quot;cloud&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;kind&quot;</span> <span class="p">:</span> <span class="s2">&quot;emr run file request&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;main.py&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;collection&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws-emr run file request&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:57:18.893398&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:57:18.893398&quot;</span>
+	<span class="p">},</span>
+	<span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">&quot;StepIds&quot;</span> <span class="p">:</span> <span class="p">[</span>
+			<span class="s2">&quot;s-XXXXXXXXXXXXX&quot;</span>
+		<span class="p">],</span>
+		<span class="s2">&quot;ResponseMetadata&quot;</span> <span class="p">:</span> <span class="p">{</span>
+			<span class="s2">&quot;RequestId&quot;</span> <span class="p">:</span> <span class="s2">&quot;16944707-5bc2-11e9-ab7c-333f036e49a6&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;HTTPStatusCode&quot;</span> <span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+			<span class="s2">&quot;HTTPHeaders&quot;</span> <span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;x-amzn-requestid&quot;</span> <span class="p">:</span> <span class="s2">&quot;16944707-5bc2-11e9-ab7c-333f036e49a6&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;content-type&quot;</span> <span class="p">:</span> <span class="s2">&quot;application/x-amz-json-1.1&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;content-length&quot;</span> <span class="p">:</span> <span class="s2">&quot;30&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;date&quot;</span> <span class="p">:</span> <span class="s2">&quot;Wed, 10 Apr 2019 18:54:36 GMT&quot;</span>
+			<span class="p">},</span>
+			<span class="s2">&quot;RetryAttempts&quot;</span> <span class="p">:</span> <span class="mi">0</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-cluster-request">
+<h3>1.8.7. Start Cluster Request<a class="headerlink" href="#start-cluster-request" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+	<span class="s2">&quot;_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s2">&quot;5cae3ba776cd4910291c2bbf&quot;</span><span class="p">),</span>
+	<span class="s2">&quot;cm&quot;</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">&quot;cloud&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;kind&quot;</span> <span class="p">:</span> <span class="s2">&quot;emr start cluster request&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;temp12&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;collection&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws-emr start cluster request&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:53:27.965266&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:53:27.965266&quot;</span>
+	<span class="p">},</span>
+	<span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">&quot;cluster&quot;</span> <span class="p">:</span> <span class="s2">&quot;j-XXXXXXXXXXXXX&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;NAME&quot;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="stop-cluster-request">
+<h3>1.8.8. Stop Cluster Request<a class="headerlink" href="#stop-cluster-request" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+	<span class="s2">&quot;_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s2">&quot;5cae3c9c76cd4913c74b5060&quot;</span><span class="p">),</span>
+	<span class="s2">&quot;cm&quot;</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">&quot;cloud&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;kind&quot;</span> <span class="p">:</span> <span class="s2">&quot;emr stop cluster request&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;j-XXXXXXXXXXXXX&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;collection&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws-emr stop cluster request&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:57:32.779245&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:57:32.779245&quot;</span>
+	<span class="p">},</span>
+	<span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;j-XXXXXXXXXXXXX&quot;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-list">
+<h3>1.8.9. Step List<a class="headerlink" href="#step-list" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+	<span class="s2">&quot;_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s2">&quot;5cae3ac276cd490f2ae1c8b7&quot;</span><span class="p">),</span>
+	<span class="s2">&quot;cm&quot;</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">&quot;cloud&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;kind&quot;</span> <span class="p">:</span> <span class="s2">&quot;emr step list&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;j-2KJT8GO4RV4VR&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;collection&quot;</span> <span class="p">:</span> <span class="s2">&quot;aws-emr step list&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:49:38.921115&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-04-10 18:49:38.921115&quot;</span>
+	<span class="p">},</span>
+	<span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span>
+			<span class="s2">&quot;Id&quot;</span> <span class="p">:</span> <span class="s2">&quot;s-XXXXXXXXXXXXX&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;Name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Run main.py&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;Config&quot;</span> <span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;Jar&quot;</span> <span class="p">:</span> <span class="s2">&quot;command-runner.jar&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;Properties&quot;</span> <span class="p">:</span> <span class="p">{</span>
+					
+				<span class="p">},</span>
+				<span class="s2">&quot;Args&quot;</span> <span class="p">:</span> <span class="p">[</span>
+					<span class="s2">&quot;spark-submit&quot;</span><span class="p">,</span>
+					<span class="s2">&quot;s3://BUCKET/FILENAME.py&quot;</span>
+				<span class="p">]</span>
+			<span class="p">},</span>
+			<span class="s2">&quot;ActionOnFailure&quot;</span> <span class="p">:</span> <span class="s2">&quot;CANCEL_AND_WAIT&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;Status&quot;</span> <span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;State&quot;</span> <span class="p">:</span> <span class="s2">&quot;CANCELLED&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;StateChangeReason&quot;</span> <span class="p">:</span> <span class="p">{</span>
+					<span class="s2">&quot;Message&quot;</span> <span class="p">:</span> <span class="s2">&quot;Job terminated&quot;</span>
+				<span class="p">},</span>
+				<span class="s2">&quot;Timeline&quot;</span> <span class="p">:</span> <span class="p">{</span>
+					<span class="s2">&quot;CreationDateTime&quot;</span> <span class="p">:</span> <span class="n">ISODate</span><span class="p">(</span><span class="s2">&quot;2019-04-04T01:42:11.574Z&quot;</span><span class="p">)</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="o">...</span>
+	<span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="hpc">
 <h2>1.9. HPC<a class="headerlink" href="#hpc" title="Permalink to this headline">¶</a></h2>
@@ -825,7 +1195,7 @@ to introduce it in all providers.</p>
         <a href="code/code.html" class="btn btn-neutral float-right" title="1. Code Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="manual/storage/vdir.html" class="btn btn-neutral float-left" title="3. vdir" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="manual/storage/vdir.html" class="btn btn-neutral float-left" title="3.3. vdir" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

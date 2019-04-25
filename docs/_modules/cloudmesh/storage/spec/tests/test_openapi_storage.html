@@ -116,7 +116,7 @@
 <p class="caption"><span class="caption-text">MANUAL PAGES</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../manual-cmd5.html">1. Manual Cmd5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../manual-compute.html">1. Compute Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../manual-compute.html">2. Compute Manual Pages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../manual-storage.html">3. Storage Manual Pages</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Database</span></p>
@@ -231,6 +231,7 @@
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
 
 <span class="kn">import</span> <span class="nn">pytest</span>
 <span class="kn">from</span> <span class="nn">cloudmesh.common.run.background</span> <span class="k">import</span> <span class="n">run</span>
@@ -252,7 +253,7 @@
 
 <span class="sd">    see: https://github.com/cloudmesh/cloudmesh-common/blob/master/cloudmesh/common/run/background.py</span>
 <span class="sd">    the code in thel link has not bean tested</span>
-<span class="sd">    make this s function execute the server in the back ground not in a termina,</span>
+<span class="sd">    make this s function execute the server in the back ground not in a terminal,</span>
 <span class="sd">    get the pid and kill it after the test is done</span>
 <span class="sd">    UNAME := $(shell uname)</span>
 <span class="sd">    ifeq ($(UNAME), Darwin)</span>
@@ -308,8 +309,17 @@
         <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
         <span class="p">}</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;{&quot;service&quot;: &quot;azureblob&quot;, &quot;source&quot;: &quot;~/openapi/a.txt&quot;, &quot;destination&quot;: &quot;/apitest&quot;, &quot;recursive&quot;: &quot;False&quot;}&#39;</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;http://localhost:8080/cloudmesh/storage/v1/put&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+        <span class="c1">#data = &#39;{&quot;service&quot;: &quot;azureblob&quot;, &quot;source&quot;: &quot;~/openapi/a.txt&quot;, &quot;destination&quot;: &quot;/apitest&quot;, &quot;recursive&quot;: &quot;False&quot;}&#39;</span>
+        
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;service&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="s2">&quot;</span><span class="si">{storage}</span><span class="s2">&quot;</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;~/openapi/a.txt&quot;</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;destination&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/apitest&quot;</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;recursive&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;False&quot;</span>
+        
+        <span class="n">data_str</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;http://localhost:8080/cloudmesh/storage/v1/put&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data_str</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">()</span>
 

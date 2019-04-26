@@ -54,7 +54,7 @@ A default `Container` should be set in the `cloudmesh4.yaml` file details  of
 which are outlined 
 [here](https://github.com/cloudmesh/cloudmesh-manual/blob/master/docs-source/source/configuration/configuration.md)
 
-**IMPORTANT NOTE:
+**IMPORTANT NOTE:**
 
 The free Azure account needs to be upgrade to a pay-as-you-go subscription 
 after first 30 days to get continued access to free products—some for the 

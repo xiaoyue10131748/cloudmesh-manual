@@ -21,9 +21,7 @@ Once you have verified your account and signed in, you will be taken to a page t
 
 Navigate to the [developer console](https://app.box.com/developers/console) and select `Create New App`.  You will need to select what type of application you are building and an authentication method for your app and then enter an app name (you can change this later). Once your app has been created, click View App. You will then need to click the profile button in the top right corner of the page, and go to `Account Settings`. Scroll down to the Authentication section and click `Require 2-step verification for unrecognized logins`, then follow the prompts.
 
-The following examples have been adapted from <https://developer.box.com/reference>.
-
-### Authentication with JWT
+## Authentication with JWT
 
 In the Configuration panel of the Developer Console, scroll down to
 the section titled `Add and Manage Public Keys` and click `Generate a

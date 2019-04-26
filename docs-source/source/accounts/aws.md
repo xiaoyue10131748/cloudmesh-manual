@@ -6,9 +6,9 @@ Amazon Web Services provides a wide variaty of cloud-based products including an
 
 * **Amazon Simple Storage Service (S3)** Amazon S3 an object storage service that offers a wide range of storage classes.
 
-This page is a step-by-step guide on how to create an AWS account. 
+This page is a step-by-step guide on how to create an AWS account through the AWS webpage. 
 
-## Registration
+## Step-by-Step Guide
 
 First, we go to the AWS website: <https://aws.amazon.com>. Click on `Create an AWS Account`.
 
@@ -60,7 +60,7 @@ Now you've successfully signed in to the AWS Management Console.
 
 ![Image](images/aws/image12.png)
 
-You can click on `Services` to explore AWS services through their GUI interface. 
+You can click on `Services` to explore AWS services through their webpage. 
 
 ![Image](images/aws/image13.png)
 

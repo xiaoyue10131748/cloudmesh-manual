@@ -288,25 +288,14 @@ storage:
 It is beyond the scope of this manual to discuss how to get an account on Google.
 However we do provide a convenient documentation at ![][CONTRIBUTE]
 
-The `cloudmesh4.yaml` file needs to be set up as follows for the 'azure-blob'
+The `cloudmesh4.yaml` file needs to be set up as follows for the 'azureblob'
 section under 'storage'.
 
 ```bash
 cloudmesh:
   .........
   storage:
-    box:
-      cm:
-        heading: Box
-        host: box.com
-        label: Box
-        kind: box
-        version: TBD
-      default:
-        directory: TBD
-      credentials:
-        name: TBD
-    azure:
+    azureblob:
       cm:
         heading: Azure
         host: azure.com

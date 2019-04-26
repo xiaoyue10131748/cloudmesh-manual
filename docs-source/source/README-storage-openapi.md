@@ -12,7 +12,7 @@ follows:
 $ cms set storage='azureblob'
 ```
 
-`azureblob` can be replaced with the desired service in the above command.
+Note: `azureblob` can be replaced with the desired service in the above command.
 
 To invoke the server, navigate to the OpenAPI folder in the 
 cloudmesh-storage directory and use:
@@ -49,7 +49,7 @@ A generic pytest is also developed which is available in the following directory
 * <https://github.com/cloudmesh/cloudmesh-storage/tree/master/cloudmesh/storage/spec/tests>
 
 
-The geneeric pytest that works accross providers and can be invoked as follows
+The generic pytest that works accross providers and can be invoked as follows
 
 ```bash
 $ cms set storage=azureblob

@@ -9,6 +9,7 @@ put your names here (put your real names here and sort by lastname
 
 * Vafa Andalibi,
   David Michael Demeulenaere,
+  Anthony Duer,
   Bo Feng,
   Yu Luo,
   Rui Li, 

@@ -1,3 +1,3 @@
 # Benchmarks
 
-Put your penchmarks in separate files into this directory.
+Put your benchmarks in separate files into this directory.

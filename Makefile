@@ -117,6 +117,8 @@ doc:
 	rm -rf docs
 	mkdir -p dest
 	cd docs-source; make html
+	cp -r docs-source/source/_ext docs-source/build/html
+	cp -r docs-source/source/_templates docs-source/build/html
 	cp -r docs-source/build/html/ docs
 	mv ~/.cloudmesh/cloudmesh4.yaml-tmp ~/.cloudmesh/cloudmesh4.yaml
 	mv ~/.cloudmesh/cloudmesh.yaml-tmp ~/.cloudmesh/cloudmesh.yaml

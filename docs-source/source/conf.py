@@ -19,6 +19,9 @@ from pprint import pprint
 # sys.path.insert(0, os.path.abspath('../..'))
 sys.path.insert(0, os.path.abspath('../..'))
 
+# the next is for edit_on_githib, which does not work
+sys.path.insert(0, os.path.abspath('_ext'))
+
 pprint (sys.path)
 
 # -- Project information -----------------------------------------------------
@@ -50,14 +53,20 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
+    'edit_on_github'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
+# the next is for edit_on_githib, which does not work
+
+edit_on_github_project = 'cloudmesh/cloudmesh-manual'
+edit_on_github_branch = 'master'
+
 templates_path = ['_templates']
 source_suffix = ['.md', '.rst']
 master_doc = 'index'
 language = None
-html_show_sourcelink = False
+html_show_sourcelink = True
 
 #
 # add source parser

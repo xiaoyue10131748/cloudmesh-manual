@@ -127,8 +127,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../manual/commands.html">1. Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual-cmd5.html">2. Manual Cmd5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual-compute.html">2. Compute Manual Pages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual-storage.html">3. Storage Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual-compute.html">3. Compute Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual-storage.html">4. Storage Manual Pages</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Database</span></p>
 <ul>
@@ -154,9 +154,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../code/commands.html">7. Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../code/inventory.html">8. Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../code/storage.html">9. cloudmesh-storage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/cloud.html">10. cloudmesh-cloud</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/batch.html">11. cloudmesh-batch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/emr.html">12. cloudmesh-emr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/objstorage.html">10. cloudmesh-objstorage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/cloud.html">11. cloudmesh-cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/batch.html">12. cloudmesh-batch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/emr.html">13. cloudmesh-emr</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CONTRIBUTION</span></p>
 <ul>
@@ -242,6 +243,8 @@
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="../_sources/accounts/storage-gdrive.md.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -307,12 +310,12 @@ one of them is Google Drive with 15 GB overall storage.</p>
 <p>After that we need to go through the Google Drive Quick start guide:</p>
 <p>&lt;https://developers.google.com/drive/api/v3/quickstart/python &gt;</p>
 <p>There we can see Enable API option as shown in the next picture:</p>
-<p><img alt="../_images/image1.png" src="../_images/image1.png" />Image1</p>
+<p><img alt="../_images/image14.png" src="../_images/image14.png" />Image1</p>
 <p>Once we enable that we will get credentials.json file where all of our
 credentials are stored that can be used  to communicate with our Google
 Drive through Python Interface.  After that, we will be redirected to a
 page where we need to create our own project as shown in the next picture:</p>
-<p><img alt="../_images/image2.png" src="../_images/image2.png" />image2</p>
+<p><img alt="../_images/image21.png" src="../_images/image21.png" />image2</p>
 <p>As we see next we need to select Google Drive API from here</p>
 <p><img alt="../_images/image16.png" src="../_images/image16.png" />gd1</p>
 <p>After that, we need to obtain the client_secret file as shown next: (The
@@ -323,7 +326,7 @@ client_secret.json)</p>
 <p>After this if we run Authentication.py we will be redirected to our default
 browser to put our our login id and password and  after that it asks to
 authenticate our credentials. If we allow that as shown next:</p>
-<p><img alt="../_images/image21.png" src="../_images/image21.png" />gd2</p>
+<p><img alt="../_images/image211.png" src="../_images/image211.png" />gd2</p>
 <p>We will get the screen something like given next (as the authentication
 pipeline has bees completed).</p>
 <p><img alt="../_images/image23.png" src="../_images/image23.png" />gd3</p>

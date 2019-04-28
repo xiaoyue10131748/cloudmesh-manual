@@ -2,7 +2,6 @@ Manual Cmd5
 -----------
 
 .. toctree::
-   :numbered:
    :caption: CMD5
 
    manual/cmd5/admin

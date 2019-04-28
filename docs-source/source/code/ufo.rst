@@ -5,7 +5,7 @@ Cloud Library
 
 
 VCluster
-----
+--------
 
 .. automodule:: cloudmesh.vcluster.api.vcluster
    :members:
@@ -15,7 +15,7 @@ VCluster
 
 
 Service
-----
+-------
 
 .. automodule:: cloudmesh.service.server
    :members:
@@ -23,7 +23,7 @@ Service
 
 
 AWS
-===============
+===
 
 .. automodule:: cloudmesh.aws.CommandAWS
    :members:

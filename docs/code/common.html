@@ -128,7 +128,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../manual/commands.html">1. Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual-cmd5.html">2. Manual Cmd5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual-compute.html">3. Compute Manual Pages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual-storage.html">3. Storage Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual-storage.html">4. Storage Manual Pages</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Database</span></p>
 <ul>
@@ -147,17 +147,17 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="code.html">1. Code Documentation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. Common</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#debug">2.1. DEBUG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cloudmesh.DEBUG">2.1. DEBUG</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#variable">2.2. Variable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-cloudmesh.common.util">2.3. Util</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dotdict">2.4. Dotdict</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#locations">2.5. Locations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#parameter">2.6. Parameter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#flatdict">2.7. FlatDict</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#printer">2.8. Printer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#stopwatch">2.9. Stopwatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cloudmesh.common.dotdict">2.4. Dotdict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cloudmesh.common.locations">2.5. Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cloudmesh.common.parameter">2.6. Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cloudmesh.common.FlatDict">2.7. FlatDict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cloudmesh.common.Printer">2.8. Printer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cloudmesh.common.StopWatch">2.9. Stopwatch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-cloudmesh.common.console">2.10. Console</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#logger">2.11. Logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cloudmesh.common.logger">2.11. Logger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-cloudmesh.common.error">2.12. Error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-cloudmesh.common.Shell">2.13. Shell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-cloudmesh.common.run.file">2.14. Run</a></li>
@@ -172,9 +172,10 @@
 <li class="toctree-l1"><a class="reference internal" href="commands.html">7. Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inventory.html">8. Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="storage.html">9. cloudmesh-storage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cloud.html">10. cloudmesh-cloud</a></li>
-<li class="toctree-l1"><a class="reference internal" href="batch.html">11. cloudmesh-batch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="emr.html">12. cloudmesh-emr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objstorage.html">10. cloudmesh-objstorage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cloud.html">11. cloudmesh-cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="batch.html">12. cloudmesh-batch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emr.html">13. cloudmesh-emr</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CONTRIBUTION</span></p>
 <ul>
@@ -267,9 +268,9 @@
 <p>cloudmesh-common contains a number of useful methods that you can reuse to
 develop your code. They avoid reimplementation and duplication among the
 different contributors. Please use these methods instead of reimplementing them.</p>
-<div class="section" id="debug">
-<h2>2.1. DEBUG<a class="headerlink" href="#debug" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-cloudmesh.DEBUG"></span></div>
+<div class="section" id="module-cloudmesh.DEBUG">
+<span id="debug"></span><h2>2.1. DEBUG<a class="headerlink" href="#module-cloudmesh.DEBUG" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="variable">
 <h2>2.2. Variable<a class="headerlink" href="#variable" title="Permalink to this headline">¶</a></h2>
 </div>
@@ -501,9 +502,9 @@ String matching only, does not do REs as currently implemented.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="dotdict">
-<h2>2.4. Dotdict<a class="headerlink" href="#dotdict" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-cloudmesh.common.dotdict"></span><p>A convenient dot dict class</p>
+<div class="section" id="module-cloudmesh.common.dotdict">
+<span id="dotdict"></span><h2>2.4. Dotdict<a class="headerlink" href="#module-cloudmesh.common.dotdict" title="Permalink to this headline">¶</a></h2>
+<p>A convenient dot dict class</p>
 <p>a = dotdict({“argument”: “value”})</p>
 <p>print (a.argument)</p>
 <dl class="class">
@@ -513,9 +514,9 @@ String matching only, does not do REs as currently implemented.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="locations">
-<h2>2.5. Locations<a class="headerlink" href="#locations" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-cloudmesh.common.locations"></span><p>class that specifies where we read the cloudmesh.yaml file from</p>
+<div class="section" id="module-cloudmesh.common.locations">
+<span id="locations"></span><h2>2.5. Locations<a class="headerlink" href="#module-cloudmesh.common.locations" title="Permalink to this headline">¶</a></h2>
+<p>class that specifies where we read the cloudmesh.yaml file from</p>
 <dl class="function">
 <dt id="cloudmesh.common.locations.config_dir_setup">
 <code class="descclassname">cloudmesh.common.locations.</code><code class="descname">config_dir_setup</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/common/locations.html#config_dir_setup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.common.locations.config_dir_setup" title="Permalink to this definition">¶</a></dt>
@@ -545,12 +546,12 @@ String matching only, does not do REs as currently implemented.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="parameter">
-<h2>2.6. Parameter<a class="headerlink" href="#parameter" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-cloudmesh.common.parameter"></span></div>
-<div class="section" id="flatdict">
-<h2>2.7. FlatDict<a class="headerlink" href="#flatdict" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-cloudmesh.common.FlatDict"></span><dl class="class">
+<div class="section" id="module-cloudmesh.common.parameter">
+<span id="parameter"></span><h2>2.6. Parameter<a class="headerlink" href="#module-cloudmesh.common.parameter" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cloudmesh.common.FlatDict">
+<span id="flatdict"></span><h2>2.7. FlatDict<a class="headerlink" href="#module-cloudmesh.common.FlatDict" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
 <dt id="cloudmesh.common.FlatDict.FlatDict">
 <em class="property">class </em><code class="descclassname">cloudmesh.common.FlatDict.</code><code class="descname">FlatDict</code><span class="sig-paren">(</span><em>d</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/common/FlatDict.html#FlatDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.common.FlatDict.FlatDict" title="Permalink to this definition">¶</a></dt>
 <dd><p>A data structure to manage a flattened dict. It is initialized by passing the dict
@@ -605,9 +606,9 @@ Typically this will be “”</p></li>
 </dd></dl>
 
 </div>
-<div class="section" id="printer">
-<h2>2.8. Printer<a class="headerlink" href="#printer" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-cloudmesh.common.Printer"></span><p>Convenient methods and classes to print tables.</p>
+<div class="section" id="module-cloudmesh.common.Printer">
+<span id="printer"></span><h2>2.8. Printer<a class="headerlink" href="#module-cloudmesh.common.Printer" title="Permalink to this headline">¶</a></h2>
+<p>Convenient methods and classes to print tables.</p>
 <dl class="class">
 <dt id="cloudmesh.common.Printer.Printer">
 <em class="property">class </em><code class="descclassname">cloudmesh.common.Printer.</code><code class="descname">Printer</code><a class="reference internal" href="../_modules/cloudmesh/common/Printer.html#Printer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.common.Printer.Printer" title="Permalink to this definition">¶</a></dt>
@@ -783,9 +784,9 @@ This specify the column(s) in the table for sorting.</p></li>
 </dd></dl>
 
 </div>
-<div class="section" id="stopwatch">
-<h2>2.9. Stopwatch<a class="headerlink" href="#stopwatch" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-cloudmesh.common.StopWatch"></span><p>Class for starting and stopping named timers.</p>
+<div class="section" id="module-cloudmesh.common.StopWatch">
+<span id="stopwatch"></span><h2>2.9. Stopwatch<a class="headerlink" href="#module-cloudmesh.common.StopWatch" title="Permalink to this headline">¶</a></h2>
+<p>Class for starting and stopping named timers.</p>
 <p>This class is based on a similar java class in cyberaide, and java cog kit.</p>
 <dl class="class">
 <dt id="cloudmesh.common.StopWatch.StopWatch">
@@ -1005,9 +1006,9 @@ warnings, errors, ok and regular messages.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="logger">
-<h2>2.11. Logger<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-cloudmesh.common.logger"></span><p>simple logging convenience framework</p>
+<div class="section" id="module-cloudmesh.common.logger">
+<span id="logger"></span><h2>2.11. Logger<a class="headerlink" href="#module-cloudmesh.common.logger" title="Permalink to this headline">¶</a></h2>
+<p>simple logging convenience framework</p>
 <dl class="function">
 <dt id="cloudmesh.common.logger.LOGGER">
 <code class="descclassname">cloudmesh.common.logger.</code><code class="descname">LOGGER</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cloudmesh/common/logger.html#LOGGER"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.common.logger.LOGGER" title="Permalink to this definition">¶</a></dt>

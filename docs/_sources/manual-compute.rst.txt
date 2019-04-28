@@ -2,7 +2,6 @@ Compute Manual Pages
 --------------------
 
 .. toctree::
-   :numbered:
    :caption: Compute
 
    manual/compute/batch

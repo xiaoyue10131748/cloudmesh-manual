@@ -2,7 +2,6 @@ Storage Manual Pages
 --------------------
 
 .. toctree::
-   :numbered:
    :caption: Storage
 
    manual/storage/objstorage

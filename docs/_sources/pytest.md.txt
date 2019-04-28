@@ -10,7 +10,7 @@ sufficient number of tests to make sure the module works can not be accepted.
 
 The nose module can be installed with the help of pip utility
 
-```python
+```bash
 $ pip install pytest
 ```
 

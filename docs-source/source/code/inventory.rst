@@ -1,5 +1,5 @@
 Inventory
-==========
+=========
 
 .. automodule:: cloudmesh.inventory.command.inventory
    :members:

@@ -37,7 +37,7 @@ Printer
 
 
 Names
--------
+-----
 
 .. automodule:: cloudmesh.management.configuration.name
    :members:

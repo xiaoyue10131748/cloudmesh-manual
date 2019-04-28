@@ -61,7 +61,7 @@ aka `vcluster`, you can simply destroy it.
 
 Consider the following two dummy clusters in the `cloudmesh4.yaml` file:
 
-```yaml
+```
 cloudmesh: 
 	...
     vcluster_test1:

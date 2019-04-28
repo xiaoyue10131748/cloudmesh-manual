@@ -7,13 +7,13 @@ different contributors. Please use these methods instead of reimplementing them.
 
 
 DEBUG
-----
+-----
 
 .. automodule:: cloudmesh.DEBUG
    :members:
 
 Variable
-----
+--------
 
 .. automodule:: cloudmesh.Variables
    :members:
@@ -26,38 +26,38 @@ Util
    :members:
 
 Dotdict
-----
+-------
 
 .. automodule:: cloudmesh.common.dotdict
    :members:
 
 Locations
-----
+---------
 
 .. automodule:: cloudmesh.common.locations
    :members:
 
 Parameter
-----
+---------
 
 .. automodule:: cloudmesh.common.parameter
    :members:
 
 FlatDict
-----
+--------
 
 .. automodule:: cloudmesh.common.FlatDict
    :members:
 
 
 Printer
-----
+-------
 
 .. automodule:: cloudmesh.common.Printer
    :members:
 
 Stopwatch
-----
+---------
 
 .. automodule:: cloudmesh.common.StopWatch
    :members:
@@ -69,7 +69,7 @@ Console
    :members:
 
 Logger
------
+------
 
 .. automodule:: cloudmesh.common.logger
    :members:
@@ -87,7 +87,7 @@ Shell
    :members:
 
 Run
------
+---
 
 .. automodule:: cloudmesh.common.run.file
    :members:
@@ -99,14 +99,14 @@ Run
    :members:
 
 DB
-----
+--
 
 .. automodule:: cloudmesh.db.strdb
    :members:
 
 
 SSH
-----
+---
 
 .. automodule:: cloudmesh.common.ssh.authorized_keys
    :members:

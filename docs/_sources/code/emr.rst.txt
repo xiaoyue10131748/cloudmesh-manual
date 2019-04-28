@@ -1,5 +1,5 @@
 cloudmesh-emr
-=====
+=============
 
 .. automodule:: cloudmesh.emr.api.manager
    :members:

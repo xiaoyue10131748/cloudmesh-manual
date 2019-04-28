@@ -1,5 +1,5 @@
 cloudmesh-storage
-==========
+=================
 
 .. automodule:: cloudmesh.storage.Provider
    :members:
@@ -17,9 +17,6 @@ cloudmesh-storage
    :members:
 
 .. automodule:: cloudmesh.storage.provider.gdrive.Provider
-   :members:
-
-.. automodule:: cloudmesh.storage.provider.gdrive.Authentication
    :members:
 
 .. automodule:: cloudmesh.storage.provider.azureblob.Provider

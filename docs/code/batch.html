@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>11. cloudmesh-batch &mdash; Cloudmesh v4 alpha documentation</title>
+  <title>12. cloudmesh-batch &mdash; Cloudmesh v4 alpha documentation</title>
   
 
   
@@ -36,8 +36,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="12. cloudmesh-emr" href="emr.html" />
-    <link rel="prev" title="10. cloudmesh-cloud" href="cloud.html" /> 
+    <link rel="next" title="13. cloudmesh-emr" href="emr.html" />
+    <link rel="prev" title="11. cloudmesh-cloud" href="cloud.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -128,7 +128,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../manual/commands.html">1. Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual-cmd5.html">2. Manual Cmd5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual-compute.html">3. Compute Manual Pages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual-storage.html">3. Storage Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual-storage.html">4. Storage Manual Pages</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Database</span></p>
 <ul>
@@ -137,6 +137,11 @@
 <p class="caption"><span class="caption-text">Database</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../benchmarks/README.html">1. Benchmarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarks/awss3-storage-benchmark.html">2. </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarks/awss3-storage-benchmark.html#none">3. None</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarks/awss3-storage-benchmark.html#test-results-tests-test-storage-aws-py-114">4. test_results \tests\test_storage_aws.py 114</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarks/awss3-storage-benchmark.html#id2">5. </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarks/azure-storage-benchmark.html">6. Azure Blob Storage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CODE</span></p>
 <ul class="current">
@@ -149,9 +154,10 @@
 <li class="toctree-l1"><a class="reference internal" href="commands.html">7. Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inventory.html">8. Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="storage.html">9. cloudmesh-storage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cloud.html">10. cloudmesh-cloud</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">11. cloudmesh-batch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="emr.html">12. cloudmesh-emr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objstorage.html">10. cloudmesh-objstorage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cloud.html">11. cloudmesh-cloud</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">12. cloudmesh-batch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emr.html">13. cloudmesh-emr</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CONTRIBUTION</span></p>
 <ul>
@@ -222,7 +228,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>11. cloudmesh-batch</li>
+      <li>12. cloudmesh-batch</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -239,9 +245,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="cloudmesh-batch">
-<h1>11. cloudmesh-batch<a class="headerlink" href="#cloudmesh-batch" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-cloudmesh.batch.api.Batch"></span><span class="target" id="module-cloudmesh.batch.command.batch"></span><span class="target" id="module-cloudmesh.queue.api.Queue"></span><span class="target" id="module-cloudmesh.queue.command.queue"></span></div>
+  <div class="section" id="module-cloudmesh.batch.api.Batch">
+<span id="cloudmesh-batch"></span><h1>12. cloudmesh-batch<a class="headerlink" href="#module-cloudmesh.batch.api.Batch" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-cloudmesh.batch.command.batch"></span><span class="target" id="module-cloudmesh.queue.api.Queue"></span><span class="target" id="module-cloudmesh.queue.command.queue"></span></div>
 
 
            </div>
@@ -251,10 +257,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="emr.html" class="btn btn-neutral float-right" title="12. cloudmesh-emr" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="emr.html" class="btn btn-neutral float-right" title="13. cloudmesh-emr" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="cloud.html" class="btn btn-neutral float-left" title="10. cloudmesh-cloud" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="cloud.html" class="btn btn-neutral float-left" title="11. cloudmesh-cloud" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

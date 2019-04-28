@@ -49,15 +49,6 @@ command and pycharm with its `Edit-Wrap Line to` column or paragraph features.
 On macOS this can be called with `CONTROL-SHIFT-COMMAND-W` or
 `CONTROL-SHIFT-COMMAND-P`
 
-## Security Management (needs further investigation if useful and secure)
-
-Some security risks can be shown with
-
-```bash
-$ pip install bandit
-$ bandit -r ./cloudmesh 
-```
-
 ## Version Managemt
 
 This is only done by Gregor

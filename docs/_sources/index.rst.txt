@@ -8,8 +8,6 @@ Cloudmesh Version 4
 
    about
    contributors
-   authors
-   management
 
 .. toctree::
    :numbered:
@@ -114,6 +112,7 @@ CODE
    :caption: CONTRIBUTION
 
    conventions
+   management
    pytest
 
 Cloud Provider Accounts

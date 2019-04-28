@@ -1,9 +1,8 @@
-
 ## Azure Blob Storage
 
 Benchmark results for Azure Blob storage under cloudmesh-storage.
 
-```bash
+```
 # ######################################################################
 # Benchmark results for AzureBlob Storage
 # ######################################################################

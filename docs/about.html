@@ -90,12 +90,13 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">1. About</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#features">1.1. Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#roadmap-under-development">1.2. Roadmap (under development)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#roadmap-providers-under-development">1.3. Roadmap Providers (under development)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#open-projects">1.4. Open Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#roadmap-for-future-activities">1.2. Roadmap for Future Activities</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contributors.html">2. Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management.html">3. Code Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management.html#documentation-management">4. Documentation Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management.html#version-managemt">5. Version Managemt</a></li>
 </ul>
 <p class="caption"><span class="caption-text">INSTALLATION</span></p>
 <ul>
@@ -176,10 +177,9 @@
 <li class="toctree-l1"><a class="reference internal" href="accounts/aws.html">1. Amazon Web Services (AWS) Account Creation Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts/azureblob-storage.html">2. Azure Blob Storage and Account Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts/box.html">3. Setting Up Your Box Account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accounts/box.html#references">4. References:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accounts/storage-gdrive.html">5. Google Storage Providers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accounts/google-ufo.html">6. Google (What is this?)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accounts/accountcreation.html">7. VM Providers (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts/storage-gdrive.html">4. Google Storage Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts/google-ufo.html">5. Google (What is this?)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts/accountcreation.html">6. VM Providers (outdated)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Outdated:</span></p>
 <ul>
@@ -270,17 +270,12 @@ by the user.</p>
 <div class="section" id="features">
 <h2>1.1. Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>usefule common programming library ti make it easy to interface with the
-system <a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cmd5">https://github.com/cloudmesh/cloudmesh-cmd5</a></p></li>
+<li><p>useful common programming library to make it easy to interface with the
+system <a class="reference external" href="https://github.com/cloudmesh/cloudmesh-common">https://github.com/cloudmesh/cloudmesh-common</a></p></li>
 <li><p>extensible cmondline and shell with cmd5
 <a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cmd5">https://github.com/cloudmesh/cloudmesh-cmd5</a></p></li>
 <li><p>convenient installer for developers
 <a class="reference external" href="https://github.com/cloudmesh/cloudmesh-installer">https://github.com/cloudmesh/cloudmesh-installer</a></p></li>
-</ul>
-</div>
-<div class="section" id="roadmap-under-development">
-<h2>1.2. Roadmap (under development)<a class="headerlink" href="#roadmap-under-development" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
 <li><p>MongoDB as a backend for caching
 <a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cloud">https://github.com/cloudmesh/cloudmesh-cloud</a></p></li>
 <li><p>Cloud Providers, AWS, Azure, Google, Openstack
@@ -289,24 +284,18 @@ system <a class="reference external" href="https://github.com/cloudmesh/cloudmes
 <a class="reference external" href="https://github.com/cloudmesh/cloudmesh-workflow">https://github.com/cloudmesh/cloudmesh-workflow</a></p></li>
 <li><p>AWS emr plugin
 <a class="reference external" href="https://github.com/cloudmesh/cloudmesh-emr">https://github.com/cloudmesh/cloudmesh-emr</a></p></li>
-<li><p>A plugin for HPC systems
-<a class="reference external" href="https://github.com/cloudmesh/cloudmesh-batch">https://github.com/cloudmesh/cloudmesh-batch</a></p></li>
 <li><p>A plugin for Storage providers
 <a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage">https://github.com/cloudmesh/cloudmesh-storage</a></p></li>
 <li><p>OpenAPI based REST service interfaces</p></li>
 </ul>
 </div>
-<div class="section" id="roadmap-providers-under-development">
-<h2>1.3. Roadmap Providers (under development)<a class="headerlink" href="#roadmap-providers-under-development" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="roadmap-for-future-activities">
+<h2>1.2. Roadmap for Future Activities<a class="headerlink" href="#roadmap-for-future-activities" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Storage: Box, gdrive, AWS3, local, ???</p></li>
-<li><p>Compute: openstack, aws, azurs, google, virtual box, ssh, slurm</p></li>
-<li><p>Mapreduce: AWS emr</p></li>
-</ul>
-</div>
-<div class="section" id="open-projects">
-<h2>1.4. Open Projects<a class="headerlink" href="#open-projects" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
+<li><p>A plugin for HPC systems
+<a class="reference external" href="https://github.com/cloudmesh/cloudmesh-batch">https://github.com/cloudmesh/cloudmesh-batch</a></p></li>
+<li><p>Storage: local provider</p></li>
+<li><p>Compute: virtual box, ssh, slurm</p></li>
 <li><p>A javascript based GUI</p></li>
 <li><p>A cloud high throughput broker for pleasantly parallel parameter studies</p></li>
 </ul>

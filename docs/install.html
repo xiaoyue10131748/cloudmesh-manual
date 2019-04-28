@@ -100,7 +100,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#installation-of-mongod">1.2. Installation of mongod</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#anaconda-and-conda-proposed">1.3. Anaconda and Conda (proposed)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anaconda-and-conda">1.3. Anaconda and Conda</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">2. Quickstart</a></li>
@@ -111,7 +111,7 @@
 </ul>
 <p class="caption"><span class="caption-text">COMPUTE</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="vm.html">1. Virtual Machine Management (proposed)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vm.html">1. Virtual Machine Management</a></li>
 </ul>
 <p class="caption"><span class="caption-text">STORAGE</span></p>
 <ul>
@@ -147,11 +147,8 @@
 <p class="caption"><span class="caption-text">Database</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="benchmarks/README.html">1. Benchmarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html">2. </a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html#none">3. None</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html#test-results-tests-test-storage-aws-py-114">4. test_results \tests\test_storage_aws.py 114</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html#id2">5. </a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/azure-storage-benchmark.html">6. Azure Blob Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html">2. AWS Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks/azure-storage-benchmark.html">3. Azure Blob Storage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CODE</span></p>
 <ul>
@@ -172,7 +169,10 @@
 <p class="caption"><span class="caption-text">CONTRIBUTION</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="conventions.html">1. Code Conventions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pytest.html">2. Pytest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management.html">2. Code Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management.html#documentation-management">3. Documentation Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management.html#version-managemt">4. Version Managemt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pytest.html">5. Pytest</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Cloud Accounts</span></p>
 <ul>
@@ -269,16 +269,16 @@ with the system installation.</p>
 <p>The installation via pip is not yet supported for cloudmesh cm. Thus
 we recommend that you use the source installation instead.</p>
 <p>In future cloudmesh version 4 will be installed with</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install cloudmesh-cms
-pip install cloudmesh-cloud
-pip install cloudmesh-storage
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install cloudmesh-cms
+$ pip install cloudmesh-cloud
+$ pip install cloudmesh-storage
 </pre></div>
 </div>
-<p>Individual packages can be installed with</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">cloudmesh</span><span class="o">-</span><span class="n">common</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">cloudmesh</span><span class="o">-</span><span class="n">sys</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">cloudmesh</span><span class="o">-</span><span class="n">cmd5</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">cloudmesh</span><span class="o">-</span><span class="n">openapi</span>
+<p>Additional packages will include</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install cloudmesh-flow
+$ pip install cloudmesh-emr
+$ pip install cloudmesh-batch
+$ pip install cloudmesh-openapi
 </pre></div>
 </div>
 <p>For the time being we recommend you conduct the source install.</p>
@@ -291,28 +291,31 @@ pip install cloudmesh-storage
 <li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-installer">https://github.com/cloudmesh/cloudmesh-installer</a></p></li>
 </ul>
 <p>You install it with</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install cloudmesh-installer
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install cloudmesh-installer
 </pre></div>
 </div>
 <p>It is best to create an emty directory and decide which bundles to install</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir cm
-<span class="nb">cd</span> cm
-cloudmesh-installer bundels
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir cm
+$ <span class="nb">cd</span> cm
+$ cloudmesh-installer bundels
 </pre></div>
 </div>
-<p>Decide which bundels you like to install (let us assume you use storage) and simply say</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cloudmesh-installer git clone storage
-cloudmesh-installer install storage -e
+<p>Decide which bundels you like to install (let us assume you use storage) and
+simply say</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cloudmesh-installer git clone storage
+$ cloudmesh-installer install storage -e
 </pre></div>
 </div>
-<p>It will take a while to install On newer machines 1 minte, on older significant longer.</p>
+<p>It will take a while to install On newer machines 1 minte, on older significant
+longer.</p>
 <p>YOu can than test if</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cms <span class="nb">help</span> 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cms <span class="nb">help</span> 
 </pre></div>
 </div>
-<p>works. Make susre to stay up to date while issuing the pull command on your bundle</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cloudmesh-installer git pull bundle
-cloudmesh-installer install storage -e
+<p>works. Make susre to stay up to date while issuing the pull command on your
+bundle</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cloudmesh-installer git pull bundle
+$ cloudmesh-installer install storage -e
 </pre></div>
 </div>
 </div>
@@ -328,12 +331,12 @@ not done this before. The easieast way to do so is with the command</p>
 <p><code class="docutils literal notranslate"><span class="pre">~/.cloudmesh/cloudmesh4.yaml</span></code></p>
 <p>and change the password of the mongo entry to something you like,
 e.g. change the TBD to a real strong password</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">MONGO_PASSWORD</span><span class="p">:</span> <span class="n">TBD</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MONGO_PASSWORD</span><span class="p">:</span> <span class="n">TBD</span>
 </pre></div>
 </div>
 <p>In case you do not have mongod installed, you can do so for macOS and Ubuntu
 18.xx by setting the following variable:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">MONGO_AUTOINSTALL</span><span class="p">:</span> <span class="kc">True</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MONGO_AUTOINSTALL</span><span class="p">:</span> <span class="kc">True</span>
 </pre></div>
 </div>
 <p>Now you can run the <code class="docutils literal notranslate"><span class="pre">admin</span> <span class="pre">mongo</span> <span class="pre">install</span></code> command. It will not only
@@ -357,12 +360,18 @@ $ cms admin mongo stop
 </div>
 <p>For cloudmesh to work properly, please start mongo.</p>
 </div>
-<div class="section" id="anaconda-and-conda-proposed">
-<h2>1.3. Anaconda and Conda (proposed)<a class="headerlink" href="#anaconda-and-conda-proposed" title="Permalink to this headline">¶</a></h2>
-<p>At this time we do not yet support conda. But if you like to
-contribute an instalation package, please do so.</p>
-<p>It may just very well work with our pip installs, but we have not
-tested it.  Please give us feedback.</p>
+<div class="section" id="anaconda-and-conda">
+<h2>1.3. Anaconda and Conda<a class="headerlink" href="#anaconda-and-conda" title="Permalink to this headline">¶</a></h2>
+<p>We also have the base packages available as conda packages on conda hub in the
+chanel <code class="docutils literal notranslate"><span class="pre">laszewski</span></code>. This includes</p>
+<ul class="simple">
+<li><p>cloudmesh-common</p></li>
+<li><p>cloudmesh-cmd5</p></li>
+<li><p>cloudmesh-sys</p></li>
+</ul>
+<p>Note that the packages will always be a little bit behind the packages on pypi
+and especially the source distribution. If you are interested in helping out
+with the conda packages, let us know.</p>
 </div>
 </div>
 

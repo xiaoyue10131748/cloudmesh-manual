@@ -1,17 +1,17 @@
-# Contributors
+Contributors
+============
 
 Code Contributions can be seen at
 
-* <https://github.com/cloudmesh/cloudmesh-cloud/graphs/contributors>
+* https://github.com/cloudmesh/cloudmesh-cloud/graphs/contributors
 
 The original author of cloudmesh is 
 
-* Gregor von Laszewski (primary contact, laszewski@gmial.com) and
+* **Gregor von Laszewski** (laszewski@gmail.com)
 
-Lareg contributions have also been made by  
+Large contributions have also been made by
 
-* Fugang Wang
-
+* *Fugang Wang*
 
 Many have contributed to cloudmesh in the past.  However, this version has
 reveived contributions from a subset of them. Previous contributors will be
@@ -28,7 +28,7 @@ please let us know. We will add you.  The contributors that we are aware of
 include:
  
 
-
+.. include:: ./authors.md
 
 
 

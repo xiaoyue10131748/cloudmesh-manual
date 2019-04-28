@@ -44,18 +44,6 @@ install:
 	cd ../cloudmesh-batch ; git pull; pip install -e .
 	cd ../cloudmesh-emr ; git pull; pip install -e .
 
-clean:
-	$(call banner, "CLEAN")
-	rm -rf dist
-	rm -rf *.zip
-	rm -rf *.egg-info
-	rm -rf *.eggs
-	rm -rf docs/build
-	rm -rf build
-	find . -name '__pycache__' -delete
-	find . -name '*.pyc' -delete
-	rm -rf .tox
-	rm -f *.whl
 
 
 manual:
@@ -109,7 +97,7 @@ manual:
 	cms man --kind=rst vdir > docs-source/source/manual/storage/vdir.rst
 	cms man --kind=rst objstorage > docs-source/source/manual/storage/objstorage.rst
 
-authors: docs-source/source/authors.md
+authors:
 	bin/authors.py > docs-source/source/authors.md
 
 doc: authors

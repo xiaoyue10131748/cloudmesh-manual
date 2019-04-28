@@ -15,19 +15,18 @@ we recommend that you use the source installation instead.
 In future cloudmesh version 4 will be installed with
 
 ```bash
-pip install cloudmesh-cms
-pip install cloudmesh-cloud
-pip install cloudmesh-storage
-
+$ pip install cloudmesh-cms
+$ pip install cloudmesh-cloud
+$ pip install cloudmesh-storage
 ```
 
-Individual packages can be installed with
+Additional packages will include
 
 ```
-pip install cloudmesh-common
-pip install cloudmesh-sys
-pip install cloudmesh-cmd5
-pip install cloudmesh-openapi
+$ pip install cloudmesh-flow
+$ pip install cloudmesh-emr
+$ pip install cloudmesh-batch
+$ pip install cloudmesh-openapi
 ```
 
 For the time being we recommend you conduct the source install.
@@ -43,37 +42,40 @@ More documentation about it can be found at
 You install it with 
 
 ```bash
-pip install cloudmesh-installer
+$ pip install cloudmesh-installer
 ```
 
 It is best to create an emty directory and decide which bundles to install
 
 ```bash
-mkdir cm
-cd cm
-cloudmesh-installer bundels
+$ mkdir cm
+$ cd cm
+$ cloudmesh-installer bundels
 ```
 
-Decide which bundels you like to install (let us assume you use storage) and simply say 
+Decide which bundels you like to install (let us assume you use storage) and
+simply say
 
 ```bash
-cloudmesh-installer git clone storage
-cloudmesh-installer install storage -e
+$ cloudmesh-installer git clone storage
+$ cloudmesh-installer install storage -e
 ```
 
-It will take a while to install On newer machines 1 minte, on older significant longer.
+It will take a while to install On newer machines 1 minte, on older significant
+longer.
 
 YOu can than test if 
 
 ``` bash
-cms help 
+$ cms help 
 ```
 
-works. Make susre to stay up to date while issuing the pull command on your bundle
+works. Make susre to stay up to date while issuing the pull command on your
+bundle
 
 ```bash
-cloudmesh-installer git pull bundle
-cloudmesh-installer install storage -e
+$ cloudmesh-installer git pull bundle
+$ cloudmesh-installer install storage -e
 
 ```
 
@@ -95,14 +97,14 @@ and change the password of the mongo entry to something you like,
  e.g. change the TBD to a real strong password
 
 ```
-      MONGO_PASSWORD: TBD
+MONGO_PASSWORD: TBD
 ```
 
 In case you do not have mongod installed, you can do so for macOS and Ubuntu 
 18.xx by setting the following variable:
 
 ```
-      MONGO_AUTOINSTALL: True
+MONGO_AUTOINSTALL: True
 ```
 
 
@@ -135,10 +137,15 @@ $ cms admin mongo stop
 For cloudmesh to work properly, please start mongo.
 
 
-## Anaconda and Conda (proposed)
+## Anaconda and Conda
 
-At this time we do not yet support conda. But if you like to
-contribute an instalation package, please do so.
- 
-It may just very well work with our pip installs, but we have not
-tested it.  Please give us feedback.
+We also have the base packages available as conda packages on conda hub in the
+chanel `laszewski`. This includes
+
+* cloudmesh-common
+* cloudmesh-cmd5
+* cloudmesh-sys
+
+Note that the packages will always be a little bit behind the packages on pypi
+and especially the source distribution. If you are interested in helping out
+with the conda packages, let us know.

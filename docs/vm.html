@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. Virtual Machine Management (proposed) &mdash; Cloudmesh v4 alpha documentation</title>
+  <title>1. Virtual Machine Management &mdash; Cloudmesh v4 alpha documentation</title>
   
 
   
@@ -90,6 +90,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="about.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributors.html">2. Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management.html">3. Code Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management.html#documentation-management">4. Documentation Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management.html#version-managemt">5. Version Managemt</a></li>
 </ul>
 <p class="caption"><span class="caption-text">INSTALLATION</span></p>
 <ul>
@@ -102,10 +105,10 @@
 </ul>
 <p class="caption"><span class="caption-text">COMPUTE</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Virtual Machine Management (proposed)</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Virtual Machine Management</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#command-line-and-shell-interface">1.1. Command Line and Shell Interface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#uniform-parameter-management">1.2. Uniform Parameter Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#virtual-machine-management">1.3. Virtual machine management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">1.3. Virtual machine management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#key-management">1.4. Key management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#security-groups">1.5. Security groups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#command-examples">1.6. Command Examples</a><ul>
@@ -158,11 +161,8 @@
 <p class="caption"><span class="caption-text">Database</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="benchmarks/README.html">1. Benchmarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html">2. </a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html#none">3. None</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html#test-results-tests-test-storage-aws-py-114">4. test_results \tests\test_storage_aws.py 114</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html#id2">5. </a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/azure-storage-benchmark.html">6. Azure Blob Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html">2. AWS Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks/azure-storage-benchmark.html">3. Azure Blob Storage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CODE</span></p>
 <ul>
@@ -190,10 +190,9 @@
 <li class="toctree-l1"><a class="reference internal" href="accounts/aws.html">1. Amazon Web Services (AWS) Account Creation Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts/azureblob-storage.html">2. Azure Blob Storage and Account Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts/box.html">3. Setting Up Your Box Account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accounts/box.html#references">4. References:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accounts/storage-gdrive.html">5. Google Storage Providers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accounts/google-ufo.html">6. Google (What is this?)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accounts/accountcreation.html">7. VM Providers (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts/storage-gdrive.html">4. Google Storage Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts/google-ufo.html">5. Google (What is this?)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts/accountcreation.html">6. VM Providers (outdated)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Outdated:</span></p>
 <ul>
@@ -249,7 +248,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>1. Virtual Machine Management (proposed)</li>
+      <li>1. Virtual Machine Management</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -268,8 +267,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="virtual-machine-management-proposed">
-<h1>1. Virtual Machine Management (proposed)<a class="headerlink" href="#virtual-machine-management-proposed" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="virtual-machine-management">
+<h1>1. Virtual Machine Management<a class="headerlink" href="#virtual-machine-management" title="Permalink to this headline">¶</a></h1>
 <p>CLoudmesh v4 contains sophisticated virtual machine management services that
 makes it easy for the user to manage a large number of virtual machines across
 clouds with a uniform naming scheme.</p>
@@ -351,8 +350,8 @@ clouds as well as virtual machine names.</p>
 <p>:–ip=IP: specify a public IP</p>
 <p>:–key=KEY: start the vm with the keypair name</p>
 </div>
-<div class="section" id="virtual-machine-management">
-<h2>1.3. Virtual machine management<a class="headerlink" href="#virtual-machine-management" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>1.3. Virtual machine management<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Virtual machines can be</p>
 <ul class="simple">
 <li><p>Created</p></li>
@@ -382,7 +381,7 @@ out of the VM.</p>
 <h2>1.6. Command Examples<a class="headerlink" href="#command-examples" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="ping">
 <h3>1.6.1. Ping<a class="headerlink" href="#ping" title="Permalink to this headline">¶</a></h3>
-<p>m ping [NAMES] [–cloud=CLOUDS] [N]</p>
+<p>vm ping [NAMES] [–cloud=CLOUDS] [N]</p>
 </div>
 <div class="section" id="check">
 <h3>1.6.2. Check<a class="headerlink" href="#check" title="Permalink to this headline">¶</a></h3>
@@ -420,14 +419,14 @@ out of the VM.</p>
 <div class="section" id="aws-quickstart">
 <h2>1.7. AWS Quickstart<a class="headerlink" href="#aws-quickstart" title="Permalink to this headline">¶</a></h2>
 <p>vm boot –name=test_cloudmesh –cloud=aws</p>
-<p>vm status
+<p>vm status –name=test_cloudmesh –cloud=aws
 (check to see if test_cloudmesh is running)</p>
-<p>vm ping</p>
-<p>vm check</p>
-<p>vm ssh</p>
-<p>vm stop</p>
-<p>vm start</p>
-<p>vm terminate</p>
+<p>vm ping –name=test_cloudmesh –cloud=aws</p>
+<p>vm check –name=test_cloudmesh –cloud=aws</p>
+<p>vm ssh –name=test_cloudmesh –cloud=aws</p>
+<p>vm stop –name=test_cloudmesh –cloud=aws</p>
+<p>vm start –name=test_cloudmesh –cloud=aws</p>
+<p>vm terminate –name=test_cloudmesh –cloud=aws</p>
 </div>
 </div>
 

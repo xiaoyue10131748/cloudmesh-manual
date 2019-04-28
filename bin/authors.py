@@ -15,12 +15,14 @@ for d in [".",
           "../cloudmesh-emr",
           "../cloudmesh-cloud",
           "../cloudmesh-storage"]:
-    lines = subprocess.check_output(["git", "shortlog", "-s"], cwd=d).decode('ascii', 'ignore').split("\n")
-    for line in lines[:-1]:
-        if debug:
-            print (d, line)
-        names.append(line.strip().split("\t")[1])
-
+    try:
+        lines = subprocess.check_output(["git", "shortlog", "-s"], cwd=d).decode('ascii', 'ignore').split("\n")
+        for line in lines[:-1]:
+            if debug:
+                print (d, line)
+            names.append("*" + line.strip().split("\t")[1] + "*")
+    except:
+        pass
 
 
 
@@ -28,7 +30,7 @@ names = list(set(names))
 
 names.sort()
 
-name_string = '\n> '.join(textwrap.wrap(', '.join(names),79, initial_indent="> "))
+name_string = '\n    '.join(textwrap.wrap(', '.join(names), 79, initial_indent="    "))
 
 '''
 

@@ -15,16 +15,12 @@ by the user.
 
 ## Features
 
-* usefule common programming library ti make it easy to interface with the 
-  system <https://github.com/cloudmesh/cloudmesh-cmd5>
+* useful common programming library to make it easy to interface with the 
+  system <https://github.com/cloudmesh/cloudmesh-common>
 * extensible cmondline and shell with cmd5 
   <https://github.com/cloudmesh/cloudmesh-cmd5>
 * convenient installer for developers 
   <https://github.com/cloudmesh/cloudmesh-installer>
-
-
-## Roadmap (under development)
-
 * MongoDB as a backend for caching
   <https://github.com/cloudmesh/cloudmesh-cloud>
 * Cloud Providers, AWS, Azure, Google, Openstack
@@ -33,20 +29,16 @@ by the user.
   <https://github.com/cloudmesh/cloudmesh-workflow>
 * AWS emr plugin 
   <https://github.com/cloudmesh/cloudmesh-emr>
-* A plugin for HPC systems 
-  <https://github.com/cloudmesh/cloudmesh-batch>
 * A plugin for Storage providers
   <https://github.com/cloudmesh/cloudmesh-storage>
 * OpenAPI based REST service interfaces
 
-## Roadmap Providers (under development)
+## Roadmap for Future Activities
 
-* Storage: Box, gdrive, AWS3, local, ???
-* Compute: openstack, aws, azurs, google, virtual box, ssh, slurm
-* Mapreduce: AWS emr
-
-## Open Projects
-
+* A plugin for HPC systems 
+  <https://github.com/cloudmesh/cloudmesh-batch>
+* Storage: local provider
+* Compute: virtual box, ssh, slurm
 * A javascript based GUI
 * A cloud high throughput broker for pleasantly parallel parameter studies
 

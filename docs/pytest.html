@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2. Pytest &mdash; Cloudmesh v4 alpha documentation</title>
+  <title>5. Pytest &mdash; Cloudmesh v4 alpha documentation</title>
   
 
   
@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="1. Amazon Web Services (AWS) Account Creation Tutorial" href="accounts/aws.html" />
-    <link rel="prev" title="1. Code Conventions" href="conventions.html" /> 
+    <link rel="prev" title="2. Code Management" href="management.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -102,7 +102,7 @@
 </ul>
 <p class="caption"><span class="caption-text">COMPUTE</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="vm.html">1. Virtual Machine Management (proposed)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vm.html">1. Virtual Machine Management</a></li>
 </ul>
 <p class="caption"><span class="caption-text">STORAGE</span></p>
 <ul>
@@ -138,11 +138,8 @@
 <p class="caption"><span class="caption-text">Database</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="benchmarks/README.html">1. Benchmarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html">2. </a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html#none">3. None</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html#test-results-tests-test-storage-aws-py-114">4. test_results \tests\test_storage_aws.py 114</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html#id2">5. </a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/azure-storage-benchmark.html">6. Azure Blob Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html">2. AWS Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks/azure-storage-benchmark.html">3. Azure Blob Storage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CODE</span></p>
 <ul>
@@ -163,9 +160,12 @@
 <p class="caption"><span class="caption-text">CONTRIBUTION</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="conventions.html">1. Code Conventions</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Pytest</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installation">2.1. Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#test-specification-and-execution">2.2. Test Specification and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management.html">2. Code Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management.html#documentation-management">3. Documentation Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management.html#version-managemt">4. Version Managemt</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Pytest</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">5.1. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-specification-and-execution">5.2. Test Specification and Execution</a></li>
 </ul>
 </li>
 </ul>
@@ -174,10 +174,9 @@
 <li class="toctree-l1"><a class="reference internal" href="accounts/aws.html">1. Amazon Web Services (AWS) Account Creation Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts/azureblob-storage.html">2. Azure Blob Storage and Account Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts/box.html">3. Setting Up Your Box Account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accounts/box.html#references">4. References:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accounts/storage-gdrive.html">5. Google Storage Providers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accounts/google-ufo.html">6. Google (What is this?)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accounts/accountcreation.html">7. VM Providers (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts/storage-gdrive.html">4. Google Storage Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts/google-ufo.html">5. Google (What is this?)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts/accountcreation.html">6. VM Providers (outdated)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Outdated:</span></p>
 <ul>
@@ -233,7 +232,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>2. Pytest</li>
+      <li>5. Pytest</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -253,13 +252,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pytest">
-<h1>2. Pytest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h1>
+<h1>5. Pytest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h1>
 <p>Pytest is a utility to unit test python code.</p>
 <p>We use nosetests and not <code class="docutils literal notranslate"><span class="pre">__main__</span></code> to test all functionality so they can me
 automatically run and reports can be generated. A project that does not have a
 sufficient number of tests to make sure the module works can not be accepted.</p>
 <div class="section" id="installation">
-<h2>2.1. Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<h2>5.1. Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>The nose module can be installed with the help of pip utility</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install pytest
 </pre></div>
@@ -282,7 +281,7 @@ tests are included in the folder <code class="docutils literal notranslate"><spa
 </div>
 </div>
 <div class="section" id="test-specification-and-execution">
-<h2>2.2. Test Specification and Execution<a class="headerlink" href="#test-specification-and-execution" title="Permalink to this headline">¶</a></h2>
+<h2>5.2. Test Specification and Execution<a class="headerlink" href="#test-specification-and-execution" title="Permalink to this headline">¶</a></h2>
 <p>A simple example for a test is</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cloud/blob/master/tests/test_key.py">https://github.com/cloudmesh/cloudmesh-cloud/blob/master/tests/test_key.py</a></p></li>
@@ -400,7 +399,7 @@ but just reports if tests fail or succeed.</p>
         <a href="accounts/aws.html" class="btn btn-neutral float-right" title="1. Amazon Web Services (AWS) Account Creation Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="conventions.html" class="btn btn-neutral float-left" title="1. Code Conventions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="management.html" class="btn btn-neutral float-left" title="2. Code Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

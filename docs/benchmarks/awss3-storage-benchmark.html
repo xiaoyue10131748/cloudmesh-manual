@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2. &mdash; Cloudmesh v4 alpha documentation</title>
+  <title>2. AWS Storage &mdash; Cloudmesh v4 alpha documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6. Azure Blob Storage" href="azure-storage-benchmark.html" />
+    <link rel="next" title="3. Azure Blob Storage" href="azure-storage-benchmark.html" />
     <link rel="prev" title="1. Benchmarks" href="README.html" /> 
 </head>
 
@@ -90,6 +90,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../about.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributors.html">2. Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management.html">3. Code Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management.html#documentation-management">4. Documentation Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management.html#version-managemt">5. Version Managemt</a></li>
 </ul>
 <p class="caption"><span class="caption-text">INSTALLATION</span></p>
 <ul>
@@ -102,7 +105,7 @@
 </ul>
 <p class="caption"><span class="caption-text">COMPUTE</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../vm.html">1. Virtual Machine Management (proposed)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vm.html">1. Virtual Machine Management</a></li>
 </ul>
 <p class="caption"><span class="caption-text">STORAGE</span></p>
 <ul>
@@ -138,11 +141,8 @@
 <p class="caption"><span class="caption-text">Database</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="README.html">1. Benchmarks</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">2. </a></li>
-<li class="toctree-l1"><a class="reference internal" href="#none">3. None</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#test-results-tests-test-storage-aws-py-114">4. test_results \tests\test_storage_aws.py 114</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#id2">5. </a></li>
-<li class="toctree-l1"><a class="reference internal" href="azure-storage-benchmark.html">6. Azure Blob Storage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. AWS Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="azure-storage-benchmark.html">3. Azure Blob Storage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CODE</span></p>
 <ul>
@@ -170,10 +170,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../accounts/aws.html">1. Amazon Web Services (AWS) Account Creation Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../accounts/azureblob-storage.html">2. Azure Blob Storage and Account Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../accounts/box.html">3. Setting Up Your Box Account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../accounts/box.html#references">4. References:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../accounts/storage-gdrive.html">5. Google Storage Providers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../accounts/google-ufo.html">6. Google (What is this?)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../accounts/accountcreation.html">7. VM Providers (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/storage-gdrive.html">4. Google Storage Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/google-ufo.html">5. Google (What is this?)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/accountcreation.html">6. VM Providers (outdated)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Outdated:</span></p>
 <ul>
@@ -229,7 +228,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>2. </li>
+      <li>2. AWS Storage</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -248,52 +247,49 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="id1">
-<h1>2. <a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="aws-storage">
+<h1>2. AWS Storage<a class="headerlink" href="#aws-storage" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ######################################################################</span>
+<span class="c1"># None</span>
+<span class="c1"># test_results \tests\test_storage_aws.py 114</span>
+<span class="c1"># ######################################################################</span>
+<span class="o">+------------------+----------------------------------------------------+</span>
+<span class="o">|</span> <span class="n">Machine</span> <span class="n">Arribute</span> <span class="o">|</span> <span class="n">Time</span><span class="o">/</span><span class="n">s</span>                                             <span class="o">|</span>
+<span class="o">+------------------+----------------------------------------------------+</span>
+<span class="o">|</span> <span class="n">mac_version</span>      <span class="o">|</span>                                                    <span class="o">|</span>
+<span class="o">|</span> <span class="n">machine</span>          <span class="o">|</span> <span class="n">AMD64</span>                                              <span class="o">|</span>
+<span class="o">|</span> <span class="n">node</span>             <span class="o">|</span> <span class="n">DESKTOP</span><span class="o">-</span><span class="n">CNS55VM</span>                                    <span class="o">|</span>
+<span class="o">|</span> <span class="n">platform</span>         <span class="o">|</span> <span class="n">Windows</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mf">10.0</span><span class="o">.</span><span class="mi">17134</span><span class="o">-</span><span class="n">SP0</span>                          <span class="o">|</span>
+<span class="o">|</span> <span class="n">processor</span>        <span class="o">|</span> <span class="n">Intel64</span> <span class="n">Family</span> <span class="mi">6</span> <span class="n">Model</span> <span class="mi">78</span> <span class="n">Stepping</span> <span class="mi">3</span><span class="p">,</span> <span class="n">GenuineIntel</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">processors</span>       <span class="o">|</span> <span class="n">Windows</span>                                            <span class="o">|</span>
+<span class="o">|</span> <span class="n">release</span>          <span class="o">|</span> <span class="mi">10</span>                                                 <span class="o">|</span>
+<span class="o">|</span> <span class="n">sys</span>              <span class="o">|</span> <span class="n">win32</span>                                              <span class="o">|</span>
+<span class="o">|</span> <span class="n">system</span>           <span class="o">|</span> <span class="n">Windows</span>                                            <span class="o">|</span>
+<span class="o">|</span> <span class="n">version</span>          <span class="o">|</span> <span class="mf">10.0</span><span class="o">.</span><span class="mi">17134</span>                                         <span class="o">|</span>
+<span class="o">|</span> <span class="n">win_version</span>      <span class="o">|</span> <span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;10.0.17134&#39;</span><span class="p">,</span> <span class="s1">&#39;SP0&#39;</span><span class="p">,</span> <span class="s1">&#39;Multiprocessor Free&#39;</span><span class="p">)</span> <span class="o">|</span>
+<span class="o">+------------------+----------------------------------------------------+</span>
+<span class="o">+---------------------+------+-----------------+---------+-------------+------------------------------------------+</span>
+<span class="o">|</span> <span class="n">timer</span>               <span class="o">|</span> <span class="n">time</span> <span class="o">|</span> <span class="n">node</span>            <span class="o">|</span> <span class="n">system</span>  <span class="o">|</span> <span class="n">mac_version</span> <span class="o">|</span> <span class="n">win_version</span>                              <span class="o">|</span>
+<span class="o">+---------------------+------+-----------------+---------+-------------+------------------------------------------+</span>
+<span class="o">|</span> <span class="n">awss3</span> <span class="n">setup</span>         <span class="o">|</span> <span class="mf">0.02</span> <span class="o">|</span> <span class="n">DESKTOP</span><span class="o">-</span><span class="n">CNS55VM</span> <span class="o">|</span> <span class="n">Windows</span> <span class="o">|</span>             <span class="o">|</span> <span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;10.0.17134&#39;</span><span class="p">,</span> <span class="s1">&#39;SP0&#39;</span><span class="p">,</span>              <span class="o">|</span>
+<span class="o">|</span>                     <span class="o">|</span>      <span class="o">|</span>                 <span class="o">|</span>         <span class="o">|</span>             <span class="o">|</span> <span class="s1">&#39;Multiprocessor Free&#39;</span><span class="p">)</span>                   <span class="o">|</span>
+<span class="o">|</span> <span class="n">awss3</span> <span class="n">create</span> <span class="n">source</span> <span class="o">|</span> <span class="mf">0.01</span> <span class="o">|</span> <span class="n">DESKTOP</span><span class="o">-</span><span class="n">CNS55VM</span> <span class="o">|</span> <span class="n">Windows</span> <span class="o">|</span>             <span class="o">|</span> <span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;10.0.17134&#39;</span><span class="p">,</span> <span class="s1">&#39;SP0&#39;</span><span class="p">,</span>              <span class="o">|</span>
+<span class="o">|</span>                     <span class="o">|</span>      <span class="o">|</span>                 <span class="o">|</span>         <span class="o">|</span>             <span class="o">|</span> <span class="s1">&#39;Multiprocessor Free&#39;</span><span class="p">)</span>                   <span class="o">|</span>
+<span class="o">|</span> <span class="n">awss3</span> <span class="n">create</span> <span class="nb">dir</span>    <span class="o">|</span> <span class="mf">0.88</span> <span class="o">|</span> <span class="n">DESKTOP</span><span class="o">-</span><span class="n">CNS55VM</span> <span class="o">|</span> <span class="n">Windows</span> <span class="o">|</span>             <span class="o">|</span> <span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;10.0.17134&#39;</span><span class="p">,</span> <span class="s1">&#39;SP0&#39;</span><span class="p">,</span>              <span class="o">|</span>
+<span class="o">|</span>                     <span class="o">|</span>      <span class="o">|</span>                 <span class="o">|</span>         <span class="o">|</span>             <span class="o">|</span> <span class="s1">&#39;Multiprocessor Free&#39;</span><span class="p">)</span>                   <span class="o">|</span>
+<span class="o">|</span> <span class="n">awss3</span> <span class="n">put</span>           <span class="o">|</span> <span class="mf">0.33</span> <span class="o">|</span> <span class="n">DESKTOP</span><span class="o">-</span><span class="n">CNS55VM</span> <span class="o">|</span> <span class="n">Windows</span> <span class="o">|</span>             <span class="o">|</span> <span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;10.0.17134&#39;</span><span class="p">,</span> <span class="s1">&#39;SP0&#39;</span><span class="p">,</span>              <span class="o">|</span>
+<span class="o">|</span>                     <span class="o">|</span>      <span class="o">|</span>                 <span class="o">|</span>         <span class="o">|</span>             <span class="o">|</span> <span class="s1">&#39;Multiprocessor Free&#39;</span><span class="p">)</span>                   <span class="o">|</span>
+<span class="o">|</span> <span class="n">awss3</span> <span class="n">get</span>           <span class="o">|</span> <span class="mf">0.66</span> <span class="o">|</span> <span class="n">DESKTOP</span><span class="o">-</span><span class="n">CNS55VM</span> <span class="o">|</span> <span class="n">Windows</span> <span class="o">|</span>             <span class="o">|</span> <span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;10.0.17134&#39;</span><span class="p">,</span> <span class="s1">&#39;SP0&#39;</span><span class="p">,</span>              <span class="o">|</span>
+<span class="o">|</span>                     <span class="o">|</span>      <span class="o">|</span>                 <span class="o">|</span>         <span class="o">|</span>             <span class="o">|</span> <span class="s1">&#39;Multiprocessor Free&#39;</span><span class="p">)</span>                   <span class="o">|</span>
+<span class="o">|</span> <span class="n">awss3</span> <span class="nb">list</span>          <span class="o">|</span> <span class="mf">0.39</span> <span class="o">|</span> <span class="n">DESKTOP</span><span class="o">-</span><span class="n">CNS55VM</span> <span class="o">|</span> <span class="n">Windows</span> <span class="o">|</span>             <span class="o">|</span> <span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;10.0.17134&#39;</span><span class="p">,</span> <span class="s1">&#39;SP0&#39;</span><span class="p">,</span>              <span class="o">|</span>
+<span class="o">|</span>                     <span class="o">|</span>      <span class="o">|</span>                 <span class="o">|</span>         <span class="o">|</span>             <span class="o">|</span> <span class="s1">&#39;Multiprocessor Free&#39;</span><span class="p">)</span>                   <span class="o">|</span>
+<span class="o">|</span> <span class="n">awss3</span> <span class="n">search</span>        <span class="o">|</span> <span class="mf">0.43</span> <span class="o">|</span> <span class="n">DESKTOP</span><span class="o">-</span><span class="n">CNS55VM</span> <span class="o">|</span> <span class="n">Windows</span> <span class="o">|</span>             <span class="o">|</span> <span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;10.0.17134&#39;</span><span class="p">,</span> <span class="s1">&#39;SP0&#39;</span><span class="p">,</span>              <span class="o">|</span>
+<span class="o">|</span>                     <span class="o">|</span>      <span class="o">|</span>                 <span class="o">|</span>         <span class="o">|</span>             <span class="o">|</span> <span class="s1">&#39;Multiprocessor Free&#39;</span><span class="p">)</span>                   <span class="o">|</span>
+<span class="o">|</span> <span class="n">awss3</span> <span class="n">delete</span>        <span class="o">|</span> <span class="mf">0.56</span> <span class="o">|</span> <span class="n">DESKTOP</span><span class="o">-</span><span class="n">CNS55VM</span> <span class="o">|</span> <span class="n">Windows</span> <span class="o">|</span>             <span class="o">|</span> <span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;10.0.17134&#39;</span><span class="p">,</span> <span class="s1">&#39;SP0&#39;</span><span class="p">,</span>              <span class="o">|</span>
+<span class="o">|</span>                     <span class="o">|</span>      <span class="o">|</span>                 <span class="o">|</span>         <span class="o">|</span>             <span class="o">|</span> <span class="s1">&#39;Multiprocessor Free&#39;</span><span class="p">)</span>                   <span class="o">|</span>
+<span class="o">+---------------------+------+-----------------+---------+-------------+------------------------------------------+</span>
+</pre></div>
 </div>
-<div class="section" id="none">
-<h1>3. None<a class="headerlink" href="#none" title="Permalink to this headline">¶</a></h1>
-</div>
-<div class="section" id="test-results-tests-test-storage-aws-py-114">
-<h1>4. test_results \tests\test_storage_aws.py 114<a class="headerlink" href="#test-results-tests-test-storage-aws-py-114" title="Permalink to this headline">¶</a></h1>
-</div>
-<div class="section" id="id2">
-<h1>5. <a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
-<p>+——————+—————————————————-+
-| Machine Arribute | Time/s                                             |
-+——————+—————————————————-+
-| mac_version      |                                                    |
-| machine          | AMD64                                              |
-| node             | DESKTOP-CNS55VM                                    |
-| platform         | Windows-10-10.0.17134-SP0                          |
-| processor        | Intel64 Family 6 Model 78 Stepping 3, GenuineIntel |
-| processors       | Windows                                            |
-| release          | 10                                                 |
-| sys              | win32                                              |
-| system           | Windows                                            |
-| version          | 10.0.17134                                         |
-| win_version      | (‘10’, ‘10.0.17134’, ‘SP0’, ‘Multiprocessor Free’) |
-+——————+—————————————————-+
-+———————+——+—————–+———+————-+——————————————+
-| timer               | time | node            | system  | mac_version | win_version                              |
-+———————+——+—————–+———+————-+——————————————+
-| awss3 setup         | 0.02 | DESKTOP-CNS55VM | Windows |             | (‘10’, ‘10.0.17134’, ‘SP0’,              |
-|                     |      |                 |         |             | ‘Multiprocessor Free’)                   |
-| awss3 create source | 0.01 | DESKTOP-CNS55VM | Windows |             | (‘10’, ‘10.0.17134’, ‘SP0’,              |
-|                     |      |                 |         |             | ‘Multiprocessor Free’)                   |
-| awss3 create dir    | 0.88 | DESKTOP-CNS55VM | Windows |             | (‘10’, ‘10.0.17134’, ‘SP0’,              |
-|                     |      |                 |         |             | ‘Multiprocessor Free’)                   |
-| awss3 put           | 0.33 | DESKTOP-CNS55VM | Windows |             | (‘10’, ‘10.0.17134’, ‘SP0’,              |
-|                     |      |                 |         |             | ‘Multiprocessor Free’)                   |
-| awss3 get           | 0.66 | DESKTOP-CNS55VM | Windows |             | (‘10’, ‘10.0.17134’, ‘SP0’,              |
-|                     |      |                 |         |             | ‘Multiprocessor Free’)                   |
-| awss3 list          | 0.39 | DESKTOP-CNS55VM | Windows |             | (‘10’, ‘10.0.17134’, ‘SP0’,              |
-|                     |      |                 |         |             | ‘Multiprocessor Free’)                   |
-| awss3 search        | 0.43 | DESKTOP-CNS55VM | Windows |             | (‘10’, ‘10.0.17134’, ‘SP0’,              |
-|                     |      |                 |         |             | ‘Multiprocessor Free’)                   |
-| awss3 delete        | 0.56 | DESKTOP-CNS55VM | Windows |             | (‘10’, ‘10.0.17134’, ‘SP0’,              |
-|                     |      |                 |         |             | ‘Multiprocessor Free’)                   |
-+———————+——+—————–+———+————-+——————————————+</p>
 </div>
 
 
@@ -304,7 +300,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="azure-storage-benchmark.html" class="btn btn-neutral float-right" title="6. Azure Blob Storage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="azure-storage-benchmark.html" class="btn btn-neutral float-right" title="3. Azure Blob Storage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="README.html" class="btn btn-neutral float-left" title="1. Benchmarks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -129,7 +129,7 @@ out of the VM.
 
 ### Ping
 
-m ping [NAMES] [--cloud=CLOUDS] [N]
+vm ping [NAMES] [--cloud=CLOUDS] [N]
 
 ### Check
 
@@ -167,18 +167,18 @@ vm delete [NAMES] [--cloud=CLOUD] [--dryrun]
 
 vm boot --name=test_cloudmesh --cloud=aws
 
-vm status 
+vm status --name=test_cloudmesh --cloud=aws
 (check to see if test_cloudmesh is running)
 
-vm ping
+vm ping --name=test_cloudmesh --cloud=aws
 
-vm check
+vm check --name=test_cloudmesh --cloud=aws
 
-vm ssh
+vm ssh --name=test_cloudmesh --cloud=aws
 
-vm stop
+vm stop --name=test_cloudmesh --cloud=aws
 
-vm start 
+vm start --name=test_cloudmesh --cloud=aws
 
-vm terminate
+vm terminate --name=test_cloudmesh --cloud=aws
 

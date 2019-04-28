@@ -3,6 +3,7 @@ from __future__ import print_function
 import subprocess
 import textwrap
 
+debug = False
 
 names = []
 
@@ -16,6 +17,8 @@ for d in [".",
           "../cloudmesh-storage"]:
     lines = subprocess.check_output(["git", "shortlog", "-s"], cwd=d).decode('ascii', 'ignore').split("\n")
     for line in lines[:-1]:
+        if debug:
+            print (d, line)
         names.append(line.strip().split("\t")[1])
 
 
@@ -26,6 +29,8 @@ names = list(set(names))
 names.sort()
 
 name_string = '\n> '.join(textwrap.wrap(', '.join(names),79, initial_indent="> "))
+
+'''
 
 print("# Contributors")
 print()
@@ -47,6 +52,7 @@ The contributors that we are aware of include:
 
 print("\n".join(textwrap.wrap(msg, 79)))
 print()
-
+'''
+print()
 print (name_string)
 print()

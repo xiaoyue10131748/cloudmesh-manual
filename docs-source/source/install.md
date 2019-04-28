@@ -1,7 +1,5 @@
 # Installation
 
-[![Downloads](https://img.shields.io/pypi/dm/cm.svg)](https://pypi.python.org/pypi/cloudmesh/cloudmesh-cloud/)
-
 ## Prerequisites
 
 Before you install make sure that you have at minimum python 3.7.2

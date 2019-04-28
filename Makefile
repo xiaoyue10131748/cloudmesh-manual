@@ -109,7 +109,10 @@ manual:
 	cms man --kind=rst vdir > docs-source/source/manual/storage/vdir.rst
 	cms man --kind=rst objstorage > docs-source/source/manual/storage/objstorage.rst
 
-doc:
+authors: docs-source/source/authors.md
+	bin/authors.py > docs-source/source/authors.md
+
+doc: authors
 	mv ~/.cloudmesh/cloudmesh4.yaml ~/.cloudmesh/cloudmesh4.yaml-tmp 
 	mv ~/.cloudmesh/cloudmesh.yaml ~/.cloudmesh/cloudmesh.yaml-tmp 
 	wget -P ~/.cloudmesh https://raw.githubusercontent.com/cloudmesh/cloudmesh-cloud/master/cloudmesh/etc/cloudmesh4.yaml

@@ -1,85 +1,35 @@
 # Contributors
 
-The contributors are listed here in alphabetical order
-
-* Gregor von Laszewski (primary contact, laszewski@gmial.com) and
-* Fugang Wang
-
-put your names here (put your real names here and sort by lastname
-
-* Vafa Andalibi,
-  Mallik Challa,
-  David Michael Demeulenaere,
-  Anthony Duer,
-  Bo Feng,
-  Yu Luo,
-  Rui Li, 
-  Sachith Danushka Withana,
-  Kimball Wu
-
 Code Contributions can be seen at
 
 * <https://github.com/cloudmesh/cloudmesh-cloud/graphs/contributors>
 
-## Code Management
+The original author of cloudmesh is 
 
-At this time we recommend and require that you use `pyCharm` community edition
-or profesional to edit your code. Before committing we like that you run
-`Inspect Code ` on all files that you commit and fix as many errors as possible
-including PEP8 format suggestions. It also notifies you of issues you may not
-think about while doing other code inspection.
+* Gregor von Laszewski (primary contact, laszewski@gmial.com) and
 
-The reason we ask you to do so is that pycharms code inspection is very good,
-and that if everyone uses pycharm the format of the code is uinform and we do
-not run in to formatting issues.
+Lareg contributions have also been made by  
 
-This will make the review of any code contributed much easier.
+* Fugang Wang
 
-Naturally you can use a different editor for your work, but we still ask you to
-use pycharm to fix formatting and code inspection before you commit.
 
-Typically we run a code inspection every week.
+Many have contributed to cloudmesh in the past.  However, this version has
+reveived contributions from a subset of them. Previous contributors will be
+acknowledged once we integrate them in the author script.
 
-## Documentation Management
+Contributors are sorted by the first letter of their combined Firstname and
+Lastname and if not available by their github ID.  Please, note that the
+authors are identified through git logs in addition to some contributors added
+by hand. The git repository from which this document is derived contains more
+than the documents included in this document. Thus not everyone in this list
+may have directly contributed to this document. However if you find someone
+missing that has contributed (they may not have used this particular git)
+please let us know. We will add you.  The contributors that we are aware of
+include:
+ 
 
-To increase readability of the documentation we ask you to try to use 80
-character line limits if possible. This is important for better editing
-experience in github. A good editor to do this with is emacs withe its `Esc-q`
-command and pycharm with its `Edit-Wrap Line to` column or paragraph features.
-On macOS this can be called with `CONTROL-SHIFT-COMMAND-W` or
-`CONTROL-SHIFT-COMMAND-P`
 
-## Version Managemt
 
-This is only done by Gregor
 
-To create a development version we say 
-
-```bash
-$ make build
-```
-
-To increase the patch number, say 
-
-```bash
-$ make patch
-```
-
-To increase the minor number
-
-```bash
-$ make minor
-```
-
-The major number will stay to 4, so this is not changed
-
-To create a release say
-
-```bash
-$ make release
-```
-
-After the release is done the minor number will be increased and the buld number
-will be reset.
 
 

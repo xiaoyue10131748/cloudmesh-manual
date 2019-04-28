@@ -8,6 +8,8 @@ Cloudmesh Version 4
 
    about
    contributors
+   authors
+   management
 
 .. toctree::
    :numbered:

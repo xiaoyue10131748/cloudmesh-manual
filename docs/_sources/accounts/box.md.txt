@@ -1,4 +1,5 @@
 # Setting Up Your Box Account
+
 ## Sign up
 
 In the top right hand corner of the box [homepage](https://www.box.com/home) click on the `Get Started` button. 
@@ -33,6 +34,6 @@ Once you have generated a keypair, a config.json file will
 automatically download. Save this file in a secure location as you
 will need it for authentication purposes. 
 
-# References:
+## References
 
-<https://developer.box.com/reference>
+* <https://developer.box.com/reference>

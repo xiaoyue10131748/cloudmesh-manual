@@ -33,9 +33,9 @@ def readfile(filename):
 
 
 requiers = """
-pyyaml
-docopt
-requests
+sphinxemoji
+sphinx_rtd_theme
+sphinxcontrib-fulltoc
 """.split("\n")
 
 # dependency_links = ['http://github.com/nicolaiarocci/eve.git@develop']

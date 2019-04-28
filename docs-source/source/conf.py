@@ -47,14 +47,19 @@ release = 'alpha'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.inheritance_diagram',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
-    'edit_on_github'
+    'edit_on_github',
 ]
+
+#    'sphinxcontrib.fulltoc'
+
 
 # Add any paths that contain templates here, relative to this directory.
 # the next is for edit_on_githib, which does not work

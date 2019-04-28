@@ -8,7 +8,9 @@ The contributors are listed here in alphabetical order
 put your names here (put your real names here and sort by lastname
 
 * Vafa Andalibi,
+  Mallik Challa,
   David Michael Demeulenaere,
+  Anthony Duer,
   Bo Feng,
   Yu Luo,
   Rui Li, 

@@ -9,7 +9,7 @@ amounts of data.
 
 Blob storage offers three types of resources:
 
-* The storage account.
+* The storage account
 * A container in the storage account
 * A blob in a container
 
@@ -19,20 +19,17 @@ Following are the steps to create Azure storage account
 
 * Prerequisites
 
-Create a free Azure cloud services subscirption account.
+  Create a free Azure cloud services subscirption account.
 
-
-* Login to Azure Portal
-
-* Log in to the [Azure Portal](https://portal.azure.com/). 
+* Log in to the [Azure Portal](https://portal.azure.com/).
 
 ![AZ-Portal](images/azure-portal.png){#fig:az-portal}
 
-* In the Azure portal, click on `Create a resource` on the top left corner
+* In the Azure portal, click on `Create a resource` on the top left corner.
 
 ![AZ-Resource](images/azure-resource.png){#fig:az-resource}
 
-* Select `Storage Account` from the options shown in @fig:az-resource
+* Select `Storage Account` from the options shown
 
 ![AZ-Account](images/azure-account.png){#fig:az-account}
 
@@ -48,9 +45,9 @@ Create a free Azure cloud services subscirption account.
 * Select `create`
 
 After the completion of above steps, Azure blob storage service will be ready 
-for use. As a firt step, a `Container` should be created in the Blob storage. 
+for use. As a first step, a `Container` should be created in the Blob storage. 
 A container organizes a set of blobs, similar to a directory in a file system. 
-A default `Container` should be set in the `cloudmesh4.yaml` file details  of 
+A default `Container` should be set in the `cloudmesh4.yaml` file, details  of 
 which are outlined 
 [here](https://github.com/cloudmesh/cloudmesh-manual/blob/master/docs-source/source/configuration/configuration.md)
 

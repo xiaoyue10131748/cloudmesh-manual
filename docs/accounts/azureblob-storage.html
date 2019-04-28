@@ -137,6 +137,11 @@
 <p class="caption"><span class="caption-text">Database</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../benchmarks/README.html">1. Benchmarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarks/awss3-storage-benchmark.html">2. </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarks/awss3-storage-benchmark.html#none">3. None</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarks/awss3-storage-benchmark.html#test-results-tests-test-storage-aws-py-114">4. test_results \tests\test_storage_aws.py 114</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarks/awss3-storage-benchmark.html#id2">5. </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarks/azure-storage-benchmark.html">6. Azure Blob Storage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CODE</span></p>
 <ul>
@@ -254,7 +259,7 @@ solution for the cloud. Blob storage is optimized for storing massive
 amounts of data.</p>
 <p>Blob storage offers three types of resources:</p>
 <ul class="simple">
-<li><p>The storage account.</p></li>
+<li><p>The storage account</p></li>
 <li><p>A container in the storage account</p></li>
 <li><p>A blob in a container</p></li>
 </ul>
@@ -262,21 +267,19 @@ amounts of data.</p>
 <div class="section" id="azure-storage-account-creation">
 <h2>2.2. Azure Storage account creation<a class="headerlink" href="#azure-storage-account-creation" title="Permalink to this headline">¶</a></h2>
 <p>Following are the steps to create Azure storage account</p>
-<ul class="simple">
-<li><p>Prerequisites</p></li>
-</ul>
+<ul>
+<li><p>Prerequisites</p>
 <p>Create a free Azure cloud services subscirption account.</p>
-<ul class="simple">
-<li><p>Login to Azure Portal</p></li>
+</li>
 <li><p>Log in to the <a class="reference external" href="https://portal.azure.com/">Azure Portal</a>.</p></li>
 </ul>
 <p><img alt="../_images/azure-portal.png" src="../_images/azure-portal.png" />AZ-Portal{#fig:az-portal}</p>
 <ul class="simple">
-<li><p>In the Azure portal, click on <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">a</span> <span class="pre">resource</span></code> on the top left corner</p></li>
+<li><p>In the Azure portal, click on <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">a</span> <span class="pre">resource</span></code> on the top left corner.</p></li>
 </ul>
 <p><img alt="../_images/azure-resource.png" src="../_images/azure-resource.png" />AZ-Resource{#fig:az-resource}</p>
 <ul class="simple">
-<li><p>Select <code class="docutils literal notranslate"><span class="pre">Storage</span> <span class="pre">Account</span></code> from the options shown in &#64;fig:az-resource</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Storage</span> <span class="pre">Account</span></code> from the options shown</p></li>
 </ul>
 <p><img alt="../_images/azure-account.png" src="../_images/azure-account.png" />AZ-Account{#fig:az-account}</p>
 <ul class="simple">
@@ -288,9 +291,9 @@ new resource group.</p></li>
 <li><p>Select <code class="docutils literal notranslate"><span class="pre">create</span></code></p></li>
 </ul>
 <p>After the completion of above steps, Azure blob storage service will be ready
-for use. As a firt step, a <code class="docutils literal notranslate"><span class="pre">Container</span></code> should be created in the Blob storage.
+for use. As a first step, a <code class="docutils literal notranslate"><span class="pre">Container</span></code> should be created in the Blob storage.
 A container organizes a set of blobs, similar to a directory in a file system.
-A default <code class="docutils literal notranslate"><span class="pre">Container</span></code> should be set in the <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file details  of
+A default <code class="docutils literal notranslate"><span class="pre">Container</span></code> should be set in the <code class="docutils literal notranslate"><span class="pre">cloudmesh4.yaml</span></code> file, details  of
 which are outlined
 <a class="reference external" href="https://github.com/cloudmesh/cloudmesh-manual/blob/master/docs-source/source/configuration/configuration">here</a></p>
 <p><strong>IMPORTANT NOTE:</strong></p>

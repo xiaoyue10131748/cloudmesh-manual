@@ -36,7 +36,7 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Code Documentation" href="../code/code.html" />
+    <link rel="next" title="2." href="awss3-storage-benchmark.html" />
     <link rel="prev" title="1. Cloudmesh Database" href="../database.html" /> 
 </head>
 
@@ -136,10 +136,12 @@
 </ul>
 <p class="caption"><span class="caption-text">Database</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Benchmarks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#azure-blob-storage">1.1. Azure Blob Storage</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Benchmarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="awss3-storage-benchmark.html">2. </a></li>
+<li class="toctree-l1"><a class="reference internal" href="awss3-storage-benchmark.html#none">3. None</a></li>
+<li class="toctree-l1"><a class="reference internal" href="awss3-storage-benchmark.html#test-results-tests-test-storage-aws-py-114">4. test_results \tests\test_storage_aws.py 114</a></li>
+<li class="toctree-l1"><a class="reference internal" href="awss3-storage-benchmark.html#id2">5. </a></li>
+<li class="toctree-l1"><a class="reference internal" href="azure-storage-benchmark.html">6. Azure Blob Storage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CODE</span></p>
 <ul>
@@ -244,51 +246,7 @@
             
   <div class="section" id="benchmarks">
 <h1>1. Benchmarks<a class="headerlink" href="#benchmarks" title="Permalink to this headline">¶</a></h1>
-<p>Put your penchmarks in separate files into this directory.</p>
-<div class="section" id="azure-blob-storage">
-<h2>1.1. Azure Blob Storage<a class="headerlink" href="#azure-blob-storage" title="Permalink to this headline">¶</a></h2>
-<p>Benchmark results for Azure Blob storage using cloudmesh-storage.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ######################################################################</span>
-<span class="c1"># Benchmark results for AzureBlob Storage</span>
-<span class="c1"># ######################################################################</span>
-
-+------------------+-------------------------------------------------------+
-<span class="p">|</span> Machine Arribute <span class="p">|</span> Time/s                                                <span class="p">|</span>
-+------------------+-------------------------------------------------------+
-<span class="p">|</span> mac_version      <span class="p">|</span>                                                       <span class="p">|</span>
-<span class="p">|</span> machine          <span class="p">|</span> x86_64                                                <span class="p">|</span>
-<span class="p">|</span> node             <span class="p">|</span> testuser-VirtualBox                                   <span class="p">|</span>
-<span class="p">|</span> platform         <span class="p">|</span> Linux-4.15.0-47-generic-x86_64-with-debian-buster-sid <span class="p">|</span>
-<span class="p">|</span> processor        <span class="p">|</span> x86_64                                                <span class="p">|</span>
-<span class="p">|</span> processors       <span class="p">|</span> Linux                                                 <span class="p">|</span>
-<span class="p">|</span> release          <span class="p">|</span> <span class="m">4</span>.15.0-47-generic                                     <span class="p">|</span>
-<span class="p">|</span> sys              <span class="p">|</span> linux                                                 <span class="p">|</span>
-<span class="p">|</span> system           <span class="p">|</span> Linux                                                 <span class="p">|</span>
-<span class="p">|</span> user             <span class="p">|</span> testuser                                              <span class="p">|</span>
-<span class="p">|</span> version          <span class="p">|</span> <span class="c1">#50-Ubuntu SMP Wed Mar 13 10:44:52 UTC 2019           |</span>
-<span class="p">|</span> win_version      <span class="p">|</span> <span class="o">(</span><span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span><span class="o">)</span>                                      <span class="p">|</span>
-+------------------+-------------------------------------------------------+
-+---------------------------------+------+---------------------+--------+-------------+------------------+
-<span class="p">|</span> timer                           <span class="p">|</span> <span class="nb">time</span> <span class="p">|</span> node                <span class="p">|</span> system <span class="p">|</span> mac_version <span class="p">|</span> win_version      <span class="p">|</span>
-+---------------------------------+------+---------------------+--------+-------------+------------------+
-<span class="p">|</span> PUT file                        <span class="p">|</span> <span class="m">0</span>.35 <span class="p">|</span> testuser-VirtualBox <span class="p">|</span> Linux  <span class="p">|</span>             <span class="p">|</span> <span class="o">(</span><span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span><span class="o">)</span> <span class="p">|</span>
-<span class="p">|</span> GET file                        <span class="p">|</span> <span class="m">0</span>.15 <span class="p">|</span> testuser-VirtualBox <span class="p">|</span> Linux  <span class="p">|</span>             <span class="p">|</span> <span class="o">(</span><span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span><span class="o">)</span> <span class="p">|</span>
-<span class="p">|</span> LIST Directory                  <span class="p">|</span> <span class="m">0</span>.42 <span class="p">|</span> testuser-VirtualBox <span class="p">|</span> Linux  <span class="p">|</span>             <span class="p">|</span> <span class="o">(</span><span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span><span class="o">)</span> <span class="p">|</span>
-<span class="p">|</span> CREATE DIR                      <span class="p">|</span> <span class="m">0</span>.58 <span class="p">|</span> testuser-VirtualBox <span class="p">|</span> Linux  <span class="p">|</span>             <span class="p">|</span> <span class="o">(</span><span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span><span class="o">)</span> <span class="p">|</span>
-<span class="p">|</span> SEARCH file                     <span class="p">|</span> <span class="m">0</span>.41 <span class="p">|</span> testuser-VirtualBox <span class="p">|</span> Linux  <span class="p">|</span>             <span class="p">|</span> <span class="o">(</span><span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span><span class="o">)</span> <span class="p">|</span>
-<span class="p">|</span> DELETE Directory                <span class="p">|</span> <span class="m">0</span>.52 <span class="p">|</span> testuser-VirtualBox <span class="p">|</span> Linux  <span class="p">|</span>             <span class="p">|</span> <span class="o">(</span><span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span><span class="o">)</span> <span class="p">|</span>
-<span class="p">|</span> PUT Directory --recursive       <span class="p">|</span> <span class="m">3</span>.55 <span class="p">|</span> testuser-VirtualBox <span class="p">|</span> Linux  <span class="p">|</span>             <span class="p">|</span> <span class="o">(</span><span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span><span class="o">)</span> <span class="p">|</span>
-<span class="p">|</span> GET Directory --recursive       <span class="p">|</span> <span class="m">1</span>.73 <span class="p">|</span> testuser-VirtualBox <span class="p">|</span> Linux  <span class="p">|</span>             <span class="p">|</span> <span class="o">(</span><span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span><span class="o">)</span> <span class="p">|</span>
-<span class="p">|</span> DELETE Sub-directory            <span class="p">|</span> <span class="m">0</span>.82 <span class="p">|</span> testuser-VirtualBox <span class="p">|</span> Linux  <span class="p">|</span>             <span class="p">|</span> <span class="o">(</span><span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span><span class="o">)</span> <span class="p">|</span>
-<span class="p">|</span> LIST Directory --recursive      <span class="p">|</span> <span class="m">0</span>.51 <span class="p">|</span> testuser-VirtualBox <span class="p">|</span> Linux  <span class="p">|</span>             <span class="p">|</span> <span class="o">(</span><span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span><span class="o">)</span> <span class="p">|</span>
-<span class="p">|</span> LIST Sub-directory --recursive  <span class="p">|</span> <span class="m">0</span>.5  <span class="p">|</span> testuser-VirtualBox <span class="p">|</span> Linux  <span class="p">|</span>             <span class="p">|</span> <span class="o">(</span><span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span><span class="o">)</span> <span class="p">|</span>
-<span class="p">|</span> SEARCH file --recursive         <span class="p">|</span> <span class="m">0</span>.45 <span class="p">|</span> testuser-VirtualBox <span class="p">|</span> Linux  <span class="p">|</span>             <span class="p">|</span> <span class="o">(</span><span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span><span class="o">)</span> <span class="p">|</span>
-<span class="p">|</span> SEARCH file under a sub-dir --r <span class="p">|</span> <span class="m">0</span>.45 <span class="p">|</span> testuser-VirtualBox <span class="p">|</span> Linux  <span class="p">|</span>             <span class="p">|</span> <span class="o">(</span><span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span><span class="o">)</span> <span class="p">|</span>
-<span class="p">|</span> SEARCH file under root dir --r  <span class="p">|</span> <span class="m">0</span>.45 <span class="p">|</span> testuser-VirtualBox <span class="p">|</span> Linux  <span class="p">|</span>             <span class="p">|</span> <span class="o">(</span><span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span>, <span class="s1">&#39;&#39;</span><span class="o">)</span> <span class="p">|</span>
-+---------------------------------+------+---------------------+--------+-------------+------------------+
-</pre></div>
-</div>
-</div>
+<p>Put your benchmarks in separate files into this directory.</p>
 </div>
 
 
@@ -299,7 +257,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../code/code.html" class="btn btn-neutral float-right" title="1. Code Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="awss3-storage-benchmark.html" class="btn btn-neutral float-right" title="2." accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../database.html" class="btn btn-neutral float-left" title="1. Cloudmesh Database" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

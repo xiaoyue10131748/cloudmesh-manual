@@ -409,7 +409,67 @@ This provder should not be used, but you need to use the general provider at
 
 #### Directory
 
+Note that directory in Azure Blob storage is a virtual folder. An empty directory cannot 
+be created and hence cloudmesh-storage creates a default marker file `dummy.txt` to create 
+the directory.
+
+```bash
+{'cm': {'cloud': 'azureblob',
+         'created': '2',
+         'kind': 'storage',
+         'name': 'dirtest/dummy.txt',
+         'size': 1,
+         'status': 'exists',
+         'updated': '2'},
+  'content': None,
+  'deleted': False,
+  'metadata': None,
+  'name': 'dirtest/dummy.txt',
+  'properties': {'append_blob_committed_block_count': None,
+                 'blob_tier': None,
+                 'blob_tier_change_time': None,
+                 'blob_tier_inferred': False,
+                 'blob_type': 'BlockBlob',
+                 'content_length': 1,
+                 'content_range': None,
+                 'deleted_time': None,
+                 'etag': '0x8D6CA68C2D61B73',
+                 'page_blob_sequence_number': None,
+                 'remaining_retention_days': None,
+                 'server_encrypted': True},
+  'snapshot': None}
+```
+
+
 #### File
+
+```bash
+{'cm': {'cloud': 'azureblob',
+         'created': '2',
+         'kind': 'storage',
+         'name': 'a/a/a1.txt',
+         'size': 19,
+         'status': 'exists',
+         'updated': '2'},
+  'content': None,
+  'deleted': False,
+  'metadata': None,
+  'name': 'a/a/a1.txt',
+  'properties': {'append_blob_committed_block_count': None,
+                 'blob_tier': None,
+                 'blob_tier_change_time': None,
+                 'blob_tier_inferred': False,
+                 'blob_type': 'BlockBlob',
+                 'content_length': 19,
+                 'content_range': None,
+                 'deleted_time': None,
+                 'etag': '0x8D6CA57263B4AEA',
+                 'page_blob_sequence_number': None,
+                 'remaining_retention_days': None,
+                 'server_encrypted': True},
+  'snapshot': None}
+```
+
 
 ### AWSS3 the one from cloudmesh-cloud
 

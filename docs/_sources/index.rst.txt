@@ -11,7 +11,7 @@ Cloudmesh Version 4
 
 .. toctree::
    :numbered:
-   :caption: INSTALATION
+   :caption: INSTALLATION
 
    install
    quickstart
@@ -41,6 +41,18 @@ Cloudmesh Version 4
    workflow
    jupyter
 
+.. toctree::
+   :numbered:
+   :caption: HPC
+
+   batch
+
+.. toctree::
+   :numbered:
+   :caption: cmd5
+
+   cmd5
+
 MAMUAL PAGES
 ============
 
@@ -48,6 +60,7 @@ MAMUAL PAGES
    :numbered:
    :caption: MANUAL PAGES
 
+   manual/commands
    manual-cmd5
    manual-compute
    manual-storage
@@ -60,6 +73,16 @@ DATABASE OBJECTS
    :caption: Database
 
    database
+
+BENCHMARKS
+==========
+
+.. toctree::
+   :glob:
+   :numbered:
+   :caption: Database
+
+   benchmarks/*
 
 
 CODE
@@ -96,11 +119,15 @@ Cloud Provider Accounts
 
 .. toctree::
    :numbered:
-   :caption: Cloud Accounts:
+   :caption: Cloud Accounts
 
+   accounts/aws
+   accounts/azureblob-storage
+   accounts/box
    accounts/storage-gdrive
    accounts/google-ufo
    accounts/accountcreation
+
 
 Cloudmesh Outdated
 ===============================

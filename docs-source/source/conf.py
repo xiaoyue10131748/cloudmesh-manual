@@ -57,6 +57,7 @@ templates_path = ['_templates']
 source_suffix = ['.md', '.rst']
 master_doc = 'index'
 language = None
+html_show_sourcelink = False
 
 #
 # add source parser

@@ -88,7 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../about.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributors.html">2. Contributors</a></li>
 </ul>
-<p class="caption"><span class="caption-text">INSTALATION</span></p>
+<p class="caption"><span class="caption-text">INSTALLATION</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">2. Quickstart</a></li>
@@ -113,15 +113,28 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../workflow.html">1. Infrastructure Workflow (proposed)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../jupyter.html">2. Jupyter Integration (proposed)</a></li>
 </ul>
+<p class="caption"><span class="caption-text">HPC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../batch.html">1. Batch</a></li>
+</ul>
+<p class="caption"><span class="caption-text">cmd5</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../cmd5.html">1. CMD5 Integartion</a></li>
+</ul>
 <p class="caption"><span class="caption-text">MANUAL PAGES</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../manual-cmd5.html">1. Manual Cmd5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../manual-compute.html">2. Compute Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../manual/commands.html">1. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../manual-cmd5.html">2. Manual Cmd5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../manual-compute.html">3. Compute Manual Pages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../manual-storage.html">3. Storage Manual Pages</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Database</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../database.html">1. Cloudmesh Database</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Database</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../benchmarks/README.html">1. Benchmarks</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CODE</span></p>
 <ul>
@@ -143,11 +156,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../conventions.html">1. Code Conventions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../pytest.html">2. Pytest</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Cloud Accounts:</span></p>
+<p class="caption"><span class="caption-text">Cloud Accounts</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../accounts/storage-gdrive.html">1. Google Storage Providers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../accounts/google-ufo.html">2. Google (What is this?)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../accounts/accountcreation.html">3. VM Providers (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/aws.html">1. Amazon Web Services (AWS) Account Creation Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/azureblob-storage.html">2. Azure Blob Storage and Account Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/box.html">3. Setting Up Your Box Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/box.html#references">4. References:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/storage-gdrive.html">5. Google Storage Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/google-ufo.html">6. Google (What is this?)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/accountcreation.html">7. VM Providers (outdated)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Outdated:</span></p>
 <ul>
@@ -231,7 +248,8 @@
 
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">time</span>
-
+<span class="kn">from</span> <span class="nn">cloudmesh.common.Printer</span> <span class="k">import</span> <span class="n">Printer</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.common.systeminfo</span> <span class="k">import</span> <span class="n">systeminfo</span>
 
 <div class="viewcode-block" id="StopWatch"><a class="viewcode-back" href="../../../code/common.html#cloudmesh.common.StopWatch.StopWatch">[docs]</a><span class="k">class</span> <span class="nc">StopWatch</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -322,7 +340,53 @@
                     <span class="s2">&quot;elapsed&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">t</span><span class="p">)),</span>
                     <span class="s2">&quot;newline&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">linesep</span><span class="p">}</span>
             <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{label}</span><span class="s2"> </span><span class="si">{start}</span><span class="s2"> </span><span class="si">{end}</span><span class="s2"> </span><span class="si">{elapsed}</span><span class="s2"> </span><span class="si">{newline}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">s</span></div>
+        <span class="k">return</span> <span class="n">s</span>
+
+<div class="viewcode-block" id="StopWatch.benchmark"><a class="viewcode-back" href="../../../code/common.html#cloudmesh.common.StopWatch.StopWatch.benchmark">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">benchmark</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">sysinfo</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        prints out all timers in a convenient benchmark tabble</span>
+<span class="sd">        :return:</span>
+<span class="sd">        :rtype:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1">#</span>
+        <span class="c1"># PRINT PLATFORM</span>
+        <span class="c1">#</span>
+        <span class="k">if</span> <span class="n">sysinfo</span><span class="p">:</span>
+            <span class="n">data_platform</span> <span class="o">=</span> <span class="n">systeminfo</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">Printer</span><span class="o">.</span><span class="n">attribute</span><span class="p">(</span><span class="n">data_platform</span><span class="p">,</span>
+                                    <span class="p">[</span><span class="s2">&quot;Machine Arribute&quot;</span><span class="p">,</span> <span class="s2">&quot;Time/s&quot;</span><span class="p">]))</span>
+
+        <span class="c1">#</span>
+        <span class="c1"># PRINT TIMERS</span>
+        <span class="c1">#</span>
+        <span class="n">timers</span> <span class="o">=</span> <span class="n">StopWatch</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+
+        <span class="n">data_timers</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">timer</span> <span class="ow">in</span> <span class="n">timers</span><span class="p">:</span>
+            <span class="n">data_timers</span><span class="p">[</span><span class="n">timer</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">StopWatch</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">timer</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="s1">&#39;timer&#39;</span><span class="p">:</span> <span class="n">timer</span>
+            <span class="p">}</span>
+            <span class="k">for</span> <span class="n">attribute</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;node&quot;</span><span class="p">,</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;machine&quot;</span><span class="p">,</span> <span class="s2">&quot;mac_version&quot;</span><span class="p">,</span>
+                              <span class="s2">&quot;win_version&quot;</span><span class="p">]:</span>
+                <span class="n">data_timers</span><span class="p">[</span><span class="n">timer</span><span class="p">][</span><span class="n">attribute</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_platform</span><span class="p">[</span><span class="n">attribute</span><span class="p">]</span>
+
+        <span class="c1"># print(Printer.attribute(data_timers, header=[&quot;Command&quot;, &quot;Time/s&quot;]))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">Printer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+            <span class="n">data_timers</span><span class="p">,</span>
+            <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;timer&quot;</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;node&quot;</span><span class="p">,</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;mac_version&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;win_version&quot;</span><span class="p">]</span>
+        <span class="p">))</span>
+
+        <span class="nb">print</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">Printer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+            <span class="n">data_timers</span><span class="p">,</span>
+            <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;timer&quot;</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;node&quot;</span><span class="p">,</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;mac_version&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;win_version&quot;</span><span class="p">],</span>
+            <span class="n">output</span><span class="o">=</span><span class="s2">&quot;csv&quot;</span>
+        <span class="p">))</span></div></div>
 </pre></div>
 
            </div>

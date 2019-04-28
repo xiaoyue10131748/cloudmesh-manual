@@ -13,6 +13,25 @@ all:
 	$(call banner, "use: make doc")
 
 
+contrib:
+	git config --global mailmap.file .mailmap
+	bin/authors.py
+
+names:
+	git config --global mailmap.file .mailmap
+	make -f Makefile names-dir > .names.txt
+	sort -u .names.txt > names.txt
+	cat names.txt
+
+names-dir:
+	@cd ../cloudmesh-cmd5; git log | fgrep Author
+	@cd ../cloudmesh-common; git log | fgrep Author
+	@cd ../cloudmesh-sys; git log | fgrep Author
+	@cd ../cloudmesh-openapi; git log | fgrep Author
+	@cd ../cloudmesh-emr; git log | fgrep Author
+	@cd ../cloudmesh-cloud; git log | fgrep Author
+	@cd ../cloudmesh-storage; git log | fgrep Author
+
 source:
 	cd ../cloudmesh.common; make source
 	$(call banner, "Install cloudmesh-cmd5")

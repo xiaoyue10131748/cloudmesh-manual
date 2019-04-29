@@ -19,7 +19,7 @@ Benchmark results for Azure Blob storage under cloudmesh-storage.
 +------------------+-------------------------------------------------------+
 | mac_version      |                                                       |
 | machine          | ('x86_64',)                                           |
-| node             | ('mallik30-VirtualBox',)                              |
+| node             | ('TESTUSER-VirtualBox',)                              |
 | platform         | Linux-4.15.0-47-generic-x86_64-with-debian-buster-sid |
 | processor        | ('x86_64',)                                           |
 | processors       | Linux                                                 |
@@ -28,26 +28,26 @@ Benchmark results for Azure Blob storage under cloudmesh-storage.
 | release          | ('4.15.0-47-generic',)                                |
 | sys              | linux                                                 |
 | system           | Linux                                                 |
-| user             | mallik30                                              |
+| user             | TESTUSER                                              |
 | version          | #50-Ubuntu SMP Wed Mar 13 10:44:52 UTC 2019           |
 | win_version      |                                                       |
 +------------------+-------------------------------------------------------+
 +---------------------------------+------+--------------------------+--------+-------------+-------------+
 | timer                           | time | node                     | system | mac_version | win_version |
 +---------------------------------+------+--------------------------+--------+-------------+-------------+
-| PUT file                        | 0.41 | ('mallik30-VirtualBox',) | Linux  |             |             |
-| GET file                        | 0.18 | ('mallik30-VirtualBox',) | Linux  |             |             |
-| LIST Directory                  | 0.44 | ('mallik30-VirtualBox',) | Linux  |             |             |
-| CREATE DIR                      | 0.72 | ('mallik30-VirtualBox',) | Linux  |             |             |
-| SEARCH file                     | 0.42 | ('mallik30-VirtualBox',) | Linux  |             |             |
-| DELETE Directory                | 0.49 | ('mallik30-VirtualBox',) | Linux  |             |             |
-| PUT Directory --recursive       | 3.69 | ('mallik30-VirtualBox',) | Linux  |             |             |
-| GET Directory --recursive       | 1.78 | ('mallik30-VirtualBox',) | Linux  |             |             |
-| DELETE Sub-directory            | 0.79 | ('mallik30-VirtualBox',) | Linux  |             |             |
-| LIST Directory --recursive      | 0.5  | ('mallik30-VirtualBox',) | Linux  |             |             |
-| LIST Sub-directory --recursive  | 0.5  | ('mallik30-VirtualBox',) | Linux  |             |             |
-| SEARCH file --recursive         | 0.49 | ('mallik30-VirtualBox',) | Linux  |             |             |
-| SEARCH file under a sub-dir --r | 0.44 | ('mallik30-VirtualBox',) | Linux  |             |             |
-| SEARCH file under root dir --r  | 0.48 | ('mallik30-VirtualBox',) | Linux  |             |             |
+| PUT file                        | 0.41 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| GET file                        | 0.18 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| LIST Directory                  | 0.44 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| CREATE DIR                      | 0.72 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| SEARCH file                     | 0.42 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| DELETE Directory                | 0.49 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| PUT Directory --recursive       | 3.69 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| GET Directory --recursive       | 1.78 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| DELETE Sub-directory            | 0.79 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| LIST Directory --recursive      | 0.5  | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| LIST Sub-directory --recursive  | 0.5  | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| SEARCH file --recursive         | 0.49 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| SEARCH file under a sub-dir --r | 0.44 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| SEARCH file under root dir --r  | 0.48 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
 +---------------------------------+------+--------------------------+--------+-------------+-------------+
 ```

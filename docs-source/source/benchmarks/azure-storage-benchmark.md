@@ -1,44 +1,53 @@
 ## Azure Blob Storage
 
+```bash
+Internet Speedtest:
+ping: 11 ms
+download: 129.68 Mbps
+upload: 11.73 Mbps
+```
+
 Benchmark results for Azure Blob storage under cloudmesh-storage.
 
 ```
 # ######################################################################
-# Benchmark results for AzureBlob Storage
+# Benchmark results for 'azureblob' Storage
 # ######################################################################
 
 +------------------+-------------------------------------------------------+
 | Machine Arribute | Time/s                                                |
 +------------------+-------------------------------------------------------+
 | mac_version      |                                                       |
-| machine          | x86_64                                                |
-| node             | testuser-VirtualBox                                   |
+| machine          | ('x86_64',)                                           |
+| node             | ('TESTUSER-VirtualBox',)                              |
 | platform         | Linux-4.15.0-47-generic-x86_64-with-debian-buster-sid |
-| processor        | x86_64                                                |
+| processor        | ('x86_64',)                                           |
 | processors       | Linux                                                 |
-| release          | 4.15.0-47-generic                                     |
+| python           | 3.7.2 (default, Feb 11 2019, 00:01:16)                |
+|                  | [GCC 7.3.0]                                           |
+| release          | ('4.15.0-47-generic',)                                |
 | sys              | linux                                                 |
 | system           | Linux                                                 |
-| user             | testuser                                              |
+| user             | TESTUSER                                              |
 | version          | #50-Ubuntu SMP Wed Mar 13 10:44:52 UTC 2019           |
-| win_version      | ('', '', '', '')                                      |
+| win_version      |                                                       |
 +------------------+-------------------------------------------------------+
-+---------------------------------+------+---------------------+--------+-------------+------------------+
-| timer                           | time | node                | system | mac_version | win_version      |
-+---------------------------------+------+---------------------+--------+-------------+------------------+
-| PUT file                        | 0.35 | testuser-VirtualBox | Linux  |             | ('', '', '', '') |
-| GET file                        | 0.15 | testuser-VirtualBox | Linux  |             | ('', '', '', '') |
-| LIST Directory                  | 0.42 | testuser-VirtualBox | Linux  |             | ('', '', '', '') |
-| CREATE DIR                      | 0.58 | testuser-VirtualBox | Linux  |             | ('', '', '', '') |
-| SEARCH file                     | 0.41 | testuser-VirtualBox | Linux  |             | ('', '', '', '') |
-| DELETE Directory                | 0.52 | testuser-VirtualBox | Linux  |             | ('', '', '', '') |
-| PUT Directory --recursive       | 3.55 | testuser-VirtualBox | Linux  |             | ('', '', '', '') |
-| GET Directory --recursive       | 1.73 | testuser-VirtualBox | Linux  |             | ('', '', '', '') |
-| DELETE Sub-directory            | 0.82 | testuser-VirtualBox | Linux  |             | ('', '', '', '') |
-| LIST Directory --recursive      | 0.51 | testuser-VirtualBox | Linux  |             | ('', '', '', '') |
-| LIST Sub-directory --recursive  | 0.5  | testuser-VirtualBox | Linux  |             | ('', '', '', '') |
-| SEARCH file --recursive         | 0.45 | testuser-VirtualBox | Linux  |             | ('', '', '', '') |
-| SEARCH file under a sub-dir --r | 0.45 | testuser-VirtualBox | Linux  |             | ('', '', '', '') |
-| SEARCH file under root dir --r  | 0.45 | testuser-VirtualBox | Linux  |             | ('', '', '', '') |
-+---------------------------------+------+---------------------+--------+-------------+------------------+
++---------------------------------+------+--------------------------+--------+-------------+-------------+
+| timer                           | time | node                     | system | mac_version | win_version |
++---------------------------------+------+--------------------------+--------+-------------+-------------+
+| PUT file                        | 0.41 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| GET file                        | 0.18 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| LIST Directory                  | 0.44 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| CREATE DIR                      | 0.72 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| SEARCH file                     | 0.42 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| DELETE Directory                | 0.49 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| PUT Directory --recursive       | 3.69 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| GET Directory --recursive       | 1.78 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| DELETE Sub-directory            | 0.79 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| LIST Directory --recursive      | 0.5  | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| LIST Sub-directory --recursive  | 0.5  | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| SEARCH file --recursive         | 0.49 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| SEARCH file under a sub-dir --r | 0.44 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
+| SEARCH file under root dir --r  | 0.48 | ('TESTUSER-VirtualBox',) | Linux  |             |             |
++---------------------------------+------+--------------------------+--------+-------------+-------------+
 ```

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3. Manual Cmd5 &mdash; Cloudmesh v4 alpha documentation</title>
+  <title>1. Reference Card (proposed) &mdash; Cloudmesh v4 alpha documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3.1. admin" href="manual/cmd5/admin.html" />
-    <link rel="prev" title="2. Commands" href="manual/commands.html" /> 
+    <link rel="next" title="2. Commands" href="manual/commands.html" />
+    <link rel="prev" title="1. CMD5 Integartion" href="cmd5.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -126,27 +126,16 @@
 </ul>
 <p class="caption"><span class="caption-text">MANUAL PAGES</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="reference-card.html">1. Reference Card (proposed)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/commands.html">2. Commands</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Manual Cmd5</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="manual/cmd5/admin.html">3.1. admin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual/cmd5/banner.html">3.2. banner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual/cmd5/clear.html">3.3. clear</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual/cmd5/default.html">3.4. default</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual/cmd5/echo.html">3.5. echo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual/cmd5/info.html">3.6. info</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual/cmd5/pause.html">3.7. pause</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual/cmd5/plugin.html">3.8. plugin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual/cmd5/q.html">3.9. q</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual/cmd5/quit.html">3.10. quit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual/cmd5/shell.html">3.11. shell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual/cmd5/sleep.html">3.12. sleep</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual/cmd5/stopwatch.html">3.13. stopwatch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual/cmd5/sys.html">3.14. sys</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual/cmd5/var.html">3.15. var</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual/cmd5/version.html">3.16. version</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Reference Card (proposed)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#shell">1.1. Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shell-commands-that-expire-after-a-session">1.2. Shell commands that expire after a session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clouds">1.3. Clouds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#comet">1.4. Comet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hpc">1.5. HPC</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="manual/commands.html">2. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual-cmd5.html">3. Manual Cmd5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual-compute.html">4. Compute Manual Pages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual-storage.html">5. Storage Manual Pages</a></li>
 </ul>
@@ -248,13 +237,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>3. Manual Cmd5</li>
+      <li>1. Reference Card (proposed)</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/manual-cmd5.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/reference-card.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -267,28 +256,156 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="manual-cmd5">
-<h1>3. Manual Cmd5<a class="headerlink" href="#manual-cmd5" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">CMD5</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="manual/cmd5/admin.html">3.1. admin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/cmd5/banner.html">3.2. banner</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/cmd5/clear.html">3.3. clear</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/cmd5/default.html">3.4. default</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/cmd5/echo.html">3.5. echo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/cmd5/info.html">3.6. info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/cmd5/pause.html">3.7. pause</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/cmd5/plugin.html">3.8. plugin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/cmd5/q.html">3.9. q</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/cmd5/quit.html">3.10. quit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/cmd5/shell.html">3.11. shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/cmd5/sleep.html">3.12. sleep</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/cmd5/stopwatch.html">3.13. stopwatch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/cmd5/sys.html">3.14. sys</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/cmd5/var.html">3.15. var</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual/cmd5/version.html">3.16. version</a></li>
-</ul>
+  <div class="section" id="reference-card-proposed">
+<h1>1. Reference Card (proposed)<a class="headerlink" href="#reference-card-proposed" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="shell">
+<h2>1.1. Shell<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-given docutils align-center" id="id1">
+<caption><span class="caption-text">Shell</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cms help</p></td>
+<td><p>help</p></td>
+</tr>
+<tr class="row-odd"><td><p>cms man</p></td>
+<td><p>manual pages</p></td>
+</tr>
+<tr class="row-even"><td><p>cms script.cm</p></td>
+<td><p>execute cm commands in script</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="shell-commands-that-expire-after-a-session">
+<h2>1.2. Shell commands that expire after a session<a class="headerlink" href="#shell-commands-that-expire-after-a-session" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-given docutils align-center" id="id2">
+<caption><span class="caption-text">Shell</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cms color on</p></td>
+<td><p>sets the shell color</p></td>
+</tr>
+<tr class="row-odd"><td><p>cms color off</p></td>
+<td><p>switches off the color</p></td>
+</tr>
+<tr class="row-even"><td><p>cms refresh on</p></td>
+<td><p>automatic refresh from the clouds</p></td>
+</tr>
+<tr class="row-odd"><td><p>cms refresh off</p></td>
+<td><p>data is only read from the database. Useful for managing thousands of VMs or limit your access to the cloud.</p></td>
+</tr>
+<tr class="row-even"><td><p>var a=xyx</p></td>
+<td><p>declares a variable</p></td>
+</tr>
+<tr class="row-odd"><td><p>var username=cloudmesh.profile.username</p></td>
+<td><p>reads the variable from the cloudmesh.yaml file</p></td>
+</tr>
+<tr class="row-even"><td><p>var time=now</p></td>
+<td><p>gets the time and store it in the variable time</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="clouds">
+<h2>1.3. Clouds<a class="headerlink" href="#clouds" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-given docutils align-center" id="id3">
+<caption><span class="caption-text">Cloud</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cms image list</p></td>
+<td><p>list images</p></td>
+</tr>
+<tr class="row-odd"><td><p>cms flavor list</p></td>
+<td><p>list flavors</p></td>
+</tr>
+<tr class="row-even"><td><p>cms vm list</p></td>
+<td><p>list vms</p></td>
+</tr>
+<tr class="row-odd"><td><p>cms vm boot</p></td>
+<td><p>boot vm</p></td>
+</tr>
+<tr class="row-even"><td><p>cms vm boot –cloud=kilo</p></td>
+<td><p>boot vm on cloud kilo</p></td>
+</tr>
+<tr class="row-odd"><td><p>cms default cloud=kilo</p></td>
+<td><p>set default cloud to kilo</p></td>
+</tr>
+<tr class="row-even"><td><p>cms select image</p></td>
+<td><p>select interactively the default image (not implemented yet).</p></td>
+</tr>
+<tr class="row-odd"><td><p>cms select flavor</p></td>
+<td><p>select interactively the default flavor (not implemented yet).</p></td>
+</tr>
+<tr class="row-even"><td><p>cms select cloud</p></td>
+<td><p>select interactively the default cloud (not implemented yet).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="comet">
+<span id="refcard-comet"></span><h2>1.4. Comet<a class="headerlink" href="#comet" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="hpc">
+<h2>1.5. HPC<a class="headerlink" href="#hpc" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-given docutils align-center" id="id4">
+<caption><span class="caption-text">HPC</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cms help</p></td>
+<td><p>Help</p></td>
+</tr>
+<tr class="row-odd"><td><p>cms hpc queue &lt;batch&gt;</p></td>
+<td><p>info about the queue &lt;batch&gt;</p></td>
+</tr>
+<tr class="row-even"><td><p>cms hpc info</p></td>
+<td><p>information about the queues on the HPC resource</p></td>
+</tr>
+<tr class="row-odd"><td><p>cms hpc run uname -a</p></td>
+<td><p>runs the command uname</p></td>
+</tr>
+<tr class="row-even"><td><p>cms hpc run list</p></td>
+<td><p>prints the ids of previously run jobs</p></td>
+</tr>
+<tr class="row-odd"><td><p>cms hpc run list</p></td>
+<td><p>prints the ids of previously run jobs</p></td>
+</tr>
+<tr class="row-even"><td><p>cms hpc run list 11</p></td>
+<td><p>prints the information regarding the job with the id 11</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -300,10 +417,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="manual/cmd5/admin.html" class="btn btn-neutral float-right" title="3.1. admin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="manual/commands.html" class="btn btn-neutral float-right" title="2. Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="manual/commands.html" class="btn btn-neutral float-left" title="2. Commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="cmd5.html" class="btn btn-neutral float-left" title="1. CMD5 Integartion" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

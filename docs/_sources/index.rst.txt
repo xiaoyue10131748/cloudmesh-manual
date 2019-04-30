@@ -60,6 +60,7 @@ MAMUAL PAGES
    :numbered:
    :caption: MANUAL PAGES
 
+   reference-card
    manual/commands
    manual-cmd5
    manual-compute

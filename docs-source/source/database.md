@@ -372,14 +372,15 @@ This provder should not be used, but you need to use the general provider at
 
 ## Storage
 
+### AwsS3
 
-The storage provider kind is `MISSING`. The Provider is located at 
+The storage provider kind is `awss3`. The Provider is located at 
 
-* <MISSING>
+* <https://github.com/cloudmesh/cloudmesh-storage/tree/master/cloudmesh/storage/provider/awss3>
 
 This provder should not be used, but you need to use the general provider at
 
-* <https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py>
+* <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py>
 
 ### Box
 

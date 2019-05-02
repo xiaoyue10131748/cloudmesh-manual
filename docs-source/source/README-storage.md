@@ -190,6 +190,8 @@ To search for a file at the root, pass an empty string or / as the target dir.
 $ cms storage --storage='aws' search /base_path/targetdir testfile.txt --recursive
 ```
 
+Note that for the Box storage provider, objects are only indexed every 5 to 10 minutes and will not show up in a search until they have been indexed. 
+
 ### List
 
 The list command lists all the contents of a cloud directory. If the recursive 

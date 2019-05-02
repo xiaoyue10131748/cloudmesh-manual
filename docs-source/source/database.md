@@ -394,7 +394,36 @@ This provder should not be used, but you need to use the general provider at
 
 #### Directory
 
+```bash
+{'_object_id': '71983743142',
+    'cm': {
+        'cloud': 'box', 
+	'kind': 'storage', 
+	'name': 'test01'
+    },
+    'etag': '0',
+    'id': '71983743142',
+    'name': 'test01',
+    'sequence_id': '0',
+    'type': 'folder'}
+```
+
 #### File
+
+```bash
+{'_object_id': '432543586295',
+  'cm': {
+      'cloud': 'box', 
+      'kind': 'storage', 
+      'name': 'test.txt'
+  },
+  'etag': '285',
+  'id': '432543586295',
+  'name': 'test.txt',
+  'sequence_id': '285',
+  'sha1': 'bca20547e94049e1ffea27223581c567022a5774',
+  'type': 'file'}]
+```
 
 ### Azure Blob
 

@@ -19,4 +19,4 @@ python:
   install:
     - requirements: requirements.txt
     - requirements: requirements-cm.txt
-    - cp docs-source/build/html docs
+

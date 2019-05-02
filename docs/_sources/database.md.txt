@@ -372,14 +372,15 @@ This provder should not be used, but you need to use the general provider at
 
 ## Storage
 
+### AwsS3
 
-The storage provider kind is `MISSING`. The Provider is located at 
+The storage provider kind is `awss3`. The Provider is located at 
 
-* <MISSING>
+* <https://github.com/cloudmesh/cloudmesh-storage/tree/master/cloudmesh/storage/provider/awss3>
 
 This provder should not be used, but you need to use the general provider at
 
-* <https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py>
+* <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py>
 
 ### Box
 
@@ -394,7 +395,36 @@ This provder should not be used, but you need to use the general provider at
 
 #### Directory
 
+```bash
+{'_object_id': '71983743142',
+    'cm': {
+        'cloud': 'box', 
+	'kind': 'storage', 
+	'name': 'test01'
+    },
+    'etag': '0',
+    'id': '71983743142',
+    'name': 'test01',
+    'sequence_id': '0',
+    'type': 'folder'}
+```
+
 #### File
+
+```bash
+{'_object_id': '432543586295',
+  'cm': {
+      'cloud': 'box', 
+      'kind': 'storage', 
+      'name': 'test.txt'
+  },
+  'etag': '285',
+  'id': '432543586295',
+  'name': 'test.txt',
+  'sequence_id': '285',
+  'sha1': 'bca20547e94049e1ffea27223581c567022a5774',
+  'type': 'file'}]
+```
 
 ### Azure Blob
 

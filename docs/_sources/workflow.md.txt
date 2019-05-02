@@ -1,109 +1,44 @@
-# Infrastructure Workflow (proposed)
+# Infrastructure Workflow
 
-Cloudmesh will support an infrastructure workflow in which we specify python
-functionas and map their execution on cloud infrastructure. The point hier is
-not to specify an optimal mapping between resources, but to define `a` mapping.
-In future differnt mapping strategies can be pursued.
+Cloudmesh supports an infrastructure [workflow](https://github.com/cloudmesh/cloudmesh-flow) where users can specify python
+functions and map their execution on cloud infrastructure. The workflow 
+feature allows you to define Python functions on a workflow class, and
+specify when to execute them via the command line or in a YAML file. You
+can then visualize the result of your workflow execution.
 
 An example is given below.
 
 ```python
-from cloudmesh.common.util import HEADING
-def a(): HEADING()
-def b(): HEADING()
-def c(): HEADING()
-def d(): HEADING()
-def e(): HEADING()
-def f(): HEADING()
-def g(): HEADING()
-def h(): HEADING()
-```
+from cloudmesh.flow.FlowDecorator import BaseWorkFlow
 
-Where headig is an internal debugging function that prints out the name of the
-function so we have some thing to do.
 
-The functions can be specified either with a workflow graph or a parallel
-language specification
+class MyFlow(BaseWorkFlow):
+    def a(self):
+        print("in a!")
+        time.sleep(5)
+    def b(self):
+        print("in b!")
+        time.sleep(10)
+    def c(self):
+        print("in c!")
+        time.sleep(10)
 
 ```
-(a; b; c; d) | (e; f; g; h) & (b ; g)
+
+This allows you to define functions in your workflow file. Then you can 
+write a specification for the sequence to execute your functions:
+
+```
+(a; b || c)
 ```
 
 Where 
 
-* `a ; b` is executed sequentially `a | b` is executed in parallel `x & y` 
-* specifies two graphs which dependency lists have to be fulfilled by parallel
-* and sequential operators. Nodes can be in differnet subgraphs.
+* `a ; b` is executed sequentially
+* `b || c` is executed in parallel.
 
-
-or
-
-```
-a -> b -> c -> d;
-e -> f -> g -> h;
-start -> a;
-start -> e;
-b -> g;
-h -> end;
-d -> end;
-```
-
-In addition to the workflow the mapping has to be specified as follows:
-
-
-
-A possible graphviz rendering is while also rendering the state of successfully
-executed functions in green
-
-```
-vm["aws0"] = (a, b, c, d) 
-vm("azure0"] = (e, f, g, h)
-```
-
-To start the vms we canuse the common vm commands (to be completed)
-
-```
-cms vm --name=aws0 --cloud=aws
-cms vm --name=azure0 --cloud azure
-```
-
-Together this specifies 
-a sets of functions do be executed on a particular vm hosted on a cloud
-
-
-A graph to render this is displayed in dot format in the next figure
-
-
-![workflow](./img/workflow.png)
-
-```
-digraph G {
-
-	subgraph cluster_0 {
-		a -> b -> c -> d;
-		label = "aws0";
-	}
-
-	subgraph cluster_1 {
-		e -> f -> g -> h;
-		label = "azure0";
-	}
-
-	start -> a;
-	start -> e;
-	b -> g;
-    h -> end;
-    d -> end;
-	start [shape=Mdiamond];
-	end [shape=Msquare];
-
-	a [style=filled,color=green];
-	e [style=filled,color=green];
-	b [style=filled,color=green];
-	start [color=green]
-}
-
-```
+Finally, after execution the results are stored in MongoDB to be visualized or consumed
+by later functions in the series.
 
 ## Javascript Interface (proposed)
 

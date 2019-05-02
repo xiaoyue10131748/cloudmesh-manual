@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="1. Benchmarks" href="benchmarks/README.html" />
-    <link rel="prev" title="4.3. vdir" href="manual/storage/vdir.html" /> 
+    <link rel="prev" title="5.3. vdir" href="manual/storage/vdir.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -102,7 +102,7 @@
 </ul>
 <p class="caption"><span class="caption-text">COMPUTE</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="vm.html">1. Virtual Machine Management (proposed)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vm.html">1. Virtual Machine Management</a></li>
 </ul>
 <p class="caption"><span class="caption-text">STORAGE</span></p>
 <ul>
@@ -113,7 +113,7 @@
 </ul>
 <p class="caption"><span class="caption-text">WORKFLOW</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="workflow.html">1. Infrastructure Workflow (proposed)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">1. Infrastructure Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">2. Jupyter Integration (proposed)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">HPC</span></p>
@@ -126,10 +126,11 @@
 </ul>
 <p class="caption"><span class="caption-text">MANUAL PAGES</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="manual/commands.html">1. Commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual-cmd5.html">2. Manual Cmd5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual-compute.html">3. Compute Manual Pages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual-storage.html">4. Storage Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference-card.html">1. Reference Card (proposed)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual/commands.html">2. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual-cmd5.html">3. Manual Cmd5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual-compute.html">4. Compute Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual-storage.html">5. Storage Manual Pages</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Database</span></p>
 <ul class="current">
@@ -168,34 +169,35 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#storage">1.6. Storage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#box">1.6.1. Box</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#directory">1.6.1.1. Directory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#file">1.6.1.2. File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#awss3">1.6.1. AwsS3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#box">1.6.2. Box</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#directory">1.6.2.1. Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#file">1.6.2.2. File</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#azure-blob">1.6.2. Azure Blob</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id13">1.6.2.1. Directory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id14">1.6.2.2. File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#azure-blob">1.6.3. Azure Blob</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id13">1.6.3.1. Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">1.6.3.2. File</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#awss3-the-one-from-cloudmesh-cloud">1.6.3. AWSS3 the one from cloudmesh-cloud</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id15">1.6.3.1. Directory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id16">1.6.3.2. File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#awss3-the-one-from-cloudmesh-cloud">1.6.4. AWSS3 the one from cloudmesh-cloud</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id15">1.6.4.1. Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">1.6.4.2. File</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#awss3-the-one-from-cloudmesh-objstore">1.6.4. AWSS3 the one from cloudmesh-objstore</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id17">1.6.4.1. Directory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id18">1.6.4.2. File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#awss3-the-one-from-cloudmesh-objstore">1.6.5. AWSS3 the one from cloudmesh-objstore</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id17">1.6.5.1. Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">1.6.5.2. File</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#google-drive">1.6.5. Google Drive</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id19">1.6.5.1. Directory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id20">1.6.5.2. File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#google-drive">1.6.6. Google Drive</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id19">1.6.6.1. Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">1.6.6.2. File</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#local">1.6.6. Local</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id21">1.6.6.1. Directory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id22">1.6.6.2. File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#local">1.6.7. Local</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id21">1.6.7.1. Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id22">1.6.7.2. File</a></li>
 </ul>
 </li>
 </ul>
@@ -226,11 +228,13 @@
 <p class="caption"><span class="caption-text">Database</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="benchmarks/README.html">1. Benchmarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html">2. </a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html#none">3. None</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html#test-results-tests-test-storage-aws-py-114">4. test_results \tests\test_storage_aws.py 114</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html#id2">5. </a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks/azure-storage-benchmark.html">6. Azure Blob Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks/awsec2-vm-management-benchmark.html">2. AWS EC2 VM Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks/awss3-storage-benchmark.html">3. AWS S3 File Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks/azure-storage-benchmark.html">4. Azure Blob Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks/box.html">5. </a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks/box.html#benchmark-results-for-box-storage">6. Benchmark results for ‘box’ Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks/box.html#id2">7. </a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks/emr.html">8. AWS EMR Benchmarking</a></li>
 </ul>
 <p class="caption"><span class="caption-text">CODE</span></p>
 <ul>
@@ -251,17 +255,19 @@
 <p class="caption"><span class="caption-text">CONTRIBUTION</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="conventions.html">1. Code Conventions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pytest.html">2. Pytest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management.html">2. Code Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management.html#documentation-management">3. Documentation Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management.html#version-managemt">4. Version Managemt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pytest.html">5. Pytest</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Cloud Accounts</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="accounts/aws.html">1. Amazon Web Services (AWS) Account Creation Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts/azureblob-storage.html">2. Azure Blob Storage and Account Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts/box.html">3. Setting Up Your Box Account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accounts/box.html#references">4. References:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accounts/storage-gdrive.html">5. Google Storage Providers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accounts/google-ufo.html">6. Google (What is this?)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accounts/accountcreation.html">7. VM Providers (outdated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts/storage-gdrive.html">4. Google Storage Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts/google-ufo.html">5. Google (What is this?)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts/accountcreation.html">6. VM Providers (outdated)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Outdated:</span></p>
 <ul>
@@ -711,16 +717,19 @@ cloudmesh attribute dict. Potential security related attributes, will hoever be 
 </div>
 <div class="section" id="storage">
 <h2>1.6. Storage<a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h2>
-<p>The storage provider kind is <code class="docutils literal notranslate"><span class="pre">MISSING</span></code>. The Provider is located at</p>
-<ul>
-<li><MISSING></li>
+<div class="section" id="awss3">
+<h3>1.6.1. AwsS3<a class="headerlink" href="#awss3" title="Permalink to this headline">¶</a></h3>
+<p>The storage provider kind is <code class="docutils literal notranslate"><span class="pre">awss3</span></code>. The Provider is located at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/tree/master/cloudmesh/storage/provider/awss3">https://github.com/cloudmesh/cloudmesh-storage/tree/master/cloudmesh/storage/provider/awss3</a></p></li>
 </ul>
 <p>This provder should not be used, but you need to use the general provider at</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py">https://github.com/cloudmesh/cloudmesh-cloud/blob/master/cloudmesh/compute/azure/AzProvider.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py</a></p></li>
 </ul>
+</div>
 <div class="section" id="box">
-<h3>1.6.1. Box<a class="headerlink" href="#box" title="Permalink to this headline">¶</a></h3>
+<h3>1.6.2. Box<a class="headerlink" href="#box" title="Permalink to this headline">¶</a></h3>
 <p>The storage provider kind is <code class="docutils literal notranslate"><span class="pre">box</span></code>. The Provider is located at</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/box/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/box/Provider.py</a></p></li>
@@ -730,14 +739,41 @@ cloudmesh attribute dict. Potential security related attributes, will hoever be 
 <li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py</a></p></li>
 </ul>
 <div class="section" id="directory">
-<h4>1.6.1.1. Directory<a class="headerlink" href="#directory" title="Permalink to this headline">¶</a></h4>
+<h4>1.6.2.1. Directory<a class="headerlink" href="#directory" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span><span class="s1">&#39;_object_id&#39;</span>: <span class="s1">&#39;71983743142&#39;</span>,
+    <span class="s1">&#39;cm&#39;</span>: <span class="o">{</span>
+        <span class="s1">&#39;cloud&#39;</span>: <span class="s1">&#39;box&#39;</span>, 
+	<span class="s1">&#39;kind&#39;</span>: <span class="s1">&#39;storage&#39;</span>, 
+	<span class="s1">&#39;name&#39;</span>: <span class="s1">&#39;test01&#39;</span>
+    <span class="o">}</span>,
+    <span class="s1">&#39;etag&#39;</span>: <span class="s1">&#39;0&#39;</span>,
+    <span class="s1">&#39;id&#39;</span>: <span class="s1">&#39;71983743142&#39;</span>,
+    <span class="s1">&#39;name&#39;</span>: <span class="s1">&#39;test01&#39;</span>,
+    <span class="s1">&#39;sequence_id&#39;</span>: <span class="s1">&#39;0&#39;</span>,
+    <span class="s1">&#39;type&#39;</span>: <span class="s1">&#39;folder&#39;</span><span class="o">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="file">
-<h4>1.6.1.2. File<a class="headerlink" href="#file" title="Permalink to this headline">¶</a></h4>
+<h4>1.6.2.2. File<a class="headerlink" href="#file" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span><span class="s1">&#39;_object_id&#39;</span>: <span class="s1">&#39;432543586295&#39;</span>,
+  <span class="s1">&#39;cm&#39;</span>: <span class="o">{</span>
+      <span class="s1">&#39;cloud&#39;</span>: <span class="s1">&#39;box&#39;</span>, 
+      <span class="s1">&#39;kind&#39;</span>: <span class="s1">&#39;storage&#39;</span>, 
+      <span class="s1">&#39;name&#39;</span>: <span class="s1">&#39;test.txt&#39;</span>
+  <span class="o">}</span>,
+  <span class="s1">&#39;etag&#39;</span>: <span class="s1">&#39;285&#39;</span>,
+  <span class="s1">&#39;id&#39;</span>: <span class="s1">&#39;432543586295&#39;</span>,
+  <span class="s1">&#39;name&#39;</span>: <span class="s1">&#39;test.txt&#39;</span>,
+  <span class="s1">&#39;sequence_id&#39;</span>: <span class="s1">&#39;285&#39;</span>,
+  <span class="s1">&#39;sha1&#39;</span>: <span class="s1">&#39;bca20547e94049e1ffea27223581c567022a5774&#39;</span>,
+  <span class="s1">&#39;type&#39;</span>: <span class="s1">&#39;file&#39;</span><span class="o">}]</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="azure-blob">
-<h3>1.6.2. Azure Blob<a class="headerlink" href="#azure-blob" title="Permalink to this headline">¶</a></h3>
+<h3>1.6.3. Azure Blob<a class="headerlink" href="#azure-blob" title="Permalink to this headline">¶</a></h3>
 <p>The storage provider kind is <code class="docutils literal notranslate"><span class="pre">azureblob</span></code>. The Provider is located at</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/azureblob/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/azureblob/Provider.py</a></p></li>
@@ -747,7 +783,7 @@ cloudmesh attribute dict. Potential security related attributes, will hoever be 
 <li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py</a></p></li>
 </ul>
 <div class="section" id="id13">
-<h4>1.6.2.1. Directory<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<h4>1.6.3.1. Directory<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
 <p>Note that directory in Azure Blob storage is a virtual folder. An empty directory cannot
 be created and hence cloudmesh-storage creates a default marker file <code class="docutils literal notranslate"><span class="pre">dummy.txt</span></code> to create
 the directory.</p>
@@ -779,7 +815,7 @@ the directory.</p>
 </div>
 </div>
 <div class="section" id="id14">
-<h4>1.6.2.2. File<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<h4>1.6.3.2. File<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span><span class="s1">&#39;cm&#39;</span>: <span class="o">{</span><span class="s1">&#39;cloud&#39;</span>: <span class="s1">&#39;azureblob&#39;</span>,
          <span class="s1">&#39;created&#39;</span>: <span class="s1">&#39;2&#39;</span>,
          <span class="s1">&#39;kind&#39;</span>: <span class="s1">&#39;storage&#39;</span>,
@@ -809,7 +845,7 @@ the directory.</p>
 </div>
 </div>
 <div class="section" id="awss3-the-one-from-cloudmesh-cloud">
-<h3>1.6.3. AWSS3 the one from cloudmesh-cloud<a class="headerlink" href="#awss3-the-one-from-cloudmesh-cloud" title="Permalink to this headline">¶</a></h3>
+<h3>1.6.4. AWSS3 the one from cloudmesh-cloud<a class="headerlink" href="#awss3-the-one-from-cloudmesh-cloud" title="Permalink to this headline">¶</a></h3>
 <p>The storage provider kind is <code class="docutils literal notranslate"><span class="pre">awss3</span></code>. The Provider is located at</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/awss3/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/awss3/Provider.py</a></p></li>
@@ -819,14 +855,14 @@ the directory.</p>
 <li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py</a></p></li>
 </ul>
 <div class="section" id="id15">
-<h4>1.6.3.1. Directory<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<h4>1.6.4.1. Directory<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="id16">
-<h4>1.6.3.2. File<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<h4>1.6.4.2. File<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
 <div class="section" id="awss3-the-one-from-cloudmesh-objstore">
-<h3>1.6.4. AWSS3 the one from cloudmesh-objstore<a class="headerlink" href="#awss3-the-one-from-cloudmesh-objstore" title="Permalink to this headline">¶</a></h3>
+<h3>1.6.5. AWSS3 the one from cloudmesh-objstore<a class="headerlink" href="#awss3-the-one-from-cloudmesh-objstore" title="Permalink to this headline">¶</a></h3>
 <p>It is unclear waht the difference to AWSS3 the one from cloudmesh-cloud is
 Please explain. If its the same, let us know and we shoudl merge</p>
 <p>The storage provider kind is <code class="docutils literal notranslate"><span class="pre">objstorage</span></code>. The Provider is located at</p>
@@ -838,14 +874,14 @@ Please explain. If its the same, let us know and we shoudl merge</p>
 <li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py</a></p></li>
 </ul>
 <div class="section" id="id17">
-<h4>1.6.4.1. Directory<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<h4>1.6.5.1. Directory<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="id18">
-<h4>1.6.4.2. File<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<h4>1.6.5.2. File<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
 <div class="section" id="google-drive">
-<h3>1.6.5. Google Drive<a class="headerlink" href="#google-drive" title="Permalink to this headline">¶</a></h3>
+<h3>1.6.6. Google Drive<a class="headerlink" href="#google-drive" title="Permalink to this headline">¶</a></h3>
 <p>The storage provider kind is <code class="docutils literal notranslate"><span class="pre">gdrive</span></code>. The Provider is located at</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/gdrive/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/gdrive/Provider.py</a></p></li>
@@ -855,14 +891,14 @@ Please explain. If its the same, let us know and we shoudl merge</p>
 <li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py</a></p></li>
 </ul>
 <div class="section" id="id19">
-<h4>1.6.5.1. Directory<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<h4>1.6.6.1. Directory<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="id20">
-<h4>1.6.5.2. File<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<h4>1.6.6.2. File<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
 <div class="section" id="local">
-<h3>1.6.6. Local<a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h3>
+<h3>1.6.7. Local<a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h3>
 <p>This has not been tested yet, so be careful as it could remove local dir trees.
 we may need ta add an option –force for this provider and always ask if
 we wnat to delete the files while shoing them first. This could even be a reason
@@ -876,10 +912,10 @@ to introduce it in all providers.</p>
 <li><p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py">https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/Provider.py</a></p></li>
 </ul>
 <div class="section" id="id21">
-<h4>1.6.6.1. Directory<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+<h4>1.6.7.1. Directory<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="id22">
-<h4>1.6.6.2. File<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<h4>1.6.7.2. File<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
 </div>
@@ -1274,7 +1310,7 @@ to introduce it in all providers.</p>
         <a href="benchmarks/README.html" class="btn btn-neutral float-right" title="1. Benchmarks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="manual/storage/vdir.html" class="btn btn-neutral float-left" title="4.3. vdir" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="manual/storage/vdir.html" class="btn btn-neutral float-left" title="5.3. vdir" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

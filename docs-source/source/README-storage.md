@@ -245,14 +245,13 @@ Open a terminal and navigate to the cloudmesh-storage directory. Enter the
 following command to run pytests:
 
 ```bash
-$ pytest -v --capture=no tests/test_box.py
+$ pytest -v --capture=no tests/test_storage_box.py
 $ pytest -v --capture=no tests/test_azure.py
 $ pytest -v --capture=no tests/test_storage_aws.py
 ```
 
 TODO: rename to 
 
-* test_storage_box.py
 * test_storage_azure.py
 
  

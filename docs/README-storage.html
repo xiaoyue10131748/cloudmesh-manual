@@ -444,6 +444,7 @@ sub-directories of the original directory as well.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cms storage --storage<span class="o">=</span><span class="s1">&#39;aws&#39;</span> search /base_path/targetdir testfile.txt --recursive
 </pre></div>
 </div>
+<p>Note that for the Box storage provider, objects are only indexed every 5 to 10 minutes and will not show up in a search until they have been indexed.</p>
 </div>
 <div class="section" id="list">
 <h3>2.2.6. List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h3>
